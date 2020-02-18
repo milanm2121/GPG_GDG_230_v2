@@ -71,55 +71,6 @@ public class Hand : MonoBehaviour
                 Use_card(1);
 
             }
-
-
-            switch (TBS.state)
-            {
-                case (TurnState.StartTurn):
-                    selectedCard = null;
-                    break;
-                case (TurnState.PlayerTurn):
-                    
-                    break;
-                case (TurnState.Attack):
-                    if (selectedCard == null)
-                    {
-                        //allows you to clik your sellected card
-                        if (Input.GetMouseButtonDown(0) == true)
-                        {
-                            RaycastHit target;
-                            Physics.Raycast(Camera.current.ScreenToWorldPoint(Input.mousePosition), new Vector3(0, 0, 1), out target);
-                            selectedCard = target.collider.GetComponent<card>();
-                        }
-                    }
-                    else
-                    {
-                        //i shoudent exsit
-                        if (Input.GetKeyDown(KeyCode.A))
-                        {
-                            Card_attack(selectedCard);
-                        }
-                        if (Input.GetKeyDown(KeyCode.D))
-                        {
-                            Card_deffend(selectedCard);
-                        }
-                        if (Input.GetKeyDown(KeyCode.Backspace))
-                        {
-                            selectedCard = null;
-                        }
-                    }
-                        
-                        break;
-                case (TurnState.Response):
-                    
-                    break;
-                case (TurnState.End):
-                    break;
-                case (TurnState.Nothing):
-
-                    break;
-
-            }
         }
         if (attacking == true)
         {
