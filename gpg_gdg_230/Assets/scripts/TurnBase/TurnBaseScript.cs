@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum TurnState { StartTurn, PlayerTurn, Response, Attack, End, Nothing }
-
 /*
  * The main purpose of this sc 
  */
@@ -11,8 +9,7 @@ public enum TurnState { StartTurn, PlayerTurn, Response, Attack, End, Nothing }
 public class TurnBaseScript : MonoBehaviour
 {
     //To make sure that the turn are played properly.
-    //i moved it above so all scripts can acsses it /|\
-   // public enum TurnState { StartTurn, PlayerTurn, Response, Attack, End, Nothing }
+    public enum TurnState { StartTurn, PlayerTurn, Response, Attack, End, Nothing, TimeWasted  }
     public TurnState state = TurnState.Nothing;
 
     public Hand player1Hand;
@@ -27,6 +24,11 @@ public class TurnBaseScript : MonoBehaviour
 
     //The timer to make sure players don't spend too long on it.
     public int turnTimer = 30;
+    private int reduceTime1 = 30;
+    private int reduceTime2 = 30;
+    private int player1AFKStrike;
+    private int player2AFKStrike;
+
     //To prevent this from overlaping
     public bool timerIsOn = false;
 
@@ -76,8 +78,8 @@ public class TurnBaseScript : MonoBehaviour
                 {
                     StopCoroutine("CountDown");
                     timerIsOn = false;
-                    turnTimer = 30 / 2;
-                    state = TurnState.Nothing;
+
+                    state = TurnState.TimeWasted;
                 }
                 break;
             case (TurnState.Attack):
@@ -91,6 +93,13 @@ public class TurnBaseScript : MonoBehaviour
                 break;
             case (TurnState.Nothing):
 
+                break;
+            case (TurnState.TimeWasted):
+                if (playerTurn == true)
+                    player1AFKStrike += 1;
+                else
+                    player2AFKStrike += 1;
+                TimerEndTurn();
                 break;
         }
     }
@@ -112,10 +121,61 @@ public class TurnBaseScript : MonoBehaviour
 
     public void EndPlayerTurn()
     {
+        turnTimer = 30;
+
+
         if (playerTurn == true)
             playerTurn = false;
         else
             playerTurn = true;
+
+        state = TurnState.PlayerTurn;
+    }
+
+    //This is use for when the player is AFK 
+    //If there are AFK for too long, then they will lose.
+    public void TimerEndTurn()
+    {
+        if (player1AFKStrike == 3)
+            GameIsOver();
+        if (player2AFKStrike == 3)
+            GameIsOver();
+
+        if (state == TurnState.TimeWasted)
+        {
+            turnTimer = 30;
+            if (playerTurn == true)
+            {
+                playerTurn = false;
+                if (player2AFKStrike >= 1)
+                {
+                    reduceTime2 = reduceTime2 / 2;
+                    turnTimer = reduceTime2;
+                }
+                state = TurnState.PlayerTurn;
+            }
+            else if (playerTurn == false)
+            {
+                playerTurn = true;
+                if (player1AFKStrike >= 1)
+                {
+                    reduceTime1 = reduceTime1 / 2;
+                    turnTimer = reduceTime1;
+                }
+                state = TurnState.PlayerTurn;
+            }
+        }
+
+    }
+
+    public void GameIsOver()
+    {
+        if (player1AFKStrike == 3)
+            Debug.Log("Player 1 lose");
+        if (player2AFKStrike == 3)
+            Debug.Log("Player 2  lose");
+
+        state = TurnState.Nothing;
     }
 
     //This is so that the player doesn't take too long
