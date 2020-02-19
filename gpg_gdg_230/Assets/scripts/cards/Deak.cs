@@ -10,6 +10,7 @@ public class Deak : MonoBehaviour
 
     public card[] deak = new card[40];
 
+   
     private void Update()
     {
         if (deak[0] == null)

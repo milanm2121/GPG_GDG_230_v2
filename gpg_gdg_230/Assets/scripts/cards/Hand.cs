@@ -11,6 +11,8 @@ using UnityEngine;
 
 public class Hand : MonoBehaviour
 {
+    //is this a player or AI used for loading cards
+    public bool player;
     //this dictates weither a hand is active or not
     public bool active;
     //the nuber of cards in your hand
@@ -34,21 +36,31 @@ public class Hand : MonoBehaviour
     public int player_mana;
     public int player_gold;
     //the card that is selected (placeholder)
-    card selectedCard;
+    public card selectedCard;
     //are you in the attack phase
     bool attacking;
     //this is a placeholder
     card attacking_card;
     //the template card for creating cards from scratch
     public GameObject cardTmp;
-
+    //for mousepos raycasting
+    Camera cam;
     // Start is called before the first frame update
     void Start()
     {
+        cam = GameObject.Find("Main Camera").GetComponent<Camera>();
         deck = GetComponent<Deak>();
         TBS = GameObject.Find("maneger object").GetComponent<TurnBaseScript>();
-        //pick 7 cards at the start of a game for your deck
-        pick7();
+        if (player == true)
+        {
+            GameObject.Find("player deck").GetComponent<player_static_deck>().loadDeck();
+            pick7();
+        }
+        else
+        {
+            //pick 7 cards at the start of a game for your deck
+            pick7();
+        }
         print("picked7");
         
     }
@@ -58,9 +70,30 @@ public class Hand : MonoBehaviour
     {
         for(int i=0; cards_in_hand > i; i++)
         {
-            hand[i].transform.position = Vector2.Lerp(hand[i].transform.position, hand_slots[i].position,0.5f);
+            hand[i].transform.position = Vector3.Lerp(hand[i].transform.position, hand_slots[i].position,0.5f);
         }
 
+        if (player)
+        {
+            //inspect card
+
+            Ray mousepos= cam.ScreenPointToRay(Input.mousePosition);
+            RaycastHit mousehover;
+            Physics.Raycast(mousepos, out mousehover);
+            //shiriinking of cards
+            if (selectedCard != null && (mousehover.collider == null || mousehover.collider != selectedCard.GetComponent<Collider>()))
+            {
+                selectedCard.transform.localScale = new Vector3(0.4f, 0.4f, 1);
+                selectedCard = null;
+            }
+            //groth of cards for view
+            if (mousehover.collider!=null && mousehover.collider.gameObject.tag == "card")
+            {
+                selectedCard = mousehover.collider.GetComponent<card>();
+                mousehover.collider.gameObject.transform.localScale = Vector3.Lerp(new Vector3(Mathf.Clamp(mousehover.collider.gameObject.transform.localScale.x, 0.4f, 0.6f), Mathf.Clamp(mousehover.collider.gameObject.transform.localScale.y, 0.4f, 0.6f), Mathf.Clamp(mousehover.collider.gameObject.transform.localScale.z, 0.4f, 0.6f)), new Vector3(0.6f, 0.6f, 0.6f), 0.2f);
+            }
+            
+        }
 
         //is it your turn
         if (active == true)

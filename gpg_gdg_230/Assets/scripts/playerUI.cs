@@ -22,7 +22,7 @@ public class playerUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        health.text = "enemy health:"+ "\n"+ "20" + "\n" + "\n" + "\n" + "health" + "\n" + TBS.player1Health.ToString();
+        health.text = "enemy health:" + "\n" + TBS.player2Health.ToString() + "\n" + "\n" + "\n" + "health" + "\n" + TBS.player1Health.ToString();
         gold.text = "gold:" + "\n" + hand.player_gold.ToString();
         mana.text = "mana:" + "\n" + hand.player_mana.ToString();
     }

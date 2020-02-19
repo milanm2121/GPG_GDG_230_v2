@@ -28,6 +28,9 @@ public class card : MonoBehaviour
 
     public pass_card_stats PCS;
 
+
+    bool inspected;
+
     void Awake()
     {
         PCS = GetComponent<pass_card_stats>();
@@ -53,6 +56,13 @@ public class card : MonoBehaviour
         {
             PCS.cost.text = gold_cost.ToString();
         }
+
+        if (inspected == true)
+        {
+
+        }
+
+
     }
     IEnumerator secondframe()
     {
