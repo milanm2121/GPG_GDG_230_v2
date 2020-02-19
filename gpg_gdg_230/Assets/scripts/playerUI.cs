@@ -23,7 +23,7 @@ public class playerUI : MonoBehaviour
     void Update()
     {
         health.text = "enemy health:" + "\n" + TBS.player2Health.ToString() + "\n" + "\n" + "\n" + "health" + "\n" + TBS.player1Health.ToString();
-        gold.text = "gold:" + "\n" + hand.player_gold.ToString();
-        mana.text = "mana:" + "\n" + hand.player_mana.ToString();
+        gold.text = "gold:" + "\n" + hand.playerGold.ToString();
+        mana.text = "mana:" + "\n" + hand.playerMana.ToString();
     }
 }

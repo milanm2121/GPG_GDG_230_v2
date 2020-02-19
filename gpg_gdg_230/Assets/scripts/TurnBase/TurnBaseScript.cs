@@ -35,6 +35,8 @@ public class TurnBaseScript : MonoBehaviour
     //To see which player goes first when the game starts.
     public int whoGoesFirst;
 
+    public bool startOfTheGame = true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -54,7 +56,11 @@ public class TurnBaseScript : MonoBehaviour
         switch(state)
         {
             case (TurnState.StartTurn):
-                //Draw7();
+                if (startOfTheGame == true)
+                {
+                    Draw7();
+                }
+                GainManaAndCoin();
                 state = TurnState.PlayerTurn;
                 break;
             case (TurnState.PlayerTurn):
@@ -108,7 +114,24 @@ public class TurnBaseScript : MonoBehaviour
     {
         player2Hand.pick7();
         player1Hand.pick7();
-        state = TurnState.PlayerTurn;
+        startOfTheGame = false;
+    }
+
+    void GainManaAndCoin()
+    {
+        player1Hand.playerGold += 1;
+        player2Hand.playerGold += 1;
+
+        if (playerTurn == true)
+            player1Hand.playerMana += 1;
+        else
+            player2Hand.playerMana += 1;
+
+        Debug.Log(player1Hand.playerGold);
+        Debug.Log(player1Hand.playerMana);
+        Debug.Log(player2Hand.playerGold);
+        Debug.Log(player2Hand.playerMana);
+
     }
 
     void PlayerResponeToAction()
@@ -129,7 +152,7 @@ public class TurnBaseScript : MonoBehaviour
         else
             playerTurn = true;
 
-        state = TurnState.PlayerTurn;
+        state = TurnState.StartTurn;
     }
 
     //This is use for when the player is AFK 
@@ -152,7 +175,7 @@ public class TurnBaseScript : MonoBehaviour
                     reduceTime2 = reduceTime2 / 2;
                     turnTimer = reduceTime2;
                 }
-                state = TurnState.PlayerTurn;
+                state = TurnState.StartTurn;
             }
             else if (playerTurn == false)
             {
@@ -162,7 +185,7 @@ public class TurnBaseScript : MonoBehaviour
                     reduceTime1 = reduceTime1 / 2;
                     turnTimer = reduceTime1;
                 }
-                state = TurnState.PlayerTurn;
+                state = TurnState.StartTurn;
             }
         }
 

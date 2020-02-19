@@ -33,8 +33,8 @@ public class Hand : MonoBehaviour
     public TurnBaseScript TBS;
     
     //these are resorses for using cards
-    public int player_mana;
-    public int player_gold;
+    public int playerMana;
+    public int playerGold;
     //the card that is selected (placeholder)
     public card selectedCard;
     //are you in the attack phase
@@ -54,12 +54,12 @@ public class Hand : MonoBehaviour
         if (player == true)
         {
             GameObject.Find("player deck").GetComponent<player_static_deck>().loadDeck();
-            pick7();
+            //pick7();
         }
         else
         {
             //pick 7 cards at the start of a game for your deck
-            pick7();
+            //pick7();
         }
         print("picked7");
         
@@ -158,14 +158,14 @@ public class Hand : MonoBehaviour
         //uses an index int to select a card in the hand and put it in a place holder
         card picked_card = hand[picked_card_index];
         //cheaks if you have enough gold or mana to use tha card
-        if (picked_card.Mana_cost <= player_mana && picked_card.gold_cost <= player_gold)
+        if (picked_card.Mana_cost <= playerMana && picked_card.gold_cost <= playerGold)
         {
             //takes away the cost
-            player_mana -= picked_card.Mana_cost;
-            player_gold -= picked_card.gold_cost;
+            playerMana -= picked_card.Mana_cost;
+            playerGold -= picked_card.gold_cost;
 
             //cheaks if the card is magic or a unit
-            if (picked_card.IsMagic==false && active_cards <=5)
+            if (picked_card.IsMagic == false && active_cards <=5)
             {
                 //moves the card from the hand into the feild
                 active_cards_slots[active_cards] = picked_card;
