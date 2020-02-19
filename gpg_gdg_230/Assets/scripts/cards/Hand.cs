@@ -84,15 +84,19 @@ public class Hand : MonoBehaviour
             if (selectedCard != null && (mousehover.collider == null || mousehover.collider != selectedCard.GetComponent<Collider>()))
             {
                 selectedCard.transform.localScale = new Vector3(0.4f, 0.4f, 1);
+                //selectedCard.GetComponent<SpriteRenderer>().sortingOrder = (int)transform.position.z;
                 selectedCard = null;
+                
             }
             //groth of cards for view
             if (mousehover.collider!=null && mousehover.collider.gameObject.tag == "card")
             {
                 selectedCard = mousehover.collider.GetComponent<card>();
                 mousehover.collider.gameObject.transform.localScale = Vector3.Lerp(new Vector3(Mathf.Clamp(mousehover.collider.gameObject.transform.localScale.x, 0.4f, 0.6f), Mathf.Clamp(mousehover.collider.gameObject.transform.localScale.y, 0.4f, 0.6f), Mathf.Clamp(mousehover.collider.gameObject.transform.localScale.z, 0.4f, 0.6f)), new Vector3(0.6f, 0.6f, 0.6f), 0.2f);
+                selectedCard.GetComponent<SpriteRenderer>().sortingOrder = 10;
+
             }
-            
+
         }
 
         //is it your turn
