@@ -15,18 +15,28 @@ public class Hand : MonoBehaviour
     public bool player;
     //this dictates weither a hand is active or not
     public bool active;
+
     //the nuber of cards in your hand
     public int cards_in_hand; 
     //the array that holds the cards that are your hands
     public card[] hand = new card[7];
     //the public visual transform of your hand
     public Transform[] hand_slots;
+
     //the amount of active cards you have in your deck
     public int active_cards;
     //the array that holds the active cards in your deck
     public card[] active_cards_slots = new card[5];
     //the transforms of active positions in your side of the feild
+
     public Transform[] active_slots;
+    //cards in combat
+    public int cards_in_combat;
+    //the array of cards in combat
+    public card[] combat_card_slots = new card[5];
+    //the transform position of cards
+    public Transform[] cambat_slots;
+
     //this is a deak(deck) it holds 40 cards
     public Deak deck;
     //a script that holds and dictaes the truns.
@@ -96,6 +106,37 @@ public class Hand : MonoBehaviour
                 selectedCard.GetComponent<SpriteRenderer>().sortingOrder = 10;
 
             }
+
+            if(selectedCard!=null && Input.GetMouseButtonDown(0))
+            {
+                for(int i = 0; cards_in_hand > i; i++)
+                {
+                    if (selectedCard == hand[i])
+                    {
+                        Use_card(i);
+                        break;
+                    }
+                }
+                for(int i=0; active_cards>i; i++)
+                {
+                    if (selectedCard = active_cards_slots[i])
+                    {
+                        combat_card_slots[cards_in_combat] = selectedCard;
+                        cards_in_combat += 1;
+                        //visual change in card goes here
+                        if (active == true)
+                        {
+                            SetToAttack(selectedCard);
+                        }
+                        else
+                        {
+                            SetToDefend(selectedCard);
+                        }
+                    }
+                }
+            }
+
+
 
         }
 
@@ -203,12 +244,22 @@ public class Hand : MonoBehaviour
             }
         }
     }
-    //this shouldent exist i think?
-    public void Card_deffend(card chosen_card)
-	{
-        chosen_card.GetComponent<Health>().defending = true;
-        //need to trun this off later some how
-	}
+
+    public void SetToAttack(card card)
+    {
+        
+    }
+
+    public void SetToDefend(card card)
+    {
+        card.transform.rotation = Quaternion.Euler(0, 0, 90);
+        
+    }
+
+    
+
+
+    
     //used for attacking
     public void Card_attack(card chosen_card)
     {
