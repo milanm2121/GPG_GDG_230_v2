@@ -394,6 +394,14 @@ MonoBehaviour:
   - {fileID: 2065000678}
   - {fileID: 1557513614}
   - {fileID: 1950913760}
+  cards_in_combat: 0
+  combat_card_slots:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  cambat_slots: []
   deck: {fileID: 0}
   TBS: {fileID: 0}
   playerMana: 0
@@ -1296,6 +1304,14 @@ MonoBehaviour:
   - {fileID: 774366276}
   - {fileID: 2076448252}
   - {fileID: 819431337}
+  cards_in_combat: 0
+  combat_card_slots:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  cambat_slots: []
   deck: {fileID: 0}
   TBS: {fileID: 0}
   playerMana: 0

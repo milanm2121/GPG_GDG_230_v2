@@ -17,7 +17,7 @@ public class Hand : MonoBehaviour
     public bool active;
 
     //the nuber of cards in your hand
-    public int cards_in_hand; 
+    public int cards_in_hand;
     //the array that holds the cards that are your hands
     public card[] hand = new card[7];
     //the public visual transform of your hand
@@ -37,11 +37,17 @@ public class Hand : MonoBehaviour
     //the transform position of cards
     public Transform[] cambat_slots;
 
+    //list of attacking card
+    public List<card> attackingCards = new List<card>();
+    //list of defending cards
+    public List<card> defendingCards = new List<card>();
+
+
     //this is a deak(deck) it holds 40 cards
     public Deak deck;
     //a script that holds and dictaes the truns.
     public TurnBaseScript TBS;
-    
+
     //these are resorses for using cards
     public int playerMana;
     public int playerGold;
@@ -72,22 +78,22 @@ public class Hand : MonoBehaviour
             //pick7();
         }
         print("picked7");
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        for(int i=0; cards_in_hand > i; i++)
+        for (int i = 0; cards_in_hand > i; i++)
         {
-            hand[i].transform.position = Vector3.Lerp(hand[i].transform.position, hand_slots[i].position,0.5f);
+            hand[i].transform.position = Vector3.Lerp(hand[i].transform.position, hand_slots[i].position, 0.5f);
         }
 
         if (player)
         {
             //inspect card
 
-            Ray mousepos= cam.ScreenPointToRay(Input.mousePosition);
+            Ray mousepos = cam.ScreenPointToRay(Input.mousePosition);
             RaycastHit mousehover;
             Physics.Raycast(mousepos, out mousehover);
             //shiriinking of cards
@@ -96,10 +102,10 @@ public class Hand : MonoBehaviour
                 selectedCard.transform.localScale = new Vector3(0.4f, 0.4f, 1);
                 //selectedCard.GetComponent<SpriteRenderer>().sortingOrder = (int)transform.position.z;
                 selectedCard = null;
-                
+
             }
             //groth of cards for view
-            if (mousehover.collider!=null && mousehover.collider.gameObject.tag == "card")
+            if (mousehover.collider != null && mousehover.collider.gameObject.tag == "card")
             {
                 selectedCard = mousehover.collider.GetComponent<card>();
                 mousehover.collider.gameObject.transform.localScale = Vector3.Lerp(new Vector3(Mathf.Clamp(mousehover.collider.gameObject.transform.localScale.x, 0.4f, 0.6f), Mathf.Clamp(mousehover.collider.gameObject.transform.localScale.y, 0.4f, 0.6f), Mathf.Clamp(mousehover.collider.gameObject.transform.localScale.z, 0.4f, 0.6f)), new Vector3(0.6f, 0.6f, 0.6f), 0.2f);
@@ -107,9 +113,9 @@ public class Hand : MonoBehaviour
 
             }
 
-            if(selectedCard!=null && Input.GetMouseButtonDown(0))
+            if (selectedCard != null && Input.GetMouseButtonDown(0))
             {
-                for(int i = 0; cards_in_hand > i; i++)
+                for (int i = 0; cards_in_hand > i; i++)
                 {
                     if (selectedCard == hand[i])
                     {
@@ -117,7 +123,7 @@ public class Hand : MonoBehaviour
                         break;
                     }
                 }
-                for(int i=0; active_cards>i; i++)
+                for (int i = 0; active_cards > i; i++)
                 {
                     if (selectedCard = active_cards_slots[i])
                     {
@@ -150,16 +156,7 @@ public class Hand : MonoBehaviour
 
             }
         }
-        if (attacking == true)
-        {
-            if (Input.GetMouseButtonDown(0) == true)
-            {
-                RaycastHit target;
-                Physics.Raycast(Camera.current.ScreenToWorldPoint(Input.mousePosition), new Vector3(0,0,1),out target);
-                attacking_card.target=target.collider.gameObject.GetComponent<card>();
 
-            }
-        }
     }
 
     //replaces hand with 7 new cards
@@ -167,7 +164,7 @@ public class Hand : MonoBehaviour
     {
         //sets cards in hand to 0
         cards_in_hand = 0;
-        for (int i=0; hand.Length > i; i++)
+        for (int i = 0; hand.Length > i; i++)
         {
 
             //clears the hand
@@ -206,7 +203,7 @@ public class Hand : MonoBehaviour
             playerGold -= picked_card.gold_cost;
 
             //cheaks if the card is magic or a unit
-            if (picked_card.IsMagic == false && active_cards <=5)
+            if (picked_card.IsMagic == false && active_cards <= 5)
             {
                 //moves the card from the hand into the feild
                 active_cards_slots[active_cards] = picked_card;
@@ -215,11 +212,11 @@ public class Hand : MonoBehaviour
                 cards_in_hand -= 1;
                 active_cards += 1;
                 //need to fix this(this sould visualy move the card to the feild)
-                print(active_cards-1);
+                print(active_cards - 1);
                 picked_card.gameObject.transform.position = active_slots[active_cards - 1].position;
 
                 //cleans up the hand array
-                for (int i=picked_card_index; cards_in_hand>i; i++)
+                for (int i = picked_card_index; cards_in_hand > i; i++)
                 {
                     hand[i] = hand[i + 1];
                 }
@@ -247,49 +244,12 @@ public class Hand : MonoBehaviour
 
     public void SetToAttack(card card)
     {
-        
+        attackingCards.Add(card);
     }
 
     public void SetToDefend(card card)
     {
         card.transform.rotation = Quaternion.Euler(0, 0, 90);
-        
-    }
-
-    
-
-
-    
-    //used for attacking
-    public void Card_attack(card chosen_card)
-    {
-        attacking = true;
-        StartCoroutine(chossetarget(chosen_card));
-        attacking_card = chosen_card;
-        
-        
-    }
-    //attacks the target
-    IEnumerator chossetarget(card chosen_card)
-    {
-        //waits for target to be chosen
-        yield return new WaitUntil(()=>(chosen_card.target != null) || active==false);
-
-        if (chosen_card.target != null)
-        {
-
-            if (chosen_card.target.defenfing == true)
-            {
-                //this is just a filler
-                chosen_card.target.health -= chosen_card.attack_dmg / 2;
-            }
-            else
-            {
-                chosen_card.target.health -= chosen_card.attack_dmg;
-            }
-        }
-        attacking = false;
-        chosen_card.target = null;
-        attacking_card = null;
+        defendingCards.Add(card);
     }
 }
