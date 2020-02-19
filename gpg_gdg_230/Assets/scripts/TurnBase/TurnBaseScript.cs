@@ -37,6 +37,10 @@ public class TurnBaseScript : MonoBehaviour
 
     public bool startOfTheGame = true;
 
+    private int defaultGold;
+    private int defaultMana1;
+    private int defaultMana2;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -119,18 +123,43 @@ public class TurnBaseScript : MonoBehaviour
 
     void GainManaAndCoin()
     {
+        player1Hand.playerGold = defaultGold;
+        player2Hand.playerGold = defaultGold;
+
         player1Hand.playerGold += 1;
         player2Hand.playerGold += 1;
+        defaultGold += 1;
+
+        player1Hand.playerMana = defaultMana1;
+        player2Hand.playerMana = defaultMana2;
 
         if (playerTurn == true)
+        {
             player1Hand.playerMana += 1;
+            defaultMana1 += 1;
+        }
         else
+        {
             player2Hand.playerMana += 1;
+            defaultMana2 += 1;
+        }
 
-        Debug.Log(player1Hand.playerGold);
-        Debug.Log(player1Hand.playerMana);
-        Debug.Log(player2Hand.playerGold);
-        Debug.Log(player2Hand.playerMana);
+        if (player1Hand.playerGold >= 10)
+            player1Hand.playerGold = 10;
+        if (player2Hand.playerGold >= 10)
+            player2Hand.playerGold = 10;
+        if (player1Hand.playerMana >= 5)
+            player1Hand.playerMana = 5;
+        if (player2Hand.playerMana >= 5)
+            player2Hand.playerMana = 5;
+
+        Debug.Log("Player 1 gold " + player1Hand.playerGold);
+        Debug.Log("Player 1 mana " + player1Hand.playerMana);
+        Debug.Log("Player 2 gold " + player2Hand.playerGold);
+        Debug.Log("Player 2 Mama " + player2Hand.playerMana);
+        Debug.Log("Default Gold " + defaultGold);
+        Debug.Log("Default Mana 1 " + defaultMana1);
+        Debug.Log("Default Mana 2 " + defaultMana2);
 
     }
 
@@ -146,11 +175,18 @@ public class TurnBaseScript : MonoBehaviour
     {
         turnTimer = 30;
 
-
         if (playerTurn == true)
+        {
+            player1AFKStrike = 0;
+            reduceTime1 = 30;
             playerTurn = false;
+        }
         else
+        {
+            player2AFKStrike = 0;
+            reduceTime2 = 30;
             playerTurn = true;
+        }
 
         state = TurnState.StartTurn;
     }
@@ -162,7 +198,7 @@ public class TurnBaseScript : MonoBehaviour
         if (player1AFKStrike == 3)
             GameIsOver();
         if (player2AFKStrike == 3)
-            GameIsOver();
+            GameIsOver(); 
 
         if (state == TurnState.TimeWasted)
         {
