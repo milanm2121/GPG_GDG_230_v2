@@ -64,6 +64,11 @@ public class TurnBaseScript : MonoBehaviour
                 {
                     Draw7();
                 }
+                else
+                {
+                    //need to make the player draw 1
+                    Debug.Log("Play drew a card");
+                }
                 GainManaAndCoin();
                 state = TurnState.PlayerTurn;
                 break;
@@ -121,6 +126,7 @@ public class TurnBaseScript : MonoBehaviour
         startOfTheGame = false;
     }
 
+    //This is to so that each player will gain Gold each turn while only gain Mana at the start of the player's turn.
     void GainManaAndCoin()
     {
         player1Hand.playerGold = defaultGold;
@@ -152,7 +158,7 @@ public class TurnBaseScript : MonoBehaviour
             player1Hand.playerMana = 5;
         if (player2Hand.playerMana >= 5)
             player2Hand.playerMana = 5;
-
+        /*
         Debug.Log("Player 1 gold " + player1Hand.playerGold);
         Debug.Log("Player 1 mana " + player1Hand.playerMana);
         Debug.Log("Player 2 gold " + player2Hand.playerGold);
@@ -160,7 +166,7 @@ public class TurnBaseScript : MonoBehaviour
         Debug.Log("Default Gold " + defaultGold);
         Debug.Log("Default Mana 1 " + defaultMana1);
         Debug.Log("Default Mana 2 " + defaultMana2);
-
+        */
     }
 
     void PlayerResponeToAction()
@@ -227,12 +233,14 @@ public class TurnBaseScript : MonoBehaviour
 
     }
 
+    //Once the game is done.
     public void GameIsOver()
     {
         if (player1AFKStrike == 3)
             Debug.Log("Player 1 lose");
         if (player2AFKStrike == 3)
             Debug.Log("Player 2  lose");
+
 
         state = TurnState.Nothing;
     }
@@ -247,5 +255,7 @@ public class TurnBaseScript : MonoBehaviour
         }
 
     }
+
+
 
 }
