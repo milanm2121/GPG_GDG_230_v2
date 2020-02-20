@@ -15,7 +15,7 @@ public class UiSortingLayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (playerHand.selectedCard != null || playerHand.selectedCard != GetComponent<card>())
+        if (playerHand.selectedCard != GetComponent<ScriptableCard>())
         {
 
             if (GetComponent<Canvas>())
@@ -24,10 +24,10 @@ public class UiSortingLayer : MonoBehaviour
             }
             else
             {
-                GetComponent<SpriteRenderer>().sortingOrder = (int)-GetComponentInParent<Transform>().position.z;
+                GetComponent<SpriteRenderer>().sortingOrder = (int)-transform.position.z;
             }
         }
-        else //if (playerHand.selectedCard == GetComponent<card>())
+        else if (playerHand.selectedCard == GetComponent<ScriptableCard>())
         {
             if (GetComponent<Canvas>())
             {

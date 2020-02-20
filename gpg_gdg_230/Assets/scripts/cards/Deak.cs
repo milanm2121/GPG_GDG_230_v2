@@ -8,9 +8,9 @@ public class Deak : MonoBehaviour
 
     public int Class;
 
-    public card[] deak = new card[40];
+    public ScriptableCard[] deak = new ScriptableCard[40];
 
-   
+    public GameObject cardTemp;
     private void Update()
     {
         if (deak[0] == null)
@@ -23,17 +23,20 @@ public class Deak : MonoBehaviour
         
     }
 
-    public card Pick_random()
+    public GameObject Pick_random()
     {
-        card Random_card;
+        ScriptableCard Random_card_index;
         int card_index_picked = Random.Range(0, Cards_active_deak);
-        Random_card = deak[card_index_picked];
+        GameObject Random_card =Instantiate(cardTemp);
+        Random_card_index = deak[card_index_picked];
+        cardTemp.GetComponent<CardDisplay>().card = Random_card_index;
         Cards_active_deak--;
         for(int i = card_index_picked; Cards_active_deak-1 > i; i++)
         {
             deak[i] = deak[i+1];
         }
 
+        Random_card.transform.parent = GameObject.Find("card feild").transform;
         return Random_card;
     }
 

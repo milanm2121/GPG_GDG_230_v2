@@ -20,7 +20,7 @@ public class card : MonoBehaviour
     //entity damage
     public int attack_dmg;
     //current target
-    public card target;
+    public ScriptableCard target;
     //public ablity
     //ablity script
     //class1-3

@@ -7,7 +7,7 @@ public class player_static_deck : MonoBehaviour
 {
     public int Class;
 
-    public card[] deak = new card[40];
+    public ScriptableCard[] deak = new ScriptableCard[40];
 
 
     // Start is called before the first frame update
