@@ -67,7 +67,16 @@ public class TurnBaseScript : MonoBehaviour
                 else
                 {
                     //need to make the player draw 1
-                    Debug.Log("Play drew a card");
+                    if (playerTurn == true)
+                    {
+                        player1Hand.pickCard();
+                        Debug.Log("Player 1 drew a card");
+                    }
+                    else
+                    {
+                        player2Hand.pickCard();
+                        Debug.Log("Player 2 drew a card");
+                    }
                 }
                 GainManaAndCoin();
                 state = TurnState.PlayerTurn;

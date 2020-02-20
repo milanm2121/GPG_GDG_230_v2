@@ -158,7 +158,7 @@ public class Hand : MonoBehaviour
     {
         //sets cards in hand to 0
         cards_in_hand = 0;
-        for (int i = 0; hand.Length > i; i++)
+        for (int i = 0; 5 > i; i++)
         {
 
             //clears the hand
@@ -187,10 +187,13 @@ public class Hand : MonoBehaviour
 
     public void pickCard()
     {
-        for (int i = 0; hand.Length > i; i++)
-        {
+        int i =cards_in_hand;
 
-            //cheask for slots
+
+
+        //cheask for slots
+        if (cards_in_hand <= 6)
+        {
             if (hand[i] == null)
             {
                 //picks random card from the deak to place it in the hand
@@ -211,6 +214,8 @@ public class Hand : MonoBehaviour
                 cards_in_hand += 1;
             }
         }
+        
+        
     }
 
 
