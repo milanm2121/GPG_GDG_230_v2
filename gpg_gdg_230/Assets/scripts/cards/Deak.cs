@@ -28,6 +28,7 @@ public class Deak : MonoBehaviour
         ScriptableCard Random_card_index;
         int card_index_picked = Random.Range(0, Cards_active_deak);
         GameObject Random_card =Instantiate(cardTemp);
+        Random_card.transform.localScale = new Vector3(1, 1, 1);
         Random_card_index = deak[card_index_picked];
         cardTemp.GetComponent<CardDisplay>().card = Random_card_index;
         Cards_active_deak--;
@@ -37,6 +38,8 @@ public class Deak : MonoBehaviour
         }
 
         Random_card.transform.parent = GameObject.Find("card feild").transform;
+        Random_card.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
+
         return Random_card;
     }
 
