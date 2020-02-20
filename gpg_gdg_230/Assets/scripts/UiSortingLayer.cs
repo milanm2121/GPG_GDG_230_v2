@@ -5,6 +5,7 @@ using UnityEngine;
 public class UiSortingLayer : MonoBehaviour
 {
     Hand playerHand;
+    //public bool inspected;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,7 +15,7 @@ public class UiSortingLayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if ((playerHand.selectedCard != null && playerHand.selectedCard.gameObject != gameObject))
+        if (playerHand.selectedCard != null || playerHand.selectedCard != GetComponent<card>())
         {
 
             if (GetComponent<Canvas>())
@@ -24,6 +25,17 @@ public class UiSortingLayer : MonoBehaviour
             else
             {
                 GetComponent<SpriteRenderer>().sortingOrder = (int)-GetComponentInParent<Transform>().position.z;
+            }
+        }
+        else //if (playerHand.selectedCard == GetComponent<card>())
+        {
+            if (GetComponent<Canvas>())
+            {
+                GetComponent<Canvas>().sortingOrder = 11;
+            }
+            else
+            {
+                GetComponent<SpriteRenderer>().sortingOrder = 10;
             }
         }
     }
