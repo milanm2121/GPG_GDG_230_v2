@@ -70,14 +70,10 @@ public class Hand : MonoBehaviour
         if (player == true)
         {
             GameObject.Find("player deck").GetComponent<player_static_deck>().loadDeck();
-            //pick7();
+
         }
-        else
-        {
-            //pick 7 cards at the start of a game for your deck
-            //pick7();
-        }
-        print("picked7");
+
+
 
     }
 
@@ -100,7 +96,6 @@ public class Hand : MonoBehaviour
             if (selectedCard != null && (mousehover.collider == null || mousehover.collider != selectedCard.GetComponent<Collider>()))
             {
                 selectedCard.transform.localScale = new Vector3(0.4f, 0.4f, 1);
-                //selectedCard.GetComponent<SpriteRenderer>().sortingOrder = (int)transform.position.z;
                 selectedCard = null;
 
             }
@@ -109,7 +104,6 @@ public class Hand : MonoBehaviour
             {
                 selectedCard = mousehover.collider.GetComponent<card>();
                 mousehover.collider.gameObject.transform.localScale = Vector3.Lerp(new Vector3(Mathf.Clamp(mousehover.collider.gameObject.transform.localScale.x, 0.4f, 0.6f), Mathf.Clamp(mousehover.collider.gameObject.transform.localScale.y, 0.4f, 0.6f), Mathf.Clamp(mousehover.collider.gameObject.transform.localScale.z, 0.4f, 0.6f)), new Vector3(0.6f, 0.6f, 0.6f), 0.2f);
-                selectedCard.GetComponent<SpriteRenderer>().sortingOrder = 10;
 
             }
 
@@ -190,6 +184,36 @@ public class Hand : MonoBehaviour
 
         }
     }
+
+    public void pickCard()
+    {
+        for (int i = 0; hand.Length > i; i++)
+        {
+
+            //cheask for slots
+            if (hand[i] == null)
+            {
+                //picks random card from the deak to place it in the hand
+                hand[i] = deck.Pick_random();
+                //creates a card crom the script heald in the deack
+                GameObject card = Instantiate(cardTmp);
+                card cardstats = card.AddComponent<card>();
+                cardstats.Name = hand[i].Name;
+                cardstats.IsMagic = hand[i].IsMagic;
+                cardstats.gold_cost = hand[i].gold_cost;
+                cardstats.Mana_cost = hand[i].Mana_cost;
+                cardstats.attack_dmg = hand[i].attack_dmg;
+                cardstats.health = hand[i].health;
+                cardstats.Class = hand[i].Class;
+                card.transform.position = hand_slots[cards_in_hand].position;
+                hand[i] = card.GetComponent<card>();
+                //adds a count to the cards in hand script
+                cards_in_hand += 1;
+            }
+        }
+    }
+
+
     //a function used to use a card from the hand
     public void Use_card(int picked_card_index)
     {
