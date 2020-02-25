@@ -89,7 +89,7 @@ public class Hand : MonoBehaviour
         {
             //inspect card
 
-            Ray mousepos = cam.ScreenPointToRay(Input.mousePosition);
+          /*  Ray mousepos = cam.ScreenPointToRay(Input.mousePosition);
             RaycastHit mousehover;
             Physics.Raycast(mousepos, out mousehover);
             //shiriinking of cards
@@ -106,7 +106,7 @@ public class Hand : MonoBehaviour
                 mousehover.collider.gameObject.transform.localScale = Vector3.Lerp(new Vector3(Mathf.Clamp(mousehover.collider.gameObject.transform.localScale.x, 0.4f, 0.6f), Mathf.Clamp(mousehover.collider.gameObject.transform.localScale.y, 0.4f, 0.6f), Mathf.Clamp(mousehover.collider.gameObject.transform.localScale.z, 0.4f, 0.6f)), new Vector3(0.6f, 0.6f, 0.6f), 0.2f);
 
             }
-
+            */
             if (selectedCard != null && Input.GetMouseButtonDown(0))
             {
                 if (active == true && TBS.state == TurnBaseScript.TurnState.PlayerTurn)
@@ -142,6 +142,11 @@ public class Hand : MonoBehaviour
             }
         }
 
+    }
+
+    public void selectCard()
+    {
+       // selectedCard = ;
     }
 
     //replaces hand with 7 new cards
