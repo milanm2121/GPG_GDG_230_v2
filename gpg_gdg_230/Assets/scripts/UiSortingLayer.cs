@@ -1,4 +1,9 @@
-﻿using System.Collections;
+﻿/*
+ * this cript changes the lyers based on the positions of the cards
+ * by milan
+ */
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -15,28 +20,18 @@ public class UiSortingLayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (playerHand.selectedCard != GetComponent<ScriptableCard>())
+        if (playerHand.selectedCard != gameObject)
         {
 
-            if (GetComponent<Canvas>())
-            {
-                GetComponent<Canvas>().sortingOrder = (int)-GetComponentInParent<Transform>().position.z;
-            }
-            else
-            {
-                GetComponent<SpriteRenderer>().sortingOrder = (int)-transform.position.z;
-            }
+            GetComponent<RectTransform>().position = transform.position;
         }
-        else if (playerHand.selectedCard == GetComponent<ScriptableCard>())
+        else if (playerHand.selectedCard == gameObject)
         {
             if (GetComponent<Canvas>())
             {
-                GetComponent<Canvas>().sortingOrder = 11;
+                GetComponent<RectTransform>().position = new Vector3(transform.position.x,transform.position.y,11);
             }
-            else
-            {
-                GetComponent<SpriteRenderer>().sortingOrder = 10;
-            }
+           
         }
     }
 }

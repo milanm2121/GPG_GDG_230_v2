@@ -2,6 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ * this script holds all of the scriptable cards and has functions to call cards from the deck
+ * 
+ * 
+ */
 public class Deak : MonoBehaviour
 {
     public int Cards_active_deak=40;
@@ -23,7 +28,7 @@ public class Deak : MonoBehaviour
         
     }
 
-    public GameObject Pick_random()
+    public GameObject Pick_random(Hand hand)
     {
         ScriptableCard Random_card_index;
         int card_index_picked = Random.Range(0, Cards_active_deak);
@@ -39,7 +44,7 @@ public class Deak : MonoBehaviour
 
         Random_card.transform.parent = GameObject.Find("card feild").transform;
         Random_card.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
-
+        Random_card.GetComponent<card_functions>().hand = hand;
         return Random_card;
     }
 

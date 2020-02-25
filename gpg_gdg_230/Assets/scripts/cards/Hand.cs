@@ -57,10 +57,9 @@ public class Hand : MonoBehaviour
     bool attacking;
     //this is a placeholder
     GameObject attacking_card;
-    //the template card for creating cards from scratch
-    public GameObject cardTmp;
     //for mousepos raycasting
     Camera cam;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -80,33 +79,26 @@ public class Hand : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        for (int i = 0; cards_in_hand > i; i++)
-        {
-            hand[i].transform.position = Vector3.Lerp(hand[i].transform.position, hand_slots[i].position, 0.5f);
-        }
+        
 
         if (player)
         {
             //inspect card
-
-          /*  Ray mousepos = cam.ScreenPointToRay(Input.mousePosition);
-            RaycastHit mousehover;
-            Physics.Raycast(mousepos, out mousehover);
-            //shiriinking of cards
-            if (selectedCard != null && (mousehover.collider == null || mousehover.collider != selectedCard.GetComponent<Collider>()))
+         /*   for (int i = 0; cards_in_hand > i; i++)
             {
-                selectedCard.transform.localScale = new Vector3(0.4f, 0.4f, 1);
-                selectedCard = null;
-
+                hand[i].transform.position = Vector3.Lerp(hand[i].transform.position, hand_slots[i].position, 0.5f);
+                if(selectedCard!=hand[i])
+                    hand[i].transform.SetSiblingIndex(i);
             }
-            //groth of cards for view
-            if (mousehover.collider != null && mousehover.collider.gameObject.tag == "card")
+
+            if (selectedCard != null)
             {
-                selectedCard = mousehover.collider.GetComponent<GameObject>();
-                mousehover.collider.gameObject.transform.localScale = Vector3.Lerp(new Vector3(Mathf.Clamp(mousehover.collider.gameObject.transform.localScale.x, 0.4f, 0.6f), Mathf.Clamp(mousehover.collider.gameObject.transform.localScale.y, 0.4f, 0.6f), Mathf.Clamp(mousehover.collider.gameObject.transform.localScale.z, 0.4f, 0.6f)), new Vector3(0.6f, 0.6f, 0.6f), 0.2f);
-
+                selectedCard.transform.SetAsLastSibling();
+                
             }
-            */
+
+    */
+
             if (selectedCard != null && Input.GetMouseButtonDown(0))
             {
                 if (active == true && TBS.state == TurnBaseScript.TurnState.PlayerTurn)
@@ -144,10 +136,6 @@ public class Hand : MonoBehaviour
 
     }
 
-    public void selectCard()
-    {
-       // selectedCard = ;
-    }
 
     //replaces hand with 7 new cards
     public void pick7()
@@ -162,7 +150,7 @@ public class Hand : MonoBehaviour
                 Destroy(hand[i]);
             hand[i] = null;
             //picks random card from the deak to place it in the hand
-            hand[i] = deck.Pick_random();
+            hand[i] = deck.Pick_random(GetComponent<Hand>());
             //creates a card crom the script heald in the deack
             
             hand[i].transform.position = hand_slots[cards_in_hand].position;
@@ -185,7 +173,7 @@ public class Hand : MonoBehaviour
             if (hand[i] == null)
             {
                 //picks random card from the deak to place it in the hand
-                hand[i] = deck.Pick_random();
+                hand[i] = deck.Pick_random(GetComponent<Hand>());
                 
                 hand[i].transform.position = hand_slots[cards_in_hand].position;
               
@@ -204,14 +192,14 @@ public class Hand : MonoBehaviour
         //uses an index int to select a card in the hand and put it in a place holder
         GameObject picked_card = hand[picked_card_index];
         //cheaks if you have enough gold or mana to use tha card
-        if (picked_card.GetComponent<ScriptableCard>().manaCost <= playerMana && picked_card.GetComponent<ScriptableCard>().manaCost <= playerGold)
+        if (picked_card.GetComponent<CardDisplay>().card.manaCost <= playerMana && picked_card.GetComponent<CardDisplay>().card.manaCost <= playerGold)
         {
             //takes away the cost
             if (picked_card.gameObject.tag == "spell") {
-                playerMana -=picked_card.GetComponent<ScriptableCard>().manaCost;
+                playerMana -= picked_card.GetComponent<CardDisplay>().card.manaCost;
             }
             else {
-                playerGold -= picked_card.GetComponent<ScriptableCard>().manaCost;
+                playerGold -= picked_card.GetComponent<CardDisplay>().card.manaCost;
             }
 
             //cheaks if the card is magic or a unit
