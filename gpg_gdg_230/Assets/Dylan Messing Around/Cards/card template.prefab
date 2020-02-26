@@ -810,7 +810,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9af46d61e8dfd04458e142e4f8752881, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hand: {fileID: 0}
+  hand: {fileID: 8866503133736098541, guid: 46ea627f80d3f484ca2d69e56cf19e53, type: 3}
+  hand2: {fileID: 2529656569740077020, guid: e927509903a63fe44bb99ea8c94cf684, type: 3}
 --- !u!114 &-2446909608878061327
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -845,6 +846,21 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1670919300621037008}
           m_MethodName: deselectCard
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 9
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1670919300621037008}
+          m_MethodName: PlayACard
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}

@@ -5,6 +5,8 @@ using UnityEngine;
 public class card_functions : MonoBehaviour
 {
     public Hand hand;
+    public Hand hand2;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +22,7 @@ public class card_functions : MonoBehaviour
     public void select_card()
     {
         hand.selectedCard = gameObject;
-        GetComponent<RectTransform>().localScale = new Vector2(2, 2);
+        GetComponent<RectTransform>().localScale = new Vector2(1.5f, 1.5f);
     }
     public void deselectCard()
     {
@@ -29,6 +31,20 @@ public class card_functions : MonoBehaviour
             hand.selectedCard = null;
             GetComponent<RectTransform>().localScale = new Vector2(1, 1);
 
+        }
+    }
+
+    //To detect which turn it is in order to play a card.
+    public void PlayACard()
+    {
+        if (hand.active == true)
+        {
+            hand.pickCard();
+        }
+
+        if (hand2.active == true)
+        {
+            hand2.pickCard();
         }
     }
 
