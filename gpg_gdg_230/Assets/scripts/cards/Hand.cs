@@ -60,6 +60,9 @@ public class Hand : MonoBehaviour
     //for mousepos raycasting
     Camera cam;
 
+
+    public combat_maneger cm;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -84,7 +87,7 @@ public class Hand : MonoBehaviour
         if (player)
         {
             //inspect card
-         /*   for (int i = 0; cards_in_hand > i; i++)
+            for (int i = 0; cards_in_hand > i; i++)
             {
                 hand[i].transform.position = Vector3.Lerp(hand[i].transform.position, hand_slots[i].position, 0.5f);
                 if(selectedCard!=hand[i])
@@ -97,8 +100,8 @@ public class Hand : MonoBehaviour
                 
             }
 
-    */
-
+    
+            //clikink cards
             if (selectedCard != null && Input.GetMouseButtonDown(0))
             {
                 if (active == true && TBS.state == TurnBaseScript.TurnState.PlayerTurn)
@@ -244,12 +247,12 @@ public class Hand : MonoBehaviour
 
     public void SetToAttack(GameObject card)
     {
-        attackingCards.Add(card);
+        cm.attack.Add(card);
     }
 
     public void SetToDefend(GameObject card)
     {
         card.transform.rotation = Quaternion.Euler(0, 0, 90);
-        defendingCards.Add(card);
+        cm.defend.Add(card);
     }
 }
