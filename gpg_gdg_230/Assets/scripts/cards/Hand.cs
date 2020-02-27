@@ -69,6 +69,8 @@ public class Hand : MonoBehaviour
         cam = GameObject.Find("Main Camera").GetComponent<Camera>();
         deck = GetComponent<Deak>();
         TBS = GameObject.Find("maneger object").GetComponent<TurnBaseScript>();
+        cm = GameObject.Find("maneger object").GetComponent<combat_maneger>();
+
         if (player == true)
         {
             GameObject.Find("player deck").GetComponent<player_static_deck>().loadDeck();
@@ -124,11 +126,11 @@ public class Hand : MonoBehaviour
                         combat_card_slots[i] = selectedCard;
                         cards_in_combat += 1;
                         //visual change in card goes here
-                        if (active == true && TBS.state == TurnBaseScript.TurnState.Attack)
+                        if (active == true && TBS.state == TurnBaseScript.TurnState.Attack && cm.attack.Contains(selectedCard)==false)
                         {
                             SetToAttack(selectedCard);
                         }
-                        else if (active==false && TBS.state == TurnBaseScript.TurnState.Response)
+                        else if (active==false && TBS.state == TurnBaseScript.TurnState.Response && cm.defend.Contains(selectedCard)==false)
                         {
                             SetToDefend(selectedCard);
                         }

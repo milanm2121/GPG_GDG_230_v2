@@ -5,8 +5,6 @@ using UnityEngine;
 public class combat_maneger : MonoBehaviour
 {
     public TurnBaseScript TBS;
-    public Hand hand1;
-    public Hand hand2;
 
     public List<GameObject> attack= new List<GameObject>();
     public List<GameObject> defend = new List<GameObject>();
@@ -32,7 +30,7 @@ public class combat_maneger : MonoBehaviour
     {
         for (int i = 0; attack.Count > i; i++)
         {
-            if (defend[i] != null)
+            if (defend.Count != 0 && defend[i] != null)
             {
                 int newHealth = defend[i].GetComponent<CardDisplay>().card.health - attack[i].GetComponent<CardDisplay>().card.attack;
                 defend[i].GetComponent<CardDisplay>().card.health = newHealth;
@@ -51,5 +49,7 @@ public class combat_maneger : MonoBehaviour
             }
             yield return new WaitForSeconds(1);
         }
+        attack.Clear();
+        defend.Clear();
     }
 }

@@ -26,6 +26,12 @@ public class CardDisplay : MonoBehaviour
 
         manaText.text = card.manaCost.ToString();
         attackText.text = card.attack.ToString();
+        
+
+    }
+    private void Update()
+    {
+
         healthText.text = card.health.ToString();
 
     }

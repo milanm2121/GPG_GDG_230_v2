@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /*
- * The main purpose of this sc 
+ * The main purpose of this sc res
  */
 
 public class TurnBaseScript : MonoBehaviour
