@@ -192,7 +192,7 @@ public class Hand : MonoBehaviour
         //uses an index int to select a card in the hand and put it in a place holder
         GameObject picked_card = hand[picked_card_index];
         //cheaks if you have enough gold or mana to use tha card
-        if (picked_card.GetComponent<CardDisplay>().card.manaCost <= playerMana && picked_card.GetComponent<CardDisplay>().card.manaCost <= playerGold)
+        if (picked_card.GetComponent<CardDisplay>().card.manaCost <= playerMana || picked_card.GetComponent<CardDisplay>().card.manaCost <= playerGold)
         {
             //takes away the cost
             if (picked_card.gameObject.tag == "spell") {

@@ -312,10 +312,10 @@ MonoBehaviour:
   Cards_active_deak: 40
   Class: 0
   deak:
-  - {fileID: 11400000, guid: 43fa0cc8a10d92e45a5f88967d3301e8, type: 2}
-  - {fileID: 11400000, guid: 9cf7f6014c31b37438500d7aea46f659, type: 2}
-  - {fileID: 11400000, guid: 43fa0cc8a10d92e45a5f88967d3301e8, type: 2}
-  - {fileID: 11400000, guid: 9cf7f6014c31b37438500d7aea46f659, type: 2}
+  - {fileID: 11400000, guid: 6906a46b0ceff1642acf825c22b20af5, type: 2}
+  - {fileID: 11400000, guid: 6906a46b0ceff1642acf825c22b20af5, type: 2}
+  - {fileID: 11400000, guid: 6906a46b0ceff1642acf825c22b20af5, type: 2}
+  - {fileID: 11400000, guid: 6906a46b0ceff1642acf825c22b20af5, type: 2}
   - {fileID: 11400000, guid: 43fa0cc8a10d92e45a5f88967d3301e8, type: 2}
   - {fileID: 11400000, guid: 9cf7f6014c31b37438500d7aea46f659, type: 2}
   - {fileID: 11400000, guid: 43fa0cc8a10d92e45a5f88967d3301e8, type: 2}
@@ -413,7 +413,6 @@ MonoBehaviour:
   playerMana: 0
   playerGold: 0
   selectedCard: {fileID: 0}
-  cardTmp: {fileID: 3209302814690878954, guid: 321d8c1bb7a3c4d41a9c708e51d69d57, type: 3}
 --- !u!4 &288857956
 Transform:
   m_ObjectHideFlags: 0
@@ -1449,7 +1448,6 @@ MonoBehaviour:
   playerMana: 0
   playerGold: 0
   selectedCard: {fileID: 0}
-  cardTmp: {fileID: 3209302814690878954, guid: 321d8c1bb7a3c4d41a9c708e51d69d57, type: 3}
 --- !u!4 &1389315625
 Transform:
   m_ObjectHideFlags: 0

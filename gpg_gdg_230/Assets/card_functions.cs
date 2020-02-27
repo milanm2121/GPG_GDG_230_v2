@@ -39,7 +39,7 @@ public class card_functions : MonoBehaviour
     {
         if (hand.active == true)
         {
-            hand.pickCard();
+            //hand.pickCard();
         }
 
         if (hand2.active == true)
