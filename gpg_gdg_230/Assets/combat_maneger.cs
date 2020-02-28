@@ -9,6 +9,7 @@ public class combat_maneger : MonoBehaviour
     public List<GameObject> attack= new List<GameObject>();
     public List<GameObject> defend = new List<GameObject>();
 
+    public bool started_combat=false;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,9 +20,10 @@ public class combat_maneger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (TBS.state == TurnBaseScript.TurnState.EndofBattle)
+        if (TBS.state == TurnBaseScript.TurnState.EndofBattle && started_combat == false)
         {
             StartCoroutine(CombatPhase());
+            started_combat = true;
         }
 
     }
@@ -52,10 +54,11 @@ public class combat_maneger : MonoBehaviour
                 }
             }
 
-            yield return new WaitForSeconds(0);
+            yield return new WaitForSeconds(1);
         }
         attack.Clear();
         defend.Clear();
         TBS.state = TurnBaseScript.TurnState.Nothing;
+        started_combat = false;
     }
 }

@@ -32,10 +32,23 @@ public class Deak : MonoBehaviour
     {
         ScriptableCard Random_card_index;
         int card_index_picked = Random.Range(0, Cards_active_deak);
-        GameObject Random_card =Instantiate(cardTemp);
+        GameObject Random_card = Instantiate(cardTemp);
         Random_card.transform.localScale = new Vector3(1, 1, 1);
         Random_card_index = deak[card_index_picked];
-        cardTemp.GetComponent<CardDisplay>().card = Random_card_index;
+        ScriptableCard sc = new ScriptableCard
+        {
+            artwork = Random_card_index.artwork,
+            name = Random_card_index.name,
+            health = Random_card_index.health,
+            attack = Random_card_index.attack,
+            manaCost = Random_card_index.manaCost,
+            description = Random_card_index.description
+        };
+        
+        cardTemp.GetComponent<CardDisplay>().card = sc;
+        
+            
+
         Cards_active_deak--;
         for(int i = card_index_picked; Cards_active_deak-1 > i; i++)
         {
