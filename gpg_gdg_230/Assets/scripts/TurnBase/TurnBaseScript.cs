@@ -9,7 +9,7 @@ using UnityEngine;
 public class TurnBaseScript : MonoBehaviour
 {
     //To make sure that the turn are played properly.
-    public enum TurnState { StartTurn, PlayerTurn, Response, Attack, End, Nothing, TimeWasted  }
+    public enum TurnState { StartTurn, PlayerTurn, Response, Attack, End, Nothing, TimeWasted, EndofBattle  }
     public TurnState state = TurnState.Nothing;
 
     public Hand player1Hand;
@@ -81,6 +81,7 @@ public class TurnBaseScript : MonoBehaviour
                 GainManaAndCoin();
                 state = TurnState.PlayerTurn;
                 break;
+
             case (TurnState.PlayerTurn):
                 if (playerTurn == true)
                 {
@@ -106,18 +107,38 @@ public class TurnBaseScript : MonoBehaviour
                     state = TurnState.TimeWasted;
                 }
                 break;
-            case (TurnState.Attack):
 
+            case (TurnState.Attack):
+         
                 break;
+
             case (TurnState.Response):
                 PlayerResponeToAction();
                 break;
+
             case (TurnState.End):
-                EndPlayerTurn();
+                turnTimer = 30;
+
+                if (playerTurn == true)
+                {
+                    player1AFKStrike = 0;
+                    reduceTime1 = 30;
+                    playerTurn = false;
+                }
+                else
+                {
+                    player2AFKStrike = 0;
+                    reduceTime2 = 30;
+                    playerTurn = true;
+                }
+                Debug.Log("Player 2 Health is " + player2Health);
+                state = TurnState.StartTurn;
                 break;
+
             case (TurnState.Nothing):
 
                 break;
+
             case (TurnState.TimeWasted):
                 if (playerTurn == true)
                     player1AFKStrike += 1;
@@ -125,6 +146,7 @@ public class TurnBaseScript : MonoBehaviour
                     player2AFKStrike += 1;
                 TimerEndTurn();
                 break;
+
         }
     }
 
@@ -186,24 +208,19 @@ public class TurnBaseScript : MonoBehaviour
             playerTurn = true;
     }
 
+    public void GoingForAttack()
+    {
+        state = TurnState.Attack;
+    }
+
+    public void Battle()
+    {
+        state = TurnState.EndofBattle;
+    }
+
     public void EndPlayerTurn()
     {
-        turnTimer = 30;
-
-        if (playerTurn == true)
-        {
-            player1AFKStrike = 0;
-            reduceTime1 = 30;
-            playerTurn = false;
-        }
-        else
-        {
-            player2AFKStrike = 0;
-            reduceTime2 = 30;
-            playerTurn = true;
-        }
-
-        state = TurnState.StartTurn;
+        state = TurnState.End;
     }
 
     //This is use for when the player is AFK 

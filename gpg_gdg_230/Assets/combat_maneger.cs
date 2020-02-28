@@ -19,7 +19,7 @@ public class combat_maneger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (TBS.state == TurnBaseScript.TurnState.End)
+        if (TBS.state == TurnBaseScript.TurnState.EndofBattle)
         {
             StartCoroutine(CombatPhase());
         }
@@ -28,28 +28,34 @@ public class combat_maneger : MonoBehaviour
 
     IEnumerator CombatPhase()
     {
+        Debug.Log("I am working");
+
         for (int i = 0; attack.Count > i; i++)
         {
             if (defend.Count != 0 && defend[i] != null)
             {
                 int newHealth = defend[i].GetComponent<CardDisplay>().card.health - attack[i].GetComponent<CardDisplay>().card.attack;
                 defend[i].GetComponent<CardDisplay>().card.health = newHealth;
+                Debug.Log("I am working Part 2");
             }
             else
             {
                 if (TBS.playerTurn == false)
                 {
                     TBS.player1Health -= attack[i].GetComponent<CardDisplay>().card.attack;
+                    Debug.Log("I am working part 3");
                 }
                 else
                 {
                     TBS.player2Health -= attack[i].GetComponent<CardDisplay>().card.attack;
-
+                    Debug.Log("I am working Part 4");
                 }
             }
-            yield return new WaitForSeconds(1);
+
+            yield return new WaitForSeconds(0);
         }
         attack.Clear();
         defend.Clear();
+        TBS.state = TurnBaseScript.TurnState.Nothing;
     }
 }
