@@ -63,6 +63,9 @@ public class Hand : MonoBehaviour
 
     public combat_maneger cm;
 
+
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -162,7 +165,7 @@ public class Hand : MonoBehaviour
 
             //adds a count to the cards in hand script
             cards_in_hand += 1;
-
+            Debug.Log(hand[i].GetComponent<CardDisplay>().card);
         }
     }
 

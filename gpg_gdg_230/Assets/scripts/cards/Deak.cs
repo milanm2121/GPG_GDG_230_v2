@@ -45,8 +45,12 @@ public class Deak : MonoBehaviour
             description = Random_card_index.description
         };
         
-        cardTemp.GetComponent<CardDisplay>().card = sc;
-        
+        Random_card.GetComponent<CardDisplay>().card = sc;
+
+        if (Random_card.GetComponent<CardDisplay>().card == null) {
+            print(hand.name);
+        }
+
             
 
         Cards_active_deak--;
