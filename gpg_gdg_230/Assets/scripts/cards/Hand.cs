@@ -76,6 +76,7 @@ public class Hand : MonoBehaviour
 
         if (player == true)
         {
+            //copies static deck to the player ingame deck
             GameObject.Find("player deck").GetComponent<player_static_deck>().loadDeck();
 
         }
@@ -91,7 +92,7 @@ public class Hand : MonoBehaviour
 
         if (player)
         {
-            //inspect card
+            //repositions the cards
             for (int i = 0; cards_in_hand > i; i++)
             {
                 hand[i].transform.position = Vector3.Lerp(hand[i].transform.position, hand_slots[i].position, 0.5f);
@@ -109,6 +110,7 @@ public class Hand : MonoBehaviour
             //clikink cards
             if (selectedCard != null && Input.GetMouseButtonDown(0))
             {
+                //for clicking cards in hand to move to the feild
                 if (active == true && TBS.state == TurnBaseScript.TurnState.PlayerTurn)
                 {
                     for (int i = 0; cards_in_hand > i; i++)
@@ -121,7 +123,7 @@ public class Hand : MonoBehaviour
                     }
                 }
 
-                
+                //for seting cards from feild to actack or defend
                 for (int i = 0; active_cards > i; i++)
                 {
                     if (selectedCard == active_cards_slots[i] )
@@ -131,15 +133,21 @@ public class Hand : MonoBehaviour
                         //visual change in card goes here
                         if (active == true && TBS.state == TurnBaseScript.TurnState.Attack && cm.attack.Contains(selectedCard)==false)
                         {
+                            //this function adds the cards to a list that the combat maneger uses
                             SetToAttack(selectedCard);
                         }
                         else if (active==false && TBS.state == TurnBaseScript.TurnState.Response && cm.defend.Contains(selectedCard)==false)
                         {
+                            //this function adds the cards to a list that the combat maneger uses and rtates the card 90 degres
                             SetToDefend(selectedCard);
                         }
                     }
                 }
             }
+        }
+        else//if AI
+        {
+
         }
 
     }
@@ -172,9 +180,6 @@ public class Hand : MonoBehaviour
     public void pickCard()
     {
         int i =cards_in_hand;
-
-
-
         //cheask for slots
         if (cards_in_hand <= 6)
         {

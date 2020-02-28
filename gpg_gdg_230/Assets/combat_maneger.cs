@@ -14,7 +14,6 @@ public class combat_maneger : MonoBehaviour
     void Start()
     {
         TBS = GameObject.Find("maneger object").GetComponent<TurnBaseScript>();
-
     }
 
     // Update is called once per frame
@@ -27,20 +26,21 @@ public class combat_maneger : MonoBehaviour
         }
 
     }
-
+    //this alows cards in the attack and defend list to interact
     IEnumerator CombatPhase()
     {
         Debug.Log("I am working");
 
         for (int i = 0; attack.Count > i; i++)
         {
+            //card defending card blocks attack from attacking card of the same position
             if (defend.Count != 0 && defend[i] != null)
             {
                 int newHealth = defend[i].GetComponent<CardDisplay>().card.health - attack[i].GetComponent<CardDisplay>().card.attack;
                 defend[i].GetComponent<CardDisplay>().card.health = newHealth;
                 Debug.Log("I am working Part 2");
             }
-            else
+            else//if there isnt anything blocking attacking card direclyattack player
             {
                 if (TBS.playerTurn == false)
                 {
@@ -56,9 +56,12 @@ public class combat_maneger : MonoBehaviour
 
             yield return new WaitForSeconds(1);
         }
+        //clears list
         attack.Clear();
         defend.Clear();
+        //changes state to stop combatphose
         TBS.state = TurnBaseScript.TurnState.Nothing;
+        //bool tick to stop calling og the combatphose
         started_combat = false;
     }
 }

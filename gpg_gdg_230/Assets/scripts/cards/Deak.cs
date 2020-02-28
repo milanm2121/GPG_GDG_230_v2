@@ -9,12 +9,13 @@ using UnityEngine;
  */
 public class Deak : MonoBehaviour
 {
+    //cardsActive in deck
     public int Cards_active_deak=40;
-
+    //class of the deck
     public int Class;
-
+    //the array of cards
     public ScriptableCard[] deak = new ScriptableCard[40];
-
+    //the template used for creating cards from te template
     public GameObject cardTemp;
     private void Update()
     {
@@ -28,6 +29,7 @@ public class Deak : MonoBehaviour
         
     }
 
+    //generates and spwans cards
     public GameObject Pick_random(Hand hand)
     {
         ScriptableCard Random_card_index;
