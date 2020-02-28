@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: c84259882dd477e43a42f7a8243dcd19
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Anoxic
+  fontNames:
+  - Anoxic
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 5222950df0acc364d901b48fd4d2e22e, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
