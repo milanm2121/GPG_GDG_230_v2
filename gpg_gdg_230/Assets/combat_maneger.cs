@@ -8,6 +8,7 @@ public class combat_maneger : MonoBehaviour
 
     public List<GameObject> attack= new List<GameObject>();
     public List<GameObject> defend = new List<GameObject>();
+    public List<GameObject> DelayedRemoval = new List<GameObject>();
 
     public bool started_combat=false;
     // Start is called before the first frame update
@@ -34,7 +35,7 @@ public class combat_maneger : MonoBehaviour
         for (int i = 0; attack.Count > i; i++)
         {
             //card defending card blocks attack from attacking card of the same position
-            if (defend.Count != 0 && defend[i] != null)
+            if (defend.Count > i && defend.Count != 0 && defend[i] != null)
             {
                 int newHealth = defend[i].GetComponent<CardDisplay>().card.health - attack[i].GetComponent<CardDisplay>().card.attack;
                 defend[i].GetComponent<CardDisplay>().card.health = newHealth;
@@ -56,8 +57,19 @@ public class combat_maneger : MonoBehaviour
 
             yield return new WaitForSeconds(1);
         }
+        yield return new WaitForFixedUpdate();
         //clears list
         attack.Clear();
+        for(int i=0; DelayedRemoval.Count > i; i++)
+        {
+            defend.Remove(DelayedRemoval[i]);
+        }
+        DelayedRemoval.Clear();
+        for(int i=0;defend.Count>i; i++)
+        {
+            defend[i].transform.rotation = Quaternion.identity;
+            
+        }
         defend.Clear();
         //changes state to stop combatphose
         TBS.state = TurnBaseScript.TurnState.Nothing;

@@ -406,8 +406,6 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   cambat_slots: []
-  attackingCards: []
-  defendingCards: []
   deck: {fileID: 0}
   TBS: {fileID: 0}
   playerMana: 0
@@ -1199,6 +1197,7 @@ MonoBehaviour:
   TBS: {fileID: 0}
   attack: []
   defend: []
+  started_combat: 0
 --- !u!4 &716059893
 Transform:
   m_ObjectHideFlags: 0
@@ -1795,8 +1794,6 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   cambat_slots: []
-  attackingCards: []
-  defendingCards: []
   deck: {fileID: 0}
   TBS: {fileID: 0}
   playerMana: 0

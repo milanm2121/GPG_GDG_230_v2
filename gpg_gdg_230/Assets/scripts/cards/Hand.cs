@@ -37,11 +37,6 @@ public class Hand : MonoBehaviour
     //the transform position of cards
     public Transform[] cambat_slots;
 
-    //list of attacking card
-    public List<GameObject> attackingCards = new List<GameObject>();
-    //list of defending cards
-    public List<GameObject> defendingCards = new List<GameObject>();
-
 
     //this is a deak(deck) it holds 40 cards
     public Deak deck;
@@ -88,25 +83,39 @@ public class Hand : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        //repositions the cards
+        for (int i = 0; cards_in_hand > i; i++)
+        {
+            hand[i].transform.position = Vector3.Lerp(hand[i].transform.position, hand_slots[i].position, 0.5f);
+        }
+        if (TBS.state != TurnBaseScript.TurnState.EndofBattle)
+        {
+            for (int i = 0; active_cards > i; i++)
+            {
+                active_cards_slots[i].transform.position = Vector3.Lerp(active_cards_slots[i].transform.position, active_slots[i].position, 0.5f);
+                //card deaths
+                if (active_cards_slots[i].GetComponent<CardDisplay>().card.health <= 0)
+                    SendToGrave(active_cards_slots[i], i);
+            }
+        }
+
 
         if (player)
         {
-            //repositions the cards
+            //repositions the selected card
             for (int i = 0; cards_in_hand > i; i++)
             {
-                hand[i].transform.position = Vector3.Lerp(hand[i].transform.position, hand_slots[i].position, 0.5f);
-                if(selectedCard!=hand[i])
+                if (selectedCard != hand[i])
                     hand[i].transform.SetSiblingIndex(i);
             }
 
             if (selectedCard != null)
             {
                 selectedCard.transform.SetAsLastSibling();
-                
+
             }
 
-    
+
             //clikink cards
             if (selectedCard != null && Input.GetMouseButtonDown(0))
             {
@@ -126,17 +135,17 @@ public class Hand : MonoBehaviour
                 //for seting cards from feild to actack or defend
                 for (int i = 0; active_cards > i; i++)
                 {
-                    if (selectedCard == active_cards_slots[i] )
+                    if (selectedCard == active_cards_slots[i])
                     {
                         combat_card_slots[i] = selectedCard;
                         cards_in_combat += 1;
                         //visual change in card goes here
-                        if (active == true && TBS.state == TurnBaseScript.TurnState.Attack && cm.attack.Contains(selectedCard)==false)
+                        if (active == true && TBS.state == TurnBaseScript.TurnState.Attack && cm.attack.Contains(selectedCard) == false)
                         {
                             //this function adds the cards to a list that the combat maneger uses
                             SetToAttack(selectedCard);
                         }
-                        else if (active==false && TBS.state == TurnBaseScript.TurnState.Response && cm.defend.Contains(selectedCard)==false)
+                        else if (active == false && TBS.state == TurnBaseScript.TurnState.Attack && cm.defend.Contains(selectedCard) == false)
                         {
                             //this function adds the cards to a list that the combat maneger uses and rtates the card 90 degres
                             SetToDefend(selectedCard);
@@ -145,11 +154,48 @@ public class Hand : MonoBehaviour
                 }
             }
         }
-        else//if AI
+        else if (TBS.playerTurn == false)//if AI
         {
+            if (TBS.state == TurnBaseScript.TurnState.PlayerTurn)
+            {
+                for (int i = 0; 20 > i; i++)
+                {
+                    Use_card(Random.Range(0, cards_in_hand));
+                }
+            }
+            if (TBS.state == TurnBaseScript.TurnState.Attack)
+            {
+                for (int i = 0; active_cards > i; i++)
+                {
+                    if (active_cards_slots[i].GetComponent<CardDisplay>().card.attack > 0 && cm.attack.Contains(active_cards_slots[i]) == false)
+                    {
+                        SetToAttack(active_cards_slots[i]);
+                    }
+                }
+            }
+        }
+        else if (TBS.playerTurn == true && TBS.state == TurnBaseScript.TurnState.Attack)
+        {
+            int defending_cards = 0;
+            for (int i = 0; active_cards > i; i++)
+            {
+                if (active_cards_slots[i].GetComponent<CardDisplay>().card.health > 1 && cm.defend.Contains(active_cards_slots[i]) == false)
+                    SetToDefend(active_cards_slots[i]);
+                defending_cards++;
+            }
+            if (defending_cards <= 2)
+            {
+                for (int i = 0; active_cards > i; i++)
+                {
+                    if (active_cards_slots[i]!=null && cm.defend.Contains(active_cards_slots[i]) == false)
+                        SetToDefend(active_cards_slots[i]);
+                    defending_cards++;
+                    if (defending_cards >= 3)
+                        break;
+                }
+            }
 
         }
-
     }
 
 
@@ -207,17 +253,11 @@ public class Hand : MonoBehaviour
         //cheaks if you have enough gold or mana to use tha card
         if (picked_card.GetComponent<CardDisplay>().card.manaCost <= playerMana || picked_card.GetComponent<CardDisplay>().card.manaCost <= playerGold)
         {
-            //takes away the cost
-            if (picked_card.gameObject.tag == "spell") {
-                playerMana -= picked_card.GetComponent<CardDisplay>().card.manaCost;
-            }
-            else {
-                playerGold -= picked_card.GetComponent<CardDisplay>().card.manaCost;
-            }
 
             //cheaks if the card is magic or a unit
-            if (picked_card.gameObject.tag != "spell" && active_cards <= 5)
+            if (picked_card.gameObject.tag != "spell" && active_cards < 5)
             {
+                playerGold -= picked_card.GetComponent<CardDisplay>().card.manaCost;
                 //moves the card from the hand into the feild
                 active_cards_slots[active_cards] = picked_card;
                 hand[picked_card_index] = null;
@@ -241,7 +281,12 @@ public class Hand : MonoBehaviour
             else
             {
                 //magic stuff spell efects are put here
+
+
+
                 cards_in_hand -= 1;
+                playerMana -= picked_card.GetComponent<CardDisplay>().card.manaCost;
+
                 //cleans up the hand array
                 for (int i = picked_card_index; cards_in_hand > i; i++)
                 {
@@ -264,5 +309,21 @@ public class Hand : MonoBehaviour
     {
         card.transform.rotation = Quaternion.Euler(0, 0, 90);
         cm.defend.Add(card);
+    }
+
+    public void SendToGrave(GameObject card,int i)
+    {
+        deck.graveyard.Add(card.GetComponent<CardDisplay>().card);
+        active_cards_slots[i]=null;
+        active_cards--;
+        for(int x=i;active_cards>x; x++)
+        {
+            active_cards_slots[x] = active_cards_slots[x + 1];
+        }
+        if (cm.defend.Contains(card))
+        {
+            cm.DelayedRemoval.Add(card);
+        }
+        Destroy(card);
     }
 }

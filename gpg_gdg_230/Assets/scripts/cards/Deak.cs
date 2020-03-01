@@ -15,7 +15,9 @@ public class Deak : MonoBehaviour
     public int Class;
     //the array of cards
     public ScriptableCard[] deak = new ScriptableCard[40];
-    //the template used for creating cards from te template
+    //the list of desroyed cards
+    public List<ScriptableCard> graveyard=new List<ScriptableCard>();
+    //the template used for creating cards from the template
     public GameObject cardTemp;
     private void Update()
     {
@@ -26,7 +28,6 @@ public class Deak : MonoBehaviour
                 deak[i] = deak[i + 1];
             }
         }
-        
     }
 
     //generates and spwans cards
@@ -60,6 +61,8 @@ public class Deak : MonoBehaviour
         {
             deak[i] = deak[i+1];
         }
+        for (int i = Cards_active_deak; deak.Length > i; i++)
+            deak[i] = null;
 
         Random_card.transform.parent = GameObject.Find("card feild").transform;
         Random_card.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
