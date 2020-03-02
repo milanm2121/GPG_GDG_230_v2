@@ -112,8 +112,18 @@ public class Hand : MonoBehaviour
             if (selectedCard != null)
             {
                 selectedCard.transform.SetAsLastSibling();
+                if (Input.GetKey(KeyCode.I))
+                {
+                    selectedCard.GetComponent<RectTransform>().localScale = new Vector2(1f, 1f);
+                }
+                else
+                {
+                    selectedCard.GetComponent<RectTransform>().localScale = new Vector2(0.6f, 0.6f);
+
+                }
 
             }
+            
 
 
             //clikink cards
@@ -156,7 +166,7 @@ public class Hand : MonoBehaviour
         }
         else if (TBS.playerTurn == false)//if AI
         {
-            if (TBS.state == TurnBaseScript.TurnState.PlayerTurn)
+            if (TBS.state == TurnBaseScript.TurnState.PlayerTurn && cards_in_hand>=1 && active_cards <= 4)
             {
                 for (int i = 0; 20 > i; i++)
                 {

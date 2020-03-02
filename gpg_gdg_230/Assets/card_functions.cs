@@ -21,15 +21,15 @@ public class card_functions : MonoBehaviour
 
     public void select_card()
     {
+        
         hand.selectedCard = gameObject;
-        GetComponent<RectTransform>().localScale = new Vector2(1.5f, 1.5f);
+        
     }
     public void deselectCard()
     {
         if (hand.selectedCard = gameObject)
         {
             hand.selectedCard = null;
-            GetComponent<RectTransform>().localScale = new Vector2(1, 1);
 
         }
     }
