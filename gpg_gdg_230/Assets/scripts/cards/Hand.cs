@@ -155,7 +155,7 @@ public class Hand : MonoBehaviour
                             //this function adds the cards to a list that the combat maneger uses
                             SetToAttack(selectedCard);
                         }
-                        else if (active == false && TBS.state == TurnBaseScript.TurnState.Attack && cm.defend.Contains(selectedCard) == false)
+                        else if (active == false && TBS.state == TurnBaseScript.TurnState.Response && cm.defend.Contains(selectedCard) == false)
                         {
                             //this function adds the cards to a list that the combat maneger uses and rtates the card 90 degres
                             SetToDefend(selectedCard);
@@ -184,7 +184,7 @@ public class Hand : MonoBehaviour
                 }
             }
         }
-        else if (TBS.playerTurn == true && TBS.state == TurnBaseScript.TurnState.Attack)
+        else if (TBS.playerTurn == true && TBS.state == TurnBaseScript.TurnState.Response)
         {
             int defending_cards = 0;
             for (int i = 0; active_cards > i; i++)

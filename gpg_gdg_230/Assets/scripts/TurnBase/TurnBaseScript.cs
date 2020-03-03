@@ -114,6 +114,7 @@ public class TurnBaseScript : MonoBehaviour
 
             case (TurnState.Response):
                 PlayerResponeToAction();
+
                 break;
 
             case (TurnState.End):
@@ -189,23 +190,17 @@ public class TurnBaseScript : MonoBehaviour
             player1Hand.playerMana = 5;
         if (player2Hand.playerMana >= 5)
             player2Hand.playerMana = 5;
-        /*
-        Debug.Log("Player 1 gold " + player1Hand.playerGold);
-        Debug.Log("Player 1 mana " + player1Hand.playerMana);
-        Debug.Log("Player 2 gold " + player2Hand.playerGold);
-        Debug.Log("Player 2 Mama " + player2Hand.playerMana);
-        Debug.Log("Default Gold " + defaultGold);
-        Debug.Log("Default Mana 1 " + defaultMana1);
-        Debug.Log("Default Mana 2 " + defaultMana2);
-        */
+
     }
 
     void PlayerResponeToAction()
     {
-        if (playerTurn == true)
-            playerTurn = false;
-        else
-            playerTurn = true;
+        turnTimer = 30;
+    }
+
+    public void ResponeToAttacking()
+    {
+        state = TurnState.Response;
     }
 
     public void GoingForAttack()
