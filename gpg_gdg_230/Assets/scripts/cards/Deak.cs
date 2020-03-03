@@ -67,6 +67,8 @@ public class Deak : MonoBehaviour
         Random_card.transform.parent = GameObject.Find("card feild").transform;
         Random_card.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
         Random_card.GetComponent<card_functions>().hand = hand;
+
+        Random_card.GetComponent<RectTransform>().localScale = new Vector2(0.6f,0.6f);
         return Random_card;
     }
 

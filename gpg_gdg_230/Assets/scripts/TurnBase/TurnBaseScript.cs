@@ -110,7 +110,7 @@ public class TurnBaseScript : MonoBehaviour
                 }
                 break;
             case (TurnState.CardPlayed):
-                ReadTheCard();
+                //ReadTheCard();
                 break;
             case (TurnState.Attack):
          
@@ -298,9 +298,11 @@ public class TurnBaseScript : MonoBehaviour
 
     }
 
-    public void ReadTheCard()
+    public void ReadTheCard(ScriptableCard card)
     {
+        print(card.description.ToString());
 
+        state = TurnState.PlayerTurn;
     }
 
 }

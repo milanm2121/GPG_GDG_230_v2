@@ -307,8 +307,10 @@ public class Hand : MonoBehaviour
                 {
                     hand[cards_in_hand] = null;
                 }
-                TBS.state = TurnBaseScript.TurnState.CardPlayed;
+                
             }
+            TBS.state = TurnBaseScript.TurnState.CardPlayed;
+            TBS.ReadTheCard(picked_card.GetComponent<CardDisplay>().card);
         }
     }
 
