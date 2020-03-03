@@ -9,7 +9,7 @@ using UnityEngine;
 public class TurnBaseScript : MonoBehaviour
 {
     //To make sure that the turn are played properly.
-    public enum TurnState { StartTurn, PlayerTurn, Response, Attack, End, Nothing, TimeWasted, EndofBattle  }
+    public enum TurnState { StartTurn, PlayerTurn, CardPlayed, Response, Attack, End, Nothing, TimeWasted, EndofBattle  }
     public TurnState state = TurnState.Nothing;
 
     public Hand player1Hand;
@@ -54,11 +54,13 @@ public class TurnBaseScript : MonoBehaviour
 
     }
 
+    #region Update
     // Update is called once per frame
     void Update()
     {
         switch(state)
         {
+            //For when the turn starts for a player.
             case (TurnState.StartTurn):
                 if (startOfTheGame == true)
                 {
@@ -81,7 +83,7 @@ public class TurnBaseScript : MonoBehaviour
                 GainManaAndCoin();
                 state = TurnState.PlayerTurn;
                 break;
-
+                
             case (TurnState.PlayerTurn):
                 if (playerTurn == true)
                 {
@@ -107,7 +109,9 @@ public class TurnBaseScript : MonoBehaviour
                     state = TurnState.TimeWasted;
                 }
                 break;
-
+            case (TurnState.CardPlayed):
+                ReadTheCard();
+                break;
             case (TurnState.Attack):
          
                 break;
@@ -149,7 +153,16 @@ public class TurnBaseScript : MonoBehaviour
                 break;
 
         }
+
+        if (player1Health <= 0 || player2Health <= 0)
+        {
+            if (state != TurnState.Nothing)
+            {
+                GameIsOver();
+            }
+        }
     }
+    #endregion
 
     void Draw7()
     {
@@ -262,6 +275,14 @@ public class TurnBaseScript : MonoBehaviour
         if (player2AFKStrike == 3)
             Debug.Log("Player 2  lose");
 
+        if (player1Health <= 0)
+        {
+            Debug.Log("Player 1 Lose");
+        }
+        if (player2Health <= 0)
+        {
+            Debug.Log("Player 2 Lose");
+        }
 
         state = TurnState.Nothing;
     }
@@ -277,6 +298,9 @@ public class TurnBaseScript : MonoBehaviour
 
     }
 
+    public void ReadTheCard()
+    {
 
+    }
 
 }

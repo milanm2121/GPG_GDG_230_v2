@@ -287,6 +287,7 @@ public class Hand : MonoBehaviour
                 {
                     hand[cards_in_hand] = null;
                 }
+                TBS.state = TurnBaseScript.TurnState.CardPlayed;
             }
             else
             {
@@ -306,6 +307,7 @@ public class Hand : MonoBehaviour
                 {
                     hand[cards_in_hand] = null;
                 }
+                TBS.state = TurnBaseScript.TurnState.CardPlayed;
             }
         }
     }
