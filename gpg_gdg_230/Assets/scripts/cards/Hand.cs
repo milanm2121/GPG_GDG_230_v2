@@ -58,7 +58,7 @@ public class Hand : MonoBehaviour
 
     public combat_maneger cm;
 
-
+    public List<GameObject> fieldCard;
 
 
     // Start is called before the first frame update
@@ -206,6 +206,11 @@ public class Hand : MonoBehaviour
             }
 
         }
+
+        if (TBS.state == TurnBaseScript.TurnState.End || TBS.state == TurnBaseScript.TurnState.TimeWasted)
+        {
+            MonsterSicknessIsOver();
+        }
     }
 
 
@@ -287,6 +292,7 @@ public class Hand : MonoBehaviour
                 {
                     hand[cards_in_hand] = null;
                 }
+                fieldCard.Add(picked_card);
                 TBS.state = TurnBaseScript.TurnState.CardPlayed;
             }
             else
@@ -316,7 +322,13 @@ public class Hand : MonoBehaviour
 
     public void SetToAttack(GameObject card)
     {
-        cm.attack.Add(card);
+        if (card.GetComponent<CardDisplay>().card.monsterSickness == false)
+        {
+            cm.attack.Add(card);
+            Debug.Log("Can Attack");
+        }
+        else
+            Debug.Log("Can't Attack");
     }
 
     public void SetToDefend(GameObject card)
@@ -339,5 +351,14 @@ public class Hand : MonoBehaviour
             cm.DelayedRemoval.Add(card);
         }
         Destroy(card);
+    }
+
+    public void MonsterSicknessIsOver()
+    {
+
+        for (int i = 0; 5 > 0; i++)
+        {
+            fieldCard[i].GetComponent<CardDisplay>().card.monsterSickness = false;
+        }
     }
 }

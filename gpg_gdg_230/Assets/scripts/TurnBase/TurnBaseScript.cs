@@ -41,6 +41,9 @@ public class TurnBaseScript : MonoBehaviour
     private int defaultMana1;
     private int defaultMana2;
 
+    //Using so that there is a delay when it comes to see what it does.
+    private int actiontime = 3;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -109,9 +112,6 @@ public class TurnBaseScript : MonoBehaviour
                     state = TurnState.TimeWasted;
                 }
                 break;
-            case (TurnState.CardPlayed):
-                //ReadTheCard();
-                break;
             case (TurnState.Attack):
          
                 break;
@@ -160,6 +160,13 @@ public class TurnBaseScript : MonoBehaviour
             {
                 GameIsOver();
             }
+        }
+
+        if (actiontime <= 0)
+        {
+            StopCoroutine("ActionCountDown");
+            actiontime = 3;
+            state = TurnState.PlayerTurn;
         }
     }
     #endregion
@@ -297,12 +304,23 @@ public class TurnBaseScript : MonoBehaviour
         }
 
     }
+    IEnumerator ActionCountDown()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(1);
+            actiontime--;
+        }
+
+    }
 
     public void ReadTheCard(ScriptableCard card)
     {
-        print(card.description.ToString());
+        StopCoroutine("CountDown");
+        timerIsOn = false;
+        StartCoroutine("ActionCountDown");
 
-        state = TurnState.PlayerTurn;
+        print(card.description.ToString());
     }
 
 }
