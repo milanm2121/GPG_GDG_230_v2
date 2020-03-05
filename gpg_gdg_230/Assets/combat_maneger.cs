@@ -71,11 +71,6 @@ public class combat_maneger : MonoBehaviour
             defend.Remove(DelayedRemoval[i]);
         }
         DelayedRemoval.Clear();
-        for(int i=0;defend.Count>i; i++)
-        {
-            defend[i].transform.rotation = Quaternion.identity;
-            
-        }
         defend.Clear();
         //changes state to stop combatphose
         TBS.state = TurnBaseScript.TurnState.Nothing;

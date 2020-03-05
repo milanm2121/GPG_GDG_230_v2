@@ -60,6 +60,8 @@ public class Hand : MonoBehaviour
 
     public List<GameObject> fieldCard;
 
+    public bool firstAttack = true;
+
 
     // Start is called before the first frame update
     void Start()
@@ -209,10 +211,12 @@ public class Hand : MonoBehaviour
 
         if (TBS.state == TurnBaseScript.TurnState.End || TBS.state == TurnBaseScript.TurnState.TimeWasted)
         {
+            firstAttack = true;
             MonsterSicknessIsOver();
         }
-    }
 
+
+    }
 
     //replaces hand with 7 new cards
     public void pick7()
@@ -293,6 +297,7 @@ public class Hand : MonoBehaviour
                     hand[cards_in_hand] = null;
                 }
                 fieldCard.Add(picked_card);
+                picked_card.GetComponent<card_functions>().isInHand = false;
                 TBS.state = TurnBaseScript.TurnState.CardPlayed;
             }
             else
@@ -324,6 +329,7 @@ public class Hand : MonoBehaviour
     {
         if (card.GetComponent<CardDisplay>().card.monsterSickness == false)
         {
+            card.transform.rotation = Quaternion.Euler(0, 0, 90);
             cm.attack.Add(card);
             Debug.Log("Can Attack");
         }
@@ -350,15 +356,32 @@ public class Hand : MonoBehaviour
         {
             cm.DelayedRemoval.Add(card);
         }
+        fieldCard.Remove(card);
         Destroy(card);
+
     }
 
     public void MonsterSicknessIsOver()
     {
-
-        for (int i = 0; 5 > 0; i++)
+        for (int i = 0; fieldCard.Count > i; i++)
         {
             fieldCard[i].GetComponent<CardDisplay>().card.monsterSickness = false;
         }
     }
+
+    public void UntapTheCards()
+    {
+        if (fieldCard.Count > 0)
+        {
+            for (int i = 0; fieldCard.Count > i; i++)
+            {
+                fieldCard[i].transform.rotation = Quaternion.identity;
+
+            }
+        }
+
+        TBS.state = TurnBaseScript.TurnState.PlayerTurn;
+    }
+
+
 }

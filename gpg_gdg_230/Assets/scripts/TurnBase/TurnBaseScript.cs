@@ -9,7 +9,7 @@ using UnityEngine;
 public class TurnBaseScript : MonoBehaviour
 {
     //To make sure that the turn are played properly.
-    public enum TurnState { StartTurn, PlayerTurn, CardPlayed, Response, Attack, End, Nothing, TimeWasted, EndofBattle  }
+    public enum TurnState { StartTurn, PlayerTurn, Untap, CardPlayed, Response, Attack, End, Nothing, TimeWasted, EndofBattle  }
     public TurnState state = TurnState.Nothing;
 
     public Hand player1Hand;
@@ -44,6 +44,8 @@ public class TurnBaseScript : MonoBehaviour
     //Using so that there is a delay when it comes to see what it does.
     private int actiontime = 3;
 
+    public GameObject attackButton;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -67,6 +69,16 @@ public class TurnBaseScript : MonoBehaviour
             case (TurnState.StartTurn):
                 if (startOfTheGame == true)
                 {
+                    if (playerTurn == true)
+                    {
+                        player1Hand.active = true;
+                        player2Hand.active = false;
+                    }
+                    else
+                    {
+                        player1Hand.active = false;
+                        player2Hand.active = true;
+                    }
                     Draw7();
                 }
                 else
@@ -74,30 +86,26 @@ public class TurnBaseScript : MonoBehaviour
                     //need to make the player draw 1
                     if (playerTurn == true)
                     {
+                        player1Hand.active = true;
+                        player2Hand.active = false;
                         player1Hand.pickCard();
                         Debug.Log("Player 1 drew a card");
                     }
                     else
                     {
+                        player1Hand.active = false;
+                        player2Hand.active = true;
                         player2Hand.pickCard();
                         Debug.Log("Player 2 drew a card");
                     }
                 }
                 GainManaAndCoin();
-                state = TurnState.PlayerTurn;
+                state = TurnState.Untap;
                 break;
-                
+            case (TurnState.Untap):
+                UntapCard();
+                break;
             case (TurnState.PlayerTurn):
-                if (playerTurn == true)
-                {
-                    player1Hand.active = true;
-                    player2Hand.active = false;
-                }
-                else
-                {
-                    player1Hand.active = false;
-                    player2Hand.active = true;
-                }
                 //Making the turn timer, we need some more work on.
                 if (timerIsOn == false)
                 {
@@ -111,9 +119,10 @@ public class TurnBaseScript : MonoBehaviour
 
                     state = TurnState.TimeWasted;
                 }
+                //attackButton.SetActive(true);
                 break;
             case (TurnState.Attack):
-         
+
                 break;
 
             case (TurnState.Response):
@@ -321,6 +330,19 @@ public class TurnBaseScript : MonoBehaviour
         StartCoroutine("ActionCountDown");
 
         print(card.description.ToString());
+    }
+
+    public void UntapCard()
+    {
+        if (playerTurn == true)
+            player1Hand.UntapTheCards();
+        else
+            player2Hand.UntapTheCards();
+    }
+
+    public void HasAttack()
+    {
+        player1Hand.firstAttack = false;
     }
 
 }
