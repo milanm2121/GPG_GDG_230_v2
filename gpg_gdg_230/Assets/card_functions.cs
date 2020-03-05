@@ -5,18 +5,14 @@ using UnityEngine;
 public class card_functions : MonoBehaviour
 {
     public Hand hand;
-    public Hand hand2;
+
+    public bool isInHand = true;
+    //public Hand hand2;
 
     // Start is called before the first frame update
     void Start()
     {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public void select_card()
@@ -34,6 +30,7 @@ public class card_functions : MonoBehaviour
         }
     }
 
+    /*
     //To detect which turn it is in order to play a card.
     public void PlayACard()
     {
@@ -46,6 +43,13 @@ public class card_functions : MonoBehaviour
         {
             hand2.pickCard();
         }
+    }
+    */
+
+    public void Attack()
+    {
+        if (isInHand == false)
+        Debug.Log("Attack");
     }
 
         
