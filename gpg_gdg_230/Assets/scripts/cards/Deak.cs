@@ -19,6 +19,12 @@ public class Deak : MonoBehaviour
     public List<ScriptableCard> graveyard=new List<ScriptableCard>();
     //the template used for creating cards from the template
     public GameObject cardTemp;
+
+    void Start()
+    {
+        cardTemp = GameObject.Find("card feild");
+    }
+    public GameObject cardfeild;
     private void Update()
     {
         if (deak[0] == null)
@@ -64,7 +70,7 @@ public class Deak : MonoBehaviour
         for (int i = Cards_active_deak; deak.Length > i; i++)
             deak[i] = null;
 
-        Random_card.transform.parent = GameObject.Find("card feild").transform;
+        Random_card.transform.parent= cardfeild.transform;
         Random_card.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
         Random_card.GetComponent<card_functions>().hand = hand;
 

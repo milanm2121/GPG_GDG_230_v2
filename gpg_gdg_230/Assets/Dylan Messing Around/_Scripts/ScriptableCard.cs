@@ -6,7 +6,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Card", menuName = "Cards/Creatures")]
 public class ScriptableCard : ScriptableObject
 {
-
+    public int ID;
     public new string name;
     public string description;
 
@@ -21,7 +21,7 @@ public class ScriptableCard : ScriptableObject
 [CreateAssetMenu(fileName = "New Card", menuName = "Cards/Spells")]
 public class ScriptableSpellCard : ScriptableObject
 {
-
+    public int ID;
     public new string name;
     public string description;
 
