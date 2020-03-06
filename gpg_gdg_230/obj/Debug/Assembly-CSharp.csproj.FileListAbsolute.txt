@@ -1397,3 +1397,7 @@ C:\Users\GBlanchard\Documents\GitHub\GPG_GDG_230_v2\gpg_gdg_230\obj\Debug\Assemb
 C:\Users\GBlanchard\Documents\GitHub\GPG_GDG_230_v2\gpg_gdg_230\obj\Debug\Assembly-CSharp.csproj.CopyComplete
 C:\Users\GBlanchard\Documents\GitHub\GPG_GDG_230_v2\gpg_gdg_230\obj\Debug\Assembly-CSharp.dll
 C:\Users\GBlanchard\Documents\GitHub\GPG_GDG_230_v2\gpg_gdg_230\obj\Debug\Assembly-CSharp.pdb
+C:\Users\guill\OneDrive\Documents\GitHub\GPG_GDG_230_v2\gpg_gdg_230\Temp\bin\Debug\Unity.Postprocessing.Editor.dll
+C:\Users\guill\OneDrive\Documents\GitHub\GPG_GDG_230_v2\gpg_gdg_230\Temp\bin\Debug\Unity.Postprocessing.Runtime.dll
+C:\Users\guill\OneDrive\Documents\GitHub\GPG_GDG_230_v2\gpg_gdg_230\Temp\bin\Debug\Unity.Postprocessing.Editor.pdb
+C:\Users\guill\OneDrive\Documents\GitHub\GPG_GDG_230_v2\gpg_gdg_230\Temp\bin\Debug\Unity.Postprocessing.Runtime.pdb
