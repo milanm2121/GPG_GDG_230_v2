@@ -12,9 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 615dd9c20f7fa234b9eb1a59bd2aec1a, type: 3}
   m_Name: Security Trooper
   m_EditorClassIdentifier: 
+  ID: 0
   name: Security Trooper
   description: 'On play: return 1 enemy unit with 3 or less ATK'
   artwork: {fileID: 0}
   manaCost: 4
   attack: 2
   health: 2
+  monsterSickness: 0

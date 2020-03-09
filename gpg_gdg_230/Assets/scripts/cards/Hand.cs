@@ -212,7 +212,6 @@ public class Hand : MonoBehaviour
         if (TBS.state == TurnBaseScript.TurnState.End || TBS.state == TurnBaseScript.TurnState.TimeWasted)
         {
             firstAttack = true;
-            MonsterSicknessIsOver();
         }
 
 
@@ -231,7 +230,7 @@ public class Hand : MonoBehaviour
                 Destroy(hand[i]);
             hand[i] = null;
             //picks random card from the deak to place it in the hand
-            hand[i] = deck.Pick_random(GetComponent<Hand>());
+            hand[i] = deck.Pick_random(this);
             //creates a card crom the script heald in the deack
             
             hand[i].transform.position = hand_slots[cards_in_hand].position;
@@ -332,6 +331,7 @@ public class Hand : MonoBehaviour
             card.transform.rotation = Quaternion.Euler(0, 0, 90);
             cm.attack.Add(card);
             Debug.Log("Can Attack");
+            card.GetComponent<CardDisplay>().card.monsterSickness = true;
         }
         else
             Debug.Log("Can't Attack");
@@ -339,8 +339,12 @@ public class Hand : MonoBehaviour
 
     public void SetToDefend(GameObject card)
     {
-        card.transform.rotation = Quaternion.Euler(0, 0, 90);
-        cm.defend.Add(card);
+        if (card.GetComponent<CardDisplay>().card.monsterSickness == false)
+        {
+
+            card.transform.rotation = Quaternion.Euler(0, 0, 90);
+            cm.defend.Add(card);
+        }
     }
 
     public void SendToGrave(GameObject card,int i)
@@ -378,6 +382,8 @@ public class Hand : MonoBehaviour
                 fieldCard[i].transform.rotation = Quaternion.identity;
 
             }
+            MonsterSicknessIsOver();
+
         }
 
         TBS.state = TurnBaseScript.TurnState.PlayerTurn;

@@ -22,7 +22,7 @@ public class Deak : MonoBehaviour
 
     void Start()
     {
-        cardTemp = GameObject.Find("card feild");
+   //     cardTemp = GameObject.Find("card feild");
     }
     public GameObject cardfeild;
     private void Update()
@@ -52,15 +52,16 @@ public class Deak : MonoBehaviour
             attack = Random_card_index.attack,
             manaCost = Random_card_index.manaCost,
             description = Random_card_index.description
+            
         };
         
-        Random_card.GetComponent<CardDisplay>().card = sc;
 
         if (Random_card.GetComponent<CardDisplay>().card == null) {
             print(hand.name);
         }
+        Random_card.GetComponent<CardDisplay>().card = sc;
 
-            
+        
 
         Cards_active_deak--;
         for(int i = card_index_picked; Cards_active_deak-1 > i; i++)

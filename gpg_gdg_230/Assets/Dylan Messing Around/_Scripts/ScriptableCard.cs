@@ -17,7 +17,7 @@ public class ScriptableCard : ScriptableObject
     public int health;
     //This is so that when it is played on the field for the first time
     // it won't be allow to attack.
-    public bool monsterSickness = true;
+    public bool monsterSickness = false;
 }
 
 [CreateAssetMenu(fileName = "New Card", menuName = "Cards/Spells")]

@@ -235,6 +235,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 428461516}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &29610822
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -506,6 +517,7 @@ MonoBehaviour:
   graveyard: []
   cardTemp: {fileID: 8099801058583234788, guid: edc5075ef4033404992ab5e0d95d3f51,
     type: 3}
+  cardfeild: {fileID: 1987046323}
 --- !u!114 &288857955
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -796,6 +808,17 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 428461516}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 716059894}
         m_MethodName: Battle
         m_Mode: 1
@@ -807,7 +830,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 428461516}
+      - m_Target: {fileID: 857068075}
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
@@ -816,7 +839,7 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &428461519
 MonoBehaviour:
@@ -968,6 +991,17 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 857068075}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &435150069
 MonoBehaviour:
@@ -1972,6 +2006,7 @@ MonoBehaviour:
   graveyard: []
   cardTemp: {fileID: 8099801058583234788, guid: edc5075ef4033404992ab5e0d95d3f51,
     type: 3}
+  cardfeild: {fileID: 1987046323}
 --- !u!114 &1389315624
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2771,6 +2806,21 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Manager
       objectReference: {fileID: 0}
+    - target: {fileID: 2285168136727759004, guid: 10016f06ccc7fc84c83dbb0ad76e50f7,
+        type: 3}
+      propertyPath: player1Hand
+      value: 
+      objectReference: {fileID: 288857955}
+    - target: {fileID: 2285168136727759004, guid: 10016f06ccc7fc84c83dbb0ad76e50f7,
+        type: 3}
+      propertyPath: player2Hand
+      value: 
+      objectReference: {fileID: 1389315624}
+    - target: {fileID: 2285168136727759004, guid: 10016f06ccc7fc84c83dbb0ad76e50f7,
+        type: 3}
+      propertyPath: attackButton
+      value: 
+      objectReference: {fileID: 435150066}
     - target: {fileID: 2285168136727759007, guid: 10016f06ccc7fc84c83dbb0ad76e50f7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2826,20 +2876,5 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2285168136727759004, guid: 10016f06ccc7fc84c83dbb0ad76e50f7,
-        type: 3}
-      propertyPath: player1Hand
-      value: 
-      objectReference: {fileID: 288857955}
-    - target: {fileID: 2285168136727759004, guid: 10016f06ccc7fc84c83dbb0ad76e50f7,
-        type: 3}
-      propertyPath: player2Hand
-      value: 
-      objectReference: {fileID: 1389315624}
-    - target: {fileID: 2285168136727759004, guid: 10016f06ccc7fc84c83dbb0ad76e50f7,
-        type: 3}
-      propertyPath: attackButton
-      value: 
-      objectReference: {fileID: 435150066}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 10016f06ccc7fc84c83dbb0ad76e50f7, type: 3}
