@@ -59,6 +59,8 @@ public class TurnBaseScript : MonoBehaviour
     public GameObject player_active_ui;
 
     public GameObject AI_active_ui;
+    //added by milan
+    public int turns = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -91,11 +93,15 @@ public class TurnBaseScript : MonoBehaviour
                     {
                         player1Hand.active = true;
                         player2Hand.active = false;
+                        player_active_ui.SetActive(true);
+                        AI_active_ui.SetActive(false);
                     }
                     else
                     {
                         player1Hand.active = false;
                         player2Hand.active = true;
+                        player_active_ui.SetActive(false);
+                        AI_active_ui.SetActive(true);
                     }
                     Draw7();
                 }
@@ -116,6 +122,22 @@ public class TurnBaseScript : MonoBehaviour
                         player2Hand.pickCard();
                         Debug.Log("Player 2 drew a card");
                     }
+                    if (playerTurn == true)
+                    {
+                        player_active_ui.SetActive(true);
+                        AI_active_ui.SetActive(false);
+                        if (turns >= 2)
+                            player1Hand.MonsterSicknessIsOver();
+
+                    }
+                    else
+                    {
+                        player_active_ui.SetActive(false);
+                        AI_active_ui.SetActive(true);
+                        if (turns >= 2)
+                            player2Hand.MonsterSicknessIsOver();
+
+                    }
                 }
                 GainManaAndCoin();
                 state = TurnState.Untap;
@@ -130,10 +152,20 @@ public class TurnBaseScript : MonoBehaviour
 
                 break;
             case (TurnState.PlayerTurn):
-                buttons[2].gameObject.SetActive(true);
-                buttons[0].gameObject.SetActive(false);
-                buttons[1].gameObject.SetActive(false);
-                buttons[3].gameObject.SetActive(false);
+                if (playerTurn == true)
+                {
+                    buttons[2].gameObject.SetActive(true);
+                    buttons[0].gameObject.SetActive(false);
+                    buttons[1].gameObject.SetActive(false);
+                    buttons[3].gameObject.SetActive(false);
+                }
+                else
+                {
+                    buttons[2].gameObject.SetActive(false);
+                    buttons[0].gameObject.SetActive(false);
+                    buttons[1].gameObject.SetActive(false);
+                    buttons[3].gameObject.SetActive(false);
+                }
                 //Making the turn timer, we need some more work on.
                 if (timerIsOn == false)
                 {
@@ -148,28 +180,25 @@ public class TurnBaseScript : MonoBehaviour
                     state = TurnState.TimeWasted;
                 }
                 //attackButton.SetActive(true);
-                if (playerTurn == true)
-                {
-                    player_active_ui.SetActive(false);
-                    AI_active_ui.SetActive(true);
-                    player1Hand.MonsterSicknessIsOver();
-                    print("cured");
-                }
-                else
-                {
-                    player_active_ui.SetActive(true);
-                    AI_active_ui.SetActive(false);
-                    player2Hand.MonsterSicknessIsOver();
-                    print("cured");
-                }
+                
 
 
                 break;
             case (TurnState.Attack):
-                buttons[2].gameObject.SetActive(false);
-                buttons[0].gameObject.SetActive(false);
-                buttons[1].gameObject.SetActive(false);
-                buttons[3].gameObject.SetActive(true);
+                if (playerTurn == true)
+                {
+                    buttons[2].gameObject.SetActive(false);
+                    buttons[0].gameObject.SetActive(false);
+                    buttons[1].gameObject.SetActive(false);
+                    buttons[3].gameObject.SetActive(true);
+                }
+                else
+                {
+                    buttons[2].gameObject.SetActive(false);
+                    buttons[0].gameObject.SetActive(false);
+                    buttons[1].gameObject.SetActive(false);
+                    buttons[3].gameObject.SetActive(false);
+                }
                 break;
 
             case (TurnState.Response):
@@ -182,6 +211,7 @@ public class TurnBaseScript : MonoBehaviour
                 break;
 
             case (TurnState.End):
+                turns += 1;
                 turnTimer = 30;
 
                 if (playerTurn == true)

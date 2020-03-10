@@ -877,7 +877,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  cambat_slots: []
+  combat_slots: []
   deck: {fileID: 0}
   TBS: {fileID: 0}
   playerMana: 0
@@ -1376,7 +1376,7 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 1
+          m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 716059894}
         m_MethodName: GoingForAttack
@@ -3276,7 +3276,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  cambat_slots: []
+  combat_slots: []
   deck: {fileID: 0}
   TBS: {fileID: 0}
   playerMana: 0

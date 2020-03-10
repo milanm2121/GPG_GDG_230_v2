@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /*
- * this is the hand script in charge controling the options of what the player and cards can do here you will find the resorses and function of what you can do with cards
+ * this is the hand script in charge of controlling the options of what the player and cards can do here you will find the resorses and function of what you can do with cards
  * this script also acts as a maneger of the hand and feild.
  * this script is directly linked to the deak class which is an array of 40 cards.
  * made by milan
@@ -35,7 +35,7 @@ public class Hand : MonoBehaviour
     //the array of cards in combat
     public GameObject[] combat_card_slots = new GameObject[5];
     //the transform position of cards
-    public Transform[] cambat_slots;
+    public Transform[] combat_slots;
 
 
     //this is a deak(deck) it holds 40 cards
@@ -163,6 +163,7 @@ public class Hand : MonoBehaviour
                             SetToDefend(selectedCard);
                         }
                     }
+                   
                 }
             }
         }
@@ -174,7 +175,8 @@ public class Hand : MonoBehaviour
                 {
                     Use_card(Random.Range(0, cards_in_hand));
                 }
-                if(stateTick==false)
+                if (stateTick == false)
+                    print("attacking");
                     StartCoroutine(Ai_turn_control(TurnBaseScript.TurnState.Attack));
             }
             if (TBS.state == TurnBaseScript.TurnState.Attack)
@@ -211,7 +213,11 @@ public class Hand : MonoBehaviour
                 }
             }
             if (stateTick == false)
-                StartCoroutine(Ai_turn_control(TurnBaseScript.TurnState.EndofBattle));
+            {
+                TBS.state = TurnBaseScript.TurnState.EndofBattle;
+                StartCoroutine(Ai_turn_control(TurnBaseScript.TurnState.End));
+            }
+
         }
 
         if (TBS.state == TurnBaseScript.TurnState.End || TBS.state == TurnBaseScript.TurnState.TimeWasted)
@@ -391,10 +397,19 @@ public class Hand : MonoBehaviour
     }
     IEnumerator Ai_turn_control(TurnBaseScript.TurnState state)
     {
-        stateTick = true;
-        yield return new WaitForSeconds(1);
-        TBS.state = state;
-        stateTick = false;
+        if (state == TurnBaseScript.TurnState.End)
+        {
+            yield return new WaitForSeconds(3);
+            TBS.EndPlayerTurn();
+        }
+        else
+        {
+            stateTick = true;
+            yield return new WaitForSeconds(0.2f);
+            TBS.state = state;
+            stateTick = false;
+        }
+
 
     }
 
