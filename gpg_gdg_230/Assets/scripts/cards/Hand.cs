@@ -382,8 +382,6 @@ public class Hand : MonoBehaviour
                 fieldCard[i].transform.rotation = Quaternion.identity;
 
             }
-            MonsterSicknessIsOver();
-
         }
 
         TBS.state = TurnBaseScript.TurnState.PlayerTurn;

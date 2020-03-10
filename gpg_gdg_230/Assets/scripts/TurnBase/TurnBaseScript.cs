@@ -150,12 +150,14 @@ public class TurnBaseScript : MonoBehaviour
                 {
                     player1AFKStrike = 0;
                     reduceTime1 = 30;
+                    player1Hand.MonsterSicknessIsOver();
                     playerTurn = false;
                 }
                 else
                 {
                     player2AFKStrike = 0;
                     reduceTime2 = 30;
+                    player2Hand.MonsterSicknessIsOver();
                     playerTurn = true;
                 }
                 Debug.Log("Player 2 Health is " + player2Health);
