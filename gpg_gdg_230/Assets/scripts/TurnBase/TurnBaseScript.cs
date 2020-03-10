@@ -56,6 +56,9 @@ public class TurnBaseScript : MonoBehaviour
     public GameObject attackButton;
     public GameObject[] buttons;
 
+    public GameObject player_active_ui;
+
+    public GameObject AI_active_ui;
     // Start is called before the first frame update
     void Start()
     {
@@ -80,6 +83,8 @@ public class TurnBaseScript : MonoBehaviour
         {
             //For when the turn starts for a player.
             case (TurnState.StartTurn):
+                
+
                 if (startOfTheGame == true)
                 {
                     if (playerTurn == true)
@@ -117,8 +122,18 @@ public class TurnBaseScript : MonoBehaviour
                 break;
             case (TurnState.Untap):
                 UntapCard();
+               // state = TurnBaseScript.TurnState.PlayerTurn;
+
+                //-------------------------------------------------------------------------------------------added stuff here
+                // player2Hand.MonsterSicknessIsOver();
+                // player1Hand.MonsterSicknessIsOver();
+
                 break;
             case (TurnState.PlayerTurn):
+                buttons[2].gameObject.SetActive(true);
+                buttons[0].gameObject.SetActive(false);
+                buttons[1].gameObject.SetActive(false);
+                buttons[3].gameObject.SetActive(false);
                 //Making the turn timer, we need some more work on.
                 if (timerIsOn == false)
                 {
@@ -133,12 +148,35 @@ public class TurnBaseScript : MonoBehaviour
                     state = TurnState.TimeWasted;
                 }
                 //attackButton.SetActive(true);
+                if (playerTurn == true)
+                {
+                    player_active_ui.SetActive(false);
+                    AI_active_ui.SetActive(true);
+                    player1Hand.MonsterSicknessIsOver();
+                    print("cured");
+                }
+                else
+                {
+                    player_active_ui.SetActive(true);
+                    AI_active_ui.SetActive(false);
+                    player2Hand.MonsterSicknessIsOver();
+                    print("cured");
+                }
+
+
                 break;
             case (TurnState.Attack):
-
+                buttons[2].gameObject.SetActive(false);
+                buttons[0].gameObject.SetActive(false);
+                buttons[1].gameObject.SetActive(false);
+                buttons[3].gameObject.SetActive(true);
                 break;
 
             case (TurnState.Response):
+                buttons[2].gameObject.SetActive(false);
+                buttons[0].gameObject.SetActive(false);
+                buttons[1].gameObject.SetActive(true);
+                buttons[3].gameObject.SetActive(false);
                 PlayerResponeToAction();
 
                 break;
@@ -150,17 +188,19 @@ public class TurnBaseScript : MonoBehaviour
                 {
                     player1AFKStrike = 0;
                     reduceTime1 = 30;
-                    player1Hand.MonsterSicknessIsOver();
+                    
                     playerTurn = false;
+                    
                 }
                 else
                 {
                     player2AFKStrike = 0;
                     reduceTime2 = 30;
-                    player2Hand.MonsterSicknessIsOver();
+                   
                     playerTurn = true;
+                    
                 }
-                Debug.Log("Player 2 Health is " + player2Health);
+         //       Debug.Log("Player 2 Health is " + player2Health);
                 state = TurnState.StartTurn;
                 break;
 

@@ -41,11 +41,10 @@ public class combat_maneger : MonoBehaviour
             {
                 int newHealth = defend[i].GetComponent<CardDisplay>().card.health - attack[i].GetComponent<CardDisplay>().card.attack;
                 defend[i].GetComponent<CardDisplay>().card.health = newHealth;
-                Debug.Log("I am working Part 2");
+
 
                 newHealth = attack[i].GetComponent<CardDisplay>().card.health - defend[i].GetComponent<CardDisplay>().card.attack;
                 attack[i].GetComponent<CardDisplay>().card.health = newHealth;
-                Debug.Log("I am working Part 2");
 
 
             }
@@ -54,12 +53,10 @@ public class combat_maneger : MonoBehaviour
                 if (TBS.playerTurn == false)
                 {
                     TBS.player1Health -= attack[i].GetComponent<CardDisplay>().card.attack;
-                    Debug.Log("I am working part 3");
                 }
                 else
                 {
                     TBS.player2Health -= attack[i].GetComponent<CardDisplay>().card.attack;
-                    Debug.Log("I am working Part 4");
                 }
             }
 

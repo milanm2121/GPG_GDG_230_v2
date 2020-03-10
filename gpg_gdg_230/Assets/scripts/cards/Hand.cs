@@ -62,7 +62,7 @@ public class Hand : MonoBehaviour
 
     public bool firstAttack = true;
 
-
+    bool stateTick=false;
     // Start is called before the first frame update
     void Start()
     {
@@ -174,6 +174,8 @@ public class Hand : MonoBehaviour
                 {
                     Use_card(Random.Range(0, cards_in_hand));
                 }
+                if(stateTick==false)
+                    StartCoroutine(Ai_turn_control(TurnBaseScript.TurnState.Attack));
             }
             if (TBS.state == TurnBaseScript.TurnState.Attack)
             {
@@ -183,6 +185,8 @@ public class Hand : MonoBehaviour
                     {
                         SetToAttack(active_cards_slots[i]);
                     }
+                    if(stateTick==false)
+                        StartCoroutine(Ai_turn_control(TurnBaseScript.TurnState.Response));
                 }
             }
         }
@@ -206,7 +210,8 @@ public class Hand : MonoBehaviour
                         break;
                 }
             }
-
+            if (stateTick == false)
+                StartCoroutine(Ai_turn_control(TurnBaseScript.TurnState.EndofBattle));
         }
 
         if (TBS.state == TurnBaseScript.TurnState.End || TBS.state == TurnBaseScript.TurnState.TimeWasted)
@@ -237,7 +242,6 @@ public class Hand : MonoBehaviour
 
             //adds a count to the cards in hand script
             cards_in_hand += 1;
-            Debug.Log(hand[i].GetComponent<CardDisplay>().card);
         }
     }
 
@@ -282,8 +286,7 @@ public class Hand : MonoBehaviour
                 //updates card count values
                 cards_in_hand -= 1;
                 active_cards += 1;
-                //need to fix this(this sould visualy move the card to the feild)
-                print(active_cards - 1);
+
                 picked_card.gameObject.transform.position = active_slots[active_cards - 1].position;
 
                 //cleans up the hand array
@@ -330,11 +333,11 @@ public class Hand : MonoBehaviour
         {
             card.transform.rotation = Quaternion.Euler(0, 0, 90);
             cm.attack.Add(card);
-            Debug.Log("Can Attack");
+  //          Debug.Log("Can Attack");
             card.GetComponent<CardDisplay>().card.monsterSickness = true;
         }
-        else
-            Debug.Log("Can't Attack");
+    //    else
+  //          Debug.Log("Can't Attack");
     }
 
     public void SetToDefend(GameObject card)
@@ -386,6 +389,13 @@ public class Hand : MonoBehaviour
 
         TBS.state = TurnBaseScript.TurnState.PlayerTurn;
     }
+    IEnumerator Ai_turn_control(TurnBaseScript.TurnState state)
+    {
+        stateTick = true;
+        yield return new WaitForSeconds(1);
+        TBS.state = state;
+        stateTick = false;
 
+    }
 
 }
