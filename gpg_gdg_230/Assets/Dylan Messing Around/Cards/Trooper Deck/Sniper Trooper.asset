@@ -18,5 +18,5 @@ MonoBehaviour:
   artwork: {fileID: 0}
   manaCost: 2
   attack: 1
-  health: -5
+  health: 5
   monsterSickness: 0

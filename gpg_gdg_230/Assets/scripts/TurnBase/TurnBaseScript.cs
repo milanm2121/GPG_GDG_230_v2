@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 /*
  * The main purpose of this sc res
@@ -18,6 +19,9 @@ public class TurnBaseScript : MonoBehaviour
     //The main players health base.
     public int player1Health = 20;
     public int player2Health = 20;
+
+    public Text player1HealthText;
+    public Text player2HealthText;
 
     //Making sure to see which player turn it is.
     public bool playerTurn = false;
@@ -41,14 +45,23 @@ public class TurnBaseScript : MonoBehaviour
     private int defaultMana1;
     private int defaultMana2;
 
+    public Text player1CoinText;
+    public Text player2CoinText;
+    public Text player1ManaText;
+    public Text player2ManaText;
+
     //Using so that there is a delay when it comes to see what it does.
     private int actiontime = 3;
 
     public GameObject attackButton;
+    public GameObject[] buttons;
 
     // Start is called before the first frame update
     void Start()
     {
+        player1HealthText.text = player1Health.ToString();
+        player2HealthText.text = player2Health.ToString();
+
         whoGoesFirst = Random.Range(1, 10);
         if (whoGoesFirst <= 5)
             playerTurn = true;
@@ -177,6 +190,9 @@ public class TurnBaseScript : MonoBehaviour
             actiontime = 3;
             state = TurnState.PlayerTurn;
         }
+
+        player1HealthText.text = player1Health.ToString();
+        player2HealthText.text = player2Health.ToString();
     }
     #endregion
 
@@ -219,6 +235,11 @@ public class TurnBaseScript : MonoBehaviour
             player1Hand.playerMana = 5;
         if (player2Hand.playerMana >= 5)
             player2Hand.playerMana = 5;
+
+        player1CoinText.text = player1Hand.playerGold.ToString();
+        player1ManaText.text = player1Hand.playerMana.ToString();
+        player2CoinText.text = player2Hand.playerGold.ToString();
+        player2ManaText.text = player2Hand.playerMana.ToString();
 
     }
 
@@ -287,17 +308,37 @@ public class TurnBaseScript : MonoBehaviour
     public void GameIsOver()
     {
         if (player1AFKStrike == 3)
+        {
             Debug.Log("Player 1 lose");
+            for (int i = 0; buttons.Length > i; i++)
+            {
+                buttons[i].SetActive(false);
+            }
+        }
         if (player2AFKStrike == 3)
+        {
             Debug.Log("Player 2  lose");
+            for (int i = 0; buttons.Length > i; i++)
+            {
+                buttons[i].SetActive(false);
+            }
+        }
 
         if (player1Health <= 0)
         {
             Debug.Log("Player 1 Lose");
+            for (int i = 0; buttons.Length > i; i++)
+            {
+                buttons[i].SetActive(false);
+            }
         }
         if (player2Health <= 0)
         {
             Debug.Log("Player 2 Lose");
+            for (int i = 0; buttons.Length > i; i++)
+            {
+                buttons[i].SetActive(false);
+            }
         }
 
         state = TurnState.Nothing;
@@ -330,6 +371,11 @@ public class TurnBaseScript : MonoBehaviour
         StartCoroutine("ActionCountDown");
 
         print(card.description.ToString());
+
+        player1CoinText.text = player1Hand.playerGold.ToString();
+        player1ManaText.text = player1Hand.playerMana.ToString();
+        player2CoinText.text = player2Hand.playerGold.ToString();
+        player2ManaText.text = player2Hand.playerMana.ToString();
     }
 
     public void UntapCard()
