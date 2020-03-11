@@ -32,7 +32,7 @@ public class combat_maneger : MonoBehaviour
     //this alows cards in the attack and defend list to interact
     IEnumerator CombatPhase()
     {
-        Debug.Log("I am working");
+//        Debug.Log("I am working");
 
         for (int i = 0; attack.Count > i; i++)
         {
@@ -73,7 +73,10 @@ public class combat_maneger : MonoBehaviour
         defend.Clear();
         //changes state to stop combatphose
         TBS.state = TurnBaseScript.TurnState.Nothing;
-        //bool tick to stop calling og the combatphose
+        //bool tick to stop calling og the combatphase
         started_combat = false;
+        print("switch");
+        yield return new WaitForSeconds(1);
+        TBS.EndPlayerTurn();
     }
 }

@@ -113,14 +113,14 @@ public class TurnBaseScript : MonoBehaviour
                         player1Hand.active = true;
                         player2Hand.active = false;
                         player1Hand.pickCard();
-                        Debug.Log("Player 1 drew a card");
+//                        Debug.Log("Player 1 drew a card");
                     }
                     else
                     {
                         player1Hand.active = false;
                         player2Hand.active = true;
                         player2Hand.pickCard();
-                        Debug.Log("Player 2 drew a card");
+//                        Debug.Log("Player 2 drew a card");
                     }
                     if (playerTurn == true)
                     {
@@ -202,10 +202,20 @@ public class TurnBaseScript : MonoBehaviour
                 break;
 
             case (TurnState.Response):
-                buttons[2].gameObject.SetActive(false);
-                buttons[0].gameObject.SetActive(false);
-                buttons[1].gameObject.SetActive(true);
-                buttons[3].gameObject.SetActive(false);
+                if (playerTurn == false)
+                {
+                    buttons[2].gameObject.SetActive(false);
+                    buttons[0].gameObject.SetActive(false);
+                    buttons[1].gameObject.SetActive(true);
+                    buttons[3].gameObject.SetActive(false);
+                }
+                else
+                {
+                    buttons[2].gameObject.SetActive(false);
+                    buttons[0].gameObject.SetActive(false);
+                    buttons[1].gameObject.SetActive(false);
+                    buttons[3].gameObject.SetActive(false);
+                }
                 PlayerResponeToAction();
 
                 break;
@@ -442,7 +452,7 @@ public class TurnBaseScript : MonoBehaviour
         timerIsOn = false;
         StartCoroutine("ActionCountDown");
 
-        print(card.description.ToString());
+//        print(card.description.ToString());
 
         player1CoinText.text = player1Hand.playerGold.ToString();
         player1ManaText.text = player1Hand.playerMana.ToString();

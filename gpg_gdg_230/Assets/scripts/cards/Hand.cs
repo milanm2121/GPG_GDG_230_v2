@@ -169,35 +169,49 @@ public class Hand : MonoBehaviour
         }
         else if (TBS.playerTurn == false)//if AI
         {
-            if (TBS.state == TurnBaseScript.TurnState.PlayerTurn && cards_in_hand>=1 && active_cards <= 4)
+            if (stateTick == false)
             {
-                for (int i = 0; 20 > i; i++)
-                {
-                    Use_card(Random.Range(0, cards_in_hand));
-                }
-                if (stateTick == false)
-                    print("attacking");
+                if (TBS.state == TurnBaseScript.TurnState.PlayerTurn ){
+                    if (cards_in_hand >= 1 && active_cards <= 4)
+                    {
+                        {
+                            print("hand phase");
+
+                            for (int i = 0; 20 > i; i++)
+                            {
+                                Use_card(Random.Range(0, cards_in_hand));
+                            }
+                        }
+                    }
                     StartCoroutine(Ai_turn_control(TurnBaseScript.TurnState.Attack));
+                }
+
             }
             if (TBS.state == TurnBaseScript.TurnState.Attack)
             {
-                for (int i = 0; active_cards > i; i++)
+                print("attack phase");
+
+                if (stateTick == false)
                 {
-                    if (active_cards_slots[i].GetComponent<CardDisplay>().card.attack > 0 && cm.attack.Contains(active_cards_slots[i]) == false)
+                    for (int i = 0; active_cards > i; i++)
                     {
-                        SetToAttack(active_cards_slots[i]);
+                        if (active_cards_slots[i].GetComponent<CardDisplay>().card.attack > 0 && cm.attack.Contains(active_cards_slots[i]) == false)
+                        {
+                            SetToAttack(active_cards_slots[i]);
+                        }
                     }
-                    if(stateTick==false)
-                        StartCoroutine(Ai_turn_control(TurnBaseScript.TurnState.Response));
+                    StartCoroutine(Ai_turn_control(TurnBaseScript.TurnState.Response));
                 }
             }
         }
         else if (TBS.playerTurn == true && TBS.state == TurnBaseScript.TurnState.Response)
         {
+            print("defence phase");
+
             int defending_cards = 0;
-            for (int i = 0; active_cards > i; i++)
+            for (int i = 0; TBS.player1Hand.active_cards > i; i++)
             {
-                if (active_cards_slots[i].GetComponent<CardDisplay>().card.health > 1 && cm.defend.Contains(active_cards_slots[i]) == false)
+                if (active_cards>i && active_cards_slots[i].GetComponent<CardDisplay>().card.health > 1 && cm.defend.Contains(active_cards_slots[i]) == false)
                     SetToDefend(active_cards_slots[i]);
                 defending_cards++;
             }
@@ -215,7 +229,7 @@ public class Hand : MonoBehaviour
             if (stateTick == false)
             {
                 TBS.state = TurnBaseScript.TurnState.EndofBattle;
-                StartCoroutine(Ai_turn_control(TurnBaseScript.TurnState.End));
+            //    StartCoroutine(Ai_turn_control(TurnBaseScript.TurnState.End));
             }
 
         }
@@ -397,18 +411,13 @@ public class Hand : MonoBehaviour
     }
     IEnumerator Ai_turn_control(TurnBaseScript.TurnState state)
     {
-        if (state == TurnBaseScript.TurnState.End)
-        {
-            yield return new WaitForSeconds(3);
-            TBS.EndPlayerTurn();
-        }
-        else
-        {
+
+ 
             stateTick = true;
             yield return new WaitForSeconds(0.2f);
             TBS.state = state;
             stateTick = false;
-        }
+     
 
 
     }
