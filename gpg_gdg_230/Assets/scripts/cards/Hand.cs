@@ -193,11 +193,24 @@ public class Hand : MonoBehaviour
 
                 if (stateTick == false)
                 {
-                    for (int i = 0; active_cards > i; i++)
+                    if (TBS.player1Hand.active_cards < 1)
                     {
-                        if (active_cards_slots[i].GetComponent<CardDisplay>().card.attack > 0 && cm.attack.Contains(active_cards_slots[i]) == false)
+                        for (int i = 0; active_cards > i; i++)
                         {
-                            SetToAttack(active_cards_slots[i]);
+                            if (active_cards_slots[i].GetComponent<CardDisplay>().card.attack > 0 && cm.attack.Contains(active_cards_slots[i]) == false)
+                            {
+                                SetToAttack(active_cards_slots[i]);
+                            }
+                        }
+                    }
+                    else
+                    {
+                        for (int i = active_cards+1-TBS.player1Hand.active_cards; active_cards > i || i<0; i++)
+                        {
+                            if (active_cards_slots[i].GetComponent<CardDisplay>().card.attack > 0 && cm.attack.Contains(active_cards_slots[i]) == false)
+                            {
+                                SetToAttack(active_cards_slots[i]);
+                            }
                         }
                     }
                     StartCoroutine(Ai_turn_control(TurnBaseScript.TurnState.Response));
