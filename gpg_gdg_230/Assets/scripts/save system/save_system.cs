@@ -6,7 +6,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 
 public class save_system
 {
-    static string Path = Application.persistentDataPath + "/item_Savedata.txt";
+    static string Path = Application.persistentDataPath + "/collection_Savedata.txt";
 
     public static void saveData(temp_collection tempc)
     {
@@ -25,9 +25,13 @@ public class save_system
     {
         if (!File.Exists(Path))
         {
+            Debug.Log("path dosent exist");
             return null;
         }
-
+        else
+        {
+            Debug.Log("path exist");
+        }
 
         BinaryFormatter formatter = new BinaryFormatter();
 
@@ -38,7 +42,7 @@ public class save_system
         stream.Close();
 
         data.temp_collection_load();
-
+        Debug.Log("loaded data");
 
         return data;
 

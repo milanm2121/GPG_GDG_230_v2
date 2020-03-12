@@ -5,6 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public class temp_collection
 {
+
     public int[] card_count = new int[150];
 
     public List<serilisable_deak> sd = new List<serilisable_deak>();

@@ -16,8 +16,6 @@ public class player_static_deck : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-
-
     // Update is called once per frame
     public void loadDeck()
     {
