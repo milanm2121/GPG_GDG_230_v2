@@ -16,7 +16,7 @@ MonoBehaviour:
   name: Burner Trooper
   description: 'On play: deal 2 damage to all enemy units'
   artwork: {fileID: 0}
-  manaCost: 6
+  manaCost: 5
   attack: 3
-  health: 1
+  health: 2
   monsterSickness: 0

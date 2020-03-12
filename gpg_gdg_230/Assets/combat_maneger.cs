@@ -53,10 +53,12 @@ public class combat_maneger : MonoBehaviour
                 if (TBS.playerTurn == false)
                 {
                     TBS.player1Health -= attack[i].GetComponent<CardDisplay>().card.attack;
+                    TBS.player1HealthText.text = TBS.player1Health.ToString();
                 }
                 else
                 {
                     TBS.player2Health -= attack[i].GetComponent<CardDisplay>().card.attack;
+                    TBS.player2HealthText.text = TBS.player2Health.ToString();
                 }
             }
 
@@ -72,11 +74,29 @@ public class combat_maneger : MonoBehaviour
         DelayedRemoval.Clear();
         defend.Clear();
         //changes state to stop combatphose
-        TBS.state = TurnBaseScript.TurnState.Nothing;
+        TBS.state = TurnBaseScript.TurnState.PlayerTurn;
         //bool tick to stop calling og the combatphase
         started_combat = false;
-        print("switch");
-        yield return new WaitForSeconds(1);
-        TBS.EndPlayerTurn();
+        if (TBS.playerTurn == false)
+        {
+            TBS.buttons[2].gameObject.SetActive(false);
+            TBS.buttons[0].gameObject.SetActive(false);
+            TBS.buttons[1].gameObject.SetActive(false);
+            TBS.buttons[3].gameObject.SetActive(false);
+        }
+        else
+        {
+            TBS.buttons[2].gameObject.SetActive(false);
+            TBS.buttons[0].gameObject.SetActive(true);
+            TBS.buttons[1].gameObject.SetActive(false);
+            TBS.buttons[3].gameObject.SetActive(false);
+        }
+        print("x");
+        if (TBS.playerTurn == false)
+        {
+            print("switch");
+            yield return new WaitForSeconds(1);
+            TBS.EndPlayerTurn();
+        }
     }
 }
