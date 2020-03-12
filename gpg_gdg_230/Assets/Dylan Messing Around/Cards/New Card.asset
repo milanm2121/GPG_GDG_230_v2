@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 615dd9c20f7fa234b9eb1a59bd2aec1a, type: 3}
-  m_Name: Burner Trooper
+  m_Name: New Card
   m_EditorClassIdentifier: 
-  ID: 4
-  name: Burner Trooper
-  description: 'On play: deal 2 damage to all enemy units'
+  ID: 0
+  name: Test ability
+  description: Deal 1 damage
   artwork: {fileID: 0}
-  manaCost: 5
-  attack: 3
-  health: 2
-  monsterSickness: 0
+  manaCost: 0
+  attack: 1
+  health: 1
+  monsterSickness: 1

@@ -207,6 +207,7 @@ public class Hand : MonoBehaviour
                     {
                         for (int i = active_cards+1-TBS.player1Hand.active_cards; active_cards > i || i<0; i++)
                         {
+                            print(i);
                             if (active_cards_slots[i].GetComponent<CardDisplay>().card.attack > 0 && cm.attack.Contains(active_cards_slots[i]) == false)
                             {
                                 SetToAttack(active_cards_slots[i]);
@@ -332,6 +333,7 @@ public class Hand : MonoBehaviour
                     hand[cards_in_hand] = null;
                 }
                 fieldCard.Add(picked_card);
+
                 picked_card.GetComponent<card_functions>().isInHand = false;
                 TBS.state = TurnBaseScript.TurnState.CardPlayed;
             }
@@ -357,11 +359,15 @@ public class Hand : MonoBehaviour
             }
             TBS.state = TurnBaseScript.TurnState.CardPlayed;
             TBS.ReadTheCard(picked_card.GetComponent<CardDisplay>().card);
+            picked_card.GetComponent<CardDisplay>().card.monsterSickness = true;
+
+            StartCoroutine(unsick(picked_card,this));
         }
     }
 
     public void SetToAttack(GameObject card)
     {
+        print(card.GetComponent<CardDisplay>().card.monsterSickness);
         if (card.GetComponent<CardDisplay>().card.monsterSickness == false)
         {
             card.transform.rotation = Quaternion.Euler(0, 0, 90);
@@ -377,7 +383,6 @@ public class Hand : MonoBehaviour
     {
         if (card.GetComponent<CardDisplay>().card.monsterSickness == false)
         {
-
             card.transform.rotation = Quaternion.Euler(0, 0, 90);
             cm.defend.Add(card);
         }
@@ -433,6 +438,19 @@ public class Hand : MonoBehaviour
      
 
 
+    }
+    IEnumerator unsick(GameObject card,Hand hand)
+    {
+        if (hand == TBS.player1Hand) {
+            yield return new WaitUntil(()=>TBS.playerTurn==false);
+            card.GetComponent<CardDisplay>().card.monsterSickness = false;
+
+        }
+        else if((hand == TBS.player2Hand))
+        {
+            yield return new WaitUntil(()=>TBS.playerTurn==true);
+            card.GetComponent<CardDisplay>().card.monsterSickness = false;
+        }
     }
 
 }

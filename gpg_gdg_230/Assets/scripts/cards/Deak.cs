@@ -15,8 +15,11 @@ public class Deak : MonoBehaviour
     public int Class;
     //the array of cards
     public ScriptableCard[] deak = new ScriptableCard[40];
+    public CardLoading[] deck = new CardLoading[40];
+
     //the list of desroyed cards
     public List<ScriptableCard> graveyard=new List<ScriptableCard>();
+    public List<CardLoading> newGraveyard = new List<CardLoading>();
     //the template used for creating cards from the template
     public GameObject cardTemp;
 

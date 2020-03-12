@@ -4,11 +4,12 @@ using UnityEngine;
 using UnityEngine.UI;
 
 /*
- * The main purpose of this sc res
+ * The main purpose of this script is so that everything works in order.
  */
 
 public class TurnBaseScript : MonoBehaviour
 {
+    #region Data
     //To make sure that the turn are played properly.
     public enum TurnState { StartTurn, PlayerTurn, Untap, CardPlayed, Response, Attack, End, Nothing, TimeWasted, EndofBattle  }
     public TurnState state = TurnState.Nothing;
@@ -51,9 +52,10 @@ public class TurnBaseScript : MonoBehaviour
     public Text player2ManaText;
 
     //Using so that there is a delay when it comes to see what it does.
-    private int actiontime = 3;
+    private int actiontime = 1;
 
     public GameObject attackButton;
+    private bool hasAttack = false;
     public GameObject[] buttons;
 
     public GameObject player_active_ui;
@@ -76,6 +78,7 @@ public class TurnBaseScript : MonoBehaviour
         state = TurnState.StartTurn;
 
     }
+    #endregion
 
     #region Update
     // Update is called once per frame
@@ -155,7 +158,7 @@ public class TurnBaseScript : MonoBehaviour
                 if (playerTurn == true)
                 {
                     buttons[2].gameObject.SetActive(true);
-                    buttons[0].gameObject.SetActive(false);
+                    buttons[0].gameObject.SetActive(true);
                     buttons[1].gameObject.SetActive(false);
                     buttons[3].gameObject.SetActive(false);
                 }
@@ -165,6 +168,10 @@ public class TurnBaseScript : MonoBehaviour
                     buttons[0].gameObject.SetActive(false);
                     buttons[1].gameObject.SetActive(false);
                     buttons[3].gameObject.SetActive(false);
+                }
+                if (hasAttack == true)
+                {
+                    buttons[2].gameObject.SetActive(false);
                 }
                 //Making the turn timer, we need some more work on.
                 if (timerIsOn == false)
@@ -199,6 +206,7 @@ public class TurnBaseScript : MonoBehaviour
                     buttons[1].gameObject.SetActive(false);
                     buttons[3].gameObject.SetActive(false);
                 }
+                hasAttack = true;
                 break;
 
             case (TurnState.Response):
@@ -221,6 +229,9 @@ public class TurnBaseScript : MonoBehaviour
                 break;
 
             case (TurnState.End):
+
+                hasAttack = false;
+
                 turns += 1;
                 turnTimer = 30;
 
@@ -272,12 +283,10 @@ public class TurnBaseScript : MonoBehaviour
             actiontime = 3;
             state = TurnState.PlayerTurn;
         }
-
-        player1HealthText.text = player1Health.ToString();
-        player2HealthText.text = player2Health.ToString();
     }
     #endregion
 
+    #region Actions
     void Draw7()
     {
         player2Hand.pick7();
@@ -354,6 +363,8 @@ public class TurnBaseScript : MonoBehaviour
     //If there are AFK for too long, then they will lose.
     public void TimerEndTurn()
     {
+        hasAttack = false;
+
         if (player1AFKStrike == 3)
             GameIsOver();
         if (player2AFKStrike == 3)
@@ -446,13 +457,15 @@ public class TurnBaseScript : MonoBehaviour
 
     }
 
+    //This will be use in order to not only read the card effect, 
+    // but to also use it if it has one.
     public void ReadTheCard(ScriptableCard card)
     {
         StopCoroutine("CountDown");
         timerIsOn = false;
         StartCoroutine("ActionCountDown");
-
-//        print(card.description.ToString());
+        buttons[0].gameObject.SetActive(false);
+        buttons[2].gameObject.SetActive(false);
 
         player1CoinText.text = player1Hand.playerGold.ToString();
         player1ManaText.text = player1Hand.playerMana.ToString();
@@ -472,5 +485,6 @@ public class TurnBaseScript : MonoBehaviour
     {
         player1Hand.firstAttack = false;
     }
+    #endregion
 
 }

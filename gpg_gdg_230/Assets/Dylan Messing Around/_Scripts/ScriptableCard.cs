@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -18,6 +19,11 @@ public class ScriptableCard : ScriptableObject
     //This is so that when it is played on the field for the first time
     // it won't be allow to attack.
     public bool monsterSickness = true;
+
+    public static implicit operator ScriptableCard(CardLoading v)
+    {
+        throw new NotImplementedException();
+    }
 }
 
 [CreateAssetMenu(fileName = "New Card", menuName = "Cards/Spells")]

@@ -1713,6 +1713,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2acc4ca2166d070439621656c099a2c2, type: 3}
+--- !u!114 &1366441906 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7236712806034176003, guid: fd3da1cde0518b74fbeaa25f7d6225f9,
+    type: 3}
+  m_PrefabInstance: {fileID: 7579787861584631709}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1422546310
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3632,10 +3644,19 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2003303586}
     m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 709939824252734660, guid: fd3da1cde0518b74fbeaa25f7d6225f9,
         type: 3}
       propertyPath: m_Name
       value: SpellCard
+      objectReference: {fileID: 0}
+    - target: {fileID: 709939824252734660, guid: fd3da1cde0518b74fbeaa25f7d6225f9,
+        type: 3}
+      propertyPath: m_TagString
+      value: Spell
       objectReference: {fileID: 0}
     - target: {fileID: 7789106744805608726, guid: fd3da1cde0518b74fbeaa25f7d6225f9,
         type: 3}
@@ -3742,6 +3763,16 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 925615598126805900, guid: fd3da1cde0518b74fbeaa25f7d6225f9,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 925615598126805900, guid: fd3da1cde0518b74fbeaa25f7d6225f9,
+        type: 3}
+      propertyPath: art
+      value: 
+      objectReference: {fileID: 1366441906}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fd3da1cde0518b74fbeaa25f7d6225f9, type: 3}
 --- !u!1001 &7820073147052646964
