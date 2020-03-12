@@ -539,7 +539,7 @@ GameObject:
   - component: {fileID: 527316903535690248}
   m_Layer: 5
   m_Name: Card
-  m_TagString: Untagged
+  m_TagString: Creature
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -584,6 +584,7 @@ MonoBehaviour:
   attack: {fileID: 7240237997038746488}
   health: {fileID: 955952637700348026}
   card: {fileID: 11400000, guid: be145efaac2bb574e91762262a8e8730, type: 2}
+  spellCard: {fileID: 11400000, guid: 6586ce9b392d7c9489b1bb38c42e918c, type: 2}
 --- !u!1 &6990923687990069056
 GameObject:
   m_ObjectHideFlags: 0

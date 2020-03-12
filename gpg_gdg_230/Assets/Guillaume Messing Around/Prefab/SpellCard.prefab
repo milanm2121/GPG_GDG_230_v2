@@ -9,10 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7789106744805608726}
-  - component: {fileID: 7870612977637963156}
+  - component: {fileID: 925615598126805900}
   m_Layer: 5
   m_Name: SpellCard
-  m_TagString: Untagged
+  m_TagString: Spell
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -37,7 +37,7 @@ RectTransform:
   m_AnchoredPosition: {x: 131, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &7870612977637963156
+--- !u!114 &925615598126805900
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -46,14 +46,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 709939824252734660}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1090c7495c7b2ec4c9931bcf72239532, type: 3}
+  m_Script: {fileID: 11500000, guid: bc8c3506ef8cf2d4d95abc9239d4ca3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   title: {fileID: 3798086579648528777}
   detail: {fileID: 4446101992232245952}
   type: {fileID: 2551868193806903471}
-  art: {fileID: 7236712806034176003}
+  art: {fileID: 3028603817980708767}
   cost: {fileID: 8203537477969780332}
+  attack: {fileID: 0}
+  health: {fileID: 0}
+  card: {fileID: 11400000, guid: be145efaac2bb574e91762262a8e8730, type: 2}
   spellCard: {fileID: 11400000, guid: 6586ce9b392d7c9489b1bb38c42e918c, type: 2}
 --- !u!1 &902111370988888002
 GameObject:

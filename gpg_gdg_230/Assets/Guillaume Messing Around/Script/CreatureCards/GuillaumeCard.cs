@@ -26,5 +26,7 @@ namespace GB
         public string cardtype;
 
         public int cardManaCost;
+        public int cardAttack;
+        public int cardHealth;
     }
 }

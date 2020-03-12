@@ -789,7 +789,49 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 02da2d282af42ef48af4b0f553eb3409, type: 2}
   - {fileID: 11400000, guid: 02da2d282af42ef48af4b0f553eb3409, type: 2}
   - {fileID: 11400000, guid: 02da2d282af42ef48af4b0f553eb3409, type: 2}
+  deck:
+  - {fileID: 0}
+  - {fileID: 6089612870178953108, guid: 8e42c87e07491b94d9806557fa4d6362, type: 3}
+  - {fileID: 6089612870178953108, guid: 8e42c87e07491b94d9806557fa4d6362, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   graveyard: []
+  newGraveyard: []
   cardTemp: {fileID: 8099801058583234788, guid: edc5075ef4033404992ab5e0d95d3f51,
     type: 3}
   cardfeild: {fileID: 1987046323}
@@ -3111,7 +3153,49 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 43fa0cc8a10d92e45a5f88967d3301e8, type: 2}
   - {fileID: 11400000, guid: 9cf7f6014c31b37438500d7aea46f659, type: 2}
   - {fileID: 11400000, guid: 43fa0cc8a10d92e45a5f88967d3301e8, type: 2}
+  deck:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   graveyard: []
+  newGraveyard: []
   cardTemp: {fileID: 8099801058583234788, guid: edc5075ef4033404992ab5e0d95d3f51,
     type: 3}
   cardfeild: {fileID: 1987046323}
