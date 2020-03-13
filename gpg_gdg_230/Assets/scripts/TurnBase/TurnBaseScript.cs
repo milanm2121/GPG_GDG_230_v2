@@ -471,6 +471,12 @@ public class TurnBaseScript : MonoBehaviour
         player1ManaText.text = player1Hand.playerMana.ToString();
         player2CoinText.text = player2Hand.playerGold.ToString();
         player2ManaText.text = player2Hand.playerMana.ToString();
+        string[] message =card.description.Split(' ');
+        for(int i=0;message.Length>i; i++)
+        {
+            print(message[i]);
+        }
+        //switch stament geos here
     }
 
     public void UntapCard()
