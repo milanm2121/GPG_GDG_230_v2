@@ -32,6 +32,6 @@ public class deck_building_functions : MonoBehaviour
     }
     public void ResetCount()
     {
-        count = col.Collection[ID].count;
+        count = Mathf.Clamp(col.Collection[ID].count,0,4);
     }
 }
