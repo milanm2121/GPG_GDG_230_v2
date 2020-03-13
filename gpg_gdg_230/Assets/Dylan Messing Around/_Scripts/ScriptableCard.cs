@@ -16,6 +16,8 @@ public class ScriptableCard : ScriptableObject
     public int manaCost;
     public int attack;
     public int health;
+
+    public bool isSpell;
     //This is so that when it is played on the field for the first time
     // it won't be allow to attack.
     public bool monsterSickness = true;

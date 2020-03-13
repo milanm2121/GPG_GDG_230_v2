@@ -11,9 +11,11 @@ public class collection : MonoBehaviour
         public GameObject card;
         public Text text;
         public int count;
+        public int cardsYouCanUse;
     };
     public GameObject cardtemp;
     public GameObject cardtempcreation;
+    public GameObject button;
 
     public cardGroup[] Collection = new cardGroup[150];
     public ScriptableCard[] id = new ScriptableCard[150];
@@ -21,16 +23,21 @@ public class collection : MonoBehaviour
     public List<cardGroup> cards_you_have = new List<cardGroup>();
 
     public RectTransform origonalTransform;
+    
     public RectTransform origonalTransform2;
-    public Scrollbar sb;
+    public RectTransform origonalTransform3;
+    public Scrollbar sbForCollecion;
     public float origonalsbYvalue;
-    public Scrollbar sb2;
+    public Scrollbar sbForCreation;
     public float origonalsbYvalue2;
+    
     public List<serilisable_deak> deaks = new List<serilisable_deak>();
 
 
     public serilisable_deak deackBeingCreated;
     public int cardsInCreateDeak=0;
+
+    public GameObject deckcreation;
     
     // Start is called before the first frame update
     void Start()
@@ -68,18 +75,19 @@ public class collection : MonoBehaviour
         {
             for (int y = 0; 3 > y; y++)
             {
-                if ((x * a) + y < cards_you_have.Count)
+                if ((x * 3) + y < cards_you_have.Count)
                 {
                     cardGroup cg = new cardGroup();
                     cg.card = Instantiate(cardtempcreation, new Vector2(origonalTransform2.position.x, origonalTransform2.position.y) + new Vector2(y * 220, -x * 300), Quaternion.identity);
                     cg.text = Instantiate(texttemp, new Vector2(origonalTransform2.position.x, origonalTransform2.position.y) + new Vector2(y * 220, -x * 300 - 150), Quaternion.identity);
-                    cg.count = cards_you_have[(x * 3) + y].count;
-                    cg.text.text = "cards you can use:" + cards_you_have[(x * 5) + y].count.ToString();
+                    cg.count = cg.cardsYouCanUse = cards_you_have[(x * 3) + y].count;
+                    cg.text.text = "cards you can use:" + cards_you_have[(x * 3) + y].count.ToString();
                     cg.text.transform.parent = origonalTransform2;
                     cg.card.transform.parent = origonalTransform2;
                     cg.card.transform.localScale = new Vector2(0.8f, 0.8f);
                     cg.card.GetComponent<RectTransform>().localScale = new Vector2(1, 1);
-                    cg.card.GetComponent<CardDisplay>().card = cards_you_have[(x * 5) + y].card.GetComponent<CardDisplay>().card;
+                    cg.card.GetComponent<CardDisplay>().card = cards_you_have[(x * 3) + y].card.GetComponent<CardDisplay>().card;
+                    cards_you_have[(x * 3) + y] = cg;
                 }
 
             }
@@ -89,11 +97,11 @@ public class collection : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        origonalTransform.position = new Vector2(origonalTransform.position.x ,6500 * sb.value+origonalsbYvalue);
-        sb.size = 0;
+        origonalTransform.position = new Vector2(origonalTransform.position.x ,6500 * sbForCollecion.value+origonalsbYvalue);
+        sbForCollecion.size = 0;
 
-        origonalTransform2.position = new Vector2(origonalTransform2.position.x, 6500 * sb2.value + origonalsbYvalue2);
-        sb2.size = 0;
+        origonalTransform2.position = new Vector2(origonalTransform2.position.x, 6500 * sbForCreation.value + origonalsbYvalue2);
+        sbForCreation.size = 0;
 
         for(int i = 0; Collection.Length > i; i++)
         {
@@ -103,12 +111,10 @@ public class collection : MonoBehaviour
     public void save_cards()
     {
         //load cards
+        static_collections.Deaks.Clear();
         for (int i = 0; deaks.Count > i; i++) {
-            static_collections.Deaks[i].Class = deaks[i].Class;
-            for (int x = 0; 40 > x; x++)
-            {
-                static_collections.Deaks[i].deck[x] = deaks[i].deck[i];
-            }
+            static_collections.Deaks.Add(deaks[i]);
+
         }
         for (int i = 0; id.Length > i; i++)
         {
@@ -130,13 +136,7 @@ public class collection : MonoBehaviour
         }
         for(int i=0;static_collections.Deaks.Count > i; i++)
         {
-            Deak loadeddeack = new Deak();
-            loadeddeack.Class = static_collections.Deaks[i].Class;
-            for (int x=0; 40>x; x++)
-            {
-
-                loadeddeack.deak[x] = id[static_collections.Deaks[i].deck[x]];
-            }
+            deaks = static_collections.Deaks;
         }
         
     }
@@ -146,6 +146,7 @@ public class collection : MonoBehaviour
         deackBeingCreated = new serilisable_deak();
         cardsInCreateDeak = 0;
         StartCoroutine(waitForFullDeck());
+    
     }
 
     IEnumerator waitForFullDeck()
@@ -153,6 +154,28 @@ public class collection : MonoBehaviour
         yield return new WaitUntil(() => cardsInCreateDeak == 40);
         //finish building deack
         print("deack created");
+        //pick a clss goes here
+
+
+
+        //resets count of cards
+        for(int i=0; cards_you_have.Count > i; i++)
+        {
+            cards_you_have[i].card.GetComponent<deck_building_functions>().ResetCount();
+        }
+        //saves deack
+        deaks.Add(deackBeingCreated);
+        //adds deack to deack screan
+        loadDeacks();
+        deckcreation.SetActive(false);
+    }
+    public void loadDeacks()
+    {
+
+        GameObject x = Instantiate(button, new Vector2(origonalTransform3.transform.position.x, origonalTransform3.transform.position.y) + new Vector2((deaks.Count-1) * 150,0), Quaternion.identity);
+        x.GetComponent<load_deck>().deck = deaks.Count - 1;
+        x.transform.parent = origonalTransform3;
+
     }
 }
 
