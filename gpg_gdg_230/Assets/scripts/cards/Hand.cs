@@ -208,7 +208,7 @@ public class Hand : MonoBehaviour
                         for (int i = active_cards+1-TBS.player1Hand.active_cards; active_cards > i || i<0; i++)
                         {
                             print(i);
-                            if (active_cards_slots[i].GetComponent<CardDisplay>().card.attack > 0 && cm.attack.Contains(active_cards_slots[i]) == false)
+                            if (i > 0 && active_cards_slots[i].GetComponent<CardDisplay>().card.attack > 0 && cm.attack.Contains(active_cards_slots[i]) == false)
                             {
                                 SetToAttack(active_cards_slots[i]);
                             }
