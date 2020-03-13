@@ -834,6 +834,8 @@ MonoBehaviour:
   newGraveyard: []
   cardTemp: {fileID: 8099801058583234788, guid: edc5075ef4033404992ab5e0d95d3f51,
     type: 3}
+  spellCardTemp: {fileID: 8099801058583234788, guid: 3d688f26bbd3c024ca45cdd3b560dfc0,
+    type: 3}
   cardfeild: {fileID: 1987046323}
 --- !u!114 &288857955
 MonoBehaviour:
@@ -3197,6 +3199,8 @@ MonoBehaviour:
   graveyard: []
   newGraveyard: []
   cardTemp: {fileID: 8099801058583234788, guid: edc5075ef4033404992ab5e0d95d3f51,
+    type: 3}
+  spellCardTemp: {fileID: 8099801058583234788, guid: 3d688f26bbd3c024ca45cdd3b560dfc0,
     type: 3}
   cardfeild: {fileID: 1987046323}
 --- !u!114 &1389315624

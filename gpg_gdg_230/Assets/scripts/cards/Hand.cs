@@ -311,7 +311,7 @@ public class Hand : MonoBehaviour
         {
 
             //cheaks if the card is magic or a unit
-            if (picked_card.gameObject.tag != "spell" && active_cards < 5)
+            if (picked_card.GetComponent<CardDisplay>().card.isSpell == false && active_cards < 5)
             {
                 playerGold -= picked_card.GetComponent<CardDisplay>().card.manaCost;
                 //moves the card from the hand into the feild

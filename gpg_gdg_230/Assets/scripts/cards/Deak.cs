@@ -22,6 +22,7 @@ public class Deak : MonoBehaviour
     public List<CardLoading> newGraveyard = new List<CardLoading>();
     //the template used for creating cards from the template
     public GameObject cardTemp;
+    public GameObject spellCardTemp;
 
     void Start()
     {
@@ -44,9 +45,18 @@ public class Deak : MonoBehaviour
     {
         ScriptableCard Random_card_index;
         int card_index_picked = Random.Range(0, Cards_active_deak);
-        GameObject Random_card = Instantiate(cardTemp);
-        Random_card.transform.localScale = new Vector3(1, 1, 1);
         Random_card_index = deak[card_index_picked];
+        GameObject Random_card = new GameObject();
+        if (Random_card_index.isSpell == false)
+        {
+            Random_card = Instantiate(cardTemp);
+        }
+        else
+        {
+            Random_card = Instantiate(spellCardTemp);
+        }
+        Random_card.transform.localScale = new Vector3(1, 1, 1);
+        
         ScriptableCard sc = new ScriptableCard
         {
             artwork = Random_card_index.artwork,
