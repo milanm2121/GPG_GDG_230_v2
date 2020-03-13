@@ -543,7 +543,7 @@ GameObject:
   - component: {fileID: 8353041005812765172}
   m_Layer: 5
   m_Name: Card
-  m_TagString: Creature
+  m_TagString: Clone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -610,7 +610,7 @@ MonoBehaviour:
     cardAttack: 0
     cardHealth: 0
     cardImage: {fileID: 0}
-  thisID: 4
+  thisID: 0
   id: 0
   thisCardName: 
   thisCardDetails: 
@@ -627,6 +627,8 @@ MonoBehaviour:
   thisCardSprite: {fileID: 0}
   cardImage: {fileID: 2395794483360367382}
   cardBack: 0
+  hand: {fileID: 0}
+  numberOfCardsInDeck: 0
 --- !u!114 &1491164016556666464
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -640,6 +642,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardBack: {fileID: 176140373764237493}
+  backCard: {fileID: 1610754973}
 --- !u!114 &5261219735661377749
 MonoBehaviour:
   m_ObjectHideFlags: 0

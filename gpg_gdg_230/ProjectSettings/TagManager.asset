@@ -9,6 +9,7 @@ TagManager:
   - Manager
   - Creature
   - Spell
+  - Clone
   layers:
   - Default
   - TransparentFX

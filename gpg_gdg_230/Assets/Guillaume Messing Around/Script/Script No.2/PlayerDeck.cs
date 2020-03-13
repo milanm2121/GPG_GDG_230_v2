@@ -7,15 +7,23 @@ public class PlayerDeck : MonoBehaviour
 
     public List<CardVersion2> deck = new List<CardVersion2>();
     public List<CardVersion2> container = new List<CardVersion2>();
+    public static List<CardVersion2> staticDeck = new List<CardVersion2>();
 
     public int x;
-    public int deckSize;
+    public static int deckSize;
 
     public GameObject cardsInDeck1;
     public GameObject cardsInDeck2;
     public GameObject cardsInDeck3;
     public GameObject cardsInDeck4;
 
+    public GameObject cardToHand;
+    public GameObject cardBack;
+    public GameObject theDeck;
+
+    public GameObject[] clones;
+
+    public GameObject hand;
 
     // Start is called before the first frame update
     void Start()
@@ -28,11 +36,15 @@ public class PlayerDeck : MonoBehaviour
             x = Random.Range(1, 6);
             deck[i] = CardDataBase.cardList[x];
         }
+
+        StartCoroutine(StartGame());
     }
 
     // Update is called once per frame
     void Update()
     {
+        staticDeck = deck;
+
         if (deckSize < 30)
         {
             cardsInDeck1.SetActive(false);
@@ -51,6 +63,27 @@ public class PlayerDeck : MonoBehaviour
         }
     }
 
+    IEnumerator Example()
+    {
+        yield return new WaitForSeconds(1);
+        clones = GameObject.FindGameObjectsWithTag("Clone");
+
+        foreach (GameObject clone in clones)
+        {
+            Destroy(clone);
+        }
+    }
+
+
+    IEnumerator StartGame()
+    {
+        for (int i = 0; i <= 4; i++)
+        {
+            yield return new WaitForSeconds(1);
+            Instantiate(cardToHand, transform.position, transform.rotation);
+        }
+    }
+
     public void Shuffle()
     {
         for (int i = 0; i < deckSize; i++)
@@ -60,5 +93,10 @@ public class PlayerDeck : MonoBehaviour
             deck[i] = deck[randomIndex];
             deck[randomIndex] = container[0];
         }
+
+        Instantiate(cardBack, transform.position, transform.rotation);
+        StartCoroutine(Example());
     }
+
+    
 }
