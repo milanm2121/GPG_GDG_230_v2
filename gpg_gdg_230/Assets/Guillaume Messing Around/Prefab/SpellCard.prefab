@@ -44,7 +44,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 709939824252734660}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bc8c3506ef8cf2d4d95abc9239d4ca3f, type: 3}
   m_Name: 
@@ -52,7 +52,7 @@ MonoBehaviour:
   title: {fileID: 3798086579648528777}
   detail: {fileID: 4446101992232245952}
   type: {fileID: 2551868193806903471}
-  art: {fileID: 3028603817980708767}
+  art: {fileID: 7236712806034176003}
   cost: {fileID: 8203537477969780332}
   attack: {fileID: 0}
   health: {fileID: 0}

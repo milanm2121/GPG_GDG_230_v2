@@ -2,11 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 namespace GB
 {
+    [System.Serializable]
     [CreateAssetMenu(menuName = "Creature Card Ver.2")]
     public class GuillaumeCard : ScriptableObject
     {
+        public int cardID;
         public string cardName;
         public Sprite art;
         public string cardDetail;
