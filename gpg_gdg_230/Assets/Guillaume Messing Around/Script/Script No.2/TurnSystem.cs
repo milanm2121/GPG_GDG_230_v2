@@ -11,11 +11,11 @@ public class TurnSystem : MonoBehaviour
     public Text turnText;
 
     public int maxMana;
-    public int currentMana;
+    public static int currentMana;
     public Text manaText;
 
     public int maxCoin;
-    public int currentCoin;
+    public static int currentCoin;
     public Text coinText;
 
     // Start is called before the first frame update
