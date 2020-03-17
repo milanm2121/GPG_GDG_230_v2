@@ -33,7 +33,7 @@ public class DraggableCard : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 
     }
 
-    public void OnMouseDrag(PointerEventData eventData)
+    public void OnDrag(PointerEventData eventData)
     {
         this.transform.position = eventData.position;    
 
@@ -44,12 +44,15 @@ public class DraggableCard : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 
         for (int i = 0; i < placeHolderParent.childCount; i++)
         {
-            newSiblingIndex = i;
+            if (this.transform.position.x < placeHolderParent.GetChild(i).position.x)
+            {
+                newSiblingIndex = i;
 
-            if (placeHolder.transform.GetSiblingIndex() < newSiblingIndex)
-                newSiblingIndex--;
+                if (placeHolder.transform.GetSiblingIndex() < newSiblingIndex)
+                    newSiblingIndex--;
 
-            break;
+                break;
+            }
         }
 
         placeHolder.transform.SetSiblingIndex(newSiblingIndex);
@@ -66,8 +69,4 @@ public class DraggableCard : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         Destroy(placeHolder);
     }
 
-    public void OnDrag(PointerEventData eventData)
-    {
-        throw new System.NotImplementedException();
-    }
 }

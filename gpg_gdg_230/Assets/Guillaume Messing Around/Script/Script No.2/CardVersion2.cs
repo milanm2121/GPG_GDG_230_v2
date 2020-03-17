@@ -15,6 +15,9 @@ public class CardVersion2
     public int cardAttack;
     public int cardHealth;
 
+    public int drawXCards;
+    public int addXMaxCoin;
+
     public Sprite cardImage;
 
     public CardVersion2()
@@ -22,7 +25,7 @@ public class CardVersion2
 
     }
 
-    public CardVersion2(int ID, string Name, string Detail, string Type, int Cost, int Attack, int Health, Sprite Image)
+    public CardVersion2(int ID, string Name, string Detail, string Type, int Cost, int Attack, int Health, Sprite Image, int DrawXCards, int AddXMaxCoin)
     {
         cardID = ID;
         cardName = Name;
@@ -33,5 +36,8 @@ public class CardVersion2
         cardHealth = Health;
 
         cardImage = Image;
+
+        drawXCards = DrawXCards;
+        addXMaxCoin = AddXMaxCoin;
     }
 }

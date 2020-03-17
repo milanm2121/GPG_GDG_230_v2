@@ -5,18 +5,20 @@ using UnityEngine.UI;
 
 public class TurnSystem : MonoBehaviour
 {
-    public bool isYourTurn;
+    public static bool isYourTurn;
     public int yourTurn;
     public int yourOpponentTurn;
     public Text turnText;
 
-    public int maxMana;
+    public static int maxMana;
     public static int currentMana;
     public Text manaText;
 
-    public int maxCoin;
+    public static int maxCoin;
     public static int currentCoin;
     public Text coinText;
+
+    public static bool startTurn;
 
     // Start is called before the first frame update
     void Start()
@@ -29,6 +31,8 @@ public class TurnSystem : MonoBehaviour
         currentCoin = 1;
         maxMana = 1;
         currentMana = 1;
+
+        startTurn = false;
     }
 
     // Update is called once per frame
@@ -48,7 +52,7 @@ public class TurnSystem : MonoBehaviour
         isYourTurn = false;
         yourOpponentTurn += 1;
 
-        if (maxCoin > 10)
+        if (maxCoin >= 10)
             maxCoin = 10;
         else
             maxCoin += 1;
@@ -61,15 +65,21 @@ public class TurnSystem : MonoBehaviour
         isYourTurn = true;
         yourTurn += 1;
 
-        maxMana += 1;
+        if (maxMana >= 10)
+            maxMana = 10;
+        else
+            maxMana += 1;
+
         currentMana = maxMana;
 
-        if (maxCoin > 10)
+        if (maxCoin >= 10)
             maxCoin = 10;
         else
             maxCoin += 1;
 
         currentCoin = maxCoin;
+
+        startTurn = true;
     }
 
 }

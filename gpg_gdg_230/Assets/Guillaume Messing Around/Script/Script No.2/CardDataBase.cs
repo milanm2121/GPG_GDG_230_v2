@@ -8,11 +8,11 @@ public class CardDataBase : MonoBehaviour
 
     private void Awake()
     {
-        cardList.Add(new CardVersion2(0, "None", "Doesn't", "French", 2, 3, 3, Resources.Load <Sprite>("0") ));
-        cardList.Add(new CardVersion2(1, "Bob", "Hi", "French", 4, 2, 5, Resources.Load <Sprite>("1") ));
-        cardList.Add(new CardVersion2(2, "Bobo", "Why", "French", 5, 4, 4, Resources.Load <Sprite>("2") ));
-        cardList.Add(new CardVersion2(3, "Ned", "Please", "French", 1, 2, 1, Resources.Load <Sprite>("3") ));
-        cardList.Add(new CardVersion2(4, "Neddy", "Stop", "French", 0, 1, 1, Resources.Load <Sprite>("4") ));
-        cardList.Add(new CardVersion2(5, "Mulan", "This", "French", 7, 8, 8, Resources.Load <Sprite>("5") ));
+        cardList.Add(new CardVersion2(0, "None", "Doesn't", "French", 2, 3, 3, Resources.Load <Sprite>("0"), 0, 0 ));
+        cardList.Add(new CardVersion2(1, "Bob", "Draw 1 Card", "French", 4, 2, 5, Resources.Load <Sprite>("1"), 1, 0));
+        cardList.Add(new CardVersion2(2, "Bobo", "Add 1 Max Mana", "French", 5, 4, 4, Resources.Load <Sprite>("2"), 0, 1));
+        cardList.Add(new CardVersion2(3, "Ned", "Add 3 Max Coin", "French", 1, 2, 1, Resources.Load <Sprite>("3"), 0, 3));
+        cardList.Add(new CardVersion2(4, "Neddy", "Draw 2 Cards", "French", 0, 1, 1, Resources.Load <Sprite>("4"), 2, 0));
+        cardList.Add(new CardVersion2(5, "Mulan", "Add 10 Max Coin", "French", 7, 8, 8, Resources.Load <Sprite>("5"), 0, 10));
     }
 }
