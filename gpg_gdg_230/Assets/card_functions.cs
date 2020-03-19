@@ -12,7 +12,7 @@ public class card_functions : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        hand = GameObject.Find("player1").GetComponent<Hand>();
     }
 
     public void select_card()

@@ -55,14 +55,24 @@ public class Hand : MonoBehaviour
     //for mousepos raycasting
     Camera cam;
 
-
+    //script that manages combat
     public combat_maneger cm;
 
+    //list of game objects in the game canvas
     public List<GameObject> fieldCard;
 
+    //if this hand attacked first
     public bool firstAttack = true;
 
+    //used so the AI dosnt brake the TBS state machine
     bool stateTick=false;
+
+    //used for sellecting groups of cards for spells
+    bool selectingCards;
+    bool selectingEnemyCards;
+    List<GameObject> selectedCards;
+    string unitType;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -125,45 +135,82 @@ public class Hand : MonoBehaviour
                 }
 
             }
-            
 
-
-            //clikink cards
-            if (selectedCard != null && Input.GetMouseButtonDown(0))
+            //for selecting groups of cards
+            if (selectingCards == true)
             {
-                //for clicking cards in hand to move to the feild
-                if (active == true && TBS.state == TurnBaseScript.TurnState.PlayerTurn)
+                if(selectedCard != null && Input.GetMouseButtonDown(0))
                 {
-                    for (int i = 0; cards_in_hand > i; i++)
+                    for (int i=0; active_cards_slots.Length > i; i++)
                     {
-                        if (selectedCard == hand[i])
+                        if (active_cards_slots[i] == selectedCard)
                         {
-                            Use_card(i);
-                            break;
+                            string compareName;
+                            compareName = selectedCard.GetComponent<CardDisplay>().card.name;
+                            string[] brokenName = compareName.Split(' ');
+                            for (int x = 0; brokenName.Length > x; x++)
+                            {
+                                if (brokenName[i] == unitType)
+                                {
+                                    selectedCards.Add(selectedCard);
+                                }
+                            }
                         }
                     }
                 }
-
-                //for seting cards from feild to actack or defend
-                for (int i = 0; active_cards > i; i++)
+            }
+            if (selectingEnemyCards == true)
+            {
+                if (selectedCard != null && Input.GetMouseButtonDown(0))
                 {
-                    if (selectedCard == active_cards_slots[i])
+                    for (int i = 0; TBS.player2Hand.active_cards > i; i++)
                     {
-                        combat_card_slots[i] = selectedCard;
-                        cards_in_combat += 1;
-                        //visual change in card goes here
-                        if (active == true && TBS.state == TurnBaseScript.TurnState.Attack && cm.attack.Contains(selectedCard) == false)
+                        if (TBS.player2Hand.active_cards_slots[i] == selectedCard)
                         {
-                            //this function adds the cards to a list that the combat maneger uses
-                            SetToAttack(selectedCard);
-                        }
-                        else if (active == false && TBS.state == TurnBaseScript.TurnState.Response && cm.defend.Contains(selectedCard) == false)
-                        {
-                            //this function adds the cards to a list that the combat maneger uses and rtates the card 90 degres
-                            SetToDefend(selectedCard);
+                            selectedCards.Add(selectedCard);
                         }
                     }
-                   
+                }
+            }
+            else
+            {
+                //clikink cards
+                if (selectedCard != null && Input.GetMouseButtonDown(0))
+                {
+                    //for clicking cards in hand to move to the feild
+                    if (active == true && TBS.state == TurnBaseScript.TurnState.PlayerTurn)
+                    {
+                        for (int i = 0; cards_in_hand > i; i++)
+                        {
+                            if (selectedCard == hand[i])
+                            {
+                                Use_card(i);
+                                break;
+                            }
+                        }
+                    }
+
+                    //for seting cards from feild to actack or defend
+                    for (int i = 0; active_cards > i; i++)
+                    {
+                        if (selectedCard == active_cards_slots[i])
+                        {
+                            combat_card_slots[i] = selectedCard;
+                            cards_in_combat += 1;
+                            //visual change in card goes here
+                            if (active == true && TBS.state == TurnBaseScript.TurnState.Attack && cm.attack.Contains(selectedCard) == false)
+                            {
+                                //this function adds the cards to a list that the combat maneger uses
+                                SetToAttack(selectedCard);
+                            }
+                            else if (active == false && TBS.state == TurnBaseScript.TurnState.Response && cm.defend.Contains(selectedCard) == false)
+                            {
+                                //this function adds the cards to a list that the combat maneger uses and rtates the card 90 degres
+                                SetToDefend(selectedCard);
+                            }
+                        }
+
+                    }
                 }
             }
         }
@@ -175,7 +222,7 @@ public class Hand : MonoBehaviour
                     if (cards_in_hand >= 1 && active_cards <= 4)
                     {
                         {
-                            print("hand phase");
+                        //    print("hand phase");
 
                             for (int i = 0; 20 > i; i++)
                             {
@@ -189,7 +236,7 @@ public class Hand : MonoBehaviour
             }
             if (TBS.state == TurnBaseScript.TurnState.Attack)
             {
-                print("attack phase");
+            //    print("attack phase");
 
                 if (stateTick == false)
                 {
@@ -220,7 +267,7 @@ public class Hand : MonoBehaviour
         }
         else if (TBS.playerTurn == true && TBS.state == TurnBaseScript.TurnState.Response)
         {
-            print("defence phase");
+        //    print("defence phase");
 
             int defending_cards = 0;
             for (int i = 0; TBS.player1Hand.active_cards > i; i++)
@@ -453,4 +500,20 @@ public class Hand : MonoBehaviour
         }
     }
 
+    public IEnumerator sellectCards(List<GameObject> cardSelection,string cardtype)
+    {
+        unitType = cardtype;
+        selectedCards = cardSelection;
+        selectingCards = true;
+        yield return new WaitUntil(() => TBS.state != TurnBaseScript.TurnState.Nothing);
+        selectingCards = false;
+    }
+
+    public IEnumerator sellectEnemyCards(List<GameObject> cardSelection)
+    {
+        selectedCards = cardSelection;
+        selectingEnemyCards = true;
+        yield return new WaitUntil(() => TBS.state != TurnBaseScript.TurnState.Nothing);
+        selectingEnemyCards = false;
+    }
 }

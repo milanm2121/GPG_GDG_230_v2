@@ -11,7 +11,7 @@ public class TurnBaseScript : MonoBehaviour
 {
     #region Data
     //To make sure that the turn are played properly.
-    public enum TurnState { StartTurn, PlayerTurn, Untap, CardPlayed, Response, Attack, End, Nothing, TimeWasted, EndofBattle  }
+    public enum TurnState { StartTurn, PlayerTurn, Untap, CardPlayed, Response, Attack, End, Nothing, TimeWasted, EndofBattle }
     public TurnState state = TurnState.Nothing;
 
     public Hand player1Hand;
@@ -84,11 +84,11 @@ public class TurnBaseScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        switch(state)
+        switch (state)
         {
             //For when the turn starts for a player.
             case (TurnState.StartTurn):
-                
+
 
                 if (startOfTheGame == true)
                 {
@@ -116,14 +116,14 @@ public class TurnBaseScript : MonoBehaviour
                         player1Hand.active = true;
                         player2Hand.active = false;
                         player1Hand.pickCard();
-//                        Debug.Log("Player 1 drew a card");
+                        //                        Debug.Log("Player 1 drew a card");
                     }
                     else
                     {
                         player1Hand.active = false;
                         player2Hand.active = true;
                         player2Hand.pickCard();
-//                        Debug.Log("Player 2 drew a card");
+                        //                        Debug.Log("Player 2 drew a card");
                     }
                     if (playerTurn == true)
                     {
@@ -147,7 +147,7 @@ public class TurnBaseScript : MonoBehaviour
                 break;
             case (TurnState.Untap):
                 UntapCard();
-               // state = TurnBaseScript.TurnState.PlayerTurn;
+                // state = TurnBaseScript.TurnState.PlayerTurn;
 
                 //-------------------------------------------------------------------------------------------added stuff here
                 // player2Hand.MonsterSicknessIsOver();
@@ -179,7 +179,7 @@ public class TurnBaseScript : MonoBehaviour
                     StartCoroutine("CountDown");
                     timerIsOn = true;
                 }
-                if(turnTimer <= 0)
+                if (turnTimer <= 0)
                 {
                     StopCoroutine("CountDown");
                     timerIsOn = false;
@@ -187,7 +187,7 @@ public class TurnBaseScript : MonoBehaviour
                     state = TurnState.TimeWasted;
                 }
                 //attackButton.SetActive(true);
-                
+
 
 
                 break;
@@ -239,19 +239,19 @@ public class TurnBaseScript : MonoBehaviour
                 {
                     player1AFKStrike = 0;
                     reduceTime1 = 30;
-                    
+
                     playerTurn = false;
-                    
+
                 }
                 else
                 {
                     player2AFKStrike = 0;
                     reduceTime2 = 30;
-                   
+
                     playerTurn = true;
-                    
+
                 }
-         //       Debug.Log("Player 2 Health is " + player2Health);
+                //       Debug.Log("Player 2 Health is " + player2Health);
                 state = TurnState.StartTurn;
                 break;
 
@@ -368,7 +368,7 @@ public class TurnBaseScript : MonoBehaviour
         if (player1AFKStrike == 3)
             GameIsOver();
         if (player2AFKStrike == 3)
-            GameIsOver(); 
+            GameIsOver();
 
         if (state == TurnState.TimeWasted)
         {
@@ -440,7 +440,7 @@ public class TurnBaseScript : MonoBehaviour
     //This is so that the player doesn't take too long
     IEnumerator CountDown()
     {
-        while(true)
+        while (true)
         {
             yield return new WaitForSeconds(1);
             turnTimer--;
@@ -457,27 +457,7 @@ public class TurnBaseScript : MonoBehaviour
 
     }
 
-    //This will be use in order to not only read the card effect, 
-    // but to also use it if it has one.
-    public void ReadTheCard(ScriptableCard card)
-    {
-        StopCoroutine("CountDown");
-        timerIsOn = false;
-        StartCoroutine("ActionCountDown");
-        buttons[0].gameObject.SetActive(false);
-        buttons[2].gameObject.SetActive(false);
 
-        player1CoinText.text = player1Hand.playerGold.ToString();
-        player1ManaText.text = player1Hand.playerMana.ToString();
-        player2CoinText.text = player2Hand.playerGold.ToString();
-        player2ManaText.text = player2Hand.playerMana.ToString();
-        string[] message =card.description.Split(' ');
-        for(int i=0;message.Length>i; i++)
-        {
-            print(message[i]);
-        }
-        //switch stament geos here
-    }
 
     public void UntapCard()
     {
@@ -493,4 +473,163 @@ public class TurnBaseScript : MonoBehaviour
     }
     #endregion
 
+    //This will be use in order to not only read the card effect, 
+    // but to also use it if it has one.
+    public void ReadTheCard(ScriptableCard card)
+    {
+        StopCoroutine("CountDown");
+        timerIsOn = false;
+        StartCoroutine("ActionCountDown");
+        buttons[0].gameObject.SetActive(false);
+        buttons[2].gameObject.SetActive(false);
+
+        player1CoinText.text = player1Hand.playerGold.ToString();
+        player1ManaText.text = player1Hand.playerMana.ToString();
+        player2CoinText.text = player2Hand.playerGold.ToString();
+        player2ManaText.text = player2Hand.playerMana.ToString();
+        string[] message = card.description.Split(' ');
+        //      for (int i = 0; message.Length > i; i++)
+        //      {
+        //          print(message[i]);
+        //      }
+        switch (message[0])
+        {
+            case "Spell:":
+
+                switch (message[1])
+                {
+                    case "damage":
+                        spellDamage(message[2], message[3]);
+                        break;
+
+                    case "upgrade":
+
+                        break;
+
+                    case "summon":
+
+                        break;
+
+                    case "earn":
+
+                        break;
+
+                    case "convert":
+
+                        break;
+
+                    case "dissable":
+
+                        break;
+                }
+                break;
+            case "sacrifice:":
+                sacrifice(message[1], message[2]);
+                break;
+        }
+    }
+    void spellDamage(string target, string Damage)
+    {
+        if (target == "all")
+        {
+
+
+            if (playerTurn == true)
+            {
+                for (int i = 0; player2Hand.active_cards > i; i++)
+                    player2Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.health -= int.Parse(Damage);
+            }
+            else
+            {
+                for (int i = 0; player2Hand.active_cards > i; i++)
+                    player1Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.health -= int.Parse(Damage);
+            }
+
+
+        }
+        else
+        {
+
+            List<GameObject> SelectedCards = new List<GameObject>();
+            StartCoroutine(waitforDamage(int.Parse(target), SelectedCards, int.Parse(Damage)));
+            StartCoroutine(pause_sellection_outher_hand(int.Parse(target), SelectedCards));
+
+
+        }
+    }
+    void sacrifice(string nuber, string unit_type)
+    {
+        if (playerTurn == true)
+        {
+            List<GameObject> SelectedCards = new List<GameObject>();
+            StartCoroutine(pause_sellection_own_hand(int.Parse(nuber), unit_type, SelectedCards));
+            StartCoroutine(player_sacrifice(int.Parse(nuber), SelectedCards));
+        }
+        else
+        {
+            //Ai option
+        }
+    }
+    IEnumerator pause_sellection_own_hand(int cardcount, string Unitytype, List<GameObject> selectedCards)
+    {
+        //selectedCards = new List<GameObject>();
+        timerIsOn = false;
+        TurnState lastState = state;
+        if (playerTurn == true) {
+            state = TurnState.Nothing;
+            StartCoroutine(player1Hand.sellectCards(selectedCards, Unitytype));
+            yield return new WaitUntil(() => selectedCards.Count == cardcount);
+            state = lastState;
+            for (int i = 0; selectedCards.Count > i; i++)
+                print(selectedCards[i].gameObject.GetComponent<CardDisplay>().card.name);
+            timerIsOn = true;
+
+
+        }
+        else
+        {
+            //Ai option
+        }
+
+    }
+    IEnumerator pause_sellection_outher_hand(int cardcount, List<GameObject> selectedCards)
+    {
+       // selectedCards = new List<GameObject>();
+        timerIsOn = false;
+        TurnState lastState = state;
+        if (playerTurn == true)
+        {
+            state = TurnState.Nothing;
+            StartCoroutine(player1Hand.sellectEnemyCards(selectedCards));
+            yield return new WaitUntil(() => selectedCards.Count == cardcount);
+            state = lastState;
+            for (int i = 0; selectedCards.Count > i; i++)
+                print(selectedCards[i].gameObject.GetComponent<CardDisplay>().card.name);
+            timerIsOn = true;
+
+        }
+        else
+        {
+
+        }
+
+    }
+
+    IEnumerator player_sacrifice(int cardcount, List<GameObject> selectedCards)
+    {
+        yield return new WaitUntil(() => selectedCards.Count == cardcount);
+        for (int i = 0; selectedCards.Count > i; i++)
+        {
+            selectedCards[i].GetComponent<CardDisplay>().card.health = 0;
+        }
+    }
+
+    IEnumerator waitforDamage(int cardcount,List<GameObject> selectedCards,int damage)
+    {
+        yield return new WaitUntil(() => selectedCards.Count == cardcount);
+        for (int i = 0; selectedCards.Count > i; i++)
+        {
+            selectedCards[i].GetComponent<CardDisplay>().card.health -= damage;
+        }
+    }
 }
