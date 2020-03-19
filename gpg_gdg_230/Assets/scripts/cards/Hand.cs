@@ -150,7 +150,7 @@ public class Hand : MonoBehaviour
                             string[] brokenName = compareName.Split(' ');
                             for (int x = 0; brokenName.Length > x; x++)
                             {
-                                if (brokenName[i] == unitType)
+                                if (brokenName[x] == unitType)
                                 {
                                     selectedCards.Add(selectedCard);
                                 }

@@ -498,12 +498,14 @@ public class TurnBaseScript : MonoBehaviour
 
                 switch (message[1])
                 {
+                        //number of units / damage
                     case "damage":
                         spellDamage(message[2], message[3]);
                         break;
 
+                        //number of units / unit type / "attack" / damage / "defence" / deffence
                     case "upgrade":
-
+                        upgrade(message[2], message[3], message[5],message[7]);
                         break;
 
                     case "summon":
@@ -511,11 +513,11 @@ public class TurnBaseScript : MonoBehaviour
                         break;
 
                     case "earn":
-
+                        //
                         break;
 
                     case "convert":
-
+                        convert(message[2]);
                         break;
 
                     case "dissable":
@@ -523,6 +525,8 @@ public class TurnBaseScript : MonoBehaviour
                         break;
                 }
                 break;
+
+                //number of units / unit type
             case "sacrifice:":
                 sacrifice(message[1], message[2]);
                 break;
@@ -570,6 +574,32 @@ public class TurnBaseScript : MonoBehaviour
             //Ai option
         }
     }
+
+    void upgrade(string nuber, string unit_type, string attack, string health)
+    {
+        if (playerTurn == true)
+        {
+            List<GameObject> SelectedCards = new List<GameObject>();
+            StartCoroutine(pause_sellection_own_hand(int.Parse(nuber), unit_type, SelectedCards));
+            StartCoroutine(waitForUpgrade(int.Parse(nuber), SelectedCards,int.Parse(attack),int.Parse(health)));
+        }
+        else
+        {
+            //Ai option
+        }
+    }
+
+    void convert(string units)
+    {
+        if (playerTurn == true)
+        {
+            List<GameObject> SelectedCards = new List<GameObject>();
+            StartCoroutine(waitForConvert(int.Parse(units), SelectedCards));
+            StartCoroutine(pause_sellection_outher_hand(int.Parse(units), SelectedCards));
+        }
+    }
+
+
     IEnumerator pause_sellection_own_hand(int cardcount, string Unitytype, List<GameObject> selectedCards)
     {
         //selectedCards = new List<GameObject>();
@@ -586,11 +616,7 @@ public class TurnBaseScript : MonoBehaviour
 
 
         }
-        else
-        {
-            //Ai option
-        }
-
+        
     }
     IEnumerator pause_sellection_outher_hand(int cardcount, List<GameObject> selectedCards)
     {
@@ -608,10 +634,7 @@ public class TurnBaseScript : MonoBehaviour
             timerIsOn = true;
 
         }
-        else
-        {
-
-        }
+    
 
     }
 
@@ -630,6 +653,42 @@ public class TurnBaseScript : MonoBehaviour
         for (int i = 0; selectedCards.Count > i; i++)
         {
             selectedCards[i].GetComponent<CardDisplay>().card.health -= damage;
+        }
+    }
+    IEnumerator waitForUpgrade(int cardcount,List<GameObject> selectedCards, int damage, int health)
+    {
+        yield return new WaitUntil(() => selectedCards.Count == cardcount);
+        for (int i = 0; selectedCards.Count > i; i++)
+        {
+            selectedCards[i].GetComponent<CardDisplay>().card.health += health;
+            selectedCards[i].GetComponent<CardDisplay>().card.attack += damage;
+        }
+    }
+    IEnumerator waitForConvert(int cardcount, List<GameObject> selectedCards)
+    {
+        yield return new WaitUntil(() => selectedCards.Count == cardcount);
+        for (int i = 0; selectedCards.Count > i; i++)
+        {
+            if (player1Hand.active_cards < 5)
+            {
+                for(int x=0; player2Hand.active_cards_slots.Length > x ;x++)
+                {
+                    if (player2Hand.active_cards_slots[x] == selectedCards[i])
+                    {
+                        player2Hand.active_cards_slots[x] = null;
+                        player2Hand.active_cards--;
+                        
+                        for (int y = x; player2Hand.active_cards > y; y++)
+                        {
+                            player2Hand.active_cards_slots[y] = player2Hand.active_cards_slots[y + 1];
+                        }
+                    }
+
+                }
+
+                player1Hand.active_cards_slots[player1Hand.active_cards] = selectedCards[i];
+                player1Hand.active_cards++;
+            }
         }
     }
 }
