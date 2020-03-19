@@ -509,19 +509,19 @@ public class TurnBaseScript : MonoBehaviour
                         break;
 
                     case "summon":
-
+                        //need refrence unit
                         break;
 
                     case "earn":
-                        //
+                        //need refrence from G
                         break;
-
+                        // number of units
                     case "convert":
                         convert(message[2]);
                         break;
-
+                        // number of units
                     case "dissable":
-
+                        disable(message[2]);
                         break;
                 }
                 break;
@@ -597,6 +597,13 @@ public class TurnBaseScript : MonoBehaviour
             StartCoroutine(waitForConvert(int.Parse(units), SelectedCards));
             StartCoroutine(pause_sellection_outher_hand(int.Parse(units), SelectedCards));
         }
+    }
+
+    void disable(string units)
+    {
+        List<GameObject> SelectedCards = new List<GameObject>();
+        StartCoroutine(waitForDisable(int.Parse(units), SelectedCards));
+        StartCoroutine(pause_sellection_outher_hand(int.Parse(units), SelectedCards));
     }
 
 
@@ -689,6 +696,14 @@ public class TurnBaseScript : MonoBehaviour
                 player1Hand.active_cards_slots[player1Hand.active_cards] = selectedCards[i];
                 player1Hand.active_cards++;
             }
+        }
+    }
+    IEnumerator waitForDisable(int cardcount, List<GameObject> selectedCards)
+    {
+        yield return new WaitUntil(() => selectedCards.Count == cardcount);
+        for (int i = 0; selectedCards.Count > i; i++)
+        {
+            selectedCards[i].GetComponent<CardDisplay>().card.monsterSickness = true;
         }
     }
 }
