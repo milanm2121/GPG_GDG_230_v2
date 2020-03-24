@@ -63,6 +63,8 @@ public class TurnBaseScript : MonoBehaviour
     public GameObject AI_active_ui;
     //added by milan
     public int turns = 0;
+
+    public int cardReadDelay = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -267,6 +269,16 @@ public class TurnBaseScript : MonoBehaviour
                 TimerEndTurn();
                 break;
 
+            case (TurnState.CardPlayed):
+                if (actiontime <= 0)
+                {
+                    StopCoroutine("ActionCountDown");
+                    actiontime = cardReadDelay;
+                    if (state == TurnState.CardPlayed)
+                        state = TurnState.PlayerTurn;
+                }
+                break;
+
         }
 
         if (player1Health <= 0 || player2Health <= 0)
@@ -277,12 +289,7 @@ public class TurnBaseScript : MonoBehaviour
             }
         }
 
-        if (actiontime <= 0)
-        {
-            StopCoroutine("ActionCountDown");
-            actiontime = 3;
-            state = TurnState.PlayerTurn;
-        }
+        
     }
     #endregion
 
@@ -488,13 +495,20 @@ public class TurnBaseScript : MonoBehaviour
         player2CoinText.text = player2Hand.playerGold.ToString();
         player2ManaText.text = player2Hand.playerMana.ToString();
         string[] message = card.description.Split(' ');
-        //      for (int i = 0; message.Length > i; i++)
-        //      {
-        //          print(message[i]);
-        //      }
+
+        if(message[0]=="Spell:" || message[0]== "sacrifice:")
+        {
+            cardReadDelay = 10;
+        }
+        else
+        {
+            cardReadDelay = 0;
+        }
+
         switch (message[0])
         {
             case "Spell:":
+                
 
                 switch (message[1])
                 {
@@ -705,5 +719,6 @@ public class TurnBaseScript : MonoBehaviour
         {
             selectedCards[i].GetComponent<CardDisplay>().card.monsterSickness = true;
         }
+        cardReadDelay = 0;
     }
 }

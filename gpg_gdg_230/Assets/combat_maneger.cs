@@ -74,8 +74,8 @@ public class combat_maneger : MonoBehaviour
         DelayedRemoval.Clear();
         defend.Clear();
         //changes state to stop combatphose
-        TBS.state = TurnBaseScript.TurnState.PlayerTurn;
-        //bool tick to stop calling og the combatphase
+        TBS.state = TurnBaseScript.TurnState.Nothing;
+        //bool tick to stop calling of the combatphase
         started_combat = false;
         if (TBS.playerTurn == false)
         {
