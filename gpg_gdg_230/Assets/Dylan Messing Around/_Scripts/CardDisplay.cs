@@ -16,6 +16,7 @@ public class CardDisplay : MonoBehaviour
     public Text attackText;
     public Text healthText;
 
+    public Color sickness;
     // Start is called before the first frame update
     void Start()
     {
@@ -34,6 +35,16 @@ public class CardDisplay : MonoBehaviour
 
         healthText.text = card.health.ToString();
         attackText.text = card.attack.ToString();
+        if (card.monsterSickness == true)
+        {
+            gameObject.transform.GetChild(1).GetComponent<Image>().color = sickness;
+            
+        }
+        else
+        {
+            gameObject.transform.GetChild(1).GetComponent<Image>().color = Color.white;
+
+        }
     }
 
 }

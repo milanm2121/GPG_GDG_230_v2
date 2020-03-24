@@ -799,6 +799,7 @@ MonoBehaviour:
   manaText: {fileID: 8099801057495556518}
   attackText: {fileID: 8099801058317950843}
   healthText: {fileID: 8099801058512465584}
+  sickness: {r: 0.5660378, g: 0.5660378, b: 0.5660378, a: 1}
 --- !u!114 &1670919300621037008
 MonoBehaviour:
   m_ObjectHideFlags: 0
