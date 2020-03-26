@@ -1,5 +1,9 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/Scenes/card_tabel.unity
+=======
+- path: Assets/Guillaume Messing Around/PVPTableScene.unity
+>>>>>>> parent of ebcea7b... add-ons
   isLoaded: 1
   isActive: 1
   isSubScene: 0

@@ -1,5 +1,9 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 ﻿{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audioPlay":false,"sceneViewState":{"showFog":true,"showMaterialUpdate":false,"showSkybox":true,"showFlares":true,"showImageEffects":true,"showParticleSystems":true},"in2DMode":true,"pivot":{"x":528.691650390625,"y":135.85394287109376,"z":-239.70314025878907},"rotation":{"x":0.0,"y":0.0,"z":0.0,"w":1.0},"size":676.3649291992188,"orthographic":true}
 =======
 ﻿{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audioPlay":false,"sceneViewState":{"showFog":true,"showMaterialUpdate":false,"showSkybox":true,"showFlares":true,"showImageEffects":true,"showParticleSystems":true},"in2DMode":true,"pivot":{"x":-0.14126969873905183,"y":0.006862819194793701,"z":-7.3585124015808109},"rotation":{"x":0.0,"y":0.0,"z":0.0,"w":1.0},"size":14.896576881408692,"orthographic":true}
 >>>>>>> parent of 7a6be41... push
+=======
+﻿{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audioPlay":false,"sceneViewState":{"showFog":true,"showMaterialUpdate":false,"showSkybox":true,"showFlares":true,"showImageEffects":true,"showParticleSystems":true},"in2DMode":true,"pivot":{"x":528.691650390625,"y":135.85394287109376,"z":-239.70314025878907},"rotation":{"x":0.0,"y":0.0,"z":0.0,"w":1.0},"size":676.3649291992188,"orthographic":true}
+>>>>>>> parent of ebcea7b... add-ons
