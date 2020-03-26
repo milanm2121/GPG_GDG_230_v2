@@ -1,9 +1,5 @@
 <<<<<<< HEAD
-<<<<<<< HEAD
 ﻿{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audioPlay":false,"sceneViewState":{"showFog":true,"showMaterialUpdate":false,"showSkybox":true,"showFlares":true,"showImageEffects":true,"showParticleSystems":true},"in2DMode":true,"pivot":{"x":-6.2920732498168949,"y":0.8560538291931152,"z":-360.6273193359375},"rotation":{"x":0.0,"y":0.0,"z":0.0,"w":1.0},"size":6.812197685241699,"orthographic":true}
-=======
-﻿{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audioPlay":false,"sceneViewState":{"showFog":true,"showMaterialUpdate":false,"showSkybox":true,"showFlares":true,"showImageEffects":true,"showParticleSystems":true},"in2DMode":true,"pivot":{"x":64.57257080078125,"y":-20.567949295043947,"z":-7999.5634765625},"rotation":{"x":0.0,"y":0.0,"z":0.0,"w":1.0},"size":747.7080078125,"orthographic":true}
->>>>>>> parent of 04ae661... ui changes needs alot of work
 =======
 ﻿{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audioPlay":false,"sceneViewState":{"showFog":true,"showMaterialUpdate":false,"showSkybox":true,"showFlares":true,"showImageEffects":true,"showParticleSystems":true},"in2DMode":true,"pivot":{"x":64.57257080078125,"y":-20.567949295043947,"z":-7999.5634765625},"rotation":{"x":0.0,"y":0.0,"z":0.0,"w":1.0},"size":747.7080078125,"orthographic":true}
 >>>>>>> parent of 04ae661... ui changes needs alot of work
