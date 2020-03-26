@@ -748,7 +748,7 @@ GameObject:
   - component: {fileID: -2469028879757637363}
   - component: {fileID: -7312176205006084540}
   m_Layer: 5
-  m_Name: spell card template 1
+  m_Name: card template
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -799,7 +799,6 @@ MonoBehaviour:
   manaText: {fileID: 8099801057495556518}
   attackText: {fileID: 8099801058317950843}
   healthText: {fileID: 8099801058512465584}
-  sickness: {r: 0.6226415, g: 0.6226415, b: 0.6226415, a: 1}
 --- !u!114 &1670919300621037008
 MonoBehaviour:
   m_ObjectHideFlags: 0
