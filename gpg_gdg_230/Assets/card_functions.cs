@@ -7,11 +7,13 @@ public class card_functions : MonoBehaviour
     public Hand hand;
 
     public bool isInHand = true;
+
     //public Hand hand2;
 
     // Start is called before the first frame update
     void Start()
     {
+
         if(GameObject.Find("player1")!=null)
             hand = GameObject.Find("player1").GetComponent<Hand>();
     }
@@ -30,6 +32,11 @@ public class card_functions : MonoBehaviour
 
         }
     }
+
+
+    
+
+
 
     /*
     //To detect which turn it is in order to play a card.

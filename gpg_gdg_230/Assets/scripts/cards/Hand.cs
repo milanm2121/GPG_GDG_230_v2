@@ -95,6 +95,7 @@ public class Hand : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         //repositions the cards
         for (int i = 0; cards_in_hand > i; i++)
         {
@@ -384,12 +385,9 @@ public class Hand : MonoBehaviour
                 picked_card.GetComponent<card_functions>().isInHand = false;
                 TBS.state = TurnBaseScript.TurnState.CardPlayed;
             }
-            else
+            else if(picked_card.GetComponent<CardDisplay>().card.isSpell == true)
             {
                 //magic stuff spell efects are put here
-
-
-
                 cards_in_hand -= 1;
                 playerMana -= picked_card.GetComponent<CardDisplay>().card.manaCost;
 
@@ -409,6 +407,10 @@ public class Hand : MonoBehaviour
             picked_card.GetComponent<CardDisplay>().card.monsterSickness = true;
 
             StartCoroutine(unsick(picked_card,this));
+
+            picked_card.GetComponent<CardDisplay>().hide =false;
+            picked_card.GetComponent<CardDisplay>().active = true;
+
         }
     }
 

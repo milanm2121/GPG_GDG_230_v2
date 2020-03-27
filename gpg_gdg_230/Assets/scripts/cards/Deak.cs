@@ -89,7 +89,14 @@ public class Deak : MonoBehaviour
         //Random_card.GetComponent<card_functions>().hand = hand;
 
         Random_card.GetComponent<RectTransform>().localScale = new Vector2(0.6f,0.6f);
+        if (hand.player == false)
+        {
+            Random_card.GetComponent<CardDisplay>().hide = true;
+        }
+
         return Random_card;
+
+        
     }
 
 }
