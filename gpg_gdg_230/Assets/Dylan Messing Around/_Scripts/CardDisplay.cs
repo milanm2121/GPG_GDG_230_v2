@@ -25,6 +25,9 @@ public class CardDisplay : MonoBehaviour
 
     public bool active=false;
 
+    //0=none, 1==attackig, 2== defending
+    public byte attack_defend = 0;
+
     
     // Start is called before the first frame update
     void Start()
@@ -45,7 +48,7 @@ public class CardDisplay : MonoBehaviour
         healthText.text = card.health.ToString();
         attackText.text = card.attack.ToString();
 
-        if (active)
+        if (active && attack_defend==0)
         {
             if (card.monsterSickness == true)
             {
@@ -55,6 +58,14 @@ public class CardDisplay : MonoBehaviour
             {
                 cardTemplate.color = Color.white;
             }
+        }
+        else if(attack_defend==1)
+        {
+            cardTemplate.color = Color.red;
+        }
+        else if (attack_defend == 2)
+        {
+            cardTemplate.color = Color.blue;
         }
 
         if (hide == true)

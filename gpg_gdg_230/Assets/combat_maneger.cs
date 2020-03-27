@@ -7,7 +7,9 @@ public class combat_maneger : MonoBehaviour
     public TurnBaseScript TBS;
 
     public List<GameObject> attack= new List<GameObject>();
-    public List<GameObject> defend = new List<GameObject>();
+    public List<GameObject> deffendingCardsRef = new List<GameObject>();
+
+    public GameObject[] defend = new GameObject[5];
     public List<GameObject> DelayedRemoval = new List<GameObject>();
 
     public bool started_combat=false;
@@ -37,7 +39,7 @@ public class combat_maneger : MonoBehaviour
         for (int i = 0; attack.Count > i; i++)
         {
             //card defending card blocks attack from attacking card of the same position
-            if (defend.Count > i && defend.Count != 0 && defend[i] != null)
+            if (defend[i] != null)
             {
                 int newHealth = defend[i].GetComponent<CardDisplay>().card.health - attack[i].GetComponent<CardDisplay>().card.attack;
                 defend[i].GetComponent<CardDisplay>().card.health = newHealth;
@@ -66,13 +68,23 @@ public class combat_maneger : MonoBehaviour
         }
         yield return new WaitForFixedUpdate();
         //clears list
-        attack.Clear();
-        for(int i=0; DelayedRemoval.Count > i; i++)
+        for(int i=0;attack.Count>i; i++)
         {
-            defend.Remove(DelayedRemoval[i]);
+            attack[i].GetComponent<CardDisplay>().attack_defend = 0;
         }
-        DelayedRemoval.Clear();
-        defend.Clear();
+        attack.Clear();
+
+
+        for (int i = 0; 5 > i; i++)
+        {
+            if (defend[i] != null)
+            {
+                defend[i].GetComponent<CardDisplay>().attack_defend = 0;
+                defend[i] = null;
+            }
+
+        }
+
         //changes state to stop combatphose
         TBS.state = TurnBaseScript.TurnState.Nothing;
         //bool tick to stop calling of the combatphase

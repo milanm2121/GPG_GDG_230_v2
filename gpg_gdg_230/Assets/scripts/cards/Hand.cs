@@ -101,7 +101,8 @@ public class Hand : MonoBehaviour
         {
             hand[i].transform.position = Vector3.Lerp(hand[i].transform.position, hand_slots[i].position, 0.5f);
         }
-        if (TBS.state != TurnBaseScript.TurnState.EndofBattle)
+
+        if(TBS.state != TurnBaseScript.TurnState.EndofBattle)
         {
             for (int i = 0; active_cards > i; i++)
             {
@@ -204,10 +205,11 @@ public class Hand : MonoBehaviour
                                 //this function adds the cards to a list that the combat maneger uses
                                 SetToAttack(selectedCard);
                             }
-                            else if (active == false && TBS.state == TurnBaseScript.TurnState.Response && cm.defend.Contains(selectedCard) == false)
+                            else if (active == false && TBS.state == TurnBaseScript.TurnState.Response && cm.deffendingCardsRef.Contains(selectedCard) == false)
                             {
                                 //this function adds the cards to a list that the combat maneger uses and rtates the card 90 degres
-                                SetToDefend(selectedCard);
+                                StartCoroutine(WaitToDefend(selectedCard));
+                                print("working");
                             }
                         }
 
@@ -255,7 +257,6 @@ public class Hand : MonoBehaviour
                     {
                         for (int i = active_cards+1-TBS.player1Hand.active_cards; active_cards > i || i<0; i++)
                         {
-                            print(i);
                             if (i > 0 && active_cards_slots[i].GetComponent<CardDisplay>().card.attack > 0 && cm.attack.Contains(active_cards_slots[i]) == false)
                             {
                                 SetToAttack(active_cards_slots[i]);
@@ -273,16 +274,16 @@ public class Hand : MonoBehaviour
             int defending_cards = 0;
             for (int i = 0; TBS.player1Hand.active_cards > i; i++)
             {
-                if (active_cards>i && active_cards_slots[i].GetComponent<CardDisplay>().card.health > 1 && cm.defend.Contains(active_cards_slots[i]) == false)
-                    SetToDefend(active_cards_slots[i]);
+                if (active_cards>i && active_cards_slots[i].GetComponent<CardDisplay>().card.health > 1 && cm.deffendingCardsRef.Contains(active_cards_slots[i]) == false)
+                    SetToDefend(active_cards_slots[i],Random.Range(0,cm.attack.Count+1));
                 defending_cards++;
             }
             if (defending_cards <= 2)
             {
                 for (int i = 0; active_cards > i; i++)
                 {
-                    if (active_cards_slots[i]!=null && cm.defend.Contains(active_cards_slots[i]) == false)
-                        SetToDefend(active_cards_slots[i]);
+                    if (active_cards_slots[i]!=null && cm.deffendingCardsRef.Contains(active_cards_slots[i]) == false)
+                        SetToDefend(active_cards_slots[i], Random.Range(0, cm.attack.Count + 1));
                     defending_cards++;
                     if (defending_cards >= 3)
                         break;
@@ -416,24 +417,27 @@ public class Hand : MonoBehaviour
 
     public void SetToAttack(GameObject card)
     {
-        print(card.GetComponent<CardDisplay>().card.monsterSickness);
         if (card.GetComponent<CardDisplay>().card.monsterSickness == false)
         {
             card.transform.rotation = Quaternion.Euler(0, 0, 90);
             cm.attack.Add(card);
   //          Debug.Log("Can Attack");
             card.GetComponent<CardDisplay>().card.monsterSickness = true;
+
+            card.GetComponent<CardDisplay>().attack_defend = 1;
         }
     //    else
   //          Debug.Log("Can't Attack");
     }
 
-    public void SetToDefend(GameObject card)
+    public void SetToDefend(GameObject card, int card_to_defend)
     {
-        if (card.GetComponent<CardDisplay>().card.monsterSickness == false)
+        if (card.GetComponent<CardDisplay>().card.monsterSickness == false && cm.defend[card_to_defend]==null)
         {
             card.transform.rotation = Quaternion.Euler(0, 0, 90);
-            cm.defend.Add(card);
+            cm.deffendingCardsRef.Add(card);
+            cm.defend[card_to_defend] = card;
+            card.GetComponent<CardDisplay>().attack_defend = 2;
         }
     }
 
@@ -446,10 +450,7 @@ public class Hand : MonoBehaviour
         {
             active_cards_slots[x] = active_cards_slots[x + 1];
         }
-        if (cm.defend.Contains(card))
-        {
-            cm.DelayedRemoval.Add(card);
-        }
+        
         fieldCard.Remove(card);
         Destroy(card);
 
@@ -516,6 +517,28 @@ public class Hand : MonoBehaviour
         selectedCards = cardSelection;
         selectingEnemyCards = true;
         yield return new WaitUntil(() => TBS.state != TurnBaseScript.TurnState.Nothing);
+        selectingEnemyCards = false;
+    }
+
+    IEnumerator WaitToDefend(GameObject defendingCard)
+    {
+        print("waiting");
+        List<GameObject> attackingcard = new List<GameObject>();
+        StartCoroutine(selectAttackingCard(attackingcard));
+        yield return new WaitUntil(()=> attackingcard.Count==1);
+        GameObject ac =attackingcard[0];
+
+        for(int i=0;cm.attack.Count>i; i++)
+        {
+            SetToDefend(defendingCard, i);
+        }
+    }
+
+    IEnumerator selectAttackingCard(List<GameObject> cardselected)
+    {
+        selectedCards = cardselected;
+        selectingEnemyCards = true;
+        yield return new WaitUntil(() =>cardselected.Count==1);
         selectingEnemyCards = false;
     }
 }
