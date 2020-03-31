@@ -73,9 +73,14 @@ public class Hand : MonoBehaviour
     List<GameObject> selectedCards;
     string unitType;
 
+    //sounds
+    public AudioSource AS;
+    public AudioClip cardDestroy;
+
     // Start is called before the first frame update
     void Start()
     {
+        AS = GetComponent<AudioSource>();
         cam = GameObject.Find("Main Camera").GetComponent<Camera>();
         deck = GetComponent<Deak>();
         TBS = GameObject.Find("maneger object").GetComponent<TurnBaseScript>();
@@ -282,9 +287,11 @@ public class Hand : MonoBehaviour
             {
                 for (int i = 0; active_cards > i; i++)
                 {
-                    if (active_cards_slots[i]!=null && cm.deffendingCardsRef.Contains(active_cards_slots[i]) == false)
+                    if (active_cards_slots[i] != null && cm.deffendingCardsRef.Contains(active_cards_slots[i]) == false)
+                    {
                         SetToDefend(active_cards_slots[i], Random.Range(0, cm.attack.Count + 1));
-                    defending_cards++;
+                        defending_cards++;
+                    }
                     if (defending_cards >= 3)
                         break;
                 }
@@ -453,6 +460,8 @@ public class Hand : MonoBehaviour
         
         fieldCard.Remove(card);
         Destroy(card);
+        AS.clip = cardDestroy;
+        AS.Play();
 
     }
 
@@ -530,7 +539,8 @@ public class Hand : MonoBehaviour
 
         for(int i=0;cm.attack.Count>i; i++)
         {
-            SetToDefend(defendingCard, i);
+            if(cm.attack[i]==ac)
+                SetToDefend(defendingCard, i);
         }
     }
 

@@ -24,9 +24,11 @@ public class Deak : MonoBehaviour
     public GameObject cardTemp;
     public GameObject spellCardTemp;
 
+    public AudioSource AS;
+    public AudioClip cardDraw;
     void Start()
     {
-   //     cardTemp = GameObject.Find("card feild");
+        AS = GetComponent<AudioSource>();
     }
     public GameObject cardfeild;
     private void Update()
@@ -93,6 +95,8 @@ public class Deak : MonoBehaviour
         {
             Random_card.GetComponent<CardDisplay>().hide = true;
         }
+        AS.clip = cardDraw;
+        AS.Play();
 
         return Random_card;
 
