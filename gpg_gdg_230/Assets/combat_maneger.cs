@@ -70,7 +70,8 @@ public class combat_maneger : MonoBehaviour
         //clears list
         for(int i=0;attack.Count>i; i++)
         {
-            attack[i].GetComponent<CardDisplay>().attack_defend = 0;
+            if(attack[i]!=null)
+                attack[i].GetComponent<CardDisplay>().attack_defend = 0;
         }
         attack.Clear();
 
