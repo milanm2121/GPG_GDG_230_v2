@@ -328,7 +328,7 @@ public class Hand : MonoBehaviour
             hand[i] = deck.Pick_random(this);
             //creates a card crom the script heald in the deack
             
-            hand[i].transform.position = hand_slots[cards_in_hand].position;
+           // hand[i].transform.position = hand_slots[cards_in_hand].position;
 
             //adds a count to the cards in hand script
             cards_in_hand += 1;
@@ -377,7 +377,7 @@ public class Hand : MonoBehaviour
                 cards_in_hand -= 1;
                 active_cards += 1;
 
-                picked_card.gameObject.transform.position = active_slots[active_cards - 1].position;
+                picked_card.gameObject.transform.position = Vector2.zero;
 
                 //cleans up the hand array
                 for (int i = picked_card_index; cards_in_hand > i; i++)
