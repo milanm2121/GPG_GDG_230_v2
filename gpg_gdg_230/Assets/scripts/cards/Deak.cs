@@ -26,6 +26,9 @@ public class Deak : MonoBehaviour
 
     public AudioSource AS;
     public AudioClip cardDraw;
+
+    public GameObject UIdeck;
+
     void Start()
     {
         AS = GetComponent<AudioSource>();
@@ -40,6 +43,31 @@ public class Deak : MonoBehaviour
                 deak[i] = deak[i + 1];
             }
         }
+        if (Cards_active_deak == 32 && UIdeck.transform.childCount==5)
+        {
+            Destroy(UIdeck.transform.GetChild(4).gameObject);
+        }
+        if (Cards_active_deak == 24 && UIdeck.transform.childCount ==4)
+        {
+            Destroy(UIdeck.transform.GetChild(3).gameObject);
+
+        }
+        if (Cards_active_deak == 16 && UIdeck.transform.childCount ==3)
+        {
+            Destroy(UIdeck.transform.GetChild(2).gameObject);
+
+        }
+        if (Cards_active_deak == 8 && UIdeck.transform.childCount ==2)
+        {
+            Destroy(UIdeck.transform.GetChild(1).gameObject);
+
+        }
+        if (Cards_active_deak == 0 && UIdeck.transform.childCount ==1)
+        {
+            Destroy(UIdeck.transform.GetChild(0).gameObject);
+
+        }
+
     }
 
     //generates and spwans cards
@@ -87,8 +115,9 @@ public class Deak : MonoBehaviour
             deak[i] = null;
 
         Random_card.transform.parent= cardfeild.transform;
-        Random_card.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
-        //Random_card.GetComponent<card_functions>().hand = hand;
+
+        Vector3 x = UIdeck.transform.GetChild(UIdeck.transform.childCount-1).transform.position;
+        Random_card.transform.position = x;
 
         Random_card.GetComponent<RectTransform>().localScale = new Vector2(0.6f,0.6f);
         if (hand.player == false)
