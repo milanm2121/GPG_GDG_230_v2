@@ -76,6 +76,8 @@ public class Hand : MonoBehaviour
     //sounds
     public AudioSource AS;
     public AudioClip cardDestroy;
+    public AudioClip unitplay;
+    public AudioClip spellPlay;
 
     // Start is called before the first frame update
     void Start()
@@ -369,6 +371,10 @@ public class Hand : MonoBehaviour
             //cheaks if the card is magic or a unit
             if (picked_card.GetComponent<CardDisplay>().card.isSpell == false && active_cards < 5)
             {
+                AS.clip = unitplay;
+                AS.Play();
+
+
                 playerGold -= picked_card.GetComponent<CardDisplay>().card.manaCost;
                 //moves the card from the hand into the feild
                 active_cards_slots[active_cards] = picked_card;
@@ -395,6 +401,8 @@ public class Hand : MonoBehaviour
             }
             else if(picked_card.GetComponent<CardDisplay>().card.isSpell == true)
             {
+                AS.clip = spellPlay;
+                AS.Play();
                 //magic stuff spell efects are put here
                 cards_in_hand -= 1;
                 playerMana -= picked_card.GetComponent<CardDisplay>().card.manaCost;

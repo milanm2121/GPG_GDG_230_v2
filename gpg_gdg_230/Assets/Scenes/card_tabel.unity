@@ -1240,6 +1240,8 @@ MonoBehaviour:
   firstAttack: 1
   AS: {fileID: 0}
   cardDestroy: {fileID: 8300000, guid: 63cabab8765b04c9daf7c6237157c31b, type: 3}
+  unitplay: {fileID: 8300000, guid: 083c9d4b9cd3e49edb7a166e6c64b3df, type: 3}
+  spellPlay: {fileID: 8300000, guid: 22af4a3e4877d473e9cb321040da904a, type: 3}
 --- !u!4 &288857956
 Transform:
   m_ObjectHideFlags: 0
@@ -4364,6 +4366,8 @@ MonoBehaviour:
   firstAttack: 1
   AS: {fileID: 0}
   cardDestroy: {fileID: 8300000, guid: 63cabab8765b04c9daf7c6237157c31b, type: 3}
+  unitplay: {fileID: 8300000, guid: 083c9d4b9cd3e49edb7a166e6c64b3df, type: 3}
+  spellPlay: {fileID: 8300000, guid: 22af4a3e4877d473e9cb321040da904a, type: 3}
 --- !u!4 &1389315625
 Transform:
   m_ObjectHideFlags: 0
@@ -5954,6 +5958,21 @@ PrefabInstance:
       propertyPath: player_active_ui
       value: 
       objectReference: {fileID: 1127912150}
+    - target: {fileID: 2285168136727759004, guid: 10016f06ccc7fc84c83dbb0ad76e50f7,
+        type: 3}
+      propertyPath: AS
+      value: 
+      objectReference: {fileID: 927181626}
+    - target: {fileID: 2285168136727759004, guid: 10016f06ccc7fc84c83dbb0ad76e50f7,
+        type: 3}
+      propertyPath: win
+      value: 
+      objectReference: {fileID: 8300000, guid: 8cdca3789fd1b4b248fcbb210dc8a68f, type: 3}
+    - target: {fileID: 2285168136727759004, guid: 10016f06ccc7fc84c83dbb0ad76e50f7,
+        type: 3}
+      propertyPath: lose
+      value: 
+      objectReference: {fileID: 8300000, guid: a9d050f35404c429289be5d7d7a83720, type: 3}
     - target: {fileID: 2285168136727759007, guid: 10016f06ccc7fc84c83dbb0ad76e50f7,
         type: 3}
       propertyPath: m_LocalPosition.x

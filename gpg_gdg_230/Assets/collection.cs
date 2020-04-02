@@ -62,7 +62,10 @@ public class collection : MonoBehaviour
     public int cardsInCreateDeak=0;
 
     public GameObject deckcreation;
-    
+
+    public AudioSource AS;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -203,6 +206,7 @@ public class collection : MonoBehaviour
         //adds deack to deack screan
         loadDeacks();
         deckcreation.SetActive(false);
+        AS.Play();
     }
     public void loadDeacks()
     {
