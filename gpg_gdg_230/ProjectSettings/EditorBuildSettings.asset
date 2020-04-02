@@ -6,15 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
     path: Assets/Scenes/main_menu.unity
     guid: 0e7bdaa8a6463284eb1e4636ba214d28
   - enabled: 1
     path: Assets/Scenes/card_tabel.unity
     guid: 7bd53bf5c8413684bbbe4cecd7d5d6b2
-  - enabled: 1
-    path: Assets/Scenes/deak_customisation.unity
-    guid: 0aff8313456ecd844a16d18aac09435b
   m_configObjects: {}
