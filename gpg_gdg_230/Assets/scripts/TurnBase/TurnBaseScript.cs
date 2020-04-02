@@ -66,6 +66,11 @@ public class TurnBaseScript : MonoBehaviour
 
     public int cardReadDelay = 0;
 
+    public AudioSource AS;
+
+    public AudioClip win;
+    public AudioClip lose;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -411,6 +416,10 @@ public class TurnBaseScript : MonoBehaviour
         if (player1AFKStrike == 3)
         {
             Debug.Log("Player 1 lose");
+            AS.clip = lose;
+            AS.loop = false;
+            AS.Play();
+
             for (int i = 0; buttons.Length > i; i++)
             {
                 buttons[i].SetActive(false);
@@ -418,6 +427,9 @@ public class TurnBaseScript : MonoBehaviour
         }
         if (player2AFKStrike == 3)
         {
+            AS.clip = win;
+            AS.loop = false;
+            AS.Play();
             Debug.Log("Player 2  lose");
             for (int i = 0; buttons.Length > i; i++)
             {
@@ -427,6 +439,9 @@ public class TurnBaseScript : MonoBehaviour
 
         if (player1Health <= 0)
         {
+            AS.clip = lose;
+            AS.loop = false;
+            AS.Play();
             Debug.Log("Player 1 Lose");
             for (int i = 0; buttons.Length > i; i++)
             {
@@ -435,6 +450,9 @@ public class TurnBaseScript : MonoBehaviour
         }
         if (player2Health <= 0)
         {
+            AS.clip = win;
+            AS.loop = false;
+            AS.Play();
             Debug.Log("Player 2 Lose");
             for (int i = 0; buttons.Length > i; i++)
             {
