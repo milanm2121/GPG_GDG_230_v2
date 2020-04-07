@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 615dd9c20f7fa234b9eb1a59bd2aec1a, type: 3}
   m_Name: Upgrade
   m_EditorClassIdentifier: 
-  ID: 0
-  name: 
-  description: 
+  ID: 26
+  name: Upgrade
+  description: 'Spell: upgrade 1 trooper attack 2 deffence 3'
   artwork: {fileID: 0}
-  manaCost: 0
+  manaCost: 3
   attack: 0
   health: 0
-  isSpell: 0
-  monsterSickness: 1
+  isSpell: 1
+  monsterSickness: 0

@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 615dd9c20f7fa234b9eb1a59bd2aec1a, type: 3}
-  m_Name: New Card
+  m_Name: Mercenary
   m_EditorClassIdentifier: 
-  ID: 0
-  name: 
-  description: 
+  ID: 26
+  name: Mercenary
+  description: A futuristic mercenary soldier
   artwork: {fileID: 0}
-  manaCost: 0
-  attack: 0
-  health: 0
+  manaCost: 3
+  attack: 2
+  health: 2
   isSpell: 0
   monsterSickness: 1

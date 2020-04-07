@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 615dd9c20f7fa234b9eb1a59bd2aec1a, type: 3}
-  m_Name: New Card
+  m_Name: trooper_in_trainig
   m_EditorClassIdentifier: 
-  ID: 0
-  name: 
+  ID: 23
+  name: trooper_in_trainig
   description: 
   artwork: {fileID: 0}
   manaCost: 0
-  attack: 0
-  health: 0
+  attack: 1
+  health: 1
   isSpell: 0
   monsterSickness: 1
