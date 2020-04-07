@@ -6,12 +6,12 @@ public class PurchasingCards : MonoBehaviour
 {
 
    public static int cardcost;
-    public collection collection;
+   public collection collection;
 
    public void PurcahseTheCards()
     {
         cardcost = 250;
-        if (cardcost >= FakeMicrotransactions.staticIngameCoins)
+        if (FakeMicrotransactions.staticIngameCoins >= cardcost)
         {
             FakeMicrotransactions.staticIngameCoins -= cardcost;
 
