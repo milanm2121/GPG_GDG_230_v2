@@ -41,13 +41,46 @@ public class combat_maneger : MonoBehaviour
             //card defending card blocks attack from attacking card of the same position
             if (defend[i] != null)
             {
-                int newHealth = defend[i].GetComponent<CardDisplay>().card.health - attack[i].GetComponent<CardDisplay>().card.attack;
-                defend[i].GetComponent<CardDisplay>().card.health = newHealth;
+                string Decription = defend[i].GetComponent<CardDisplay>().card.description;
+                string[] b = Decription.Split(' ');
+                bool doge=false;
+                for (int a = 0; b.Length > a; i++)
+                {
+                    if (b[i] == "Doge")
+                    {
+                        int chance = Random.Range(1, 10);
+                        if (chance >= 6)
+                            doge = true;
+                    }
+                }
+                if (doge == false) {
+                    int newHealth = defend[i].GetComponent<CardDisplay>().card.health - attack[i].GetComponent<CardDisplay>().card.attack;
+                    defend[i].GetComponent<CardDisplay>().card.health = newHealth;
+                    if (newHealth < 0)
+                    {
+                        string Decriptionx = attack[i].GetComponent<CardDisplay>().card.description;
+                        string[] x = Decriptionx.Split(' ');
+                        for (int y = 0; x.Length > y; i++)
+                        {
+                            if (x[i] == "Swarm")
+                            {
+                                if (TBS.playerTurn == false)
+                                {
+                                    TBS.player1Health += newHealth;
+                                    TBS.player1HealthText.text = TBS.player1Health.ToString();
+                                }
+                                else
+                                {
+                                    TBS.player2Health += newHealth;
+                                    TBS.player2HealthText.text = TBS.player2Health.ToString();
+                                }
 
-
-                newHealth = attack[i].GetComponent<CardDisplay>().card.health - defend[i].GetComponent<CardDisplay>().card.attack;
-                attack[i].GetComponent<CardDisplay>().card.health = newHealth;
-
+                            }
+                        }
+                    }
+                    newHealth = attack[i].GetComponent<CardDisplay>().card.health - defend[i].GetComponent<CardDisplay>().card.attack;
+                    attack[i].GetComponent<CardDisplay>().card.health = newHealth;
+                }
 
             }
             else//if there isnt anything blocking attacking card direclyattack player

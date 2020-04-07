@@ -423,6 +423,16 @@ public class Hand : MonoBehaviour
             picked_card.GetComponent<CardDisplay>().card.monsterSickness = true;
 
             StartCoroutine(unsick(picked_card,this));
+            string Decription = picked_card.GetComponent<CardDisplay>().card.description;
+            string[] x = Decription.Split(' ');
+            for(int i =0;x.Length>i; i++)
+            {
+                if (x[i] == "Haste")
+                {
+                    picked_card.GetComponent<CardDisplay>().card.monsterSickness = false;
+
+                }
+            }
 
             picked_card.GetComponent<CardDisplay>().hide =false;
             picked_card.GetComponent<CardDisplay>().active = true;
@@ -432,14 +442,39 @@ public class Hand : MonoBehaviour
 
     public void SetToAttack(GameObject card)
     {
-        if (card.GetComponent<CardDisplay>().card.monsterSickness == false)
+        string Decription = card.GetComponent<CardDisplay>().card.description;
+        string[] y = Decription.Split(' ');
+        bool imobile = false;
+        for (int i = 0; y.Length > i; i++)
         {
-            card.transform.rotation = Quaternion.Euler(0, 0, 90);
-            cm.attack.Add(card);
-  //          Debug.Log("Can Attack");
-            card.GetComponent<CardDisplay>().card.monsterSickness = true;
+            if (y[i] == "Immobile")
+                imobile = true;
+        }
+        if (imobile == false)
+        {
 
-            card.GetComponent<CardDisplay>().attack_defend = 1;
+            if (card.GetComponent<CardDisplay>().card.monsterSickness == false)
+            {
+                string Decriptionx = card.GetComponent<CardDisplay>().card.description;
+                string[] x = Decriptionx.Split(' ');
+                bool Charged = false;
+                for (int i = 0; x.Length > i; i++)
+                {
+                    if (x[i] == "Charged")
+                    {
+                        Charged = true;
+                    }
+                }
+                if (Charged == false)
+                {
+                    card.transform.rotation = Quaternion.Euler(0, 0, 90);
+                    //          Debug.Log("Can Attack");
+                    card.GetComponent<CardDisplay>().card.monsterSickness = true;
+                }
+                cm.attack.Add(card);
+
+                card.GetComponent<CardDisplay>().attack_defend = 1;
+            }
         }
     //    else
   //          Debug.Log("Can't Attack");

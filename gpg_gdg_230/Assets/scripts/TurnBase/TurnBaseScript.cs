@@ -14,6 +14,8 @@ public class TurnBaseScript : MonoBehaviour
     public enum TurnState { StartTurn, PlayerTurn, Untap, CardPlayed, Response, Attack, End, Nothing, TimeWasted, EndofBattle }
     public TurnState state = TurnState.Nothing;
 
+    public card_reffence Cr;
+
     public Hand player1Hand;
     public Hand player2Hand;
 
@@ -541,8 +543,9 @@ public class TurnBaseScript : MonoBehaviour
                         upgrade(message[2], message[3], message[5],message[7]);
                         break;
 
+                        //unit count / unit name
                     case "summon":
-                        //need refrence unit
+                        summon(message[2], message[3]);
                         break;
 
                     case "earn":
@@ -562,6 +565,35 @@ public class TurnBaseScript : MonoBehaviour
                 //number of units / unit type
             case "sacrifice:":
                 sacrifice(message[1], message[2]);
+                switch (message[2+1])
+                {
+                    //number of units / damage
+                    case "damage":
+                        spellDamage(message[2+2], message[2+3]);
+                        break;
+
+                    //number of units / unit type / "attack" / damage / "defence" / deffence
+                    case "upgrade":
+                        upgrade(message[2+2], message[2+3], message[2+5], message[2+7]);
+                        break;
+
+                    //unit count / unit name
+                    case "summon":
+                        summon(message[2+2], message[2+3]);
+                        break;
+
+                    case "earn":
+                        //need refrence from G
+                        break;
+                    // number of units
+                    case "convert":
+                        convert(message[2+2]);
+                        break;
+                    // number of units
+                    case "dissable":
+                        disable(message[2+2]);
+                        break;
+                }
                 break;
         }
     }
@@ -573,15 +605,42 @@ public class TurnBaseScript : MonoBehaviour
 
             if (playerTurn == true)
             {
+
                 for (int i = 0; player2Hand.active_cards > i; i++)
-                    player2Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.health -= int.Parse(Damage);
+                {
+                    string Decription = player2Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.description;
+                    string[] x = Decription.Split(' ');
+                    bool enduring = false;
+                    for (int y = 0; x.Length > y; i++)
+                    {
+                        if (x[i] == "Enduring")
+                        {
+                            enduring = true;
+                        }
+                    }
+                    if (enduring == false)
+                        player2Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.health -= int.Parse(Damage);
+                }
             }
             else
             {
-                for (int i = 0; player2Hand.active_cards > i; i++)
-                    player1Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.health -= int.Parse(Damage);
+                for (int i = 0; player1Hand.active_cards > i; i++)
+                {
+                    string Decription = player1Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.description;
+                    string[] x = Decription.Split(' ');
+                    bool enduring = false;
+                    for (int y = 0; x.Length > y; i++)
+                    {
+                        if (x[i] == "Enduring")
+                        {
+                            enduring = true;
+                        }
+                    }
+                    if (enduring == false)
+                        player1Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.health -= int.Parse(Damage);
+                }
             }
-
+        
 
         }
         else
@@ -612,9 +671,32 @@ public class TurnBaseScript : MonoBehaviour
     {
         if (playerTurn == true)
         {
-            List<GameObject> SelectedCards = new List<GameObject>();
-            StartCoroutine(pause_sellection_own_hand(int.Parse(nuber), unit_type, SelectedCards));
-            StartCoroutine(waitForUpgrade(int.Parse(nuber), SelectedCards,int.Parse(attack),int.Parse(health)));
+            if (nuber != "all")
+            {
+                List<GameObject> SelectedCards = new List<GameObject>();
+                StartCoroutine(pause_sellection_own_hand(int.Parse(nuber), unit_type, SelectedCards));
+                StartCoroutine(waitForUpgrade(int.Parse(nuber), SelectedCards, int.Parse(attack), int.Parse(health)));
+            }
+            else
+            {
+                List<GameObject> selectedCards = new List<GameObject>();
+                for (int i = 0; player1Hand.active_cards > i; i++)
+                {
+                    string n = player1Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.name;
+                    string[] brokenName = n.Split(' ');
+                    for (int x = 0; brokenName.Length > x; x++)
+                    {
+                        if (brokenName[x] == unit_type)
+                            selectedCards.Add(player1Hand.active_cards_slots[i]);
+
+                    }
+                }
+                for (int i = 0; selectedCards.Count > i; i++)
+                {
+                    selectedCards[i].GetComponent<CardDisplay>().card.health += int.Parse(health);
+                    selectedCards[i].GetComponent<CardDisplay>().card.attack += int.Parse(attack);
+                }
+            }
         }
         else
         {
@@ -629,6 +711,34 @@ public class TurnBaseScript : MonoBehaviour
             List<GameObject> SelectedCards = new List<GameObject>();
             StartCoroutine(waitForConvert(int.Parse(units), SelectedCards));
             StartCoroutine(pause_sellection_outher_hand(int.Parse(units), SelectedCards));
+        }
+    }
+
+    void summon(string unitcount,string unit)
+    {
+        if (playerTurn == true)
+        {
+            for (int i = 0; int.Parse(unitcount) > i; i++)
+            {
+                if (player1Hand.active_cards < 5)
+                {
+                    GameObject x =Cr.create_card(unit);
+                    player1Hand.active_cards_slots[player1Hand.active_cards] = x;
+                    player1Hand.active_cards += 1;
+                }
+            }
+        }
+        else
+        {
+            for (int i = 0; int.Parse(unitcount) > i; i++)
+            {
+                if (player2Hand.active_cards < 5)
+                {
+                    GameObject x = Cr.create_card(unit);
+                    player2Hand.active_cards_slots[player2Hand.active_cards] = x;
+                    player2Hand.active_cards += 1;
+                }
+            }
         }
     }
 
@@ -692,6 +802,17 @@ public class TurnBaseScript : MonoBehaviour
         yield return new WaitUntil(() => selectedCards.Count == cardcount);
         for (int i = 0; selectedCards.Count > i; i++)
         {
+            string Decription = selectedCards[i].GetComponent<CardDisplay>().card.description;
+            string[] x = Decription.Split(' ');
+            bool enduring = false;
+            for (int y = 0; x.Length > y; i++)
+            {
+                if (x[i] == "Enduring")
+                {
+                    enduring = true;
+                }
+            }
+            if (enduring == false)
             selectedCards[i].GetComponent<CardDisplay>().card.health -= damage;
         }
     }
