@@ -15,8 +15,12 @@ public class CardVersion2
     public int cardAttack;
     public int cardHealth;
 
+    //Ability Lists
     public int drawXCards;
     public int addXMaxCoin;
+    public int buffATK;
+    public int buffHealth;
+    public int summonMonster;
 
     public Sprite cardImage;
 
@@ -25,7 +29,7 @@ public class CardVersion2
 
     }
 
-    public CardVersion2(int ID, string Name, string Detail, string Type, int Cost, int Attack, int Health, Sprite Image, int DrawXCards, int AddXMaxCoin)
+    public CardVersion2(int ID, string Name, string Detail, string Type, int Cost, int Attack, int Health, Sprite Image, int DrawXCards, int AddXMaxCoin, int BuffATK, int BuffHealth, int SummonMonster)
     {
         cardID = ID;
         cardName = Name;
@@ -39,5 +43,8 @@ public class CardVersion2
 
         drawXCards = DrawXCards;
         addXMaxCoin = AddXMaxCoin;
+        buffATK = BuffATK;
+        buffHealth = BuffHealth;
+        summonMonster = SummonMonster;
     }
 }

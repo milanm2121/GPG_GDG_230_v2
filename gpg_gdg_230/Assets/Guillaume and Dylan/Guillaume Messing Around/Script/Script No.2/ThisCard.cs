@@ -6,6 +6,7 @@ using UnityEngine.EventSystems;
 
 public class ThisCard : MonoBehaviour
 {
+    //This is for the card deatils in our game.
     public List<CardVersion2> thisCard = new List<CardVersion2>();
     public int thisID;
 
@@ -31,18 +32,30 @@ public class ThisCard : MonoBehaviour
     public bool cardBack;
     //public static bool staticCardBack;
 
+    //This is to make sure the card go to the hand.
     public GameObject hand;
 
     public int numberOfCardsInDeck;
 
+    //Seting up the summoning mechanic
     public bool canBeSummon;
     public bool summoned;
     public GameObject battleZone;
 
+    //This is to be use for our abilities.
+    //Need to make a summoning one.
     public static int drawX;
     public int drawXCards;
     public int addXMaxCoin;
+    public int buffXATK;
+    public int buffXHealth;
+    public int summoningMonsters;
+    public bool token = true;
+    public List<CardVersion2> tokenCards = new List<CardVersion2>();
 
+    //These are forbeing able to attack or not
+    // and which one to attack.
+    public GameObject ableToAttackObject;
     public GameObject target;
     public GameObject enemy;
 
@@ -58,6 +71,9 @@ public class ThisCard : MonoBehaviour
 
     public bool onlyThisCardAttack;
 
+    //Thi is to make the player know when they are able to summon/use their card.
+    public GameObject ableToUseCard;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -72,7 +88,7 @@ public class ThisCard : MonoBehaviour
         canAttack = false;
         summoningSickness = true;
 
-        enemy = GameObject.Find("Enemy HP");
+        enemy = GameObject.Find("EnemyHealth");
 
         targeting = false;
         targetingEnemy = false;
@@ -87,17 +103,23 @@ public class ThisCard : MonoBehaviour
             cardBack = false;
         }
 
-        id = thisCard[0].cardID;
-        thisCardName = thisCard[0].cardName;
-        thisCardDetails = thisCard[0].cardDetail;
-        thisCardType = thisCard[0].cardType;
-        thisCardCost = thisCard[0].cardCoinCost;
-        thisCardAttack = thisCard[0].cardAttack;
-        thisCardHealth = thisCard[0].cardHealth;
-        thisCardSprite = thisCard[0].cardImage;
+        if (summoned == false)
+        {
+            id = thisCard[0].cardID;
+            thisCardName = thisCard[0].cardName;
+            thisCardDetails = thisCard[0].cardDetail;
+            thisCardType = thisCard[0].cardType;
+            thisCardCost = thisCard[0].cardCoinCost;
+            thisCardAttack = thisCard[0].cardAttack;
+            thisCardHealth = thisCard[0].cardHealth;
+            thisCardSprite = thisCard[0].cardImage;
+        }
 
         drawXCards = thisCard[0].drawXCards;
         addXMaxCoin = thisCard[0].addXMaxCoin;
+        buffXATK = thisCard[0].buffATK;
+        buffXHealth = thisCard[0].buffHealth;
+        summoningMonsters = thisCard[0].summonMonster;
 
         nameText.text = "" + thisCardName;
         deatilText.text = "" + thisCardDetails;
@@ -118,7 +140,7 @@ public class ThisCard : MonoBehaviour
             this.tag = "Untagged";
         }
 
-        if (TurnSystem.currentCoin >= thisCardCost && summoned == false)
+        if (TurnSystem.currentCoin >= thisCardCost && summoned == false && TurnSystem.isYourTurn == true)
             canBeSummon = true;
 
         else
@@ -140,11 +162,11 @@ public class ThisCard : MonoBehaviour
 
         if (canAttack == true)
         {
-            //Add something to indecate that the card is able to attack
+            ableToAttackObject.SetActive(true);
         }
         else
         {
-            //Add something to indecate that the card is unable to attack
+            ableToAttackObject.SetActive(false);
         }
 
         if (TurnSystem.isYourTurn == false && summoned == true)
@@ -155,7 +177,7 @@ public class ThisCard : MonoBehaviour
 
         if (TurnSystem.isYourTurn == true && summoningSickness == false && cantAttack == false)
         {
-            cantAttack = true;
+            canAttack = true;
         }
         else
         {
@@ -166,17 +188,30 @@ public class ThisCard : MonoBehaviour
         targetingEnemy = staticTargetingEnemy;
 
         if (targetingEnemy == true)
-        {
             target = enemy;
-        }
         else
-        {
             target = null;
-        }
 
         if (targeting == true && targetingEnemy == true && onlyThisCardAttack == true)
-        {
             Attack();
+
+        if (canBeSummon == true && TurnSystem.isYourTurn == true)
+            ableToUseCard.SetActive(true);
+        else
+            ableToUseCard.SetActive(false);
+
+        if (summoningMonsters > 0 && token == true)
+        {
+            AddToken(summoningMonsters);
+        }
+    }
+
+    public void AddToken(int x)
+    {
+        for (int i = 0; i < x; i++)
+        {
+            tokenCards[i] = CardDataBase.cardList[0];
+            token = false;
         }
     }
 
@@ -186,6 +221,8 @@ public class ThisCard : MonoBehaviour
         summoned = true;
 
         MaxCoin(addXMaxCoin);
+        BuffAttack(buffXATK);
+        BuffHealth(buffXHealth);
         drawX = drawXCards;
     }
 
@@ -197,16 +234,40 @@ public class ThisCard : MonoBehaviour
             TurnSystem.maxCoin = 10;
         }
     }
+    
+    public void BuffAttack(int x)
+    {
+        thisCardAttack += x;
+        Debug.Log("Buff Attack by " + x);
+        attackText.text = thisCardAttack.ToString();
+    }
+
+    public void BuffHealth(int x)
+    {
+        thisCardHealth += x;
+        Debug.Log("Buff health by " + x);
+        healthText.text = "" + thisCardHealth;
+    }
+
+    public void SummoningTheMonster(int x)
+    {
+        for (int i = 0; i < x; i++)
+        {
+
+        }
+    }
 
     public void Attack()
     {
-        if (cantAttack == true)
+        if (canAttack == true)
         {
             if (target != null)
             {
                 if (target == enemy)
                 {
-                    canAttack = false;
+                    EnemyHp.staticHp -= thisCardAttack;
+                    targeting = false;
+                    cantAttack = true;
                 }
 
                 if (target.name == "CardToHand(Clone)")

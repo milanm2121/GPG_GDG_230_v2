@@ -1668,8 +1668,8 @@ C:\Users\guill\OneDrive\Documents\GitHub\New\GPG_GDG_230_v2\gpg_gdg_230\Temp\bin
 C:\Users\guill\OneDrive\Documents\GitHub\New\GPG_GDG_230_v2\gpg_gdg_230\Temp\bin\Debug\UnityEngine.VideoModule.xml
 C:\Users\guill\OneDrive\Documents\GitHub\New\GPG_GDG_230_v2\gpg_gdg_230\Temp\bin\Debug\UnityEngine.WindModule.xml
 C:\Users\guill\OneDrive\Documents\GitHub\New\GPG_GDG_230_v2\gpg_gdg_230\Temp\bin\Debug\UnityEngine.XRModule.xml
-C:\Users\guill\OneDrive\Documents\GitHub\New\GPG_GDG_230_v2\gpg_gdg_230\obj\Debug\Assembly-CSharp.csprojAssemblyReference.cache
 C:\Users\guill\OneDrive\Documents\GitHub\New\GPG_GDG_230_v2\gpg_gdg_230\obj\Debug\Assembly-CSharp.csproj.CoreCompileInputs.cache
 C:\Users\guill\OneDrive\Documents\GitHub\New\GPG_GDG_230_v2\gpg_gdg_230\obj\Debug\Assembly-CSharp.csproj.CopyComplete
 C:\Users\guill\OneDrive\Documents\GitHub\New\GPG_GDG_230_v2\gpg_gdg_230\obj\Debug\Assembly-CSharp.dll
 C:\Users\guill\OneDrive\Documents\GitHub\New\GPG_GDG_230_v2\gpg_gdg_230\obj\Debug\Assembly-CSharp.pdb
+C:\Users\guill\OneDrive\Documents\GitHub\New\GPG_GDG_230_v2\gpg_gdg_230\obj\Debug\Assembly-CSharp.csprojAssemblyReference.cache

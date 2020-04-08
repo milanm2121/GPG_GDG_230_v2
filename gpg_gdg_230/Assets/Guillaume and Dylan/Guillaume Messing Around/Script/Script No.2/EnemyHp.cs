@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class EmenyHp : MonoBehaviour
+public class EnemyHp : MonoBehaviour
 {
     public static int maxHp;
     public static int staticHp;
