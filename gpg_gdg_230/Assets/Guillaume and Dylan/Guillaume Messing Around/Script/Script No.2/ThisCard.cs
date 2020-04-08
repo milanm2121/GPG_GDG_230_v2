@@ -51,6 +51,7 @@ public class ThisCard : MonoBehaviour
     public int buffXHealth;
     public int summoningMonsters;
     public bool token = true;
+    public GameObject tokenObject;
     public List<CardVersion2> tokenCards = new List<CardVersion2>();
 
     //These are forbeing able to attack or not
@@ -103,16 +104,17 @@ public class ThisCard : MonoBehaviour
             cardBack = false;
         }
 
+        id = thisCard[0].cardID;
+        thisCardName = thisCard[0].cardName;
+        thisCardDetails = thisCard[0].cardDetail;
+        thisCardType = thisCard[0].cardType;
+        thisCardCost = thisCard[0].cardCoinCost;
+        thisCardSprite = thisCard[0].cardImage;
+
         if (summoned == false)
         {
-            id = thisCard[0].cardID;
-            thisCardName = thisCard[0].cardName;
-            thisCardDetails = thisCard[0].cardDetail;
-            thisCardType = thisCard[0].cardType;
-            thisCardCost = thisCard[0].cardCoinCost;
             thisCardAttack = thisCard[0].cardAttack;
             thisCardHealth = thisCard[0].cardHealth;
-            thisCardSprite = thisCard[0].cardImage;
         }
 
         drawXCards = thisCard[0].drawXCards;
@@ -155,7 +157,6 @@ public class ThisCard : MonoBehaviour
 
 
         battleZone = GameObject.Find("Field");
-
 
         if (summoned == false && this.transform.parent == battleZone.transform)
             Summon();
@@ -204,12 +205,19 @@ public class ThisCard : MonoBehaviour
         {
             AddToken(summoningMonsters);
         }
+        if (tokenCards == null)
+            return;
+
+        if (thisCard[0].cardID == 0)
+        {
+            this.tag = "Token";
+        }
     }
 
     public void AddToken(int x)
     {
         for (int i = 0; i < x; i++)
-        {
+        { 
             tokenCards[i] = CardDataBase.cardList[0];
             token = false;
         }
@@ -223,6 +231,7 @@ public class ThisCard : MonoBehaviour
         MaxCoin(addXMaxCoin);
         BuffAttack(buffXATK);
         BuffHealth(buffXHealth);
+        SummoningTheMonster(summoningMonsters);
         drawX = drawXCards;
     }
 
@@ -253,7 +262,7 @@ public class ThisCard : MonoBehaviour
     {
         for (int i = 0; i < x; i++)
         {
-
+            Instantiate(tokenObject);
         }
     }
 

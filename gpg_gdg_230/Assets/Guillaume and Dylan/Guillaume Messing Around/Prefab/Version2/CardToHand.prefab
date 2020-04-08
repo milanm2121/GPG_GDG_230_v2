@@ -319,7 +319,73 @@ MonoBehaviour:
   buffXHealth: 0
   summoningMonsters: 0
   token: 1
-  tokenCards: []
+  tokenObject: {fileID: 2335418786316836980}
+  tokenCards:
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    cardImage: {fileID: 0}
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    cardImage: {fileID: 0}
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    cardImage: {fileID: 0}
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    cardImage: {fileID: 0}
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    cardImage: {fileID: 0}
   ableToAttackObject: {fileID: 3161765567210277177}
   target: {fileID: 0}
   enemy: {fileID: 0}
