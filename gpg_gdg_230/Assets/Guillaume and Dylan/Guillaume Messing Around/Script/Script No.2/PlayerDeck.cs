@@ -76,7 +76,7 @@ public class PlayerDeck : MonoBehaviour
 
     }
 
-    /*
+    
     IEnumerator Example()
     {
         yield return new WaitForSeconds(1);
@@ -87,7 +87,7 @@ public class PlayerDeck : MonoBehaviour
            Destroy(clone);
         }
     }
-    */
+    
 
 
     IEnumerator StartGame()
@@ -109,8 +109,8 @@ public class PlayerDeck : MonoBehaviour
             deck[randomIndex] = container[0];
         }
 
-        Instantiate(cardBack, transform.position, transform.rotation);
-        //StartCoroutine(Example());
+        //Instantiate(cardBack, transform.position, transform.rotation);
+        StartCoroutine(Example());
     }
 
     IEnumerator Draw(int x)

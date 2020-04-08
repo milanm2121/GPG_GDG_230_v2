@@ -667,7 +667,7 @@ GameObject:
   - component: {fileID: -8068848026361764079}
   m_Layer: 5
   m_Name: CardBack
-  m_TagString: Clone
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -733,6 +733,11 @@ MonoBehaviour:
     cardCoinCost: 0
     cardAttack: 0
     cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
     cardImage: {fileID: 0}
   thisID: 0
   id: 0
@@ -753,6 +758,27 @@ MonoBehaviour:
   cardBack: 1
   hand: {fileID: 0}
   numberOfCardsInDeck: 0
+  canBeSummon: 0
+  summoned: 0
+  battleZone: {fileID: 0}
+  drawXCards: 0
+  addXMaxCoin: 0
+  buffXATK: 0
+  buffXHealth: 0
+  summoningMonsters: 0
+  token: 1
+  tokenObject: {fileID: 0}
+  tokenCards: []
+  ableToAttackObject: {fileID: 0}
+  target: {fileID: 0}
+  enemy: {fileID: 0}
+  summoningSickness: 0
+  cantAttack: 0
+  canAttack: 0
+  targeting: 0
+  targetingEnemy: 0
+  onlyThisCardAttack: 0
+  ableToUseCard: {fileID: 0}
 --- !u!114 &4229706296443545162
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -138,6 +138,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Card (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5514749094227752913, guid: 2acc4ca2166d070439621656c099a2c2,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 2975211153750898179, guid: 2acc4ca2166d070439621656c099a2c2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -982,6 +987,7 @@ MonoBehaviour:
     buffATK: 0
     buffHealth: 0
     summonMonster: 0
+    blocker: 0
     cardImage: {fileID: 0}
   - cardID: 0
     cardName: 
@@ -995,6 +1001,7 @@ MonoBehaviour:
     buffATK: 0
     buffHealth: 0
     summonMonster: 0
+    blocker: 0
     cardImage: {fileID: 0}
   - cardID: 0
     cardName: 
@@ -1008,6 +1015,7 @@ MonoBehaviour:
     buffATK: 0
     buffHealth: 0
     summonMonster: 0
+    blocker: 0
     cardImage: {fileID: 0}
   - cardID: 0
     cardName: 
@@ -1021,6 +1029,7 @@ MonoBehaviour:
     buffATK: 0
     buffHealth: 0
     summonMonster: 0
+    blocker: 0
     cardImage: {fileID: 0}
   - cardID: 0
     cardName: 
@@ -1034,6 +1043,7 @@ MonoBehaviour:
     buffATK: 0
     buffHealth: 0
     summonMonster: 0
+    blocker: 0
     cardImage: {fileID: 0}
   - cardID: 0
     cardName: 
@@ -1047,6 +1057,7 @@ MonoBehaviour:
     buffATK: 0
     buffHealth: 0
     summonMonster: 0
+    blocker: 0
     cardImage: {fileID: 0}
   - cardID: 0
     cardName: 
@@ -1060,6 +1071,7 @@ MonoBehaviour:
     buffATK: 0
     buffHealth: 0
     summonMonster: 0
+    blocker: 0
     cardImage: {fileID: 0}
   - cardID: 0
     cardName: 
@@ -1073,6 +1085,7 @@ MonoBehaviour:
     buffATK: 0
     buffHealth: 0
     summonMonster: 0
+    blocker: 0
     cardImage: {fileID: 0}
   - cardID: 0
     cardName: 
@@ -1086,6 +1099,7 @@ MonoBehaviour:
     buffATK: 0
     buffHealth: 0
     summonMonster: 0
+    blocker: 0
     cardImage: {fileID: 0}
   - cardID: 0
     cardName: 
@@ -1099,6 +1113,7 @@ MonoBehaviour:
     buffATK: 0
     buffHealth: 0
     summonMonster: 0
+    blocker: 0
     cardImage: {fileID: 0}
   - cardID: 0
     cardName: 
@@ -1112,6 +1127,7 @@ MonoBehaviour:
     buffATK: 0
     buffHealth: 0
     summonMonster: 0
+    blocker: 0
     cardImage: {fileID: 0}
   - cardID: 0
     cardName: 
@@ -1125,6 +1141,7 @@ MonoBehaviour:
     buffATK: 0
     buffHealth: 0
     summonMonster: 0
+    blocker: 0
     cardImage: {fileID: 0}
   - cardID: 0
     cardName: 
@@ -1138,6 +1155,7 @@ MonoBehaviour:
     buffATK: 0
     buffHealth: 0
     summonMonster: 0
+    blocker: 0
     cardImage: {fileID: 0}
   - cardID: 0
     cardName: 
@@ -1151,6 +1169,7 @@ MonoBehaviour:
     buffATK: 0
     buffHealth: 0
     summonMonster: 0
+    blocker: 0
     cardImage: {fileID: 0}
   - cardID: 0
     cardName: 
@@ -1164,6 +1183,7 @@ MonoBehaviour:
     buffATK: 0
     buffHealth: 0
     summonMonster: 0
+    blocker: 0
     cardImage: {fileID: 0}
   - cardID: 0
     cardName: 
@@ -1177,6 +1197,7 @@ MonoBehaviour:
     buffATK: 0
     buffHealth: 0
     summonMonster: 0
+    blocker: 0
     cardImage: {fileID: 0}
   - cardID: 0
     cardName: 
@@ -1190,6 +1211,7 @@ MonoBehaviour:
     buffATK: 0
     buffHealth: 0
     summonMonster: 0
+    blocker: 0
     cardImage: {fileID: 0}
   - cardID: 0
     cardName: 
@@ -1203,6 +1225,7 @@ MonoBehaviour:
     buffATK: 0
     buffHealth: 0
     summonMonster: 0
+    blocker: 0
     cardImage: {fileID: 0}
   - cardID: 0
     cardName: 
@@ -1216,6 +1239,7 @@ MonoBehaviour:
     buffATK: 0
     buffHealth: 0
     summonMonster: 0
+    blocker: 0
     cardImage: {fileID: 0}
   - cardID: 0
     cardName: 
@@ -1229,6 +1253,7 @@ MonoBehaviour:
     buffATK: 0
     buffHealth: 0
     summonMonster: 0
+    blocker: 0
     cardImage: {fileID: 0}
   - cardID: 0
     cardName: 
@@ -1242,6 +1267,7 @@ MonoBehaviour:
     buffATK: 0
     buffHealth: 0
     summonMonster: 0
+    blocker: 0
     cardImage: {fileID: 0}
   - cardID: 0
     cardName: 
@@ -1255,6 +1281,7 @@ MonoBehaviour:
     buffATK: 0
     buffHealth: 0
     summonMonster: 0
+    blocker: 0
     cardImage: {fileID: 0}
   - cardID: 0
     cardName: 
@@ -1268,6 +1295,7 @@ MonoBehaviour:
     buffATK: 0
     buffHealth: 0
     summonMonster: 0
+    blocker: 0
     cardImage: {fileID: 0}
   - cardID: 0
     cardName: 
@@ -1281,6 +1309,7 @@ MonoBehaviour:
     buffATK: 0
     buffHealth: 0
     summonMonster: 0
+    blocker: 0
     cardImage: {fileID: 0}
   - cardID: 0
     cardName: 
@@ -1294,6 +1323,7 @@ MonoBehaviour:
     buffATK: 0
     buffHealth: 0
     summonMonster: 0
+    blocker: 0
     cardImage: {fileID: 0}
   - cardID: 0
     cardName: 
@@ -1307,6 +1337,7 @@ MonoBehaviour:
     buffATK: 0
     buffHealth: 0
     summonMonster: 0
+    blocker: 0
     cardImage: {fileID: 0}
   - cardID: 0
     cardName: 
@@ -1320,6 +1351,7 @@ MonoBehaviour:
     buffATK: 0
     buffHealth: 0
     summonMonster: 0
+    blocker: 0
     cardImage: {fileID: 0}
   - cardID: 0
     cardName: 
@@ -1333,6 +1365,7 @@ MonoBehaviour:
     buffATK: 0
     buffHealth: 0
     summonMonster: 0
+    blocker: 0
     cardImage: {fileID: 0}
   - cardID: 0
     cardName: 
@@ -1346,6 +1379,7 @@ MonoBehaviour:
     buffATK: 0
     buffHealth: 0
     summonMonster: 0
+    blocker: 0
     cardImage: {fileID: 0}
   - cardID: 0
     cardName: 
@@ -1359,6 +1393,7 @@ MonoBehaviour:
     buffATK: 0
     buffHealth: 0
     summonMonster: 0
+    blocker: 0
     cardImage: {fileID: 0}
   - cardID: 0
     cardName: 
@@ -1372,6 +1407,7 @@ MonoBehaviour:
     buffATK: 0
     buffHealth: 0
     summonMonster: 0
+    blocker: 0
     cardImage: {fileID: 0}
   - cardID: 0
     cardName: 
@@ -1385,6 +1421,7 @@ MonoBehaviour:
     buffATK: 0
     buffHealth: 0
     summonMonster: 0
+    blocker: 0
     cardImage: {fileID: 0}
   - cardID: 0
     cardName: 
@@ -1398,6 +1435,7 @@ MonoBehaviour:
     buffATK: 0
     buffHealth: 0
     summonMonster: 0
+    blocker: 0
     cardImage: {fileID: 0}
   - cardID: 0
     cardName: 
@@ -1411,6 +1449,7 @@ MonoBehaviour:
     buffATK: 0
     buffHealth: 0
     summonMonster: 0
+    blocker: 0
     cardImage: {fileID: 0}
   - cardID: 0
     cardName: 
@@ -1424,6 +1463,7 @@ MonoBehaviour:
     buffATK: 0
     buffHealth: 0
     summonMonster: 0
+    blocker: 0
     cardImage: {fileID: 0}
   - cardID: 0
     cardName: 
@@ -1437,6 +1477,7 @@ MonoBehaviour:
     buffATK: 0
     buffHealth: 0
     summonMonster: 0
+    blocker: 0
     cardImage: {fileID: 0}
   - cardID: 0
     cardName: 
@@ -1450,6 +1491,7 @@ MonoBehaviour:
     buffATK: 0
     buffHealth: 0
     summonMonster: 0
+    blocker: 0
     cardImage: {fileID: 0}
   - cardID: 0
     cardName: 
@@ -1463,6 +1505,7 @@ MonoBehaviour:
     buffATK: 0
     buffHealth: 0
     summonMonster: 0
+    blocker: 0
     cardImage: {fileID: 0}
   - cardID: 0
     cardName: 
@@ -1476,6 +1519,7 @@ MonoBehaviour:
     buffATK: 0
     buffHealth: 0
     summonMonster: 0
+    blocker: 0
     cardImage: {fileID: 0}
   - cardID: 0
     cardName: 
@@ -1489,6 +1533,7 @@ MonoBehaviour:
     buffATK: 0
     buffHealth: 0
     summonMonster: 0
+    blocker: 0
     cardImage: {fileID: 0}
   container:
   - cardID: 0
@@ -1503,6 +1548,7 @@ MonoBehaviour:
     buffATK: 0
     buffHealth: 0
     summonMonster: 0
+    blocker: 0
     cardImage: {fileID: 0}
   x: 0
   cardsInDeck1: {fileID: 1641129311}
@@ -3141,6 +3187,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Card (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 5514749094227752913, guid: 2acc4ca2166d070439621656c099a2c2,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 2975211153750898179, guid: 2acc4ca2166d070439621656c099a2c2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4198,6 +4249,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Card (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 5514749094227752913, guid: 2acc4ca2166d070439621656c099a2c2,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 2975211153750898179, guid: 2acc4ca2166d070439621656c099a2c2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4328,6 +4384,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Card (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514749094227752913, guid: 2acc4ca2166d070439621656c099a2c2,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 2975211153750898179, guid: 2acc4ca2166d070439621656c099a2c2,
         type: 3}
