@@ -723,8 +723,7 @@ public class TurnBaseScript : MonoBehaviour
                 if (player1Hand.active_cards < 5)
                 {
                     GameObject x =Cr.create_card(unit);
-                    player1Hand.active_cards_slots[player1Hand.active_cards] = x;
-                    player1Hand.active_cards += 1;
+                    player1Hand.active_cards_slots[player1Hand.active_cards-1] = x ;
                 }
             }
         }
@@ -736,7 +735,6 @@ public class TurnBaseScript : MonoBehaviour
                 {
                     GameObject x = Cr.create_card(unit);
                     player2Hand.active_cards_slots[player2Hand.active_cards] = x;
-                    player2Hand.active_cards += 1;
                 }
             }
         }

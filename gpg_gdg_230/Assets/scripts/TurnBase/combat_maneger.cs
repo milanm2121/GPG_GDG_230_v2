@@ -44,9 +44,9 @@ public class combat_maneger : MonoBehaviour
                 string Decription = defend[i].GetComponent<CardDisplay>().card.description;
                 string[] b = Decription.Split(' ');
                 bool doge=false;
-                for (int a = 0; b.Length > a; i++)
+                for (int a = 0; b.Length > a; a++)
                 {
-                    if (b[i] == "Doge")
+                    if (b[a] == "Doge")
                     {
                         int chance = Random.Range(1, 10);
                         if (chance >= 6)
@@ -60,7 +60,7 @@ public class combat_maneger : MonoBehaviour
                     {
                         string Decriptionx = attack[i].GetComponent<CardDisplay>().card.description;
                         string[] x = Decriptionx.Split(' ');
-                        for (int y = 0; x.Length > y; i++)
+                        for (int y = 0; x.Length > y;y++)
                         {
                             if (x[i] == "Swarm")
                             {
