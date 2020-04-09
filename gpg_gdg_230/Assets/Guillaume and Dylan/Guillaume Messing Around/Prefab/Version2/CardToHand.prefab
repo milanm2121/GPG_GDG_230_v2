@@ -104,8 +104,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.15, y: 0.15, z: 1}
   m_Children:
-  - {fileID: 9018389905671295632}
   - {fileID: 7022521141812601075}
+  - {fileID: 9018389905671295632}
   - {fileID: 1802570832204730998}
   - {fileID: 934002479665558122}
   - {fileID: 4852721571415286895}
@@ -290,6 +290,9 @@ MonoBehaviour:
     buffATK: 0
     buffHealth: 0
     summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
     cardImage: {fileID: 0}
   thisID: 0
   id: 0
@@ -333,6 +336,9 @@ MonoBehaviour:
     buffATK: 0
     buffHealth: 0
     summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
     cardImage: {fileID: 0}
   - cardID: 0
     cardName: 
@@ -346,6 +352,9 @@ MonoBehaviour:
     buffATK: 0
     buffHealth: 0
     summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
     cardImage: {fileID: 0}
   - cardID: 0
     cardName: 
@@ -359,6 +368,9 @@ MonoBehaviour:
     buffATK: 0
     buffHealth: 0
     summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
     cardImage: {fileID: 0}
   - cardID: 0
     cardName: 
@@ -372,6 +384,9 @@ MonoBehaviour:
     buffATK: 0
     buffHealth: 0
     summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
     cardImage: {fileID: 0}
   - cardID: 0
     cardName: 
@@ -385,6 +400,9 @@ MonoBehaviour:
     buffATK: 0
     buffHealth: 0
     summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
     cardImage: {fileID: 0}
   ableToAttackObject: {fileID: 3161765567210277177}
   target: {fileID: 0}
@@ -396,6 +414,10 @@ MonoBehaviour:
   targetingEnemy: 0
   onlyThisCardAttack: 0
   ableToUseCard: {fileID: 8645459530666959515}
+  field: {fileID: 0}
+  fieldObject: {fileID: 0}
+  cardObject: {fileID: 2335418786316836980}
+  tokenTimer: 0
 --- !u!114 &8669690776644368837
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -424,6 +446,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hand: {fileID: 0}
   cardObject: {fileID: 2335418786316836980}
+  tokenCard: {fileID: 7845622490883193912}
+  field: {fileID: 0}
+  fieldObject: {fileID: 0}
+  onfield: 1
 --- !u!114 &2729985596070342512
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -648,12 +674,12 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3161765567210277177}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1713533807444372753}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1094,7 +1120,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4095614142829574918
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1180,7 +1206,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1713533807444372753}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}

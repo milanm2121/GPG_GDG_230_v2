@@ -7,15 +7,22 @@ public class CardToHand : MonoBehaviour
 {
     public GameObject hand;
     public GameObject cardObject;
+    public ThisCard tokenCard;
+    public CardsOnTheField field;
+    public GameObject fieldObject;
+    public bool onfield = true;
 
     // Start is called before the first frame update
     void Start()
     {
-            hand = GameObject.Find("PlayerHand Version2");
-            cardObject.transform.SetParent(hand.transform);
-            cardObject.transform.localScale = Vector3.one;
-            cardObject.transform.position = new Vector3(transform.position.x, transform.position.y, -48);
-            cardObject.transform.eulerAngles = new Vector3(25, 0, 0);
+        hand = GameObject.Find("PlayerHand Version2");
+        cardObject.transform.SetParent(hand.transform);
+        cardObject.transform.localScale = Vector3.one;
+        cardObject.transform.position = new Vector3(transform.position.x, transform.position.y, -48);
+        cardObject.transform.eulerAngles = new Vector3(25, 0, 0);
+        fieldObject = GameObject.Find("Field");
+        field = fieldObject.GetComponent<CardsOnTheField>();
+
     }
 
     private void Update()
@@ -27,6 +34,8 @@ public class CardToHand : MonoBehaviour
             cardObject.transform.localScale = Vector3.one;
             cardObject.transform.position = new Vector3(transform.position.x, transform.position.y, -48);
             cardObject.transform.eulerAngles = new Vector3(25, 0, 0);
+            this.tag = tokenCard.thisCard[0].cardType;
         }
     }
+
 }

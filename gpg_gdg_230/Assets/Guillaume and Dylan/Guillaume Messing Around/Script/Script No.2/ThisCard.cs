@@ -53,6 +53,8 @@ public class ThisCard : MonoBehaviour
     public bool token = true;
     public GameObject tokenObject;
     public List<CardVersion2> tokenCards = new List<CardVersion2>();
+    public int buffOtherCardsATK;
+    public int buffOtherCardsHealth;
 
     //These are forbeing able to attack or not
     // and which one to attack.
@@ -75,6 +77,12 @@ public class ThisCard : MonoBehaviour
     //Thi is to make the player know when they are able to summon/use their card.
     public GameObject ableToUseCard;
 
+    public CardsOnTheField field;
+    public GameObject fieldObject;
+    public GameObject cardObject;
+
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -93,6 +101,9 @@ public class ThisCard : MonoBehaviour
 
         targeting = false;
         targetingEnemy = false;
+
+        fieldObject = GameObject.Find("Field");
+        field = fieldObject.GetComponent<CardsOnTheField>();
     }
 
     // Update is called once per frame
@@ -122,6 +133,8 @@ public class ThisCard : MonoBehaviour
         buffXATK = thisCard[0].buffATK;
         buffXHealth = thisCard[0].buffHealth;
         summoningMonsters = thisCard[0].summonMonster;
+        buffOtherCardsATK = thisCard[0].buffOtherATK;
+        buffOtherCardsHealth = thisCard[0].buffOtherHealth;
 
         nameText.text = "" + thisCardName;
         deatilText.text = "" + thisCardDetails;
@@ -142,10 +155,12 @@ public class ThisCard : MonoBehaviour
             this.tag = "Untagged";
         }
 
-        if (TurnSystem.currentCoin >= thisCardCost && summoned == false && TurnSystem.isYourTurn == true)
+        //So right here it make sures that all the Requirements for this game to summon are in the perfect.
+        //While also making sure that I dont flood the field.
+        if (TurnSystem.currentCoin >= thisCardCost && summoned == false && TurnSystem.isYourTurn == true && field.fieldCards.Count < 5)
             canBeSummon = true;
 
-        else
+        else 
             canBeSummon = false;
 
 
@@ -157,18 +172,16 @@ public class ThisCard : MonoBehaviour
 
 
         battleZone = GameObject.Find("Field");
-
-        if (summoned == false && this.transform.parent == battleZone.transform)
+        
+        if (summoned == false && this.transform.parent == battleZone.transform && field.fieldCards.Count < 5)
             Summon();
 
+        //This is the setup for the battle System.
+        //I still need to fix it where the player chose to attack and the opponent must who to defend with.
         if (canAttack == true)
-        {
             ableToAttackObject.SetActive(true);
-        }
         else
-        {
             ableToAttackObject.SetActive(false);
-        }
 
         if (TurnSystem.isYourTurn == false && summoned == true)
         {
@@ -177,13 +190,9 @@ public class ThisCard : MonoBehaviour
         }
 
         if (TurnSystem.isYourTurn == true && summoningSickness == false && cantAttack == false)
-        {
             canAttack = true;
-        }
         else
-        {
             canAttack = false;
-        }
 
         targeting = staticTargeting;
         targetingEnemy = staticTargetingEnemy;
@@ -196,22 +205,26 @@ public class ThisCard : MonoBehaviour
         if (targeting == true && targetingEnemy == true && onlyThisCardAttack == true)
             Attack();
 
+        //Making it visable for the Player to know if there able to summon or not.
         if (canBeSummon == true && TurnSystem.isYourTurn == true)
             ableToUseCard.SetActive(true);
         else
             ableToUseCard.SetActive(false);
 
+        //Making a list for the token Ability.
         if (summoningMonsters > 0 && token == true)
-        {
             AddToken(summoningMonsters);
-        }
         if (tokenCards == null)
             return;
 
+        //Changing the tag of Token in order to make it be able to summon it to the field.
+        //Instead of it being summoned to the hand.
         if (thisCard[0].cardID == 0)
         {
             this.tag = "Token";
         }
+        else
+        this.tag = thisCard[0].cardType;
     }
 
     public void AddToken(int x)
@@ -227,12 +240,16 @@ public class ThisCard : MonoBehaviour
     {
         TurnSystem.currentCoin -= thisCardCost;
         summoned = true;
+        field.fieldCards.Add(cardObject);
 
         MaxCoin(addXMaxCoin);
         BuffAttack(buffXATK);
         BuffHealth(buffXHealth);
         SummoningTheMonster(summoningMonsters);
         drawX = drawXCards;
+        CardsOnTheField.beingSummoned = true;
+        BuffOtherCardATK(buffOtherCardsATK);
+        BuffOtherCardHealth(buffOtherCardsHealth);
     }
 
     public void MaxCoin(int x)
@@ -247,22 +264,39 @@ public class ThisCard : MonoBehaviour
     public void BuffAttack(int x)
     {
         thisCardAttack += x;
-        Debug.Log("Buff Attack by " + x);
         attackText.text = thisCardAttack.ToString();
     }
 
     public void BuffHealth(int x)
     {
         thisCardHealth += x;
-        Debug.Log("Buff health by " + x);
         healthText.text = "" + thisCardHealth;
+    }
+
+    public void BuffOtherCardATK(int x)
+    {
+        int fieldList = field.fieldCards.Count;
+
+        for (int i = 0; i < fieldList; i++)
+        {
+            if (field.fieldCards[i].tag == thisCard[0].cardType)
+            {
+                CardsOnTheField.staticAttackList[i] += x;
+            }
+        }
+    }
+        
+    public void BuffOtherCardHealth(int x)
+    {
+
     }
 
     public void SummoningTheMonster(int x)
     {
         for (int i = 0; i < x; i++)
         {
-            Instantiate(tokenObject);
+            if(field.fieldCards.Count < 5)
+                Instantiate(tokenObject);
         }
     }
 
