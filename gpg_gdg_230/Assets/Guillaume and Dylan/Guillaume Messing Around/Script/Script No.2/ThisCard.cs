@@ -212,10 +212,12 @@ public class ThisCard : MonoBehaviour
             ableToUseCard.SetActive(false);
 
         //Making a list for the token Ability.
+        /*
         if (summoningMonsters > 0 && token == true)
             AddToken(summoningMonsters);
         if (tokenCards == null)
             return;
+            */
 
         //Changing the tag of Token in order to make it be able to summon it to the field.
         //Instead of it being summoned to the hand.
@@ -230,8 +232,8 @@ public class ThisCard : MonoBehaviour
     public void AddToken(int x)
     {
         for (int i = 0; i < x; i++)
-        { 
-            tokenCards[i] = CardDataBase.cardList[0];
+        {
+            tokenCards.Add(CardDataBase.cardList[0]);
             token = false;
         }
     }
@@ -241,6 +243,7 @@ public class ThisCard : MonoBehaviour
         TurnSystem.currentCoin -= thisCardCost;
         summoned = true;
         field.fieldCards.Add(cardObject);
+        AddToken(summoningMonsters);
 
         MaxCoin(addXMaxCoin);
         BuffAttack(buffXATK);
@@ -295,8 +298,18 @@ public class ThisCard : MonoBehaviour
     {
         for (int i = 0; i < x; i++)
         {
-            if(field.fieldCards.Count < 5)
+            if (field.fieldCards.Count >= 5)
+            {
+                break;
+            }
+            else if (field.fieldCards.Count < 5)
+            {
+                Debug.Log("creating card: " + tokenObject);
                 Instantiate(tokenObject);
+                tokenCards.Remove(CardDataBase.cardList[0]);
+                if (!field.fieldCards.Contains(tokenObject))
+                    field.fieldCards.Add(tokenObject);
+            }
         }
     }
 
