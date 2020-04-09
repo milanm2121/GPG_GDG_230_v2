@@ -470,6 +470,7 @@ public class Hand : MonoBehaviour
                     card.transform.rotation = Quaternion.Euler(0, 0, 90);
                     //          Debug.Log("Can Attack");
                     card.GetComponent<CardDisplay>().card.monsterSickness = true;
+
                 }
                 cm.attack.Add(card);
 

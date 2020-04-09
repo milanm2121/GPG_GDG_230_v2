@@ -49,7 +49,7 @@ public class combat_maneger : MonoBehaviour
                     if (b[a] == "Doge")
                     {
                         int chance = Random.Range(1, 10);
-                        if (chance >= 6)
+                        if (chance >= int.Parse(b[a+1])/10)
                             doge = true;
                     }
                 }
