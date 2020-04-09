@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 1
   name: dammage one spell
-  description: 'Spell: dissable 1'
+  description: 'Spell: damage all 1'
   artwork: {fileID: 0}
   manaCost: 2
   attack: 0

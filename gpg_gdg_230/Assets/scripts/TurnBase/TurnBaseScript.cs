@@ -521,6 +521,10 @@ public class TurnBaseScript : MonoBehaviour
         {
             cardReadDelay = 10;
         }
+        else if(message[0]=="On" && message[1] == "Play:")
+        {
+            cardReadDelay = 2;
+        }
         else
         {
             cardReadDelay = 0;
@@ -528,6 +532,21 @@ public class TurnBaseScript : MonoBehaviour
 
         switch (message[0])
         {
+            case "On":
+
+                switch (message[1]) {
+                    case "Play:":
+                        switch (message[2])
+                        {
+                            //unitytype(e.g. "Trooper") / "for" / damage
+                            case "Damage":
+                                typeDamage(message[3], message[5]);
+                                break;
+                        }
+                        break;
+                }
+                break;
+
             case "Spell:":
                 
 
@@ -597,6 +616,41 @@ public class TurnBaseScript : MonoBehaviour
                 break;
         }
     }
+
+    void typeDamage(string target,string damage)
+    {
+        if (playerTurn == true)
+        {
+            for (int i=0; player2Hand.active_cards > i; i++)
+            {
+                string nam = player2Hand.active_cards_slots[i - 1].GetComponent<CardDisplay>().card.name;
+                string[] brokenName=nam.Split(' ');
+                for(int a=0;brokenName.Length>a; a++)
+                {
+                    if (brokenName[a] == target)
+                    {
+                        player2Hand.active_cards_slots[i - 1].GetComponent<CardDisplay>().card.health -= int.Parse(damage);
+                    }
+                }
+            }
+        }
+        else
+        {
+            for (int i = 0; player1Hand.active_cards > i; i++)
+            {
+                string nam = player1Hand.active_cards_slots[i - 1].GetComponent<CardDisplay>().card.name;
+                string[] brokenName = nam.Split(' ');
+                for (int a = 0; brokenName.Length > a; a++)
+                {
+                    if (brokenName[a] == target)
+                    {
+                        player1Hand.active_cards_slots[i - 1].GetComponent<CardDisplay>().card.health -= int.Parse(damage);
+                    }
+                }
+            }
+        }
+    }
+
     void spellDamage(string target, string Damage)
     {
         if (target == "all")
@@ -611,9 +665,9 @@ public class TurnBaseScript : MonoBehaviour
                     string Decription = player2Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.description;
                     string[] x = Decription.Split(' ');
                     bool enduring = false;
-                    for (int y = 0; x.Length > y; i++)
+                    for (int y = 0; x.Length > y; y++)
                     {
-                        if (x[i] == "Enduring")
+                        if (x[y] == "Enduring")
                         {
                             enduring = true;
                         }
