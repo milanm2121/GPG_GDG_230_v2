@@ -247,6 +247,7 @@ public class ThisCard : MonoBehaviour
 
     public void Summon()
     {
+        CardsOnTheField.monsterAttack = thisCardAttack;
         Debug.Log("summoning");
         TurnSystem.currentCoin -= thisCardCost;
         summoned = true;

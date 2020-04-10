@@ -11,7 +11,7 @@ public class CardsOnTheField : MonoBehaviour
 
     public int[] attackList;
 
-    public ThisCard cardATK;
+    public static int monsterAttack;
 
     public static bool beingSummoned = false;
 
@@ -25,14 +25,15 @@ public class CardsOnTheField : MonoBehaviour
         staticAttackList = attackList;
 
         if (beingSummoned == true)
-            Invoke("CheckList", 2f);
+            CheckList();
     }
 
     public void CheckList()
     {
         for (int i = 0; i < fieldCards.Count; i++)
-        { 
-            attackList[i] = cardATK.thisCardAttack;
+        {
+            if (attackList[i] < 1)
+                attackList[i] = monsterAttack;
         }
 
         beingSummoned = false;
