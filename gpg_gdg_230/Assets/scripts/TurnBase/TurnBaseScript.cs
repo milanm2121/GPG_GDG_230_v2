@@ -580,9 +580,9 @@ public class TurnBaseScript : MonoBehaviour
                         case "summon":
                             summon(message[i+2], message[i+3]);
                             break;
-
+                        //gold / "Gold" / mana / "Power"
                         case "earn":
-                            //need refrence from G
+                            earn(message[i + 2], message[i + 4]);
                             break;
                         // number of units
                         case "convert":
@@ -604,7 +604,7 @@ public class TurnBaseScript : MonoBehaviour
             }
         }
     }
-    
+    #region passives
     void typeDamage(string target,string damage)
     {
         if (playerTurn == true)
@@ -703,8 +703,23 @@ public class TurnBaseScript : MonoBehaviour
             }
         }
     }
-
+    #endregion
     #region spells
+
+    void earn(string Gold,string Mana)
+    {
+        if (playerTurn == true)
+        {
+            player1Hand.playerGold += int.Parse(Gold);
+            player1Hand.playerMana += int.Parse(Mana);
+        }
+        else
+        {
+            player2Hand.playerGold += int.Parse(Gold);
+            player2Hand.playerMana += int.Parse(Mana);
+        }
+    }
+
     void spellDamage(string target, string Damage)
     {
 
