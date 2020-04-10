@@ -523,113 +523,101 @@ public class TurnBaseScript : MonoBehaviour
         }
         else if(message[0]=="On" && message[1] == "Play:")
         {
-            cardReadDelay = 2;
+            cardReadDelay = 5;
         }
         else
         {
             cardReadDelay = 0;
         }
-
-        switch (message[0])
+        for (int i = 0; message.Length > i; i++)
         {
-            case "On":
+            switch (message[i])
+            {
+                case "On":
 
-                switch (message[1]) {
-                    case "Play:":
-                        switch (message[2])
-                        {
-                            //unitytype(e.g. "Trooper") / "for" / damage
-                            case "Damage":
-                                typeDamage(message[3], message[5]);
-                                break;
-                        }
-                        break;
-                }
-                break;
+                    switch (message[i+1])
+                    {
+                        case "Play:":
+                            switch (message[i+2])
+                            {
+                                //unitytype(e.g. "Trooper") / "for" / damage
+                                case "Damage":
+                                    typeDamage(message[i+3], message[i+5]);
+                                    break;
 
-            case "Spell:":
-                
+                                //"all"/ unitytype / attack / "attack" / deffence / "deffence"
+                                case "Boost":
+                                    boost(message[i+4], message[i+5], message[i+7]);
+                                    break;
 
-                switch (message[1])
-                {
+                                // unit count/ unit name    
+                                case "Summon":
+                                    PasSummon(message[i+3], message[i+4]);
+                                    break;
+                            }
+                            break;
+                    }
+                    break;
+
+
+
+                case "Spell:":
+
+
+                    switch (message[i+1])
+                    {
                         //number of units / damage
-                    case "damage":
-                        spellDamage(message[2], message[3]);
-                        break;
+                        case "damage":
+                            spellDamage(message[i+2], message[i+3]);
+                            break;
 
                         //number of units / unit type / "attack" / damage / "defence" / deffence
-                    case "upgrade":
-                        upgrade(message[2], message[3], message[5],message[7]);
-                        break;
+                        case "upgrade":
+                            upgrade(message[i+2], message[i+3], message[i+5], message[i+7]);
+                            break;
 
                         //unit count / unit name
-                    case "summon":
-                        summon(message[2], message[3]);
-                        break;
+                        case "summon":
+                            summon(message[i+2], message[i+3]);
+                            break;
 
-                    case "earn":
-                        //need refrence from G
-                        break;
+                        case "earn":
+                            //need refrence from G
+                            break;
                         // number of units
-                    case "convert":
-                        convert(message[2]);
-                        break;
+                        case "convert":
+                            convert(message[i+2]);
+                            break;
                         // number of units
-                    case "dissable":
-                        disable(message[2]);
-                        break;
-                }
-                break;
+                        case "dissable":
+                            disable(message[i+2]);
+                            break;
+                    }
+                    break;
 
                 //number of units / unit type
-            case "sacrifice:":
-                sacrifice(message[1], message[2]);
-                switch (message[2+1])
-                {
-                    //number of units / damage
-                    case "damage":
-                        spellDamage(message[2+2], message[2+3]);
-                        break;
+                case "sacrifice:":
+                    sacrifice(message[i+1], message[i+2], message, i);
 
-                    //number of units / unit type / "attack" / damage / "defence" / deffence
-                    case "upgrade":
-                        upgrade(message[2+2], message[2+3], message[2+5], message[2+7]);
-                        break;
 
-                    //unit count / unit name
-                    case "summon":
-                        summon(message[2+2], message[2+3]);
-                        break;
-
-                    case "earn":
-                        //need refrence from G
-                        break;
-                    // number of units
-                    case "convert":
-                        convert(message[2+2]);
-                        break;
-                    // number of units
-                    case "dissable":
-                        disable(message[2+2]);
-                        break;
-                }
-                break;
+                    break;
+            }
         }
     }
-
+    
     void typeDamage(string target,string damage)
     {
         if (playerTurn == true)
         {
             for (int i=0; player2Hand.active_cards > i; i++)
             {
-                string nam = player2Hand.active_cards_slots[i - 1].GetComponent<CardDisplay>().card.name;
+                string nam = player2Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.name;
                 string[] brokenName=nam.Split(' ');
                 for(int a=0;brokenName.Length>a; a++)
                 {
                     if (brokenName[a] == target)
                     {
-                        player2Hand.active_cards_slots[i - 1].GetComponent<CardDisplay>().card.health -= int.Parse(damage);
+                        player2Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.health -= int.Parse(damage);
                     }
                 }
             }
@@ -638,26 +626,93 @@ public class TurnBaseScript : MonoBehaviour
         {
             for (int i = 0; player1Hand.active_cards > i; i++)
             {
-                string nam = player1Hand.active_cards_slots[i - 1].GetComponent<CardDisplay>().card.name;
+                string nam = player1Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.name;
                 string[] brokenName = nam.Split(' ');
                 for (int a = 0; brokenName.Length > a; a++)
                 {
                     if (brokenName[a] == target)
                     {
-                        player1Hand.active_cards_slots[i - 1].GetComponent<CardDisplay>().card.health -= int.Parse(damage);
+                        player1Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.health -= int.Parse(damage);
+                    }
+                }
+            }
+        }
+    }
+    void boost(string unittype, string attack, string deffence)
+    {
+        if (playerTurn == true)
+        {
+            for (int i = 0; player1Hand.active_cards > i; i++)
+            {
+                string nam = player1Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.name;
+                string[] brokenName = nam.Split(' ');
+                for (int a = 0; brokenName.Length > a; a++)
+                {
+                    if (brokenName[a] == unittype)
+                    {
+                        player1Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.health += int.Parse(deffence);
+                        player1Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.attack += int.Parse(attack);
+                    }
+                }
+            }
+        }
+        else
+        {
+            for (int i = 0; player2Hand.active_cards > i; i++)
+            {
+                string nam = player2Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.name;
+                string[] brokenName = nam.Split(' ');
+                for (int a = 0; brokenName.Length > a; a++)
+                {
+                    if (brokenName[a] == unittype)
+                    {
+                        player2Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.health += int.Parse(deffence);
+                        player2Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.attack += int.Parse(attack);
                     }
                 }
             }
         }
     }
 
+    void PasSummon(string unitcount, string unit)
+    {
+        if (playerTurn == true)
+        {
+            for (int i = 0; int.Parse(unitcount) > i; i++)
+            {
+                if (player1Hand.active_cards < 5)
+                {
+                    GameObject x = Cr.create_card(unit);
+                    player1Hand.active_cards_slots[player1Hand.active_cards] = x;
+                    player1Hand.active_cards++;
+                    StartCoroutine(player1Hand.unsick(x, player1Hand));
+                }
+            }
+        }
+        else
+        {
+            for (int i = 0; int.Parse(unitcount) > i; i++)
+            {
+                if (player2Hand.active_cards < 5)
+                {
+                    GameObject x = Cr.create_card(unit);
+                    player2Hand.active_cards_slots[player2Hand.active_cards] = x;
+                    player2Hand.active_cards++;
+                    StartCoroutine(player1Hand.unsick(x, player2Hand));
+                }
+            }
+        }
+    }
+
+    #region spells
     void spellDamage(string target, string Damage)
     {
-        if (target == "all")
+
+
+
+        if (playerTurn == true)
         {
-
-
-            if (playerTurn == true)
+            if (target == "all")
             {
 
                 for (int i = 0; player2Hand.active_cards > i; i++)
@@ -678,46 +733,97 @@ public class TurnBaseScript : MonoBehaviour
             }
             else
             {
-                for (int i = 0; player1Hand.active_cards > i; i++)
-                {
-                    string Decription = player1Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.description;
-                    string[] x = Decription.Split(' ');
-                    bool enduring = false;
-                    for (int y = 0; x.Length > y; i++)
-                    {
-                        if (x[i] == "Enduring")
-                        {
-                            enduring = true;
-                        }
-                    }
-                    if (enduring == false)
-                        player1Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.health -= int.Parse(Damage);
-                }
+                List<GameObject> SelectedCards = new List<GameObject>();
+                StartCoroutine(waitforDamage(int.Parse(target), SelectedCards, int.Parse(Damage)));
+                StartCoroutine(pause_sellection_outher_hand(int.Parse(target), SelectedCards));
             }
-        
-
         }
         else
         {
-
-            List<GameObject> SelectedCards = new List<GameObject>();
-            StartCoroutine(waitforDamage(int.Parse(target), SelectedCards, int.Parse(Damage)));
-            StartCoroutine(pause_sellection_outher_hand(int.Parse(target), SelectedCards));
-
-
+            int effectedCards = 0;
+            for (int i = 0; player1Hand.active_cards > i; i++)
+            {
+                string Decription = player1Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.description;
+                string[] x = Decription.Split(' ');
+                bool enduring = false;
+                
+                for (int y = 0; x.Length > y; i++)
+                {
+                    if (x[i] == "Enduring")
+                    {
+                        enduring = true;
+                    }
+                }
+                if (enduring == false) {
+                    player1Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.health -= int.Parse(Damage);
+                    effectedCards++;
+                    if (effectedCards == int.Parse(target))
+                        i = player1Hand.active_cards;
+                }
+            }
+            
         }
     }
-    void sacrifice(string nuber, string unit_type)
+    void sacrifice(string nuber, string unit_type, string[] spell, int start)
     {
         if (playerTurn == true)
         {
             List<GameObject> SelectedCards = new List<GameObject>();
             StartCoroutine(pause_sellection_own_hand(int.Parse(nuber), unit_type, SelectedCards));
-            StartCoroutine(player_sacrifice(int.Parse(nuber), SelectedCards));
+            StartCoroutine(player_sacrifice(int.Parse(nuber), SelectedCards,spell,start));
         }
         else
         {
-            //Ai option
+            for (int i = 0; player2Hand.active_cards > i; i++)
+            {
+                string Decription = player2Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.name;
+                string[] x = Decription.Split(' ');
+                List<GameObject> SelectedCards = new List<GameObject>();
+                for (int y = 0; x.Length > y; i++)
+                {
+                    if (x[i] == unit_type)
+                    {
+                        SelectedCards.Add(player2Hand.active_cards_slots[i]);
+                    }
+                    if (SelectedCards.Count == int.Parse(nuber))
+                    {
+                        i = player2Hand.active_cards;
+                        scrificeComplete(spell,start);
+                    }
+                }
+            }
+        }
+    }
+    void scrificeComplete(string[] message,int start)
+    {
+        switch (message[start+2 + 1])
+        {
+            //number of units / damage
+            case "damage":
+                spellDamage(message[start+2 + 2], message[start+2 + 3]);
+                break;
+
+            //number of units / unit type / "attack" / damage / "defence" / deffence
+            case "upgrade":
+                upgrade(message[start+2 + 2], message[start+2 + 3], message[start+2 + 5], message[start+2 + 7]);
+                break;
+
+            //unit count / unit name
+            case "summon":
+                summon(message[start+2 + 2], message[start+2 + 3]);
+                break;
+
+            case "earn":
+                //need refrence from G
+                break;
+            // number of units
+            case "convert":
+                convert(message[start+2 + 2]);
+                break;
+            // number of units
+            case "dissable":
+                disable(message[start+2 + 2]);
+                break;
         }
     }
 
@@ -754,7 +860,47 @@ public class TurnBaseScript : MonoBehaviour
         }
         else
         {
-            //Ai option
+            if (nuber == "all")
+            {
+                List<GameObject> selectedCards = new List<GameObject>();
+                for (int i = 0; player2Hand.active_cards > i; i++)
+                {
+                    string n = player2Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.name;
+                    string[] brokenName = n.Split(' ');
+                    for (int x = 0; brokenName.Length > x; x++)
+                    {
+                        if (brokenName[x] == unit_type)
+                            selectedCards.Add(player2Hand.active_cards_slots[i]);
+
+                    }
+                }
+                for (int i = 0; selectedCards.Count > i; i++)
+                {
+                    selectedCards[i].GetComponent<CardDisplay>().card.health += int.Parse(health);
+                    selectedCards[i].GetComponent<CardDisplay>().card.attack += int.Parse(attack);
+                }
+            }
+            else
+            {
+                List<GameObject> selectedCards = new List<GameObject>();
+                for (int i = 0; player2Hand.active_cards > i; i++)
+                {
+                    string n = player2Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.name;
+                    string[] brokenName = n.Split(' ');
+                    for (int x = 0; brokenName.Length > x; x++)
+                    {
+                        if (brokenName[x] == unit_type)
+                            selectedCards.Add(player2Hand.active_cards_slots[i]);
+                        if (selectedCards.Count == int.Parse(nuber))
+                            i = player2Hand.active_cards;
+                    }
+                }
+                for (int i = 0; selectedCards.Count > i; i++)
+                {
+                    selectedCards[i].GetComponent<CardDisplay>().card.health += int.Parse(health);
+                    selectedCards[i].GetComponent<CardDisplay>().card.attack += int.Parse(attack);
+                }
+            }
         }
     }
 
@@ -765,6 +911,27 @@ public class TurnBaseScript : MonoBehaviour
             List<GameObject> SelectedCards = new List<GameObject>();
             StartCoroutine(waitForConvert(int.Parse(units), SelectedCards));
             StartCoroutine(pause_sellection_outher_hand(int.Parse(units), SelectedCards));
+        }
+        else
+        {
+            for (int i = 0; int.Parse(units) > i; i++)
+            {
+                if (player2Hand.active_cards < 5)
+                {
+                    int card = Random.Range(0, player1Hand.active_cards);
+                    player2Hand.active_cards_slots[player2Hand.active_cards - 1] = player1Hand.active_cards_slots[card];
+                    player1Hand.active_cards_slots[card] = null;
+                    player2Hand.active_cards++;
+                    player1Hand.active_cards--;
+
+                    for (int x = card; player1Hand.active_cards_slots.Length > x; x++)
+                    {
+
+                        player1Hand.active_cards_slots[x] = player1Hand.active_cards_slots[x + 1];
+
+                    }
+                }
+            }
         }
     }
 
@@ -778,6 +945,7 @@ public class TurnBaseScript : MonoBehaviour
                 {
                     GameObject x =Cr.create_card(unit);
                     player1Hand.active_cards_slots[player1Hand.active_cards-1] = x ;
+                    StartCoroutine(player1Hand.unsick(x, player1Hand));
                 }
             }
         }
@@ -788,7 +956,8 @@ public class TurnBaseScript : MonoBehaviour
                 if (player2Hand.active_cards < 5)
                 {
                     GameObject x = Cr.create_card(unit);
-                    player2Hand.active_cards_slots[player2Hand.active_cards] = x;
+                    player2Hand.active_cards_slots[player2Hand.active_cards-1] = x;
+                    StartCoroutine(player2Hand.unsick(x, player2Hand));
                 }
             }
         }
@@ -796,9 +965,29 @@ public class TurnBaseScript : MonoBehaviour
 
     void disable(string units)
     {
-        List<GameObject> SelectedCards = new List<GameObject>();
-        StartCoroutine(waitForDisable(int.Parse(units), SelectedCards));
-        StartCoroutine(pause_sellection_outher_hand(int.Parse(units), SelectedCards));
+        if (playerTurn == true)
+        {
+            List<GameObject> SelectedCards = new List<GameObject>();
+            StartCoroutine(waitForDisable(int.Parse(units), SelectedCards));
+            StartCoroutine(pause_sellection_outher_hand(int.Parse(units), SelectedCards));
+        }
+        else
+        {
+            int x=0;
+            for(int i=0;int.Parse(units)>i; x++)
+            {
+                int card = Random.Range(0, player1Hand.active_cards);
+                if (player1Hand.active_cards_slots[card].GetComponent<CardDisplay>().card.monsterSickness == false)
+                {
+                    i++;
+                    player1Hand.active_cards_slots[card].GetComponent<CardDisplay>().card.monsterSickness = true;
+                }
+                if (x == 10)
+                {
+                    i = x;
+                }
+            }
+        }
     }
 
 
@@ -840,13 +1029,14 @@ public class TurnBaseScript : MonoBehaviour
 
     }
 
-    IEnumerator player_sacrifice(int cardcount, List<GameObject> selectedCards)
+    IEnumerator player_sacrifice(int cardcount, List<GameObject> selectedCards,string[] message, int start)
     {
         yield return new WaitUntil(() => selectedCards.Count == cardcount);
         for (int i = 0; selectedCards.Count > i; i++)
         {
             selectedCards[i].GetComponent<CardDisplay>().card.health = 0;
         }
+        scrificeComplete(message,start);
     }
 
     IEnumerator waitforDamage(int cardcount,List<GameObject> selectedCards,int damage)
@@ -913,4 +1103,5 @@ public class TurnBaseScript : MonoBehaviour
         }
         cardReadDelay = 0;
     }
+    #endregion
 }

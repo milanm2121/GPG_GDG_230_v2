@@ -5302,12 +5302,17 @@ PrefabInstance:
         type: 3}
       propertyPath: win
       value: 
-      objectReference: {fileID: 8300000, guid: 8cdca3789fd1b4b248fcbb210dc8a68f, type: 3}
+      objectReference: {fileID: 8300000, guid: b43e1e428b5c16243be8b7c343ec1087, type: 3}
     - target: {fileID: 2285168136727759004, guid: 10016f06ccc7fc84c83dbb0ad76e50f7,
         type: 3}
       propertyPath: lose
       value: 
-      objectReference: {fileID: 8300000, guid: a9d050f35404c429289be5d7d7a83720, type: 3}
+      objectReference: {fileID: 8300000, guid: d5332ab41fd138541aa31549456016dc, type: 3}
+    - target: {fileID: 2285168136727759004, guid: 10016f06ccc7fc84c83dbb0ad76e50f7,
+        type: 3}
+      propertyPath: Cr
+      value: 
+      objectReference: {fileID: 927181627}
     - target: {fileID: 2285168136727759007, guid: 10016f06ccc7fc84c83dbb0ad76e50f7,
         type: 3}
       propertyPath: m_LocalPosition.x

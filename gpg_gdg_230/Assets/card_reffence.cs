@@ -25,13 +25,14 @@ public class card_reffence : MonoBehaviour
                     attack = id[i].attack,
                     manaCost = id[i].manaCost,
                     description = id[i].description,
-                    monsterSickness = false
+                    monsterSickness = true
 
                 };
                 card.GetComponent<CardDisplay>().card = sc;
                 card.transform.parent = cardfeild.transform;
                 card.GetComponent<RectTransform>().localScale = new Vector2(0.6f, 0.6f);
                 card.GetComponent<card_functions>().isInHand = false;
+                
                 return card;
 
             }
