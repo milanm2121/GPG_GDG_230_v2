@@ -34,7 +34,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 315, y: 460}
+  m_AnchoredPosition: {x: 300, y: 450}
   m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 1, y: 1}
 --- !u!222 &6714747550132610723
@@ -157,7 +157,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 315, y: -50}
+  m_AnchoredPosition: {x: 300, y: -85}
   m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!222 &5674455223232609600
@@ -233,7 +233,7 @@ RectTransform:
   m_GameObject: {fileID: 2335418786316836980}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 1713533807444372753}
   m_Father: {fileID: 0}
@@ -323,87 +323,9 @@ MonoBehaviour:
   summoningMonsters: 0
   token: 1
   tokenObject: {fileID: 2335418786316836980}
-  tokenCards:
-  - cardID: 0
-    cardName: 
-    cardDetail: 
-    cardType: 
-    cardCoinCost: 0
-    cardAttack: 0
-    cardHealth: 0
-    drawXCards: 0
-    addXMaxCoin: 0
-    buffATK: 0
-    buffHealth: 0
-    summonMonster: 0
-    blocker: 0
-    buffOtherATK: 0
-    buffOtherHealth: 0
-    cardImage: {fileID: 0}
-  - cardID: 0
-    cardName: 
-    cardDetail: 
-    cardType: 
-    cardCoinCost: 0
-    cardAttack: 0
-    cardHealth: 0
-    drawXCards: 0
-    addXMaxCoin: 0
-    buffATK: 0
-    buffHealth: 0
-    summonMonster: 0
-    blocker: 0
-    buffOtherATK: 0
-    buffOtherHealth: 0
-    cardImage: {fileID: 0}
-  - cardID: 0
-    cardName: 
-    cardDetail: 
-    cardType: 
-    cardCoinCost: 0
-    cardAttack: 0
-    cardHealth: 0
-    drawXCards: 0
-    addXMaxCoin: 0
-    buffATK: 0
-    buffHealth: 0
-    summonMonster: 0
-    blocker: 0
-    buffOtherATK: 0
-    buffOtherHealth: 0
-    cardImage: {fileID: 0}
-  - cardID: 0
-    cardName: 
-    cardDetail: 
-    cardType: 
-    cardCoinCost: 0
-    cardAttack: 0
-    cardHealth: 0
-    drawXCards: 0
-    addXMaxCoin: 0
-    buffATK: 0
-    buffHealth: 0
-    summonMonster: 0
-    blocker: 0
-    buffOtherATK: 0
-    buffOtherHealth: 0
-    cardImage: {fileID: 0}
-  - cardID: 0
-    cardName: 
-    cardDetail: 
-    cardType: 
-    cardCoinCost: 0
-    cardAttack: 0
-    cardHealth: 0
-    drawXCards: 0
-    addXMaxCoin: 0
-    buffATK: 0
-    buffHealth: 0
-    summonMonster: 0
-    blocker: 0
-    buffOtherATK: 0
-    buffOtherHealth: 0
-    cardImage: {fileID: 0}
+  tokenCards: []
+  buffOtherCardsATK: 0
+  buffOtherCardsHealth: 0
   ableToAttackObject: {fileID: 3161765567210277177}
   target: {fileID: 0}
   enemy: {fileID: 0}
@@ -417,7 +339,6 @@ MonoBehaviour:
   field: {fileID: 0}
   fieldObject: {fileID: 0}
   cardObject: {fileID: 2335418786316836980}
-  tokenTimer: 0
 --- !u!114 &8669690776644368837
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -756,7 +677,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: -300, y: -50}
+  m_AnchoredPosition: {x: -300, y: -85}
   m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &1664466029245281929
@@ -833,7 +754,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 5, y: -50}
+  m_AnchoredPosition: {x: 0, y: -160}
   m_SizeDelta: {x: 550, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3038422850018005728
@@ -910,8 +831,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 3, y: 1.1}
-  m_SizeDelta: {x: 1176, y: 1100}
+  m_AnchoredPosition: {x: 20, y: 120}
+  m_SizeDelta: {x: 1200, y: 1335}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8656275312113687559
 CanvasRenderer:
@@ -939,7 +860,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 24a4d253ba1ef4ad1975a213e613325b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 54fae83e6cbbf41338c5943883fdd3bc, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -983,8 +904,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: -214.6, y: -264.4}
-  m_SizeDelta: {x: 540, y: 338.9}
+  m_AnchoredPosition: {x: -340, y: -328.9}
+  m_SizeDelta: {x: 780, y: 280}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &5364903851293505781
 CanvasRenderer:
@@ -1060,7 +981,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -300, y: 460}
+  m_AnchoredPosition: {x: -300, y: 565}
   m_SizeDelta: {x: 640, y: 60}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &5325150816300399139

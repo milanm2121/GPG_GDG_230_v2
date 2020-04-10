@@ -17,7 +17,7 @@ public class CardDataBase : MonoBehaviour
         cardList.Add(new CardVersion2(6, "The Commander of Trooper", "On play: summon x2 Trooper", "Soldier", 5, 4, 4, Resources.Load <Sprite>("5"), 0, 0, 0, 0, 2, false, 0, 0));
         cardList.Add(new CardVersion2(7, "The Genral of Trooper", "On play: summon x1 Trooper and give other Soldier +1/+1", "Soldier", 5, 4, 3, Resources.Load<Sprite>("6"), 0, 0, 0, 0, 1, false, 1, 1));
         cardList.Add(new CardVersion2(8, "Frost Trooper", "On play: Stun 1 enemy unit", "Soldier", 3, 3, 2, Resources.Load<Sprite>("6"), 0, 0, 0, 0, 0, false, 0, 0));
-        cardList.Add(new CardVersion2(9, "Air Trooper", "On attack: cannot be block by enemy with 3 of less ATK", "Soldier", 4, 4, 2, Resources.Load<Sprite>("6"), 0, 0, 0, 0, 0, false, 0, 0));
+        cardList.Add(new CardVersion2(9, "Air Trooper", "On play: draw 2 cards", "Soldier", 4, 4, 2, Resources.Load<Sprite>("6"), 2, 0, 0, 0, 0, false, 0, 0));
 
         cardList.Add(new CardVersion2(10, "Stealth Trooper", "Summon 3 Monster", "French", 1, 1, 1, Resources.Load<Sprite>("6"), 0, 0, 0, 0, 0, false, 0, 0));
         cardList.Add(new CardVersion2(11, "Electric Trooper", "Summon 3 Monster", "French", 1, 1, 1, Resources.Load<Sprite>("6"), 0, 0, 0, 0, 0, false, 0, 0));
