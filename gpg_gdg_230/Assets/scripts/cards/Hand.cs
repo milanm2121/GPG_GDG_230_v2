@@ -232,12 +232,9 @@ public class Hand : MonoBehaviour
                     if (cards_in_hand >= 1 && active_cards <= 4)
                     {
                         {
-                        //    print("hand phase");
+                            //    print("hand phase");
 
-                            for (int i = 0; 20 > i; i++)
-                            {
-                                Use_card(Random.Range(0, cards_in_hand));
-                            }
+                            StartCoroutine(DelayAIUsecard());
                         }
                     }
                     StartCoroutine(Ai_turn_control(TurnBaseScript.TurnState.Attack));
@@ -542,7 +539,7 @@ public class Hand : MonoBehaviour
 
 
     }
-    IEnumerator unsick(GameObject card,Hand hand)
+    public IEnumerator unsick(GameObject card,Hand hand)
     {
         if (hand == TBS.player1Hand) {
             yield return new WaitUntil(()=>TBS.playerTurn==false);
@@ -594,5 +591,14 @@ public class Hand : MonoBehaviour
         selectingEnemyCards = true;
         yield return new WaitUntil(() =>cardselected.Count==1);
         selectingEnemyCards = false;
+    }
+
+    IEnumerator DelayAIUsecard()
+    {
+        for (int i = 0; 20 > i; i++)
+        {
+            Use_card(Random.Range(0, cards_in_hand));
+            yield return new WaitForSeconds(0.5f);
+        }
     }
 }
