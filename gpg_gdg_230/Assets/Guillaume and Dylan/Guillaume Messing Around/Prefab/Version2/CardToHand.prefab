@@ -322,7 +322,8 @@ MonoBehaviour:
   buffXHealth: 0
   summoningMonsters: 0
   token: 1
-  tokenObject: {fileID: 2335418786316836980}
+  tokenObject: {fileID: 7173777714064427245, guid: 0acb876c4c9cd614cbdc8178ca95ff5c,
+    type: 3}
   tokenCards: []
   buffOtherCardsATK: 0
   buffOtherCardsHealth: 0
