@@ -57,8 +57,8 @@ public class ThisCard : MonoBehaviour
     public static int staticBuffOtherCardsATK;
     public int buffOtherCardsHealth;
     public static int staticBuffOtherCardsHealth;
-    public bool buffingOtherCards;
-    public static bool staticBuffingOtherCards;
+
+    public BuffingOtherCardsScript buffingOthersCards;
 
     //These are forbeing able to attack or not
     // and which one to attack.
@@ -108,8 +108,6 @@ public class ThisCard : MonoBehaviour
 
         fieldObject = GameObject.Find("Field");
         field = fieldObject.GetComponent<CardsOnTheField>();
-
-        staticBuffingOtherCards = false;
 
     }
 
@@ -240,11 +238,6 @@ public class ThisCard : MonoBehaviour
             Invoke("DestroyMonster", 1.5f);
         }
 
-        if (buffOtherCardsATK == 0 && buffingOtherCards == true)
-        {
-            BuffOtherCardATK();
-        }
-
     }
 
     public void AddToken(int x)
@@ -273,7 +266,6 @@ public class ThisCard : MonoBehaviour
         drawX = drawXCards;
         CardsOnTheField.beingSummoned = true;
 
-        staticBuffingOtherCards = false;
     }
 
     public void MaxCoin(int x)
@@ -289,12 +281,11 @@ public class ThisCard : MonoBehaviour
     {
         if (buffOtherCardsATK > 0)
         {
-            staticBuffingOtherCards = true;
-            staticBuffOtherCardsATK = buffOtherCardsATK;
-            buffingOtherCards = staticBuffingOtherCards;
+            buffingOthersCards.buffingOtherCardsATKBool = true;
+            buffingOthersCards.attackBuff = buffOtherCardsATK;
         }
 
-        if (staticBuffingOtherCards == false)
+        if (buffingOthersCards.buffingOtherCardsATKBool == false)
         {
             thisCardAttack += x;
             attackText.text = thisCardAttack.ToString();
@@ -305,14 +296,6 @@ public class ThisCard : MonoBehaviour
     {
         thisCardHealth += x;
         healthText.text = "" + thisCardHealth;
-    }
-
-    public void BuffOtherCardATK()
-    {
-        Debug.Log("Hello my name is edler Maguex");
-        thisCardAttack += staticBuffOtherCardsATK;
-        buffingOtherCards = false;
-        //staticBuffOtherCardsATK = 0;
     }
 
     public void SummoningTheMonster(int x)
