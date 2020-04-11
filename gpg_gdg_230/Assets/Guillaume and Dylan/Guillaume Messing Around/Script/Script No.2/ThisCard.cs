@@ -54,7 +54,11 @@ public class ThisCard : MonoBehaviour
     public GameObject tokenObject;
     public List<CardVersion2> tokenCards = new List<CardVersion2>();
     public int buffOtherCardsATK;
+    public static int staticBuffOtherCardsATK;
     public int buffOtherCardsHealth;
+    public static int staticBuffOtherCardsHealth;
+    public bool buffingOtherCards;
+    public static bool staticBuffingOtherCards;
 
     //These are forbeing able to attack or not
     // and which one to attack.
@@ -104,6 +108,8 @@ public class ThisCard : MonoBehaviour
 
         fieldObject = GameObject.Find("Field");
         field = fieldObject.GetComponent<CardsOnTheField>();
+
+        staticBuffingOtherCards = false;
 
     }
 
@@ -234,6 +240,11 @@ public class ThisCard : MonoBehaviour
             Invoke("DestroyMonster", 1.5f);
         }
 
+        if (buffOtherCardsATK == 0 && buffingOtherCards == true)
+        {
+            BuffOtherCardATK();
+        }
+
     }
 
     public void AddToken(int x)
@@ -261,8 +272,8 @@ public class ThisCard : MonoBehaviour
         SummoningTheMonster(summoningMonsters);
         drawX = drawXCards;
         CardsOnTheField.beingSummoned = true;
-        BuffOtherCardATK(buffOtherCardsATK);
-        BuffOtherCardHealth(buffOtherCardsHealth);
+
+        staticBuffingOtherCards = false;
     }
 
     public void MaxCoin(int x)
@@ -276,8 +287,18 @@ public class ThisCard : MonoBehaviour
     
     public void BuffAttack(int x)
     {
-        thisCardAttack += x;
-        attackText.text = thisCardAttack.ToString();
+        if (buffOtherCardsATK > 0)
+        {
+            staticBuffingOtherCards = true;
+            staticBuffOtherCardsATK = buffOtherCardsATK;
+            buffingOtherCards = staticBuffingOtherCards;
+        }
+
+        if (staticBuffingOtherCards == false)
+        {
+            thisCardAttack += x;
+            attackText.text = thisCardAttack.ToString();
+        }
     }
 
     public void BuffHealth(int x)
@@ -286,22 +307,12 @@ public class ThisCard : MonoBehaviour
         healthText.text = "" + thisCardHealth;
     }
 
-    public void BuffOtherCardATK(int x)
+    public void BuffOtherCardATK()
     {
-        int fieldList = field.fieldCards.Count;
-
-        for (int i = 0; i < fieldList; i++)
-        {
-            if (field.fieldCards[i].tag == thisCard[0].cardType)
-            {
-                CardsOnTheField.staticAttackList[i] += x;
-            }
-        }
-    }
-        
-    public void BuffOtherCardHealth(int x)
-    {
-
+        Debug.Log("Hello my name is edler Maguex");
+        thisCardAttack += staticBuffOtherCardsATK;
+        buffingOtherCards = false;
+        //staticBuffOtherCardsATK = 0;
     }
 
     public void SummoningTheMonster(int x)
