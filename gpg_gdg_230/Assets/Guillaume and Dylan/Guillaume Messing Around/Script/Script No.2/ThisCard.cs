@@ -4,6 +4,15 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
+//This is where most of the action takes place for this card game.
+//There is it states in here, abilities it can use and if able to attack.
+//Done by Guillaume Blanchard 
+//Reference to where I got this help from is in this link:
+//https://www.youtube.com/watch?v=KZ9VNbFP8Pg&list=PLOoQ0JTWjALQGkiDWw_ws21fanM2za02B
+//Though I did manage to do a lot without it since it didn't show me how like:
+//Buffing units, summoning Tokens, preventing of playing too many cards on the field,
+// preventing of playing card during your opponent's turn(even thought there is a video
+// of it, I didnt't watch it).
 public class ThisCard : MonoBehaviour
 {
     //This is for the card deatils in our game.
@@ -90,6 +99,7 @@ public class ThisCard : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //Here is to make sure things are setup properly.
         thisCard[0] = CardDataBase.cardList[thisID];
         numberOfCardsInDeck = PlayerDeck.deckSize;
 
@@ -110,7 +120,7 @@ public class ThisCard : MonoBehaviour
         field = fieldObject.GetComponent<CardsOnTheField>();
 
     }
-
+    #region ThisCardUpdate
     // Update is called once per frame
     void Update()
     {
@@ -127,6 +137,9 @@ public class ThisCard : MonoBehaviour
         thisCardCost = thisCard[0].cardCoinCost;
         thisCardSprite = thisCard[0].cardImage;
 
+        //This is so that the card ATK and Health will be able to change
+        // when it is on the battle feild and either takes damage from 
+        // opponent's card, or getting buff by your card.
         if (summoned == false)
         {
             thisCardAttack = thisCard[0].cardAttack;
@@ -160,6 +173,13 @@ public class ThisCard : MonoBehaviour
             this.tag = "Untagged";
         }
 
+        //So this was at the bottom of update to begin with which was one of my major problems in which
+        // it kept summoning tokens over the limit of the field limit I have put in which is 5.
+        //So at first I put it here and things were working but it still had another problem to where
+        // I could delete them if it went over the field limit so I did make a new void to to it own Token summon,
+        // but then release that having the tokens with this card script is a bit too much since it doesn't need
+        // abilities in it. So I just made a new script to where I just copy, pasted and then just remove what 
+        // the token don't need.
         /*
         //Changing the tag of Token in order to make it be able to summon it to the field.
         //Instead of it being summoned to the hand.
@@ -233,12 +253,16 @@ public class ThisCard : MonoBehaviour
         if (tokenCards == null)
             return;
 
+        //Killing the monster when it reaches 0 Health. 
+        //Though might need to change this later as we have a card that revives cards
+        // that were destroy in battle.
         if (thisCardHealth <= 0)
         {
             Invoke("DestroyMonster", 1.5f);
         }
 
     }
+    #endregion
 
     public void AddToken(int x)
     {
@@ -249,6 +273,7 @@ public class ThisCard : MonoBehaviour
         token = false;
     }
 
+    //This summons the card from the hand and check all the abilities to see if the card has one.
     public void Summon()
     {
         CardsOnTheField.monsterAttack = thisCardAttack;
@@ -267,7 +292,10 @@ public class ThisCard : MonoBehaviour
         CardsOnTheField.beingSummoned = true;
 
     }
+    //This is where all the abilities will be put in.
+    //Make sure when making the next one to put then in here.
 
+    #region Abilities List
     public void MaxCoin(int x)
     {
         TurnSystem.maxCoin += x;
@@ -316,7 +344,9 @@ public class ThisCard : MonoBehaviour
             }
         }
     }
+    #endregion
 
+    #region Battling
     public void Attack()
     {
         if (canAttack == true)
@@ -367,6 +397,7 @@ public class ThisCard : MonoBehaviour
     {
         onlyThisCardAttack = false;
     }
+    #endregion
 
     public void DestroyMonster()
     {
