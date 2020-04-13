@@ -24,6 +24,7 @@ public class CardVersion2
     public bool blocker;
     public int buffOtherATK;
     public int buffOtherHealth;
+    public bool dontBuffThisUnit;
 
     public Sprite cardImage;
 
@@ -32,7 +33,7 @@ public class CardVersion2
 
     }
 
-    public CardVersion2(int ID, string Name, string Detail, string Type, int Cost, int Attack, int Health, Sprite Image, int DrawXCards, int AddXMaxCoin, int BuffATK, int BuffHealth, int SummonMonster, bool Blocker, int BuffOtherATK, int BuffOtherHealth)
+    public CardVersion2(int ID, string Name, string Detail, string Type, int Cost, int Attack, int Health, Sprite Image, int DrawXCards, int AddXMaxCoin, int BuffATK, int BuffHealth, int SummonMonster, bool Blocker, int BuffOtherATK, int BuffOtherHealth, bool DontBuffThisUnit)
     {
         cardID = ID;
         cardName = Name;
@@ -52,5 +53,6 @@ public class CardVersion2
         blocker = Blocker;
         buffOtherATK = BuffOtherATK;
         buffOtherHealth = BuffOtherHealth;
+        dontBuffThisUnit = DontBuffThisUnit;
     }
 }

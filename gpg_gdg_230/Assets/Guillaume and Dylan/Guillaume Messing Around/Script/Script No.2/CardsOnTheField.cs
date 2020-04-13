@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//This is where both I keep tracks on who is on the field,
+// While also making sure that my card buff other cards,
+// rather than itself.
+//Guillaume Blanchard
 public class CardsOnTheField : MonoBehaviour
 {
 
@@ -14,7 +18,7 @@ public class CardsOnTheField : MonoBehaviour
         for (int i = 0; i < cardStats.Count; i++)
         {
             Debug.Log("Working Part 2");
-            if (cardStats[i].buffOtherCardsATK == 0)
+            if (cardStats[i].buffOtherCardsATK == 0 && cardStats[i].dontBuffThisUnit == false)
                 cardStats[i].thisCardAttack += x;
         }
     }
@@ -35,7 +39,7 @@ public class CardsOnTheField : MonoBehaviour
     {
         for (int i = 0; i < cardStats.Count; i++)
         {
-            if (cardStats[i].buffOtherCardsHealth == 0)
+            if (cardStats[i].buffOtherCardsHealth == 0 && cardStats[i].dontBuffThisUnit == false)
                 cardStats[i].thisCardHealth += x;
         }
     }

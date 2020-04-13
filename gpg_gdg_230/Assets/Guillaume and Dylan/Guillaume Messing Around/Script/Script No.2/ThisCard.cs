@@ -66,8 +66,7 @@ public class ThisCard : MonoBehaviour
     public bool buffingOtherCardsATKBool = false;
     public int buffOtherCardsHealth;
     public bool buffingOtherCardsHealthBool = false;
-
-    public BuffingOtherCardsScript buffingOthersCards;
+    public bool dontBuffThisUnit;
 
     //These are forbeing able to attack or not
     // and which one to attack.
@@ -146,6 +145,7 @@ public class ThisCard : MonoBehaviour
             thisCardHealth = thisCard[0].cardHealth;
             buffOtherCardsATK = thisCard[0].buffOtherATK;
             buffOtherCardsHealth = thisCard[0].buffOtherHealth;
+            dontBuffThisUnit = thisCard[0].dontBuffThisUnit;
         }
 
         drawXCards = thisCard[0].drawXCards;
@@ -293,6 +293,7 @@ public class ThisCard : MonoBehaviour
 
         buffingOtherCardsATKBool = false;
         buffingOtherCardsHealthBool = false;
+        dontBuffThisUnit = false;
         buffOtherCardsATK = 0;
         buffOtherCardsHealth = 0;
     }
