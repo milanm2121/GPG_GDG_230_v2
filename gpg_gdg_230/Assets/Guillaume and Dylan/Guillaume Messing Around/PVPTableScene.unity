@@ -2431,8 +2431,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fieldCards: []
-  attackList: 0000000000000000000000000000000000000000
-  cardATK: {fileID: 7845622490883193912, guid: 37e0b5a55464ec04692404da56e3e814, type: 3}
+  cardStats: []
+  tokenCardStats: []
 --- !u!1 &706838080
 GameObject:
   m_ObjectHideFlags: 0

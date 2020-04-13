@@ -180,7 +180,7 @@ public class ThisTokenCard : MonoBehaviour
     {
         summoned = true;
         cardsOnThefield.fieldCards.Add(cardObject);
-        CardsOnTheField.beingSummoned = true;
+        cardsOnThefield.tokenCardStats.Add(this);
         CheckFieldLimit();
 
     }
@@ -248,6 +248,7 @@ public class ThisTokenCard : MonoBehaviour
     public void DestroyMonster()
     {
         cardsOnThefield.fieldCards.Remove(cardObject);
+        cardsOnThefield.tokenCardStats.Remove(this);
         Destroy(gameObject);
     }
 }

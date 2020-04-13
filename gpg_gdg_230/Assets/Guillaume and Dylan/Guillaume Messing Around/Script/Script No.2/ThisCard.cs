@@ -63,9 +63,9 @@ public class ThisCard : MonoBehaviour
     public GameObject tokenObject;
     public List<CardVersion2> tokenCards = new List<CardVersion2>();
     public int buffOtherCardsATK;
-    public static int staticBuffOtherCardsATK;
+    public bool buffingOtherCardsATKBool = false;
     public int buffOtherCardsHealth;
-    public static int staticBuffOtherCardsHealth;
+    public bool buffingOtherCardsHealthBool = false;
 
     public BuffingOtherCardsScript buffingOthersCards;
 
@@ -144,6 +144,8 @@ public class ThisCard : MonoBehaviour
         {
             thisCardAttack = thisCard[0].cardAttack;
             thisCardHealth = thisCard[0].cardHealth;
+            buffOtherCardsATK = thisCard[0].buffOtherATK;
+            buffOtherCardsHealth = thisCard[0].buffOtherHealth;
         }
 
         drawXCards = thisCard[0].drawXCards;
@@ -151,8 +153,6 @@ public class ThisCard : MonoBehaviour
         buffXATK = thisCard[0].buffATK;
         buffXHealth = thisCard[0].buffHealth;
         summoningMonsters = thisCard[0].summonMonster;
-        buffOtherCardsATK = thisCard[0].buffOtherATK;
-        buffOtherCardsHealth = thisCard[0].buffOtherHealth;
 
         nameText.text = "" + thisCardName;
         deatilText.text = "" + thisCardDetails;
@@ -276,12 +276,12 @@ public class ThisCard : MonoBehaviour
     //This summons the card from the hand and check all the abilities to see if the card has one.
     public void Summon()
     {
-        CardsOnTheField.monsterAttack = thisCardAttack;
         Debug.Log("summoning");
         TurnSystem.currentCoin -= thisCardCost;
         summoned = true;
         this.tag = thisCard[0].cardType;
         field.fieldCards.Add(cardObject);
+        field.cardStats.Add(this);
         AddToken(summoningMonsters);
 
         MaxCoin(addXMaxCoin);
@@ -289,8 +289,12 @@ public class ThisCard : MonoBehaviour
         BuffHealth(buffXHealth);
         SummoningTheMonster(summoningMonsters);
         drawX = drawXCards;
-        CardsOnTheField.beingSummoned = true;
 
+
+        buffingOtherCardsATKBool = false;
+        buffingOtherCardsHealthBool = false;
+        buffOtherCardsATK = 0;
+        buffOtherCardsHealth = 0;
     }
     //This is where all the abilities will be put in.
     //Make sure when making the next one to put then in here.
@@ -309,11 +313,13 @@ public class ThisCard : MonoBehaviour
     {
         if (buffOtherCardsATK > 0)
         {
-            buffingOthersCards.buffingOtherCardsATKBool = true;
-            buffingOthersCards.attackBuff = buffOtherCardsATK;
+            buffingOtherCardsATKBool = true;
+            Debug.Log("Working Part 1");
+            field.BuffOtherCardsATKStats(buffOtherCardsATK);
+            field.BuffOtherTokenCardsATKStats(buffOtherCardsATK);
         }
 
-        if (buffingOthersCards.buffingOtherCardsATKBool == false)
+        if (buffingOtherCardsATKBool == false)
         {
             thisCardAttack += x;
             attackText.text = thisCardAttack.ToString();
@@ -322,8 +328,19 @@ public class ThisCard : MonoBehaviour
 
     public void BuffHealth(int x)
     {
-        thisCardHealth += x;
-        healthText.text = "" + thisCardHealth;
+        if (buffOtherCardsHealth > 0)
+        {
+            buffingOtherCardsHealthBool = true;
+            Debug.Log("Yes");
+            field.BuffOtherCardsHealthStat(buffOtherCardsHealth);
+            field.BuffOtherTokenCardsHealthStat(buffOtherCardsHealth);
+        }
+
+        if (buffingOtherCardsHealthBool == false)
+        {
+            thisCardHealth += x;
+            healthText.text = "" + thisCardHealth;
+        }
     }
 
     public void SummoningTheMonster(int x)
@@ -402,6 +419,7 @@ public class ThisCard : MonoBehaviour
     public void DestroyMonster()
     {
         field.fieldCards.Remove(cardObject);
+        field.cardStats.Remove(this);
         Destroy(gameObject);
     }
 }
