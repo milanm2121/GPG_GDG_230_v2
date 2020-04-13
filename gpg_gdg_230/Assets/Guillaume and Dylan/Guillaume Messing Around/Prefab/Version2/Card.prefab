@@ -63,7 +63,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 7db88ae10b57d8040958ee5027c7d707, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 55aad2be057404c548a2ba67be5c20df, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -617,6 +617,7 @@ MonoBehaviour:
     blocker: 0
     buffOtherATK: 0
     buffOtherHealth: 0
+    dontBuffThisUnit: 0
     cardImage: {fileID: 0}
   thisID: 0
   id: 0
@@ -640,6 +641,9 @@ MonoBehaviour:
   canBeSummon: 0
   summoned: 0
   battleZone: {fileID: 0}
+  spellCanBeUse: 0
+  spellPlay: 0
+  thisIsASpellCard: 0
   drawXCards: 0
   addXMaxCoin: 0
   buffXATK: 0
@@ -649,7 +653,10 @@ MonoBehaviour:
   tokenObject: {fileID: 0}
   tokenCards: []
   buffOtherCardsATK: 0
+  buffingOtherCardsATKBool: 0
   buffOtherCardsHealth: 0
+  buffingOtherCardsHealthBool: 0
+  dontBuffThisUnit: 0
   ableToAttackObject: {fileID: 0}
   target: {fileID: 0}
   enemy: {fileID: 0}

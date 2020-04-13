@@ -51,6 +51,11 @@ public class ThisCard : MonoBehaviour
     public bool summoned;
     public GameObject battleZone;
 
+    //Setting up spell mechanic
+    public bool spellCanBeUse;
+    public bool spellPlay;
+    public bool thisIsASpellCard;
+
     //This is to be use for our abilities.
     //Need to make a summoning one.
     public static int drawX;
@@ -93,7 +98,8 @@ public class ThisCard : MonoBehaviour
     public GameObject fieldObject;
     public GameObject cardObject;
 
-
+    public GameObject monsterCardTemplate;
+    public GameObject spellCardTemplate;
 
     // Start is called before the first frame update
     void Start()
@@ -114,6 +120,7 @@ public class ThisCard : MonoBehaviour
 
         targeting = false;
         targetingEnemy = false;
+        thisIsASpellCard = false;
 
         fieldObject = GameObject.Find("Field");
         field = fieldObject.GetComponent<CardsOnTheField>();
@@ -173,6 +180,18 @@ public class ThisCard : MonoBehaviour
             this.tag = "Untagged";
         }
 
+
+        if (thisCardAttack == 0 && thisCardHealth == 0)
+        {
+            monsterCardTemplate.SetActive(false);
+            spellCardTemplate.SetActive(true);
+        }
+        else
+        {
+            monsterCardTemplate.SetActive(true);
+            spellCardTemplate.SetActive(false);
+        }
+
         //So this was at the bottom of update to begin with which was one of my major problems in which
         // it kept summoning tokens over the limit of the field limit I have put in which is 5.
         //So at first I put it here and things were working but it still had another problem to where
@@ -199,8 +218,17 @@ public class ThisCard : MonoBehaviour
         else 
             canBeSummon = false;
 
+        if (TurnSystem.currentMana >= thisCardCost && spellPlay == false && TurnSystem.isYourTurn == true && thisCardAttack == 0 && thisCardHealth == 0)
+            spellCanBeUse = true;
+        else
+            spellCanBeUse = false;
 
-        if (canBeSummon == true)
+        if (thisCardAttack == 0 && thisCardHealth == 0)
+            thisIsASpellCard = true;
+        else
+            thisIsASpellCard = false;
+
+        if (canBeSummon == true || spellCanBeUse == true)
             gameObject.GetComponent<DraggableCard>().enabled = true;
 
         else
@@ -256,7 +284,7 @@ public class ThisCard : MonoBehaviour
         //Killing the monster when it reaches 0 Health. 
         //Though might need to change this later as we have a card that revives cards
         // that were destroy in battle.
-        if (thisCardHealth <= 0)
+        if (thisCardHealth <= 0 && thisIsASpellCard == false)
         {
             Invoke("DestroyMonster", 1.5f);
         }
@@ -284,12 +312,13 @@ public class ThisCard : MonoBehaviour
         field.cardStats.Add(this);
         AddToken(summoningMonsters);
 
+        SummoningTheMonster(summoningMonsters);
+
+
         MaxCoin(addXMaxCoin);
+        drawX = drawXCards;
         BuffAttack(buffXATK);
         BuffHealth(buffXHealth);
-        SummoningTheMonster(summoningMonsters);
-        drawX = drawXCards;
-
 
         buffingOtherCardsATKBool = false;
         buffingOtherCardsHealthBool = false;

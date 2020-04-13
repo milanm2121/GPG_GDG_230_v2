@@ -15,6 +15,9 @@ public class CardVersion2
     public int cardAttack;
     public int cardHealth;
 
+    //Making the spell card cost.
+
+
     //Ability Lists
     public int drawXCards;
     public int addXMaxCoin;
