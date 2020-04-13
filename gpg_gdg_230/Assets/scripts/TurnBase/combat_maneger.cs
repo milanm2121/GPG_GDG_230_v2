@@ -55,7 +55,11 @@ public class combat_maneger : MonoBehaviour
                 }
                 if (doge == false) {
                     int newHealth = defend[i].GetComponent<CardDisplay>().card.health - attack[i].GetComponent<CardDisplay>().card.attack;
-                    defend[i].GetComponent<CardDisplay>().card.health = newHealth;
+                    if (newHealth < defend[i].GetComponent<CardDisplay>().card.health)
+                    {
+                        defend[i].GetComponent<CardDisplay>().card.health = newHealth;
+                    }
+
                     if (newHealth < 0)
                     {
                         string Decriptionx = attack[i].GetComponent<CardDisplay>().card.description;

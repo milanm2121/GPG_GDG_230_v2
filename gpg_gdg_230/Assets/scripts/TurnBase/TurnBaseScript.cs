@@ -554,6 +554,10 @@ public class TurnBaseScript : MonoBehaviour
                                 case "Summon":
                                     PasSummon(message[i+3], message[i+4]);
                                     break;
+                                //gold / "Gold" / mana / "Power"
+                                case "Earn":
+                                    earn(message[i + 3],message[i + 5]);
+                                    break;
                             }
                             break;
                     }
