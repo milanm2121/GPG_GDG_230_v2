@@ -34,8 +34,6 @@ public class combat_maneger : MonoBehaviour
     //this alows cards in the attack and defend list to interact
     IEnumerator CombatPhase()
     {
-//        Debug.Log("I am working");
-
         for (int i = 0; attack.Count > i; i++)
         {
             //card defending card blocks attack from attacking card of the same position
@@ -58,6 +56,25 @@ public class combat_maneger : MonoBehaviour
                     if (newHealth < defend[i].GetComponent<CardDisplay>().card.health)
                     {
                         defend[i].GetComponent<CardDisplay>().card.health = newHealth;
+                        if (newHealth <= 0)
+                        {
+                            //On Death: Explode for (damage) and(optional) Disable
+                            Decription = defend[i].GetComponent<CardDisplay>().card.description;
+                            b = Decription.Split(' ');
+                            for (int a = 0; b.Length > a; a++)
+                            {
+                                if (b[a] == "On" && b[a+1]=="Death:") {
+                                    if (b[a + 2] == "Explode")
+                                    {
+                                        attack[i].GetComponent<CardDisplay>().card.health -= int.Parse(b[a + 4]);
+                                    }
+                                    if (b.Length>(a+6) && b[a + 6] == "disable")
+                                    {
+                                        attack[i].GetComponent<CardDisplay>().card.monsterSickness = true;
+                                    }
+                                }
+                            }
+                        }
                     }
 
                     if (newHealth < 0)
@@ -84,6 +101,23 @@ public class combat_maneger : MonoBehaviour
                     }
                     newHealth = attack[i].GetComponent<CardDisplay>().card.health - defend[i].GetComponent<CardDisplay>().card.attack;
                     attack[i].GetComponent<CardDisplay>().card.health = newHealth;
+                    //On Death: Explode for (damage) and(optional) Disable
+                    Decription = attack[i].GetComponent<CardDisplay>().card.description;
+                    b = Decription.Split(' ');
+                    for (int a = 0; b.Length > a; a++)
+                    {
+                        if (b[a] == "On" && b[a + 1] == "Death:")
+                        {
+                            if (b[a + 2] == "Explode")
+                            {
+                                defend[i].GetComponent<CardDisplay>().card.health -= int.Parse(b[a + 4]);
+                            }
+                            if (b.Length > (a + 6) && b[a + 6] == "disable")
+                            {
+                                defend[i].GetComponent<CardDisplay>().card.monsterSickness = true;
+                            }
+                        }
+                    }
                 }
 
             }

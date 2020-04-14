@@ -233,7 +233,7 @@ public class Hand : MonoBehaviour
                     {
                         {
                             //    print("hand phase");
-
+                            
                             StartCoroutine(DelayAIUsecard());
                         }
                     }

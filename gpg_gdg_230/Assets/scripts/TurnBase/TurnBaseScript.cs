@@ -519,11 +519,11 @@ public class TurnBaseScript : MonoBehaviour
 
         if(message[0]=="Spell:" || message[0]== "sacrifice:")
         {
-            cardReadDelay = 10;
+            cardReadDelay = 5;
         }
         else if(message[0]=="On" && message[1] == "Play:")
         {
-            cardReadDelay = 5;
+            cardReadDelay = 2;
         }
         else
         {
@@ -557,6 +557,10 @@ public class TurnBaseScript : MonoBehaviour
                                 //gold / "Gold" / mana / "Power"
                                 case "Earn":
                                     earn(message[i + 3],message[i + 5]);
+                                    break;
+
+                                case "Enhance":
+
                                     break;
                             }
                             break;
