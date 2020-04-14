@@ -129,7 +129,6 @@ public class Hand : MonoBehaviour
                 if (selectedCard != hand[i])
                     hand[i].transform.SetSiblingIndex(i);
             }
-
             if (selectedCard != null)
             {
                 selectedCard.transform.SetAsLastSibling();
@@ -154,15 +153,22 @@ public class Hand : MonoBehaviour
                     {
                         if (active_cards_slots[i] == selectedCard)
                         {
-                            string compareName;
-                            compareName = selectedCard.GetComponent<CardDisplay>().card.name;
-                            string[] brokenName = compareName.Split(' ');
-                            for (int x = 0; brokenName.Length > x; x++)
+                            if (unitType != "none")
                             {
-                                if (brokenName[x] == unitType)
+                                string compareName;
+                                compareName = selectedCard.GetComponent<CardDisplay>().card.name;
+                                string[] brokenName = compareName.Split(' ');
+                                for (int x = 0; brokenName.Length > x; x++)
                                 {
-                                    selectedCards.Add(selectedCard);
+                                    if (brokenName[x] == unitType)
+                                    {
+                                        selectedCards.Add(selectedCard);
+                                    }
                                 }
+                            }
+                            else
+                            {
+                                selectedCards.Add(selectedCard);
                             }
                         }
                     }

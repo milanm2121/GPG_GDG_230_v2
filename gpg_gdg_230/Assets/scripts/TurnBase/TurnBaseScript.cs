@@ -558,9 +558,9 @@ public class TurnBaseScript : MonoBehaviour
                                 case "Earn":
                                     earn(message[i + 3],message[i + 5]);
                                     break;
-
+                                //"all" / unit type/ "with" / enhancement
                                 case "Enhance":
-
+                                    Enhance(message[i + 3], message[i + 5]);
                                     break;
                             }
                             break;
@@ -600,6 +600,10 @@ public class TurnBaseScript : MonoBehaviour
                         case "dissable":
                             disable(message[i+2]);
                             break;
+
+                        case "Enhance":
+                            SpellEnhance();
+                            break;
                     }
                     break;
 
@@ -613,6 +617,43 @@ public class TurnBaseScript : MonoBehaviour
         }
     }
     #region passives
+
+    void Enhance(string unit_type, string enhancement)
+    {
+        if (playerTurn == true)
+        {
+            for (int i = 0; player1Hand.active_cards > i; i++)
+            {
+                string nam = player1Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.name;
+                string[] brokenName = nam.Split(' ');
+                for (int a = 0; brokenName.Length > a; a++)
+                {
+                    if (brokenName[a] == unit_type)
+                    {
+                        player1Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.description += " " + enhancement;
+                        player1Hand.active_cards_slots[i].GetComponent<CardDisplay>().descriptionText.text += " " + enhancement;
+                    }
+                }
+            }
+        }
+        else
+        {
+            for (int i = 0; player2Hand.active_cards > i; i++)
+            {
+                string nam = player2Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.name;
+                string[] brokenName = nam.Split(' ');
+                for (int a = 0; brokenName.Length > a; a++)
+                {
+                    if (brokenName[a] == unit_type)
+                    {
+                        player2Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.description += " " + enhancement;
+                        player2Hand.active_cards_slots[i].GetComponent<CardDisplay>().descriptionText.text += " " + enhancement;
+                    }
+                }
+            }
+        }
+    }
+
     void typeDamage(string target,string damage)
     {
         if (playerTurn == true)
@@ -850,6 +891,16 @@ public class TurnBaseScript : MonoBehaviour
         }
     }
 
+    void SpellEnhance()
+    {
+        if (playerTurn == true)
+        {
+            List<GameObject> SelectedCards = new List<GameObject>();
+            StartCoroutine(pause_sellection_own_hand(1, "none", SelectedCards));
+            StartCoroutine(WaitForEnhance(SelectedCards));
+
+        }
+    }
     void upgrade(string nuber, string unit_type, string attack, string health)
     {
         if (playerTurn == true)
@@ -1013,6 +1064,15 @@ public class TurnBaseScript : MonoBehaviour
         }
     }
 
+    IEnumerator WaitForEnhance(List<GameObject> selectedCards)
+    {
+        yield return new WaitUntil(() => selectedCards.Count == 1);
+        for (int i = 0; selectedCards.Count > i; i++)
+        {
+            selectedCards[i].GetComponent<CardDisplay>().card.description += " Charged Swarm Enduring";
+            selectedCards[i].GetComponent<CardDisplay>().descriptionText.text += " Charged Swarm Enduring";
+        }
+    }
 
     IEnumerator pause_sellection_own_hand(int cardcount, string Unitytype, List<GameObject> selectedCards)
     {
