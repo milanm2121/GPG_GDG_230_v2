@@ -101,6 +101,9 @@ public class ThisCard : MonoBehaviour
     public GameObject monsterCardTemplate;
     public GameObject spellCardTemplate;
 
+    public GameObject attackTextObject;
+    public GameObject healthTextObject;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -177,18 +180,23 @@ public class ThisCard : MonoBehaviour
             numberOfCardsInDeck -= 1;
             PlayerDeck.deckSize -= 1;
             cardBack = false;
-            this.tag = "Untagged";
+            //this.tag = "Untagged";
+            this.tag = thisCard[0].cardType;
         }
 
 
         if (thisCardAttack == 0 && thisCardHealth == 0)
         {
             monsterCardTemplate.SetActive(false);
+            attackTextObject.SetActive(false);
+            healthTextObject.SetActive(false);
             spellCardTemplate.SetActive(true);
         }
         else
         {
             monsterCardTemplate.SetActive(true);
+            attackTextObject.SetActive(true);
+            healthTextObject.SetActive(true);
             spellCardTemplate.SetActive(false);
         }
 
@@ -212,13 +220,13 @@ public class ThisCard : MonoBehaviour
 
         //So right here it make sures that all the Requirements for this game to summon are in the perfect.
         //While also making sure that I dont flood the field.
-        if (TurnSystem.currentCoin >= thisCardCost && summoned == false && TurnSystem.isYourTurn == true && field.fieldCards.Count < 5)
+        if (TurnSystem.currentCoin >= thisCardCost && summoned == false && TurnSystem.isYourTurn == true && field.fieldCards.Count < 5 && this.tag != "Spell")
             canBeSummon = true;
 
         else 
             canBeSummon = false;
 
-        if (TurnSystem.currentMana >= thisCardCost && spellPlay == false && TurnSystem.isYourTurn == true && thisCardAttack == 0 && thisCardHealth == 0)
+        if (TurnSystem.currentMana >= thisCardCost && spellPlay == false && TurnSystem.isYourTurn == true && this.tag == "Spell")
             spellCanBeUse = true;
         else
             spellCanBeUse = false;
@@ -230,14 +238,15 @@ public class ThisCard : MonoBehaviour
 
         if (canBeSummon == true || spellCanBeUse == true)
             gameObject.GetComponent<DraggableCard>().enabled = true;
-
         else
             gameObject.GetComponent<DraggableCard>().enabled = false;
 
-
         battleZone = GameObject.Find("Field");
-        
-        if (summoned == false && this.transform.parent == battleZone.transform && field.fieldCards.Count < 5)
+
+        if (spellPlay == false && this.transform.parent == battleZone.transform && this.tag == "Spell")
+            PlaySpellCard();
+
+        if (summoned == false && this.transform.parent == battleZone.transform && field.fieldCards.Count < 5 && this.tag != "Spell")
             Summon();
 
         //This is the setup for the battle System.
@@ -326,9 +335,31 @@ public class ThisCard : MonoBehaviour
         buffOtherCardsATK = 0;
         buffOtherCardsHealth = 0;
     }
+
+    public void PlaySpellCard()
+    {
+        Debug.Log("Playing Spell Card" + thisCardName);
+        TurnSystem.currentMana -= thisCardCost;
+        spellPlay = true;
+        AddToken(summoningMonsters);
+
+        SummoningTheMonster(summoningMonsters);
+
+        MaxCoin(addXMaxCoin);
+        drawX = drawXCards;
+        BuffAttack(buffXATK);
+        BuffHealth(buffXHealth);
+
+        buffingOtherCardsATKBool = false;
+        buffingOtherCardsHealthBool = false;
+        dontBuffThisUnit = false;
+        buffOtherCardsATK = 0;
+        buffOtherCardsHealth = 0;
+        Invoke("DestroySpellCard", 1.5f);
+    }
+
     //This is where all the abilities will be put in.
     //Make sure when making the next one to put then in here.
-
     #region Abilities List
     public void MaxCoin(int x)
     {
@@ -450,6 +481,11 @@ public class ThisCard : MonoBehaviour
     {
         field.fieldCards.Remove(cardObject);
         field.cardStats.Remove(this);
+        Destroy(gameObject);
+    }
+
+    public void DestroySpellCard()
+    {
         Destroy(gameObject);
     }
 }

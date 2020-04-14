@@ -10,7 +10,7 @@ public class CardDataBase : MonoBehaviour
     {
         cardList.Add(new CardVersion2(0, "Trooper Token", "I dont exist in the deck", "Soldier", 1, 3, 3, Resources.Load <Sprite>("0"), 0, 0, 0, 0, 0, false, 0 , 0, false));
         cardList.Add(new CardVersion2(1, "Sniper Trooper", "On play: Deal 1 damage", "Soldier", 2, 1, 1, Resources.Load <Sprite>("1"), 0, 0, 0, 0, 0, false, 0, 0, false));
-        cardList.Add(new CardVersion2(21, "Storm in Trooper", "Give all Solider unit +1/+1", "Spell", 0, 0, 0, Resources.Load<Sprite>("6"), 0, 0, 0, 0, 0, false, 1, 1, false));
+        cardList.Add(new CardVersion2(21, "Storm in Trooper", "Give all Solider unit +1/+1", "Spell", 3, 0, 0, Resources.Load<Sprite>("6"), 0, 0, 0, 0, 0, false, 1, 1, false));
         cardList.Add(new CardVersion2(2, "Trooper", "They've been trained to kill", "Soldier", 3, 3, 3, Resources.Load <Sprite>("2"), 0, 0, 0, 0, 0, false, 0, 0, false));
         cardList.Add(new CardVersion2(3, "Shield Trooper", "Defender", "Soldier", 2, 1, 3, Resources.Load<Sprite>("3"), 0, 0, 0, 0, 0, true, 0, 0, false));
         cardList.Add(new CardVersion2(4, "Sword Trooper", "On play: give other cards +1/+0", "Soldier", 3, 3, 2, Resources.Load <Sprite>("3"), 0, 0, 0, 0, 0, false, 1, 0, true));
@@ -31,7 +31,7 @@ public class CardDataBase : MonoBehaviour
         cardList.Add(new CardVersion2(18, "Security Trooper", "Summon 3 Monster", "French", 1, 1, 1, Resources.Load<Sprite>("6"), 0, 0, 0, 0, 0, false, 0, 0, false));
         cardList.Add(new CardVersion2(19, "Assassin Trooper", "Summon 3 Monster", "French", 1, 1, 1, Resources.Load<Sprite>("6"), 0, 0, 0, 0, 0, false, 0, 0, false));
         cardList.Add(new CardVersion2(20, "Super Trooper", "Summon 3 Monster", "French", 1, 1, 1, Resources.Load<Sprite>("6"), 0, 0, 0, 0, 0, false, 0, 0, false));
-        cardList.Add(new CardVersion2(21, "Storm in Trooper", "Give all Solider unit +1/+1", "Spell", 0, 0, 0, Resources.Load<Sprite>("6"), 0, 0, 0, 0, 0, false, 1, 1, false));
+        cardList.Add(new CardVersion2(21, "Storm in Trooper", "Give all Solider unit +1/+1", "Spell", 3, 0, 0, Resources.Load<Sprite>("6"), 0, 0, 0, 0, 0, false, 1, 1, false));
         cardList.Add(new CardVersion2(22, "Training Camp", "Draw 1 Card", "French", 4, 2, 5, Resources.Load<Sprite>("1"), 0, 0, 0, 0, 0, false, 0, 0, false));
         cardList.Add(new CardVersion2(23, "Call for reinforcement", "Add 1 Max Mana", "French", 5, 4, 4, Resources.Load<Sprite>("2"), 0, 0, 0, 0, 0, false, 0, 0, false));
         cardList.Add(new CardVersion2(24, "We need to prepare", "Buff 3 ATK and 3 DEF", "French", 1, 2, 1, Resources.Load<Sprite>("3"), 0, 0, 0, 0, 0, false, 0, 0, false));

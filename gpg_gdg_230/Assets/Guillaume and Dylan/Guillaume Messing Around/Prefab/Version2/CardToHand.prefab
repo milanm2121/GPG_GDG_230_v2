@@ -351,6 +351,8 @@ MonoBehaviour:
   cardObject: {fileID: 2335418786316836980}
   monsterCardTemplate: {fileID: 5522974878051695469}
   spellCardTemplate: {fileID: 2790271915661088543}
+  attackTextObject: {fileID: 5325323479551415881}
+  healthTextObject: {fileID: 2209583461616593614}
 --- !u!114 &8923790389123335331
 MonoBehaviour:
   m_ObjectHideFlags: 0
