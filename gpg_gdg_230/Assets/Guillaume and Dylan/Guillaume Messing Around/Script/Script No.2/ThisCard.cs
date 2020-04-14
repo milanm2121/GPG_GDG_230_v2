@@ -11,7 +11,7 @@ using UnityEngine.EventSystems;
 //https://www.youtube.com/watch?v=KZ9VNbFP8Pg&list=PLOoQ0JTWjALQGkiDWw_ws21fanM2za02B
 //Though I did manage to do a lot without it since it didn't show me how like:
 //Buffing units, summoning Tokens, preventing of playing too many cards on the field,
-// preventing of playing card during your opponent's turn(even thought there is a video
+// preventing of playing card during your opponent's turn (even thought there is a video
 // of it, I didnt't watch it).
 public class ThisCard : MonoBehaviour
 {
