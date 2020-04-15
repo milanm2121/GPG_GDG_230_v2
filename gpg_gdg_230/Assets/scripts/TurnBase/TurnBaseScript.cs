@@ -196,7 +196,7 @@ public class TurnBaseScript : MonoBehaviour
                     state = TurnState.TimeWasted;
                 }
                 //attackButton.SetActive(true);
-               // FutureFur_Uniqe_pram();
+
 
 
                 break;
@@ -532,6 +532,9 @@ public class TurnBaseScript : MonoBehaviour
         }
 
         StartCoroutine("ActionCountDown");
+
+        FutureFur_Uniqe_pram();
+
         for (int i = 0; message.Length > i; i++)
         {
             switch (message[i])
@@ -1200,13 +1203,13 @@ public class TurnBaseScript : MonoBehaviour
                 string[] x = Decription.Split(' ');
                 for (int y = 0; x.Length > y; y++)
                 {
-                    if (x[y] == "is" && x[y + 1] == "the" && x[y + 2] == "only" && x[y + 3] == "creature" && x[y + 4] == "on" && x[y + 5] == "the" && x[y + 6] == "field" && x[y + 7] == "it" && x[y + 8] == "gains")
+                    if (x[y] == "is" && x[y + 1] == "the" && x[y + 2] == "only" && x[y + 3] == "unit" && x[y + 4] == "on" && x[y + 5] == "the" && x[y + 6] == "feild" && x[y + 7] == "it" && x[y + 8] == "gains")
                     {
-                        StartCoroutine(futrtfurAloneBonus(player1Hand.active_cards_slots[i].GetComponent<CardDisplay>().card, x[i + 9], x[i + 10], player1Hand));
+                        StartCoroutine(futrtfurAloneBonus(player1Hand.active_cards_slots[i].GetComponent<CardDisplay>().card, x[y + 9], x[y + 11], player1Hand));
                     }
-                    else if (x[y] == "dies" && x[y + 1] == "when" && x[y + 1] == "it" && x[y + 1] == "is" && x[y + 1] == "not" && x[y + 1] == "alone")
+                    else if (x[y] == "dies" && x[y + 1] == "when" && x[y + 2] == "it" && x[y + 3] == "is" && x[y + 4] == "not" && x[y + 5] == "alone")
                     {
-                        StartCoroutine(futrtfurDieWhenNotAlone(player1Hand.active_cards_slots[i].GetComponent<CardDisplay>().card, player1Hand));
+                        StartCoroutine(futrtfurDieWhenNotAlone(player1Hand.active_cards_slots[i].GetComponent<CardDisplay>().card, player1Hand)) ;
                     }
                 }
             }

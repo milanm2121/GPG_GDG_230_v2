@@ -116,7 +116,7 @@ public class Hand : MonoBehaviour
             {
                 active_cards_slots[i].transform.position = Vector3.Lerp(active_cards_slots[i].transform.position, active_slots[i].position, 0.5f);
                 //card deaths
-                if (active_cards_slots[i].GetComponent<CardDisplay>().card.health <= 0 && GetComponent<CardDisplay>().card.isSpell == false)
+                if (active_cards_slots[i].GetComponent<CardDisplay>().card.health <= 0 && active_cards_slots[i].GetComponent<CardDisplay>().card.isSpell == false)
                     SendToGrave(active_cards_slots[i], i);
             }
         }
@@ -245,15 +245,20 @@ public class Hand : MonoBehaviour
                         tick = true;
 
                     }
-                    
-                    
+                    else
+                    {
+                        StartCoroutine(Ai_turn_control(TurnBaseScript.TurnState.Attack));
+
+                    }
+
+
                 }
 
             }
             if (TBS.state == TurnBaseScript.TurnState.Attack)
             {
-            //    print("attack phase");
-
+                //    print("attack phase");
+                tick = false;
                 if (stateTick == false)
                 {
                     if (TBS.player1Hand.active_cards < 1)
@@ -547,11 +552,13 @@ public class Hand : MonoBehaviour
     IEnumerator Ai_turn_control(TurnBaseScript.TurnState state)
     {
 
- 
+        if (active == true)
+        {
             stateTick = true;
             yield return new WaitForSeconds(1);
             TBS.state = state;
             stateTick = false;
+        }
             
 
 
