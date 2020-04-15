@@ -72,6 +72,8 @@ public class ThisCard : MonoBehaviour
     public int buffOtherCardsHealth;
     public bool buffingOtherCardsHealthBool = false;
     public bool dontBuffThisUnit;
+    public int healXHealth;
+    public bool canHeal;
 
     //These are forbeing able to attack or not
     // and which one to attack.
@@ -128,7 +130,9 @@ public class ThisCard : MonoBehaviour
         fieldObject = GameObject.Find("Field");
         field = fieldObject.GetComponent<CardsOnTheField>();
 
+        canHeal = false;
     }
+
     #region ThisCardUpdate
     // Update is called once per frame
     void Update()
@@ -163,6 +167,7 @@ public class ThisCard : MonoBehaviour
         buffXATK = thisCard[0].buffATK;
         buffXHealth = thisCard[0].buffHealth;
         summoningMonsters = thisCard[0].summonMonster;
+        healXHealth = thisCard[0].healXHealth;
 
         nameText.text = "" + thisCardName;
         deatilText.text = "" + thisCardDetails;
@@ -298,6 +303,11 @@ public class ThisCard : MonoBehaviour
             Invoke("DestroyMonster", 1.5f);
         }
 
+        if (canHeal == true && summoned == true)
+        {
+            Heal(healXHealth);
+        }
+
     }
     #endregion
 
@@ -420,6 +430,15 @@ public class ThisCard : MonoBehaviour
                 //if (!field.fieldCards.Contains(tokenObject))
                     //field.fieldCards.Add(tokenObject);
             }
+        }
+    }
+
+    public void Heal(int x)
+    {
+        if (canHeal == true)
+        {
+            PlayerHp.staticHp = x;
+            canHeal = false;
         }
     }
     #endregion
