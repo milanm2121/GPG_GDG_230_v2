@@ -14,9 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 20
   name: Trooper
-  description: '"They have been trained to kill."'
+  description: dies when it is not alone
   artwork: {fileID: 0}
   manaCost: 3
   attack: 3
   health: 3
+  isSpell: 0
   monsterSickness: 0
+  FuturefurePramCheak: 0

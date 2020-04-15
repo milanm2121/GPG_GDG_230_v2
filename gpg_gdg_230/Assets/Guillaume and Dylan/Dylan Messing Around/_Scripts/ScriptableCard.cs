@@ -22,6 +22,7 @@ public class ScriptableCard : ScriptableObject
     // it won't be allow to attack.
     public bool monsterSickness = true;
 
+    public bool FuturefurePramCheak=false;
     public static implicit operator ScriptableCard(CardLoading v)
     {
         throw new NotImplementedException();

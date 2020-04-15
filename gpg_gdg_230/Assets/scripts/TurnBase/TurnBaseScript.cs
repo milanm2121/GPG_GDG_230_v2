@@ -54,7 +54,7 @@ public class TurnBaseScript : MonoBehaviour
     public Text player2ManaText;
 
     //Using so that there is a delay when it comes to see what it does.
-    private int actiontime = 1;
+    private int actiontime = 1 ;
 
     public GameObject attackButton;
     private bool hasAttack = false;
@@ -66,7 +66,6 @@ public class TurnBaseScript : MonoBehaviour
     //added by milan
     public int turns = 0;
 
-    public int cardReadDelay = 0;
 
     public AudioSource AS;
 
@@ -197,7 +196,7 @@ public class TurnBaseScript : MonoBehaviour
                     state = TurnState.TimeWasted;
                 }
                 //attackButton.SetActive(true);
-
+               // FutureFur_Uniqe_pram();
 
 
                 break;
@@ -281,9 +280,11 @@ public class TurnBaseScript : MonoBehaviour
                 if (actiontime <= 0)
                 {
                     StopCoroutine("ActionCountDown");
-                    actiontime = cardReadDelay;
                     if (state == TurnState.CardPlayed)
+                    {
                         state = TurnState.PlayerTurn;
+                    }
+                
                 }
                 break;
 
@@ -507,7 +508,7 @@ public class TurnBaseScript : MonoBehaviour
     {
         StopCoroutine("CountDown");
         timerIsOn = false;
-        StartCoroutine("ActionCountDown");
+        
         buttons[0].gameObject.SetActive(false);
         buttons[2].gameObject.SetActive(false);
 
@@ -519,16 +520,18 @@ public class TurnBaseScript : MonoBehaviour
 
         if(message[0]=="Spell:" || message[0]== "sacrifice:")
         {
-            cardReadDelay = 5;
+            actiontime = 3;
         }
         else if(message[0]=="On" && message[1] == "Play:")
         {
-            cardReadDelay = 2;
+            actiontime = 1;
         }
         else
         {
-            cardReadDelay = 0;
+            actiontime = 0;
         }
+
+        StartCoroutine("ActionCountDown");
         for (int i = 0; message.Length > i; i++)
         {
             switch (message[i])
@@ -1130,9 +1133,9 @@ public class TurnBaseScript : MonoBehaviour
             string Decription = selectedCards[i].GetComponent<CardDisplay>().card.description;
             string[] x = Decription.Split(' ');
             bool enduring = false;
-            for (int y = 0; x.Length > y; i++)
+            for (int y = 0; x.Length > y; y++)
             {
-                if (x[i] == "Enduring")
+                if (x[y] == "Enduring")
                 {
                     enduring = true;
                 }
@@ -1184,7 +1187,45 @@ public class TurnBaseScript : MonoBehaviour
         {
             selectedCards[i].GetComponent<CardDisplay>().card.monsterSickness = true;
         }
-        cardReadDelay = 0;
     }
     #endregion
+
+    void FutureFur_Uniqe_pram()
+    {
+        for(int i=0;player1Hand.active_cards>i; i++)
+        {
+            if (player1Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.FuturefurePramCheak == false)
+            {
+                string Decription = player1Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.description;
+                string[] x = Decription.Split(' ');
+                for (int y = 0; x.Length > y; y++)
+                {
+                    if (x[y] == "is" && x[y + 1] == "the" && x[y + 2] == "only" && x[y + 3] == "creature" && x[y + 4] == "on" && x[y + 5] == "the" && x[y + 6] == "field" && x[y + 7] == "it" && x[y + 8] == "gains")
+                    {
+                        StartCoroutine(futrtfurAloneBonus(player1Hand.active_cards_slots[i].GetComponent<CardDisplay>().card, x[i + 9], x[i + 10], player1Hand));
+                    }
+                    else if (x[y] == "dies" && x[y + 1] == "when" && x[y + 1] == "it" && x[y + 1] == "is" && x[y + 1] == "not" && x[y + 1] == "alone")
+                    {
+                        StartCoroutine(futrtfurDieWhenNotAlone(player1Hand.active_cards_slots[i].GetComponent<CardDisplay>().card, player1Hand));
+                    }
+                }
+            }
+        }
+    }
+    IEnumerator futrtfurAloneBonus(ScriptableCard card, string bonusHealth, string bonusAttack, Hand hand)
+    {
+        card.FuturefurePramCheak = true;
+        card.health += int.Parse(bonusHealth);
+        card.attack += int.Parse(bonusAttack);
+        yield return new WaitUntil(() => hand.active_cards != 1);
+        card.health -= int.Parse(bonusHealth);
+        card.attack -= int.Parse(bonusAttack);
+        card.FuturefurePramCheak = false;
+    }
+    IEnumerator futrtfurDieWhenNotAlone(ScriptableCard card,Hand hand)
+    {
+        card.FuturefurePramCheak = true;
+        yield return new WaitUntil(() => hand.active_cards != 1);
+        card.health = 0;
+    }
 }

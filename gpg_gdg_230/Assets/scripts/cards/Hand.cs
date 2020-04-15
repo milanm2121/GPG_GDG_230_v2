@@ -66,6 +66,7 @@ public class Hand : MonoBehaviour
 
     //used so the AI dosnt brake the TBS state machine
     bool stateTick=false;
+    bool tick = false;
 
     //used for sellecting groups of cards for spells
     bool selectingCards;
@@ -115,7 +116,7 @@ public class Hand : MonoBehaviour
             {
                 active_cards_slots[i].transform.position = Vector3.Lerp(active_cards_slots[i].transform.position, active_slots[i].position, 0.5f);
                 //card deaths
-                if (active_cards_slots[i].GetComponent<CardDisplay>().card.health <= 0)
+                if (active_cards_slots[i].GetComponent<CardDisplay>().card.health <= 0 && GetComponent<CardDisplay>().card.isSpell == false)
                     SendToGrave(active_cards_slots[i], i);
             }
         }
@@ -232,18 +233,20 @@ public class Hand : MonoBehaviour
         }
         else if (TBS.playerTurn == false)//if AI
         {
+
             if (stateTick == false)
             {
                 if (TBS.state == TurnBaseScript.TurnState.PlayerTurn ){
-                    if (cards_in_hand >= 1 && active_cards <= 4)
+                   
+                    if (cards_in_hand >= 1 && active_cards <= 4 && tick==false)
                     {
-                        {
-                            //    print("hand phase");
-                            
-                            StartCoroutine(DelayAIUsecard());
-                        }
+
+                        StartCoroutine(DelayAIUsecard());
+                        tick = true;
+
                     }
-                    StartCoroutine(Ai_turn_control(TurnBaseScript.TurnState.Attack));
+                    
+                    
                 }
 
             }
@@ -273,6 +276,7 @@ public class Hand : MonoBehaviour
                             }
                         }
                     }
+                    
                     StartCoroutine(Ai_turn_control(TurnBaseScript.TurnState.Response));
                 }
             }
@@ -368,7 +372,7 @@ public class Hand : MonoBehaviour
         //uses an index int to select a card in the hand and put it in a place holder
         GameObject picked_card = hand[picked_card_index];
         //cheaks if you have enough gold or mana to use tha card
-        if (picked_card.GetComponent<CardDisplay>().card.manaCost <= playerMana || picked_card.GetComponent<CardDisplay>().card.manaCost <= playerGold)
+        if (TBS.state == TurnBaseScript.TurnState.PlayerTurn && picked_card.GetComponent<CardDisplay>().card.manaCost <= playerMana || picked_card.GetComponent<CardDisplay>().card.manaCost <= playerGold)
         {
 
             //cheaks if the card is magic or a unit
@@ -401,8 +405,29 @@ public class Hand : MonoBehaviour
 
                 picked_card.GetComponent<card_functions>().isInHand = false;
                 TBS.state = TurnBaseScript.TurnState.CardPlayed;
+
+                string Decription = picked_card.GetComponent<CardDisplay>().card.description;
+                string[] x = Decription.Split(' ');
+                bool Haste = false;
+                for (int i = 0; x.Length > i; i++)
+                {
+                    if (x[i] == "Haste")
+                    {
+                        picked_card.GetComponent<CardDisplay>().card.monsterSickness = false;
+                        Haste = true;
+                    }
+                }
+                if (Haste == false)
+                {
+                    picked_card.GetComponent<CardDisplay>().card.monsterSickness = true;
+                    StartCoroutine(unsick(picked_card, this));
+                    picked_card.GetComponent<CardDisplay>().hide = false;
+                    picked_card.GetComponent<CardDisplay>().active = true;
+                    TBS.ReadTheCard(picked_card.GetComponent<CardDisplay>().card);
+                }
+
             }
-            else if(picked_card.GetComponent<CardDisplay>().card.isSpell == true)
+            else if (picked_card.GetComponent<CardDisplay>().card.isSpell == true)
             {
                 AS.clip = spellPlay;
                 AS.Play();
@@ -419,27 +444,13 @@ public class Hand : MonoBehaviour
                 {
                     hand[cards_in_hand] = null;
                 }
-                
+
+
+                TBS.state = TurnBaseScript.TurnState.CardPlayed;
+                TBS.ReadTheCard(picked_card.GetComponent<CardDisplay>().card);
+                picked_card.GetComponent<CardDisplay>().hide = false;
+                picked_card.GetComponent<CardDisplay>().active = true;
             }
-            TBS.state = TurnBaseScript.TurnState.CardPlayed;
-            TBS.ReadTheCard(picked_card.GetComponent<CardDisplay>().card);
-            picked_card.GetComponent<CardDisplay>().card.monsterSickness = true;
-
-            StartCoroutine(unsick(picked_card,this));
-            string Decription = picked_card.GetComponent<CardDisplay>().card.description;
-            string[] x = Decription.Split(' ');
-            for(int i =0;x.Length>i; i++)
-            {
-                if (x[i] == "Haste")
-                {
-                    picked_card.GetComponent<CardDisplay>().card.monsterSickness = false;
-
-                }
-            }
-
-            picked_card.GetComponent<CardDisplay>().hide =false;
-            picked_card.GetComponent<CardDisplay>().active = true;
-
         }
     }
 
@@ -541,7 +552,7 @@ public class Hand : MonoBehaviour
             yield return new WaitForSeconds(1);
             TBS.state = state;
             stateTick = false;
-     
+            
 
 
     }
@@ -601,10 +612,14 @@ public class Hand : MonoBehaviour
 
     IEnumerator DelayAIUsecard()
     {
-        for (int i = 0; 20 > i; i++)
+        for (int i = 0; 10 > i; i++)
         {
             Use_card(Random.Range(0, cards_in_hand));
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(0.2f);
         }
+        yield return new WaitForSeconds(3);
+        if(stateTick==false)
+            StartCoroutine(Ai_turn_control(TurnBaseScript.TurnState.Attack));
+
     }
 }
