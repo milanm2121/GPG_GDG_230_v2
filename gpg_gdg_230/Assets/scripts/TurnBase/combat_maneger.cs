@@ -83,7 +83,7 @@ public class combat_maneger : MonoBehaviour
                         string[] x = Decriptionx.Split(' ');
                         for (int y = 0; x.Length > y;y++)
                         {
-                            if (x[i] == "Swarm")
+                            if (x[y] == "Swarm")
                             {
                                 if (TBS.playerTurn == false)
                                 {
