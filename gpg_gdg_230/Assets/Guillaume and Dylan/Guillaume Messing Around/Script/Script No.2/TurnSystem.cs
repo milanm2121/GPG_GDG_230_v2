@@ -114,6 +114,8 @@ public class TurnSystem : MonoBehaviour
 
         coinText.text = currentCoin + "/" + maxCoin;
         manaText.text = currentMana + "/" + maxMana;
+        enemyCoinText.text = enemyCurrentCoin + "/" + enemyMaxCoin;
+        enemyManaText.text = enemyCurrentMana + "/" + enemyMaxMana;
 
         if (PlayerHp.staticHp <= 0)
             state = TurnState.PlayerLost;
@@ -135,6 +137,21 @@ public class TurnSystem : MonoBehaviour
             maxCoin += 1;
 
         currentCoin = maxCoin;
+        currentMana = maxMana;
+
+        if (enemyMaxCoin >= 10)
+            enemyMaxCoin = 10;
+        else
+            enemyMaxCoin += 1;
+
+        enemyCurrentCoin = enemyMaxCoin;
+
+        if (enemyMaxMana >= 10)
+            enemyMaxMana = 10;
+        else
+            enemyMaxMana += 1;
+
+        enemyCurrentMana = enemyMaxMana;
 
         startTurn = false;
         AI.draw = false;
@@ -158,6 +175,14 @@ public class TurnSystem : MonoBehaviour
             maxCoin += 1;
 
         currentCoin = maxCoin;
+
+        if (enemyMaxCoin >= 10)
+            enemyMaxCoin = 10;
+        else
+            enemyMaxCoin += 1;
+
+        enemyCurrentCoin = enemyMaxCoin;
+        enemyCurrentMana = enemyMaxMana;
 
         startTurn = true;
     }

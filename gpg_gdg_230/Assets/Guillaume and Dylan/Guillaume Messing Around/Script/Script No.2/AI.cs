@@ -51,6 +51,8 @@ public class AI : MonoBehaviour
 
     public int howManyCards;
 
+    public CardsOnTheField fieldCards;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -149,6 +151,81 @@ public class AI : MonoBehaviour
                 }
             }
         }
+        else
+        {
+            for (int i = 0; i < 40; i++)
+            {
+                aiCanSummon[i] = false;
+            }
+        }
+
+        if (TurnSystem.isYourTurn == false)
+        {
+            drawPhase = true;
+        }
+
+        if (drawPhase == true && summonPhase == false && attackPhase == false)
+        {
+            StartCoroutine(WaitForSummonPhase());
+        }
+
+        if (TurnSystem.isYourTurn == true)
+        {
+            drawPhase = false;
+            summonPhase = false;
+            attackPhase = false;
+            endPhase = false;
+        }
+
+        if (summonPhase == true)
+        {
+            summonID = 0;
+            summonThisID = 0;
+
+            int index = 0;
+            for (int i = 0; i < 40; i++)
+            {
+                if (aiCanSummon[i] == true)
+                {
+                    cardID[index] = cardsInHand[i].cardID;
+                }
+            }
+
+            for (int i = 0; i < 40; i++)
+            {
+                if (cardID[i] > summonID)
+                {
+                    summonID = cardID[i];
+                }
+            }
+
+            summonThisID = summonID;
+
+            foreach (Transform child in hand.transform)
+            {
+                if (child.GetComponent<AICardToHand>().id == summonThisID && currentCoin >= CardDataBase.cardList[summonThisID].cardCoinCost && fieldCards.fieldCards.Count < 5 && CardDataBase.cardList[summonThisID].cardType != "Spell")
+                {
+                    child.transform.SetParent(fieldZone.transform);
+                    TurnSystem.enemyCurrentCoin -= CardDataBase.cardList[summonThisID].cardCoinCost;
+                    fieldCards.fieldCards.Add(cardToHand);
+                    break;
+                }
+            }
+
+            foreach (Transform child in hand.transform)
+            {
+                if (child.GetComponent<AICardToHand>().id == summonThisID && currentMana >= CardDataBase.cardList[summonThisID].cardCoinCost && fieldCards.fieldCards.Count < 5 && CardDataBase.cardList[summonThisID].cardType == "Spell")
+                {
+                    child.transform.SetParent(fieldZone.transform);
+                    TurnSystem.enemyCurrentCoin -= CardDataBase.cardList[summonThisID].cardCoinCost;
+                    fieldCards.fieldCards.Add(cardToHand);
+                    break;
+                }
+            }
+
+            summonPhase = false;
+            attackPhase = true;
+        }
     }
 
     public void Shuffle()
@@ -197,7 +274,14 @@ public class AI : MonoBehaviour
 
     IEnumerator WaitFiveSeconds()
     {
-        yield return new WaitForSeconds(1);
-        //aiCanPlay = true;
+        yield return new WaitForSeconds(5);
     }
+
+    IEnumerator WaitForSummonPhase()
+    {
+        yield return new WaitForSeconds(5);
+        summonPhase = true;
+    }
+
+    
 }

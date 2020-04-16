@@ -69,6 +69,11 @@ public class AICardToHand : MonoBehaviour
     public GameObject attackTextObject;
     public GameObject healthTextObject;
 
+    public GameObject cardBack;
+    public GameObject aiZone;
+    public CardsOnTheField enemyField;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -81,6 +86,9 @@ public class AICardToHand : MonoBehaviour
         z = 0;
 
         summoned = false;
+
+        aiZone = GameObject.Find("EnemyField");
+        enemyField = aiZone.GetComponent<CardsOnTheField>();
     }
 
     // Update is called once per frame
@@ -153,6 +161,109 @@ public class AICardToHand : MonoBehaviour
             attackTextObject.SetActive(true);
             healthTextObject.SetActive(true);
             spellCardTemplate.SetActive(false);
+        }
+
+        if (this.transform.parent == hand.transform)
+        {
+            cardBack.SetActive(true);
+        }
+        
+        if(this.transform.parent == aiZone.transform)
+        {
+            cardBack.SetActive(false);
+        }
+    }
+
+    public void Summon()
+    {
+        Debug.Log("summoning");
+        TurnSystem.currentCoin -= thisCardCost;
+        summoned = true;
+        //AddToken(summoningMonsters);
+
+        SummoningTheMonster(summoningMonsters);
+
+
+        MaxCoin(addXMaxCoin);
+        drawX = drawXCards;
+        BuffAttack(buffXATK);
+        BuffHealth(buffXHealth);
+
+        buffingOtherCardsATKBool = false;
+        buffingOtherCardsHealthBool = false;
+        dontBuffThisUnit = false;
+        buffOtherCardsATK = 0;
+        buffOtherCardsHealth = 0;
+    }
+
+    public void MaxCoin(int x)
+    {
+        TurnSystem.maxCoin += x;
+        if (TurnSystem.maxCoin >= 10)
+        {
+            TurnSystem.maxCoin = 10;
+        }
+    }
+
+    public void BuffAttack(int x)
+    {
+        if (buffOtherCardsATK > 0)
+        {
+            buffingOtherCardsATKBool = true;
+            Debug.Log("Working Part 1");
+            enemyField.BuffOtherCardsATKStats(buffOtherCardsATK);
+            enemyField.BuffOtherTokenCardsATKStats(buffOtherCardsATK);
+        }
+
+        if (buffingOtherCardsATKBool == false)
+        {
+            thisCardAttack += x;
+            attackText.text = thisCardAttack.ToString();
+        }
+    }
+
+    public void BuffHealth(int x)
+    {
+        if (buffOtherCardsHealth > 0)
+        {
+            buffingOtherCardsHealthBool = true;
+            Debug.Log("Yes");
+            enemyField.BuffOtherCardsHealthStat(buffOtherCardsHealth);
+            enemyField.BuffOtherTokenCardsHealthStat(buffOtherCardsHealth);
+        }
+
+        if (buffingOtherCardsHealthBool == false)
+        {
+            thisCardHealth += x;
+            healthText.text = "" + thisCardHealth;
+        }
+    }
+
+    public void SummoningTheMonster(int x)
+    {
+        for (int i = 0; i < tokenCards.Count; i++)
+        {
+            if (enemyField.fieldCards.Count >= 5)
+            {
+                break;
+            }
+            else if (enemyField.fieldCards.Count < 5)
+            {
+                Debug.Log("creating card: " + tokenObject);
+                Instantiate(tokenObject);
+                tokenCards.Remove(CardDataBase.cardList[0]);
+                //if (!field.fieldCards.Contains(tokenObject))
+                //field.fieldCards.Add(tokenObject);
+            }
+        }
+    }
+
+    public void Heal(int x)
+    {
+        if (canHeal == true)
+        {
+            PlayerHp.staticHp = x;
+            canHeal = false;
         }
     }
 }

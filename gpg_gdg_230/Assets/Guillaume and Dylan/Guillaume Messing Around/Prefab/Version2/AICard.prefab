@@ -148,6 +148,8 @@ MonoBehaviour:
   spellCardTemplate: {fileID: 1655580870099698142}
   attackTextObject: {fileID: 8766150008697667720}
   healthTextObject: {fileID: 3380729914977156111}
+  cardBack: {fileID: 6832032288176073169}
+  aiZone: {fileID: 0}
 --- !u!1 &1546726453329880499
 GameObject:
   m_ObjectHideFlags: 0
