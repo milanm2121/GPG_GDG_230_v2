@@ -29,6 +29,7 @@ public class card_reffence : MonoBehaviour
 
                 };
                 card.GetComponent<CardDisplay>().card = sc;
+                card.GetComponent<CardDisplay>().active = true;
                 card.transform.parent = cardfeild.transform;
                 card.GetComponent<RectTransform>().localScale = new Vector2(0.6f, 0.6f);
                 card.GetComponent<card_functions>().isInHand = false;

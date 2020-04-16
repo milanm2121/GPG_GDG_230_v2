@@ -94,8 +94,8 @@ public class Deak : MonoBehaviour
             health = Random_card_index.health,
             attack = Random_card_index.attack,
             manaCost = Random_card_index.manaCost,
-            description = Random_card_index.description
-            
+            description = Random_card_index.description,
+            isSpell = Random_card_index.isSpell
         };
         
 

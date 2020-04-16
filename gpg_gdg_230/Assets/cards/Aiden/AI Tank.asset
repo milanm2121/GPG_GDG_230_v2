@@ -14,10 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 26
   name: AI Tank
-  description: Afuteristic tank that function on its own
+  description: Afuteristic tank that function on its own Enduring
   artwork: {fileID: 0}
   manaCost: 6
   attack: 4
   health: 5
   isSpell: 0
   monsterSickness: 1
+  FuturefurePramCheak: 0

@@ -13,11 +13,12 @@ MonoBehaviour:
   m_Name: spell test
   m_EditorClassIdentifier: 
   ID: 1
-  name: dammage one spell
-  description: 'Spell: Enhance a unit with Charged, Enduring and Swarm'
+  name: damage spell
+  description: 'Spell: summon 1 Trooper'
   artwork: {fileID: 0}
-  manaCost: 2
+  manaCost: 1
   attack: 0
   health: 0
   isSpell: 1
   monsterSickness: 0
+  FuturefurePramCheak: 0
