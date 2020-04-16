@@ -8,11 +8,6 @@ public class AICardToHand : MonoBehaviour
 
     public List<CardVersion2> thisAICard = new List<CardVersion2>();
 
-
-    public static List<CardVersion2> cardsInHandStatic = new List<CardVersion2>();
-    public List<CardVersion2> cardsInHand = new List<CardVersion2>();
-    public static int cardsInHandNumber;
-
     public int thisID;
 
     public int id;
@@ -77,7 +72,7 @@ public class AICardToHand : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        cardsInHandStatic = cardsInHand;
+        //cardsInHandStatic = cardsInHand;
 
         thisAICard[0] = CardDataBase.cardList[thisID];
         numberOfCardInDeck = AI.deckSize;
@@ -139,9 +134,6 @@ public class AICardToHand : MonoBehaviour
 
         if (this.tag == "Clone")
         {
-            cardsInHand[cardsInHandNumber] = AI.staticEnemyDeck[numberOfCardInDeck - 1];
-            cardsInHandNumber++;
-
             thisAICard[0] = AI.staticEnemyDeck[numberOfCardInDeck - 1];
             numberOfCardInDeck -= 1;
             AI.deckSize -= 1;
@@ -162,14 +154,5 @@ public class AICardToHand : MonoBehaviour
             healthTextObject.SetActive(true);
             spellCardTemplate.SetActive(false);
         }
-
-        for (int i = 0; i < 40; i++)
-        {
-            if (cardsInHand[i].cardID != 0)
-            {
-                cardsInHandStatic[i] = cardsInHand[i];
-            }
-        }
-
     }
 }

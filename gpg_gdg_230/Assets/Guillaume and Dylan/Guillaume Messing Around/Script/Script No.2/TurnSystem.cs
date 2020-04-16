@@ -21,25 +21,64 @@ public class TurnSystem : MonoBehaviour
     public static int currentCoin;
     public Text coinText;
 
+    public static int enemyMaxMana;
+    public static int enemyCurrentMana;
+    public Text enemyManaText;
+
+    public static int enemyMaxCoin;
+    public static int enemyCurrentCoin;
+    public Text enemyCoinText;
+
     public static bool startTurn;
 
     public GameObject textObject;
     public GameObject spellField;
     public Text victoryText;
 
+    public int whoGoesFirst;
+
     // Start is called before the first frame update
     void Start()
     {
-        isYourTurn = true;
-        yourTurn = 1;
-        yourOpponentTurn = 0;
+        whoGoesFirst = Random.Range(1, 10);
 
-        maxCoin = 1;
-        currentCoin = 1;
-        maxMana = 1;
-        currentMana = 1;
+        if (whoGoesFirst <= 5)
+        {
+            isYourTurn = true;
+            yourTurn = 1;
+            yourOpponentTurn = 0;
 
-        startTurn = false;
+            maxCoin = 1;
+            currentCoin = 1;
+            maxMana = 1;
+            currentMana = 1;
+
+            enemyCurrentCoin = 1;
+            enemyMaxCoin = 1;
+            enemyMaxMana = 0;
+            enemyCurrentMana = 0;
+
+            startTurn = true;
+        }
+        else
+        {
+            isYourTurn = false;
+            yourTurn = 0;
+            yourOpponentTurn = 1;
+
+            maxCoin = 1;
+            currentCoin = 1;
+            maxMana = 0;
+            currentMana = 0;
+
+            enemyCurrentCoin = 1;
+            enemyMaxCoin = 1;
+            enemyCurrentMana = 1;
+            enemyMaxMana = 1;
+
+            startTurn = false;
+        }
+
 
         textObject.SetActive(false);
     }

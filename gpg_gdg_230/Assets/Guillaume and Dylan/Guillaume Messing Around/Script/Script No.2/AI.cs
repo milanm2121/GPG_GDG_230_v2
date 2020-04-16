@@ -9,7 +9,7 @@ public class AI : MonoBehaviour
     public static List<CardVersion2> staticEnemyDeck = new List<CardVersion2>();
 
     public List<CardVersion2> cardsInHand = new List<CardVersion2>();
-    public bool aiCanPlay;
+    //public bool aiCanPlay;
 
     public GameObject hand;
     public GameObject fieldZone;
@@ -30,6 +30,26 @@ public class AI : MonoBehaviour
     public static bool draw;
 
     public GameObject cardBack;
+
+    public int currentCoin;
+    public int currentMana;
+
+    public bool[] aiCanSummon;
+
+    public bool drawPhase;
+    public bool summonPhase;
+    public bool attackPhase;
+    public bool endPhase;
+
+    public int[] cardID;
+
+    public int summonThisID;
+
+    public AICardToHand aiCardToHand;
+
+    public int summonID;
+
+    public int howManyCards;
 
     // Start is called before the first frame update
     void Start()
@@ -89,17 +109,46 @@ public class AI : MonoBehaviour
             draw = true;
         }
 
-        if (aiCanPlay == true)
+        currentCoin = TurnSystem.enemyCurrentCoin;
+        currentMana = TurnSystem.enemyCurrentMana;
+
+        if (0 == 0)
+        {
+            int j = 0;
+            howManyCards = 0;
+            foreach (Transform child in hand.transform)
+            {
+                howManyCards++;
+            }
+            foreach (Transform child in hand.transform)
+            {
+                cardsInHand[j] = child.GetComponent<AICardToHand>().thisAICard[0];
+                j++;
+            }
+
+            for (int i = 0; i < 40; i++)
+            {
+                if (i >= howManyCards)
+                {
+                    cardsInHand[i] = CardDataBase.cardList[0];
+                }
+            }
+            j = 0;
+        }
+
+        if (TurnSystem.isYourTurn == false)
         {
             for (int i = 0; i < 40; i++)
             {
-                if (AICardToHand.cardsInHandStatic[i].cardID != 0)
+                if (cardsInHand[i].cardID != 0)
                 {
-                    cardsInHand[i] = AICardToHand.cardsInHandStatic[i];
+                    if (currentCoin >= cardsInHand[i].cardCoinCost)
+                    {
+                        aiCanSummon[i] = true;
+                    }
                 }
             }
         }
-
     }
 
     public void Shuffle()
@@ -149,6 +198,6 @@ public class AI : MonoBehaviour
     IEnumerator WaitFiveSeconds()
     {
         yield return new WaitForSeconds(1);
-        aiCanPlay = true;
+        //aiCanPlay = true;
     }
 }
