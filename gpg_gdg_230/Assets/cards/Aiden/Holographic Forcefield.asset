@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 615dd9c20f7fa234b9eb1a59bd2aec1a, type: 3}
-  m_Name: Self Driving AI Police Car
+  m_Name: Holographic Forcefield
   m_EditorClassIdentifier: 
-  ID: 47
-  name: Self Driving AI Police Car
-  description: 'Spell: summon 2 Undrcover_Cop'
+  ID: 50
+  name: Holographic Forcefield
+  description: 'Spell: upgrade all units attack -2 health 3'
   artwork: {fileID: 0}
-  manaCost: 3
+  manaCost: 5
   attack: 0
   health: 0
-  isSpell: 1
+  isSpell: 0
   monsterSickness: 1
   FuturefurePramCheak: 0
