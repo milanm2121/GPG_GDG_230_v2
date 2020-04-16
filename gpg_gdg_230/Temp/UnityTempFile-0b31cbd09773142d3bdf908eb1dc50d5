@@ -291,13 +291,14 @@
 /define:UNITY_POST_PROCESSING_STACK_V2
 /define:CSHARP_7_OR_LATER
 /define:CSHARP_7_3_OR_NEWER
-"Assets/card_reffence.cs"
 "Assets/Guillaume and Dylan/Dylan Messing Around/_Scripts/CardDisplay.cs"
 "Assets/Guillaume and Dylan/Dylan Messing Around/_Scripts/ScriptableCard.cs"
 "Assets/Guillaume and Dylan/Guillaume Messing Around/Script/CreatureCards/CardViz.cs"
 "Assets/Guillaume and Dylan/Guillaume Messing Around/Script/CreatureCards/GuillaumeCard.cs"
 "Assets/Guillaume and Dylan/Guillaume Messing Around/Script/CreatureCards/SpellCardViz.cs"
 "Assets/Guillaume and Dylan/Guillaume Messing Around/Script/HandScript.cs"
+"Assets/Guillaume and Dylan/Guillaume Messing Around/Script/Script No.2/AI.cs"
+"Assets/Guillaume and Dylan/Guillaume Messing Around/Script/Script No.2/AICardToHand.cs"
 "Assets/Guillaume and Dylan/Guillaume Messing Around/Script/Script No.2/BuffingOtherCardsScript.cs"
 "Assets/Guillaume and Dylan/Guillaume Messing Around/Script/Script No.2/CardBack.cs"
 "Assets/Guillaume and Dylan/Guillaume Messing Around/Script/Script No.2/CardBackPrefab.cs"
@@ -314,6 +315,8 @@
 "Assets/Guillaume and Dylan/Guillaume Messing Around/Script/Script No.2/Token/ThisTokenCard.cs"
 "Assets/Guillaume and Dylan/Guillaume Messing Around/Script/Script No.2/Token/TokenToField.cs"
 "Assets/Guillaume and Dylan/Guillaume Messing Around/Script/Script No.2/TurnSystem.cs"
+"Assets/scripts for backup/Player_deck_int_id.cs"
+"Assets/scripts/card_reffence.cs"
 "Assets/scripts/cards/card_functions.cs"
 "Assets/scripts/cards/CardLoading.cs"
 "Assets/scripts/cards/Deak.cs"

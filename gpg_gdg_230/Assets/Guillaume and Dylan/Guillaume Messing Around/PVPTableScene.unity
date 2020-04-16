@@ -2135,7 +2135,6 @@ MonoBehaviour:
     healXHealth: 0
     isSpellCard: 0
     cardImage: {fileID: 0}
-  aiCanPlay: 0
   hand: {fileID: 0}
   fieldZone: {fileID: 0}
   spellZone: {fileID: 0}
@@ -2149,6 +2148,18 @@ MonoBehaviour:
   clones: []
   cardBack: {fileID: 7100788648612626427, guid: c3d6d8799b49d3347be733d89aa01e9a,
     type: 3}
+  currentCoin: 0
+  currentMana: 0
+  aiCanSummon: 
+  drawPhase: 0
+  summonPhase: 0
+  attackPhase: 0
+  endPhase: 0
+  cardID: 
+  summonThisID: 0
+  aiCardToHand: {fileID: 0}
+  summonID: 0
+  howManyCards: 0
 --- !u!114 &134410642
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2364,9 +2375,12 @@ MonoBehaviour:
   turnText: {fileID: 1097072548}
   manaText: {fileID: 164577109}
   coinText: {fileID: 728992886}
+  enemyManaText: {fileID: 0}
+  enemyCoinText: {fileID: 0}
   textObject: {fileID: 365675503}
   spellField: {fileID: 2011511998}
   victoryText: {fileID: 1911914674}
+  whoGoesFirst: 0
 --- !u!4 &145773393
 Transform:
   m_ObjectHideFlags: 0
@@ -3719,6 +3733,7 @@ MonoBehaviour:
   theDeck: {fileID: 283033685}
   clones: []
   hand: {fileID: 1382901565}
+  ready_for_load: 1
 --- !u!1001 &293542325
 PrefabInstance:
   m_ObjectHideFlags: 0
