@@ -14,9 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 17
   name: The General of Trooper
-  description: 'On play: give other solider +2/+2'
+  description: 'On play: Boost all Trooper 2 attack 2 health'
   artwork: {fileID: 0}
   manaCost: 6
   attack: 4
   health: 4
-  monsterSickness: 0
+  isSpell: 0
+  monsterSickness: 1
+  FuturefurePramCheak: 0

@@ -14,9 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 12
   name: Stealth Trooper
-  description: cAnnot be block on its first attack
+  description: 
   artwork: {fileID: 0}
   manaCost: 3
   attack: 2
   health: 2
-  monsterSickness: 0
+  isSpell: 0
+  monsterSickness: 1
+  FuturefurePramCheak: 0

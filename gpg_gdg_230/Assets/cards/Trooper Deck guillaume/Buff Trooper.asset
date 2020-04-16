@@ -13,10 +13,12 @@ MonoBehaviour:
   m_Name: Buff Trooper
   m_EditorClassIdentifier: 
   ID: 3
-  name: Buff Trooper
+  name: Buff_Trooper
   description: '"Troopers that have been trained harder than other Trooper."'
   artwork: {fileID: 0}
   manaCost: 4
   attack: 4
   health: 4
-  monsterSickness: 0
+  isSpell: 0
+  monsterSickness: 1
+  FuturefurePramCheak: 0

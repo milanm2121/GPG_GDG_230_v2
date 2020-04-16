@@ -14,9 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 16
   name: The Commander of Troopers
-  description: 'On play: summon 2x Trooper. On attack: summon 1x Trooper'
+  description: 'On play: Summon 2 Trooper'
   artwork: {fileID: 0}
   manaCost: 7
   attack: 5
   health: 5
-  monsterSickness: 0
+  isSpell: 0
+  monsterSickness: 1
+  FuturefurePramCheak: 0

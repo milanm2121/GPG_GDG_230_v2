@@ -14,9 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 8
   name: Rogue Trooper
-  description: 'To play: Kill 1 unit'
+  description: 
   artwork: {fileID: 0}
   manaCost: 1
   attack: 3
   health: 3
-  monsterSickness: 0
+  isSpell: 0
+  monsterSickness: 1
+  FuturefurePramCheak: 0

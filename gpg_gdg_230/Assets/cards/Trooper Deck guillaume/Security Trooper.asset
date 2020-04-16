@@ -14,9 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 9
   name: Security Trooper
-  description: 'On play: return 1 enemy unit with 3 or less ATK'
+  description: 
   artwork: {fileID: 0}
   manaCost: 4
   attack: 2
   health: 2
-  monsterSickness: 0
+  isSpell: 0
+  monsterSickness: 1
+  FuturefurePramCheak: 0

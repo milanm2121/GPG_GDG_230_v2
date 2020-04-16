@@ -14,9 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 7
   name: Frost Trooper
-  description: 'On play: stun 1 enemy unit'
+  description: 
   artwork: {fileID: 0}
   manaCost: 3
   attack: 3
   health: 2
-  monsterSickness: 0
+  isSpell: 0
+  monsterSickness: 1
+  FuturefurePramCheak: 0

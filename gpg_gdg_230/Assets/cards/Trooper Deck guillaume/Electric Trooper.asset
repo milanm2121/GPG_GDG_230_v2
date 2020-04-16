@@ -14,9 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 5
   name: Electric Trooper
-  description: 'On attack: stun all enemy unit with 2 or less Health'
+  description: 'On play: damage all for 1'
   artwork: {fileID: 0}
   manaCost: 5
   attack: 3
   health: 4
-  monsterSickness: 0
+  isSpell: 0
+  monsterSickness: 1
+  FuturefurePramCheak: 0

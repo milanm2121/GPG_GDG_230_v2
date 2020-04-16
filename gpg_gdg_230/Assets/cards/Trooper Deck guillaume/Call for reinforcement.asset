@@ -19,6 +19,6 @@ MonoBehaviour:
   manaCost: 2
   attack: 0
   health: 0
-  isSpell: 0
-  monsterSickness: 1
+  isSpell: 1
+  monsterSickness: 0
   FuturefurePramCheak: 0
