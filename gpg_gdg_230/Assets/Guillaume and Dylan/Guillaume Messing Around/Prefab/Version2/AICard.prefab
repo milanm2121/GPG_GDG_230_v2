@@ -1,0 +1,1932 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1164695636494497461
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8497049294563686247}
+  - component: {fileID: 1558840233631906225}
+  - component: {fileID: 3407660443329908880}
+  - component: {fileID: 8137122894220041121}
+  m_Layer: 5
+  m_Name: AICard
+  m_TagString: Clone
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &8497049294563686247
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1164695636494497461}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.3}
+  m_Children:
+  - {fileID: 2848375490259712976}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1558840233631906225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1164695636494497461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 306cc8c2b49d7114eaa3623786fc2126, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreLayout: 0
+  m_MinWidth: -1
+  m_MinHeight: -1
+  m_PreferredWidth: -1
+  m_PreferredHeight: -1
+  m_FlexibleWidth: 1
+  m_FlexibleHeight: 1
+  m_LayoutPriority: 1
+--- !u!225 &3407660443329908880
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1164695636494497461}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
+--- !u!114 &8137122894220041121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1164695636494497461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d7025fb1e2164f40981c150c0de4fe6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thisAICard:
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  cardsInHand:
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  thisID: 0
+  id: 0
+  thisCardName: 
+  thisCardDetails: 
+  thisCardType: 
+  thisCardCost: 0
+  thisCardAttack: 0
+  thisCardHealth: 0
+  nameText: {fileID: 3262402313304570872}
+  deatilText: {fileID: 2612184764553601201}
+  typeText: {fileID: 4222666274451559134}
+  costText: {fileID: 7506150239820145693}
+  attackText: {fileID: 4097142676597389852}
+  healthText: {fileID: 5901332122350885150}
+  thisCardSprite: {fileID: 0}
+  cardImage: {fileID: 9051696439211623026}
+  spellCanBeUse: 0
+  spellPlay: 0
+  thisIsASpellCard: 0
+  drawXCards: 0
+  addXMaxCoin: 0
+  buffXATK: 0
+  buffXHealth: 0
+  summoningMonsters: 0
+  token: 1
+  tokenObject: {fileID: 7173777714064427245, guid: 0acb876c4c9cd614cbdc8178ca95ff5c,
+    type: 3}
+  tokenCards: []
+  buffOtherCardsATK: 0
+  buffingOtherCardsATKBool: 0
+  buffOtherCardsHealth: 0
+  buffingOtherCardsHealthBool: 0
+  dontBuffThisUnit: 0
+  healXHealth: 0
+  canHeal: 0
+  isSpellCard: 0
+  hand: {fileID: 0}
+  z: 0
+  cardObject: {fileID: 1164695636494497461}
+  numberOfCardInDeck: 0
+  summoned: 0
+  monsterCardTemplate: {fileID: 8999682865229639084}
+  spellCardTemplate: {fileID: 1655580870099698142}
+  attackTextObject: {fileID: 8766150008697667720}
+  healthTextObject: {fileID: 3380729914977156111}
+--- !u!1 &1546726453329880499
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4374958755747423403}
+  - component: {fileID: 2921764531550574497}
+  - component: {fileID: 9051696439211623026}
+  m_Layer: 5
+  m_Name: Art
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &4374958755747423403
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1546726453329880499}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2848375490259712976}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 5.4, y: 209.6}
+  m_SizeDelta: {x: 540, y: 440}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &2921764531550574497
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1546726453329880499}
+  m_CullTransparentMesh: 0
+--- !u!114 &9051696439211623026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1546726453329880499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: c91b242720a5ff44ba187e1ad34f433f, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!1 &1655580870099698142
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7306995227942267149}
+  - component: {fileID: 5341804058441504193}
+  - component: {fileID: 7050655078551446864}
+  m_Layer: 5
+  m_Name: Spell Card Template
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &7306995227942267149
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1655580870099698142}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2848375490259712976}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 20.00016, y: 120.00015}
+  m_SizeDelta: {x: 1200, y: 1335}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &5341804058441504193
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1655580870099698142}
+  m_CullTransparentMesh: 0
+--- !u!114 &7050655078551446864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1655580870099698142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 9461992fa783f4f7fb1e8dc534a57cb6, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!1 &1990624611542409208
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5577433638431245393}
+  - component: {fileID: 7549416370597632472}
+  - component: {fileID: 4167194632372608640}
+  m_Layer: 5
+  m_Name: Attacking
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &5577433638431245393
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1990624611542409208}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2848375490259712976}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 780, y: 1080}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &7549416370597632472
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1990624611542409208}
+  m_CullTransparentMesh: 0
+--- !u!114 &4167194632372608640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1990624611542409208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!1 &3380729914977156111
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2611583634380387022}
+  - component: {fileID: 9151157726139673473}
+  - component: {fileID: 5901332122350885150}
+  m_Layer: 5
+  m_Name: Health
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2611583634380387022
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3380729914977156111}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2848375490259712976}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: 300, y: -85}
+  m_SizeDelta: {x: 60, y: 60}
+  m_Pivot: {x: 1, y: 0.5}
+--- !u!222 &9151157726139673473
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3380729914977156111}
+  m_CullTransparentMesh: 0
+--- !u!114 &5901332122350885150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3380729914977156111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 1
+    m_BestFit: 1
+    m_MinSize: 14
+    m_MaxSize: 100
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 0
+--- !u!1 &3915998164013681826
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 562775509341775168}
+  - component: {fileID: 7885614740424618082}
+  - component: {fileID: 7506150239820145693}
+  m_Layer: 5
+  m_Name: Cost
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &562775509341775168
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3915998164013681826}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2848375490259712976}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 300, y: 450}
+  m_SizeDelta: {x: 60, y: 60}
+  m_Pivot: {x: 1, y: 1}
+--- !u!222 &7885614740424618082
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3915998164013681826}
+  m_CullTransparentMesh: 0
+--- !u!114 &7506150239820145693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3915998164013681826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 1
+    m_BestFit: 1
+    m_MinSize: 14
+    m_MaxSize: 100
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 0
+--- !u!1 &4442035332156392996
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2848375490259712976}
+  m_Layer: 5
+  m_Name: CardTemplate
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2848375490259712976
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4442035332156392996}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.15, y: 0.15, z: 1}
+  m_Children:
+  - {fileID: 4577920893191716621}
+  - {fileID: 5851801286364296754}
+  - {fileID: 5577433638431245393}
+  - {fileID: 2973716190079796407}
+  - {fileID: 7306995227942267149}
+  - {fileID: 4374958755747423403}
+  - {fileID: 8293540408560366254}
+  - {fileID: 2206019224558252924}
+  - {fileID: 5221089567038768249}
+  - {fileID: 562775509341775168}
+  - {fileID: 1321842821363736468}
+  - {fileID: 2611583634380387022}
+  - {fileID: 618766508816854471}
+  m_Father: {fileID: 8497049294563686247}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &5168461263695033434
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5851801286364296754}
+  - component: {fileID: 1463528811879317331}
+  - component: {fileID: 3741617987187974850}
+  m_Layer: 5
+  m_Name: AbleToBeSummoned
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &5851801286364296754
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5168461263695033434}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2848375490259712976}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 780, y: 1080}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &1463528811879317331
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5168461263695033434}
+  m_CullTransparentMesh: 0
+--- !u!114 &3741617987187974850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5168461263695033434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!1 &6079480060958671989
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4577920893191716621}
+  - component: {fileID: 272114811032456716}
+  - component: {fileID: 7826792168488584028}
+  m_Layer: 5
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &4577920893191716621
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6079480060958671989}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_Children: []
+  m_Father: {fileID: 2848375490259712976}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 5, y: 75}
+  m_SizeDelta: {x: 540, y: 640}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &272114811032456716
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6079480060958671989}
+  m_CullTransparentMesh: 0
+--- !u!114 &7826792168488584028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6079480060958671989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!1 &6497254269092212044
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8293540408560366254}
+  - component: {fileID: 8765830019344018658}
+  - component: {fileID: 3262402313304570872}
+  m_Layer: 5
+  m_Name: Title
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &8293540408560366254
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6497254269092212044}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2848375490259712976}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: -300, y: 565}
+  m_SizeDelta: {x: 640, y: 60}
+  m_Pivot: {x: 0, y: 1}
+--- !u!222 &8765830019344018658
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6497254269092212044}
+  m_CullTransparentMesh: 0
+--- !u!114 &3262402313304570872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6497254269092212044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 1
+    m_BestFit: 1
+    m_MinSize: 14
+    m_MaxSize: 100
+    m_Alignment: 3
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Title
+--- !u!1 &6832032288176073169
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 618766508816854471}
+  - component: {fileID: 5940118159741409697}
+  - component: {fileID: 3743653615213919726}
+  m_Layer: 5
+  m_Name: background
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &618766508816854471
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6832032288176073169}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2848375490259712976}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 5.1, y: 71.2}
+  m_SizeDelta: {x: 1030, y: 1245}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &5940118159741409697
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6832032288176073169}
+  m_CullTransparentMesh: 0
+--- !u!114 &3743653615213919726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6832032288176073169}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 55aad2be057404c548a2ba67be5c20df, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!1 &7628485093617073719
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2206019224558252924}
+  - component: {fileID: 8805434616257883700}
+  - component: {fileID: 2612184764553601201}
+  m_Layer: 5
+  m_Name: Card Description
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2206019224558252924
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7628485093617073719}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2848375490259712976}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: -340, y: -328.9}
+  m_SizeDelta: {x: 780, y: 280}
+  m_Pivot: {x: 0, y: 0.5}
+--- !u!222 &8805434616257883700
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7628485093617073719}
+  m_CullTransparentMesh: 0
+--- !u!114 &2612184764553601201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7628485093617073719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 1
+    m_BestFit: 1
+    m_MinSize: 14
+    m_MaxSize: 100
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Card description
+--- !u!1 &8766150008697667720
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1321842821363736468}
+  - component: {fileID: 2835465156217888840}
+  - component: {fileID: 4097142676597389852}
+  m_Layer: 5
+  m_Name: Attack
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1321842821363736468
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8766150008697667720}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2848375490259712976}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: -300, y: -85}
+  m_SizeDelta: {x: 60, y: 60}
+  m_Pivot: {x: 0, y: 0.5}
+--- !u!222 &2835465156217888840
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8766150008697667720}
+  m_CullTransparentMesh: 0
+--- !u!114 &4097142676597389852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8766150008697667720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 1
+    m_BestFit: 1
+    m_MinSize: 14
+    m_MaxSize: 100
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 0
+--- !u!1 &8913640036056422540
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5221089567038768249}
+  - component: {fileID: 1903442619745371169}
+  - component: {fileID: 4222666274451559134}
+  m_Layer: 5
+  m_Name: Card Type
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &5221089567038768249
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8913640036056422540}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2848375490259712976}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -160}
+  m_SizeDelta: {x: 550, y: 60}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &1903442619745371169
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8913640036056422540}
+  m_CullTransparentMesh: 0
+--- !u!114 &4222666274451559134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8913640036056422540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 1
+    m_BestFit: 1
+    m_MinSize: 14
+    m_MaxSize: 100
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Card Type
+--- !u!1 &8999682865229639084
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2973716190079796407}
+  - component: {fileID: 5215593918619896518}
+  - component: {fileID: 1823978728452988606}
+  m_Layer: 5
+  m_Name: Monster Card Template
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2973716190079796407
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8999682865229639084}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2848375490259712976}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 20, y: 120}
+  m_SizeDelta: {x: 1200, y: 1335}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &5215593918619896518
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8999682865229639084}
+  m_CullTransparentMesh: 0
+--- !u!114 &1823978728452988606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8999682865229639084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 54fae83e6cbbf41338c5943883fdd3bc, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
