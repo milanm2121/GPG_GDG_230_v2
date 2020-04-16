@@ -24,15 +24,7 @@ MonoBehaviour:
   m_MinSize: {x: 683, y: 494}
   m_MaxSize: {x: 14004, y: 14044}
   vertical: 0
-<<<<<<< HEAD
-<<<<<<< HEAD
-  controlID: 64428
-=======
-  controlID: 58935
->>>>>>> parent of a6017986... fixed deck scaling again
-=======
-  controlID: 5322
->>>>>>> parent of dbfde6f1... df
+  controlID: 92
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -138,15 +130,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 494}
   m_MaxSize: {x: 10002, y: 14044}
   vertical: 1
-<<<<<<< HEAD
-<<<<<<< HEAD
-  controlID: 64429
-=======
-  controlID: 58889
->>>>>>> parent of a6017986... fixed deck scaling again
-=======
-  controlID: 5323
->>>>>>> parent of dbfde6f1... df
+  controlID: 93
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -171,15 +155,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 222}
   m_MaxSize: {x: 8006, y: 4022}
   vertical: 0
-<<<<<<< HEAD
-<<<<<<< HEAD
-  controlID: 64430
-=======
-  controlID: 58853
->>>>>>> parent of a6017986... fixed deck scaling again
-=======
-  controlID: 5296
->>>>>>> parent of dbfde6f1... df
+  controlID: 94
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -237,7 +213,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 5e8effff888effff3cdcffff8af1ffffeafaffff
+      m_ExpandedIDs: bc5cfeffc05cfeffc45cfeffce5cfeffd85cfeff0c5dfeff185dfeff805dfeff925dfeff4c5ffeffae60feffc060feffea60feff1461feff4461feffcc6bfeff526cfeff7a6cfeffbc75feffe475fefffa05fffffe05ffff0206ffff0c06ffff1606ffff4a06ffffb006ffffb408ffff8ae6ffffb0e6ffffb4e6ffffbee6ffffc8e6fffffce6ffff08e7ffff58eaffff6cedffff66f0ffff8af0ffff9cfaffffbefaffff3efbffff624100000c4300006044000020450000624500008e450000c0450000b85000003a5100004851000084510000a85100001852000062520000a25f0000c25f00000660000096610000ec610000f0610000626200009662000078680000fa68000008690000226a0000a6740000147d0000847d0000727e00005c8300009e830000fc83000010880000808800006e890000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -280,8 +256,8 @@ MonoBehaviour:
     y: 0
     width: 751
     height: 533
-  m_MinSize: {x: 204, y: 222}
-  m_MaxSize: {x: 4004, y: 4022}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 2}
   m_Panes:
   - {fileID: 8}
@@ -325,9 +301,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -0.39940584, y: -0.27141035, z: -285.1212}
+    m_Target: {x: 341.796, y: 351.15808, z: -4926.4253}
     speed: 2
-    m_Value: {x: -0.39940584, y: -0.27141035, z: -285.1212}
+    m_Value: {x: 341.796, y: 351.15808, z: -4926.4253}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -360,9 +336,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 14.628975
+    m_Target: 775.13025
     speed: 2
-    m_Value: 14.628975
+    m_Value: 775.13025
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -433,20 +409,9 @@ MonoBehaviour:
     y: 533
     width: 1044
     height: 272
-<<<<<<< HEAD
-<<<<<<< HEAD
-  m_MinSize: {x: 102, y: 122}
-  m_MaxSize: {x: 4002, y: 4022}
-  m_ActualView: {fileID: 12}
-=======
   m_MinSize: {x: 230, y: 250}
   m_MaxSize: {x: 10000, y: 10000}
-=======
-  m_MinSize: {x: 232, y: 272}
-  m_MaxSize: {x: 10002, y: 10022}
->>>>>>> parent of dbfde6f1... df
   m_ActualView: {fileID: 11}
->>>>>>> parent of a6017986... fixed deck scaling again
   m_Panes:
   - {fileID: 11}
   - {fileID: 12}
@@ -491,20 +456,20 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Guillaume and Dylan/Guillaume Messing Around
+    - Assets/Guillaume and Dylan/Dylan Messing Around/Cards
   m_ViewMode: 1
-  m_StartGridSize: 64
+  m_StartGridSize: 50
   m_LastFolders:
-  - Assets/Guillaume and Dylan/Guillaume Messing Around
-  m_LastFoldersGridSize: -1
+  - Assets/Guillaume and Dylan/Dylan Messing Around/Cards
+  m_LastFoldersGridSize: 50
   m_LastProjectPath: /Users/milan.manji/Documents/GitHub/GPG_GDG_230_v2/gpg_gdg_230
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 295.00134}
-    m_SelectedIDs: 32330000
-    m_LastClickedID: 13106
-    m_ExpandedIDs: 00000000fa2f00009e3000001632000064320000b63200001833000032330000f4330000043400001434000048340000523400003e35000076350000d23500000a3a00000c3a00000e3a000000ca9a3b
+    scrollPos: {x: 0, y: 150.9978}
+    m_SelectedIDs: f4300000
+    m_LastClickedID: 12532
+    m_ExpandedIDs: 000000007c2e0000282f000074300000a4300000f43000004c310000b63100009a320000a4320000aa320000ba320000ee320000f8320000e83300002034000084340000d8350000da350000dc350000de35000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -532,7 +497,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000fa2f00009e3000001632000064320000b632000018330000f4330000043400001434000048340000523400003e35000076350000d23500000a3a00000c3a00000e3a000000ca9a3b
+    m_ExpandedIDs: 000000007c2e0000282f000074300000a4300000f43000004c310000b63100009a320000aa320000ba320000ee320000f8320000e83300002034000084340000d8350000da350000dc350000de350000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -557,24 +522,24 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 50310000
-    m_LastClickedInstanceID: 12624
+    m_SelectedInstanceIDs: bc5cfeff
+    m_LastClickedInstanceID: -107332
     m_HadKeyboardFocusLastEvent: 1
-    m_ExpandedInstanceIDs: c6230000
+    m_ExpandedInstanceIDs: c62300008234000000000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: Player_deck_int_id
+      m_OriginalName: Player_deck_int_id
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: 11676
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 10}
     m_CreateAssetUtility:
@@ -585,7 +550,7 @@ MonoBehaviour:
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
     m_ScrollPosition: {x: 0, y: 0}
-    m_GridSize: 64
+    m_GridSize: 50
   m_SkipHiddenPackages: 0
   m_DirectoriesAreaWidth: 197
 --- !u!114 &12
@@ -633,8 +598,8 @@ MonoBehaviour:
     y: 0
     width: 396
     height: 805
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 277, y: 72}
+  m_MaxSize: {x: 4002, y: 4022}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -676,13 +641,5 @@ MonoBehaviour:
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_PreviewWindow: {fileID: 0}
-<<<<<<< HEAD
-<<<<<<< HEAD
-  m_LastInspectedObjectInstanceID: -1219246
-=======
-  m_LastInspectedObjectInstanceID: 113322
->>>>>>> parent of a6017986... fixed deck scaling again
-=======
-  m_LastInspectedObjectInstanceID: 12624
->>>>>>> parent of dbfde6f1... df
+  m_LastInspectedObjectInstanceID: -107332
   m_LastVerticalScrollValue: 0

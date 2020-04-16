@@ -26,6 +26,10 @@ public class PlayerDeck : MonoBehaviour
     public GameObject hand;
 
     // Start is called before the first frame update
+    private void Awake()
+    {
+        //GameObject.Find("Player")
+    }
     void Start()
     {
         x = 0;
@@ -124,6 +128,6 @@ public class PlayerDeck : MonoBehaviour
 
     public void loadDeack(List<int> loadeddeck)
     {
-
+        
     }
 }
