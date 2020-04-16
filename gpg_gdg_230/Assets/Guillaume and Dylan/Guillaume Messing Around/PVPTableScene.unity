@@ -2150,28 +2150,17 @@ MonoBehaviour:
     type: 3}
   currentCoin: 0
   currentMana: 0
-<<<<<<< HEAD
   aiCanSummon: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
-=======
-  aiCanSummon: 
->>>>>>> 2def504db8a95d0f9bc070433ff38bc6b5a85ff4
   drawPhase: 0
   summonPhase: 0
   attackPhase: 0
   endPhase: 0
-<<<<<<< HEAD
   cardID: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-=======
-  cardID: 
->>>>>>> 2def504db8a95d0f9bc070433ff38bc6b5a85ff4
   summonThisID: 0
   aiCardToHand: {fileID: 0}
   summonID: 0
   howManyCards: 0
-<<<<<<< HEAD
   fieldCards: {fileID: 76761437}
-=======
->>>>>>> 2def504db8a95d0f9bc070433ff38bc6b5a85ff4
 --- !u!114 &134410642
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2387,13 +2376,8 @@ MonoBehaviour:
   turnText: {fileID: 1097072548}
   manaText: {fileID: 164577109}
   coinText: {fileID: 728992886}
-<<<<<<< HEAD
   enemyManaText: {fileID: 462490156}
   enemyCoinText: {fileID: 608074057}
-=======
-  enemyManaText: {fileID: 0}
-  enemyCoinText: {fileID: 0}
->>>>>>> 2def504db8a95d0f9bc070433ff38bc6b5a85ff4
   textObject: {fileID: 365675503}
   spellField: {fileID: 2011511998}
   victoryText: {fileID: 1911914674}
@@ -3750,7 +3734,6 @@ MonoBehaviour:
   theDeck: {fileID: 283033685}
   clones: []
   hand: {fileID: 1382901565}
-  ready_for_load: 1
 --- !u!1001 &293542325
 PrefabInstance:
   m_ObjectHideFlags: 0

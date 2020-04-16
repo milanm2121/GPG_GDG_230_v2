@@ -25,29 +25,19 @@ public class PlayerDeck : MonoBehaviour
 
     public GameObject hand;
 
-    public List<int> deckId = new List<int>();
-    public bool ready_for_load;
     // Start is called before the first frame update
     void Start()
     {
-        if (ready_for_load == false)
+        x = 0;
+        deckSize = 40;
+        
+        for (int i = 0; i < deckSize; i++)
         {
-            x = 0;
-            deckSize = 40;
-
-            for (int i = 0; i < deckSize; i++)
-            {
-                x = Random.Range(1, 10);
-                deck[i] = CardDataBase.cardList[x];
-            }
-
-            StartCoroutine(StartGame());
+            x = Random.Range(1, 10);
+            deck[i] = CardDataBase.cardList[x];
         }
-        else
-        {
-            StartCoroutine(waitToLoadDeack());
-            
-        }
+
+        StartCoroutine(StartGame());
     }
 
     // Update is called once per frame
@@ -130,25 +120,5 @@ public class PlayerDeck : MonoBehaviour
             yield return new WaitForSeconds(1);
             Instantiate(cardToHand, transform.position, transform.rotation);
         }
-    }
-    public void loadDeack(List<int> loading_deck)
-    {
-        deckId = loading_deck;
-    }
-
-    IEnumerator waitToLoadDeack()
-    {
-        yield return new WaitUntil(() => deckId.Count == 40);
-        x = 0;
-        deckSize = 40;
-
-        for (int i = 0; i < deckSize; i++)
-        {
-            x = deckId[Random.Range(1, deckId.Count)];
-            deckId.RemoveAt(x);
-            deck[i] = CardDataBase.cardList[x];
-        }
-
-        StartCoroutine(StartGame());
     }
 }

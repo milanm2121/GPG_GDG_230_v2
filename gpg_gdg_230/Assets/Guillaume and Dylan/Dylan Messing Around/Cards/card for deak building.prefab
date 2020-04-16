@@ -795,11 +795,11 @@ MonoBehaviour:
   nameText: {fileID: 8099801056950460012}
   descriptionText: {fileID: 8099801056763287180}
   artworkImage: {fileID: 8099801057560566636}
-  cardTemplate: {fileID: 8099801057429437445}
+  cardTemplate: {fileID: 0}
   manaText: {fileID: 8099801057495556518}
   attackText: {fileID: 8099801058317950843}
   healthText: {fileID: 8099801058512465584}
-  backofCard: {fileID: 8099801056784036593}
+  backofCard: {fileID: 0}
   sickness: {r: 0, g: 0, b: 0, a: 0}
   hide: 0
   active: 0

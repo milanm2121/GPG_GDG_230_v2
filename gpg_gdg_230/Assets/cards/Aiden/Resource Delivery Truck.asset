@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 615dd9c20f7fa234b9eb1a59bd2aec1a, type: 3}
   m_Name: Resource Delivery Truck
   m_EditorClassIdentifier: 
-  ID: 46
-  name: Resource Delivery Truck
-  description: 'Spell: earn 3 Gold 2 mana'
+  ID: 0
+  name: 
+  description: 
   artwork: {fileID: 0}
-  manaCost: 2
+  manaCost: 0
   attack: 0
   health: 0
-  isSpell: 1
+  isSpell: 0
   monsterSickness: 1
   FuturefurePramCheak: 0
