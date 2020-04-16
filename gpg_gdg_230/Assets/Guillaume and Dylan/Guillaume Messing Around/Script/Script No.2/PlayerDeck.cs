@@ -121,4 +121,9 @@ public class PlayerDeck : MonoBehaviour
             Instantiate(cardToHand, transform.position, transform.rotation);
         }
     }
+
+    public void loadDeack(List<int> loadeddeck)
+    {
+
+    }
 }
