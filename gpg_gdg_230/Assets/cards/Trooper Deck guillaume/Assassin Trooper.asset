@@ -14,9 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 2
   name: Assassin Trooper
-  description: 'On play: kill 1 enemy unit'
+  description: 
   artwork: {fileID: 0}
   manaCost: 6
   attack: 4
   health: 4
+  isSpell: 0
   monsterSickness: 0
+  FuturefurePramCheak: 0

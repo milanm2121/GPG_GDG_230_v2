@@ -14,9 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 1
   name: Air Trooper
-  description: 'On attack: cannot be block by enemy unit with 3 or less ATK'
+  description: 
   artwork: {fileID: 0}
   manaCost: 4
   attack: 4
   health: 2
+  isSpell: 0
   monsterSickness: 0
+  FuturefurePramCheak: 0

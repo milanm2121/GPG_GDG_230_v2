@@ -535,54 +535,110 @@ public class TurnBaseScript : MonoBehaviour
 
         FutureFur_Uniqe_pram();
 
+        
         for (int i = 0; message.Length > i; i++)
         {
             switch (message[i])
             {
-                case "On":
-
-                    switch (message[i+1])
+                case ".":
+                    switch (message[i + 1])
                     {
-                        case "Play:":
-                            switch (message[i+2])
-                            {
-                                //unitytype(e.g. "Trooper") / "for" / damage
-                                case "Damage":
-                                    typeDamage(message[i+3], message[i+5]);
-                                    break;
+                        //unitytype(e.g. "Trooper") / "for" / damage
+                        case "Damage":
+                            typeDamage(message[i + 2], message[i + 4]);
+                            break;
 
-                                //"all"/ unitytype / attack / "attack" / deffence / "deffence"
-                                case "Boost":
-                                    boost(message[i+4], message[i+5], message[i+7]);
-                                    break;
+                        //"all"/ unitytype / attack / "attack" / deffence / "deffence"
+                        case "Boost":
+                            boost(message[i + 3], message[i + 4], message[i + 6]);
+                            break;
 
-                                // unit count/ unit name    
-                                case "Summon":
-                                    PasSummon(message[i+3], message[i+4]);
-                                    break;
-                                //gold / "Gold" / mana / "Power"
-                                case "Earn":
-                                    earn(message[i + 3],message[i + 5]);
-                                    break;
-                                //"all" / unit type/ "with" / enhancement
-                                case "Enhance":
-                                    Enhance(message[i + 3], message[i + 5]);
-                                    break;
-                            }
+                        // unit count/ unit name    
+                        case "Summon":
+                            PasSummon(message[i + 2], message[i + 3]);
+                            break;
+                        //gold / "Gold" / mana / "Power"
+                        case "Earn":
+                            earn(message[i + 2], message[i + 4]);
+                            break;
+                        //"all" / unit type/ "with" / enhancement
+                        case "Enhance":
+                            Enhance(message[i + 2], message[i + 4]);
+                            break;
+
+                        //number of units / units / for / damage
+                        case "damage":
+                            spellDamage(message[i + 1], message[i + 4]);
+                            break;
+
+                        //number of units / unit type / "attack" / damage / "defence" / deffence
+                        case "upgrade":
+                            upgrade(message[i + 1], message[i + 2], message[i + 4], message[i + 6]);
+                            break;
+
+                        //unit count / unit name
+                        case "summon":
+                            summon(message[i + 1], message[i + 2]);
+                            break;
+                        //gold / "Gold" / mana / "Power"
+                        case "earn":
+                            earn(message[i + 1], message[i + 3]);
+                            break;
+                        // number of units
+                        case "convert":
+                            convert(message[i + 1]);
+                            break;
+                        // number of units
+                        case "dissable":
+                            disable(message[i + 1]);
                             break;
                     }
                     break;
 
+                case "On":
 
+                    switch (message[i + 1])
+                    {
+                        case "Play:":
+                            switch (message[i + 2])
+                            {
+                                //unitytype(e.g. "Trooper") / "for" / damage
+                                case "Damage":
+                                    typeDamage(message[i + 3], message[i + 5]);
+                                    break;
+
+                                //"all"/ unitytype / attack / "attack" / deffence / "deffence"
+                                case "Boost":
+                                    boost(message[i + 4], message[i + 5], message[i + 7]);
+                                    break;
+
+                                // unit count/ unit name    
+                                case "Summon":
+                                    PasSummon(message[i + 3], message[i + 4]);
+                                    break;
+                                //gold / "Gold" / mana / "Power"
+                                case "Earn":
+                                    earn(message[i + 3], message[i + 5]);
+                                    break;
+                                //"all" / unit type/ "with" / enhancement
+                                case "Enhance":
+                                    Enhance(message[i + 3], message[i + 5]);
+                                    break;                                
+                            }
+                            break;
+                    }
+                    break;
+            
+                
 
                 case "Spell:":
 
 
                     switch (message[i+1])
                     {
-                        //number of units / damage
+                        //number of units / units / for / damage
                         case "damage":
-                            spellDamage(message[i+2], message[i+3]);
+                            spellDamage(message[i+2], message[i+5]);
                             break;
 
                         //number of units / unit type / "attack" / damage / "defence" / deffence
@@ -1019,25 +1075,30 @@ public class TurnBaseScript : MonoBehaviour
     {
         if (playerTurn == true)
         {
-            for (int i = 0; int.Parse(unitcount) > i; i++)
+            for (int i = 0; int.Parse(unitcount)+1 > i; i++)
             {
-                if (player1Hand.active_cards < 5)
+                if (player1Hand.active_cards <= 4)
                 {
                     GameObject x =Cr.create_card(unit);
-                    player1Hand.active_cards_slots[player1Hand.active_cards-1] = x ;
+                    player1Hand.active_cards++;
+                    player1Hand.active_cards_slots[player1Hand.active_cards - 1] = x ;
+
                     StartCoroutine(player1Hand.unsick(x, player1Hand));
+                    
                 }
             }
         }
         else
         {
-            for (int i = 0; int.Parse(unitcount) > i; i++)
+            for (int i = 0; int.Parse(unitcount)+1 > i; i++)
             {
                 if (player2Hand.active_cards < 5)
                 {
                     GameObject x = Cr.create_card(unit);
+                    player2Hand.active_cards++;
                     player2Hand.active_cards_slots[player2Hand.active_cards-1] = x;
                     StartCoroutine(player2Hand.unsick(x, player2Hand));
+                    
                 }
             }
         }

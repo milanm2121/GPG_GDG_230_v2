@@ -14,10 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 26
   name: Mercenary
-  description: A futuristic mercenary soldier
+  description: 'On Play: Damage All for 1 . Earn 1 Gold 0 Power  futuristic mercenary
+    soldier  '
   artwork: {fileID: 0}
   manaCost: 3
   attack: 2
   health: 2
   isSpell: 0
   monsterSickness: 1
+  FuturefurePramCheak: 0

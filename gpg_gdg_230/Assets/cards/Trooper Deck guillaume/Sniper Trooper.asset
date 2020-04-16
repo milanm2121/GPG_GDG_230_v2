@@ -14,9 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 11
   name: Sniper Trooper
-  description: Deal 1 Damage to a unit
+  description: 'On Play: Deal 1 Damage to a unit'
   artwork: {fileID: 0}
   manaCost: 2
   attack: 1
   health: 5
+  isSpell: 0
   monsterSickness: 0
+  FuturefurePramCheak: 0

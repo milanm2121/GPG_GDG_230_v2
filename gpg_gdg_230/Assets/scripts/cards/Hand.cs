@@ -28,16 +28,8 @@ public class Hand : MonoBehaviour
     //the array that holds the active cards in your deck
     public GameObject[] active_cards_slots = new GameObject[5];
     //the transforms of active positions in your side of the feild
-
     public Transform[] active_slots;
-    //cards in combat
-    public int cards_in_combat;
-    //the array of cards in combat
-    public GameObject[] combat_card_slots = new GameObject[5];
-    //the transform position of cards
-    public Transform[] combat_slots;
-
-
+    
     //this is a deak(deck) it holds 40 cards
     public Deak deck;
     //a script that holds and dictaes the truns.
@@ -54,6 +46,8 @@ public class Hand : MonoBehaviour
     GameObject attacking_card;
     //for mousepos raycasting
     Camera cam;
+    //used for clickand hold
+    float hold;
 
     //script that manages combat
     public combat_maneger cm;
@@ -154,7 +148,7 @@ public class Hand : MonoBehaviour
                     {
                         if (active_cards_slots[i] == selectedCard)
                         {
-                            if (unitType != "none")
+                            if (unitType != "all")
                             {
                                 string compareName;
                                 compareName = selectedCard.GetComponent<CardDisplay>().card.name;
@@ -191,17 +185,22 @@ public class Hand : MonoBehaviour
             else
             {
                 //clikink cards
-                if (selectedCard != null && Input.GetMouseButtonDown(0))
+                if (selectedCard != null && (Input.GetMouseButtonDown(0) || hold!=0))
                 {
                     //for clicking cards in hand to move to the feild
-                    if (active == true && TBS.state == TurnBaseScript.TurnState.PlayerTurn)
+                    if (active == true && TBS.state == TurnBaseScript.TurnState.PlayerTurn &&Input.GetMouseButton(0))
                     {
-                        for (int i = 0; cards_in_hand > i; i++)
+                        hold += Time.deltaTime;
+                        if (hold >= 1)
                         {
-                            if (selectedCard == hand[i])
+                            hold = 0;
+                            for (int i = 0; cards_in_hand > i; i++)
                             {
-                                Use_card(i);
-                                break;
+                                if (selectedCard == hand[i])
+                                {
+                                    Use_card(i);
+                                    break;
+                                }
                             }
                         }
                     }
@@ -211,8 +210,7 @@ public class Hand : MonoBehaviour
                     {
                         if (selectedCard == active_cards_slots[i])
                         {
-                            combat_card_slots[i] = selectedCard;
-                            cards_in_combat += 1;
+                            
                             //visual change in card goes here
                             if (active == true && TBS.state == TurnBaseScript.TurnState.Attack && cm.attack.Contains(selectedCard) == false)
                             {
@@ -455,6 +453,7 @@ public class Hand : MonoBehaviour
                 TBS.ReadTheCard(picked_card.GetComponent<CardDisplay>().card);
                 picked_card.GetComponent<CardDisplay>().hide = false;
                 picked_card.GetComponent<CardDisplay>().active = true;
+                SendToGrave(picked_card, picked_card_index);
             }
         }
     }

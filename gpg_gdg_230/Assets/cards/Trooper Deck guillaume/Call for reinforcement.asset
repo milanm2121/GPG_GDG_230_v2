@@ -14,10 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 24
   name: Call for renforcmetns
-  description: 'Spell: summon 3 troopers'
+  description: 'Spell: summon 2 Troopers'
   artwork: {fileID: 0}
   manaCost: 2
   attack: 0
   health: 0
   isSpell: 0
   monsterSickness: 1
+  FuturefurePramCheak: 0
