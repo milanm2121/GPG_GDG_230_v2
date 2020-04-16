@@ -924,9 +924,9 @@ public class TurnBaseScript : MonoBehaviour
     {
         switch (message[start+2 + 1])
         {
-            //number of units / damage
+            //number of units / units / for / damage
             case "damage":
-                spellDamage(message[start+2 + 2], message[start+2 + 3]);
+                spellDamage(message[start+2 + 2], message[start+2 + 5]);
                 break;
 
             //number of units / unit type / "attack" / damage / "defence" / deffence
@@ -972,19 +972,28 @@ public class TurnBaseScript : MonoBehaviour
                 List<GameObject> SelectedCards = new List<GameObject>();
                 StartCoroutine(pause_sellection_own_hand(int.Parse(nuber), unit_type, SelectedCards));
                 StartCoroutine(waitForUpgrade(int.Parse(nuber), SelectedCards, int.Parse(attack), int.Parse(health)));
+
+                
             }
             else
             {
                 List<GameObject> selectedCards = new List<GameObject>();
                 for (int i = 0; player1Hand.active_cards > i; i++)
                 {
-                    string n = player1Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.name;
-                    string[] brokenName = n.Split(' ');
-                    for (int x = 0; brokenName.Length > x; x++)
+                    if (unit_type == "units")
                     {
-                        if (brokenName[x] == unit_type)
-                            selectedCards.Add(player1Hand.active_cards_slots[i]);
+                        selectedCards.Add(player1Hand.active_cards_slots[i]);
+                    }
+                    else
+                    {
+                        string n = player1Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.name;
+                        string[] brokenName = n.Split(' ');
+                        for (int x = 0; brokenName.Length > x; x++)
+                        {
+                            if (brokenName[x] == unit_type)
+                                selectedCards.Add(player1Hand.active_cards_slots[i]);
 
+                        }
                     }
                 }
                 for (int i = 0; selectedCards.Count > i; i++)
@@ -996,7 +1005,7 @@ public class TurnBaseScript : MonoBehaviour
         }
         else
         {
-            if (nuber == "all")
+            if (nuber != "all")
             {
                 List<GameObject> selectedCards = new List<GameObject>();
                 for (int i = 0; player2Hand.active_cards > i; i++)
@@ -1019,16 +1028,28 @@ public class TurnBaseScript : MonoBehaviour
             else
             {
                 List<GameObject> selectedCards = new List<GameObject>();
+
+
+
+
                 for (int i = 0; player2Hand.active_cards > i; i++)
                 {
-                    string n = player2Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.name;
-                    string[] brokenName = n.Split(' ');
-                    for (int x = 0; brokenName.Length > x; x++)
+                    if (unit_type == "units")
                     {
-                        if (brokenName[x] == unit_type)
-                            selectedCards.Add(player2Hand.active_cards_slots[i]);
-                        if (selectedCards.Count == int.Parse(nuber))
-                            i = player2Hand.active_cards;
+                        selectedCards.Add(player1Hand.active_cards_slots[i]);
+                    }
+                    else
+                    {
+                        string n = player2Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.name;
+                        string[] brokenName = n.Split(' ');
+                        for (int x = 0; brokenName.Length > x; x++)
+                        {
+                            if (brokenName[x] == unit_type)
+                                selectedCards.Add(player2Hand.active_cards_slots[i]);
+                            if (selectedCards.Count == int.Parse(nuber))
+                                i = player2Hand.active_cards;
+                        }
+
                     }
                 }
                 for (int i = 0; selectedCards.Count > i; i++)
@@ -1036,6 +1057,7 @@ public class TurnBaseScript : MonoBehaviour
                     selectedCards[i].GetComponent<CardDisplay>().card.health += int.Parse(health);
                     selectedCards[i].GetComponent<CardDisplay>().card.attack += int.Parse(attack);
                 }
+                
             }
         }
     }

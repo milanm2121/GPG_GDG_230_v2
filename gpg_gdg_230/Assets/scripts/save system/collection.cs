@@ -93,9 +93,10 @@ public class collection : MonoBehaviour
                 }
                 Collection[(x * 5) + y].text.text = "cards you can use:" + Collection[(x * 5) + y].count.ToString();
                 Collection[(x * 5) + y].text.transform.parent = origonalTransform;
+                Collection[(x * 5) + y].text.GetComponent<RectTransform>().localScale= new Vector2(0.5f, 0.5f);
                 Collection[(x * 5) + y].card.transform.parent = origonalTransform;
                 Collection[(x * 5) + y].card.transform.localScale = new Vector2(0.8f, 0.8f);
-                Collection[(x * 5) + y].card.GetComponent<RectTransform>().localScale = new Vector2(0.7f, 0.7f);
+                Collection[(x * 5) + y].card.GetComponent<RectTransform>().localScale = new Vector2(0.5f, 0.5f);
                 Collection[(x * 5) + y].card.GetComponent<CardDisplay>().card = id[(x * 5) + y];
 
                 if (Collection[(x * 5) + y].count != 0)
@@ -118,8 +119,8 @@ public class collection : MonoBehaviour
                     cg.text.text = "cards you can use:" + cards_you_have[(x * 3) + y].count.ToString();
                     cg.text.transform.parent = origonalTransform2;
                     cg.card.transform.parent = origonalTransform2;
-                    cg.card.transform.localScale = new Vector2(0.8f, 0.8f);
-                    cg.card.GetComponent<RectTransform>().localScale = new Vector2(1, 1);
+                    cg.card.transform.localScale = new Vector2(0.1f, 0.1f);
+                    cg.card.GetComponent<RectTransform>().localScale = new Vector2(0.7f, 0.7f);
                     cg.card.GetComponent<CardDisplay>().card = cards_you_have[(x * 3) + y].card.GetComponent<CardDisplay>().card;
                     cards_you_have[(x * 3) + y] = cg;
                 }
@@ -131,14 +132,14 @@ public class collection : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        origonalTransform.position = new Vector2(origonalTransform.position.x ,6500 * sbForCollecion.value+origonalsbYvalue);
+        origonalTransform.position = new Vector2(origonalTransform.position.x ,9000 * sbForCollecion.value+origonalsbYvalue);
         sbForCollecion.size = 0;
 
         configuerScale();
         print(xoffset);
-        origonalTransform.localScale = new Vector3(xoffset/150,xoffset/150, 0);
+       // origonalTransform.localScale = new Vector3(xoffset/250,xoffset/250, 0);
 
-        origonalTransform2.position = new Vector2(origonalTransform2.position.x, 6500 * sbForCreation.value + origonalsbYvalue2);
+        origonalTransform2.position = new Vector2((int)origonalTransform2.position.x, 6500 * sbForCreation.value + origonalsbYvalue2);
         sbForCreation.size = 0;
 
         for(int i = 0; Collection.Length > i; i++)
@@ -185,6 +186,11 @@ public class collection : MonoBehaviour
         cardsInCreateDeak = 0;
         StartCoroutine(waitForFullDeck());
     
+    }
+    public void cancle_deack_creation()
+    {
+        StopCoroutine(waitForFullDeck());
+        deckcreation.SetActive(false);
     }
 
     IEnumerator waitForFullDeck()
