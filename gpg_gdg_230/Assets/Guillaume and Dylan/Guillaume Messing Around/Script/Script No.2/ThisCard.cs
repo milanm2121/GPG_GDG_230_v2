@@ -50,6 +50,7 @@ public class ThisCard : MonoBehaviour
     public bool canBeSummon;
     public bool summoned;
     public GameObject battleZone;
+    public GameObject spellZone;
 
     //Setting up spell mechanic
     public bool spellCanBeUse;
@@ -72,6 +73,8 @@ public class ThisCard : MonoBehaviour
     public int buffOtherCardsHealth;
     public bool buffingOtherCardsHealthBool = false;
     public bool dontBuffThisUnit;
+    public int healXHealth;
+    public bool canHeal;
 
     //These are forbeing able to attack or not
     // and which one to attack.
@@ -128,7 +131,9 @@ public class ThisCard : MonoBehaviour
         fieldObject = GameObject.Find("Field");
         field = fieldObject.GetComponent<CardsOnTheField>();
 
+        canHeal = false;
     }
+
     #region ThisCardUpdate
     // Update is called once per frame
     void Update()
@@ -163,6 +168,7 @@ public class ThisCard : MonoBehaviour
         buffXATK = thisCard[0].buffATK;
         buffXHealth = thisCard[0].buffHealth;
         summoningMonsters = thisCard[0].summonMonster;
+        healXHealth = thisCard[0].healXHealth;
 
         nameText.text = "" + thisCardName;
         deatilText.text = "" + thisCardDetails;
@@ -242,8 +248,9 @@ public class ThisCard : MonoBehaviour
             gameObject.GetComponent<DraggableCard>().enabled = false;
 
         battleZone = GameObject.Find("Field");
+        spellZone = GameObject.Find("SpellField");
 
-        if (spellPlay == false && this.transform.parent == battleZone.transform && this.tag == "Spell")
+        if (spellPlay == false && this.transform.parent == spellZone.transform && this.tag == "Spell")
             PlaySpellCard();
 
         if (summoned == false && this.transform.parent == battleZone.transform && field.fieldCards.Count < 5 && this.tag != "Spell")
@@ -349,6 +356,7 @@ public class ThisCard : MonoBehaviour
         drawX = drawXCards;
         BuffAttack(buffXATK);
         BuffHealth(buffXHealth);
+        Heal(healXHealth);
 
         buffingOtherCardsATKBool = false;
         buffingOtherCardsHealthBool = false;
@@ -420,6 +428,15 @@ public class ThisCard : MonoBehaviour
                 //if (!field.fieldCards.Contains(tokenObject))
                     //field.fieldCards.Add(tokenObject);
             }
+        }
+    }
+
+    public void Heal(int x)
+    {
+        if (canHeal == true)
+        {
+            PlayerHp.staticHp = x;
+            canHeal = false;
         }
     }
     #endregion
