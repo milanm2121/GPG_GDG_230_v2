@@ -126,6 +126,282 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1256543442}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &65138895
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 134410640}
+    m_Modifications:
+    - target: {fileID: 5514749094227752913, guid: 2acc4ca2166d070439621656c099a2c2,
+        type: 3}
+      propertyPath: m_Name
+      value: Card (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514749094227752913, guid: 2acc4ca2166d070439621656c099a2c2,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 2975211153750898179, guid: 2acc4ca2166d070439621656c099a2c2,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2975211153750898179, guid: 2acc4ca2166d070439621656c099a2c2,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2975211153750898179, guid: 2acc4ca2166d070439621656c099a2c2,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2975211153750898179, guid: 2acc4ca2166d070439621656c099a2c2,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2975211153750898179, guid: 2acc4ca2166d070439621656c099a2c2,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2975211153750898179, guid: 2acc4ca2166d070439621656c099a2c2,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2975211153750898179, guid: 2acc4ca2166d070439621656c099a2c2,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2975211153750898179, guid: 2acc4ca2166d070439621656c099a2c2,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2975211153750898179, guid: 2acc4ca2166d070439621656c099a2c2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2975211153750898179, guid: 2acc4ca2166d070439621656c099a2c2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2975211153750898179, guid: 2acc4ca2166d070439621656c099a2c2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2975211153750898179, guid: 2acc4ca2166d070439621656c099a2c2,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2975211153750898179, guid: 2acc4ca2166d070439621656c099a2c2,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2975211153750898179, guid: 2acc4ca2166d070439621656c099a2c2,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2975211153750898179, guid: 2acc4ca2166d070439621656c099a2c2,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2975211153750898179, guid: 2acc4ca2166d070439621656c099a2c2,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2975211153750898179, guid: 2acc4ca2166d070439621656c099a2c2,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2975211153750898179, guid: 2acc4ca2166d070439621656c099a2c2,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2975211153750898179, guid: 2acc4ca2166d070439621656c099a2c2,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2975211153750898179, guid: 2acc4ca2166d070439621656c099a2c2,
+        type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2975211153750898179, guid: 2acc4ca2166d070439621656c099a2c2,
+        type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1610754973, guid: 2acc4ca2166d070439621656c099a2c2, type: 3}
+      propertyPath: cardBack
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1610754973, guid: 2acc4ca2166d070439621656c099a2c2, type: 3}
+      propertyPath: numberOfCardsInDeck
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1610754973, guid: 2acc4ca2166d070439621656c099a2c2, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2acc4ca2166d070439621656c099a2c2, type: 3}
+--- !u!224 &65138896 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 2975211153750898179, guid: 2acc4ca2166d070439621656c099a2c2,
+    type: 3}
+  m_PrefabInstance: {fileID: 65138895}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &65138897 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5514749094227752913, guid: 2acc4ca2166d070439621656c099a2c2,
+    type: 3}
+  m_PrefabInstance: {fileID: 65138895}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &76761435
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 76761436}
+  - component: {fileID: 76761441}
+  - component: {fileID: 76761440}
+  - component: {fileID: 76761439}
+  - component: {fileID: 76761438}
+  - component: {fileID: 76761437}
+  m_Layer: 5
+  m_Name: EnemyField
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &76761436
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 76761435}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.79999995, y: 0.79999995, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2003303586}
+  m_RootOrder: 17
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 80}
+  m_SizeDelta: {x: 1000, y: 160}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &76761437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 76761435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4441fed8ba67c9a4f82fb9255274ff11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fieldCards: []
+  cardStats: []
+  tokenCardStats: []
+--- !u!114 &76761438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 76761435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30649d3a9faa99c48a7b1166b86bf2a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 4
+  m_Spacing: 0
+  m_ChildForceExpandWidth: 1
+  m_ChildForceExpandHeight: 1
+  m_ChildControlWidth: 1
+  m_ChildControlHeight: 1
+  m_ChildScaleWidth: 0
+  m_ChildScaleHeight: 0
+--- !u!114 &76761439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 76761435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ba889a6a2df9294ba19effe96ce8624, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &76761440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 76761435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &76761441
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 76761435}
+  m_CullTransparentMesh: 0
 --- !u!1001 &133801230
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -262,6 +538,1678 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2acc4ca2166d070439621656c099a2c2, type: 3}
+--- !u!1 &134410639
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 134410640}
+  - component: {fileID: 134410644}
+  - component: {fileID: 134410643}
+  - component: {fileID: 134410642}
+  - component: {fileID: 134410641}
+  m_Layer: 5
+  m_Name: Enemy Deck Panel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &134410640
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 134410639}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1998218833}
+  - {fileID: 1024839074}
+  - {fileID: 65138896}
+  - {fileID: 294211003}
+  m_Father: {fileID: 2003303586}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 170, y: 220}
+  m_Pivot: {x: 1, y: 1}
+--- !u!114 &134410641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 134410639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee0e2f293c933af439fde0e8b8c402b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deck:
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  container:
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  cardsInHand:
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  - cardID: 0
+    cardName: 
+    cardDetail: 
+    cardType: 
+    cardCoinCost: 0
+    cardAttack: 0
+    cardHealth: 0
+    drawXCards: 0
+    addXMaxCoin: 0
+    buffATK: 0
+    buffHealth: 0
+    summonMonster: 0
+    blocker: 0
+    buffOtherATK: 0
+    buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
+    cardImage: {fileID: 0}
+  aiCanPlay: 0
+  hand: {fileID: 0}
+  fieldZone: {fileID: 0}
+  spellZone: {fileID: 0}
+  x: 0
+  cardInDeck1: {fileID: 1998218834}
+  cardInDeck2: {fileID: 1024839075}
+  cardInDeck3: {fileID: 65138897}
+  cardInDeck4: {fileID: 294211004}
+  cardToHand: {fileID: 1164695636494497461, guid: 3dfd3066ca4273642b1caa007debd0ce,
+    type: 3}
+  clones: []
+  cardBack: {fileID: 7100788648612626427, guid: c3d6d8799b49d3347be733d89aa01e9a,
+    type: 3}
+--- !u!114 &134410642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 134410639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30649d3a9faa99c48a7b1166b86bf2a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 4
+  m_Spacing: -205
+  m_ChildForceExpandWidth: 1
+  m_ChildForceExpandHeight: 1
+  m_ChildControlWidth: 1
+  m_ChildControlHeight: 1
+  m_ChildScaleWidth: 0
+  m_ChildScaleHeight: 0
+--- !u!114 &134410643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 134410639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &134410644
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 134410639}
+  m_CullTransparentMesh: 0
 --- !u!1001 &138917312
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -410,11 +2358,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 525c64ff7f46173498f776f24746d045, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
   yourTurn: 0
   yourOpponentTurn: 0
   turnText: {fileID: 1097072548}
   manaText: {fileID: 164577109}
   coinText: {fileID: 728992886}
+  textObject: {fileID: 365675503}
+  spellField: {fileID: 2011511998}
+  victoryText: {fileID: 1911914674}
 --- !u!4 &145773393
 Transform:
   m_ObjectHideFlags: 0
@@ -504,7 +2456,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 75, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &185523812 stripped
 RectTransform:
@@ -543,13 +2495,13 @@ RectTransform:
   m_Children:
   - {fileID: 728992884}
   m_Father: {fileID: 2003303586}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 120, y: -14}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 180}
+  m_SizeDelta: {x: 75, y: 75}
+  m_Pivot: {x: 0, y: 0}
 --- !u!114 &224767972
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -684,13 +2636,13 @@ RectTransform:
   m_Children:
   - {fileID: 271815269}
   m_Father: {fileID: 2003303586}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 145, y: 273}
+  m_AnchorMin: {x: 1, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 50}
   m_SizeDelta: {x: 160, y: 30}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &270946961
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -992,6 +2944,7 @@ MonoBehaviour:
     buffOtherHealth: 0
     dontBuffThisUnit: 0
     healXHealth: 0
+    isSpellCard: 0
     cardImage: {fileID: 0}
   - cardID: 0
     cardName: 
@@ -1010,6 +2963,7 @@ MonoBehaviour:
     buffOtherHealth: 0
     dontBuffThisUnit: 0
     healXHealth: 0
+    isSpellCard: 0
     cardImage: {fileID: 0}
   - cardID: 0
     cardName: 
@@ -1028,6 +2982,7 @@ MonoBehaviour:
     buffOtherHealth: 0
     dontBuffThisUnit: 0
     healXHealth: 0
+    isSpellCard: 0
     cardImage: {fileID: 0}
   - cardID: 0
     cardName: 
@@ -1046,6 +3001,7 @@ MonoBehaviour:
     buffOtherHealth: 0
     dontBuffThisUnit: 0
     healXHealth: 0
+    isSpellCard: 0
     cardImage: {fileID: 0}
   - cardID: 0
     cardName: 
@@ -1064,6 +3020,7 @@ MonoBehaviour:
     buffOtherHealth: 0
     dontBuffThisUnit: 0
     healXHealth: 0
+    isSpellCard: 0
     cardImage: {fileID: 0}
   - cardID: 0
     cardName: 
@@ -1082,6 +3039,7 @@ MonoBehaviour:
     buffOtherHealth: 0
     dontBuffThisUnit: 0
     healXHealth: 0
+    isSpellCard: 0
     cardImage: {fileID: 0}
   - cardID: 0
     cardName: 
@@ -1100,6 +3058,7 @@ MonoBehaviour:
     buffOtherHealth: 0
     dontBuffThisUnit: 0
     healXHealth: 0
+    isSpellCard: 0
     cardImage: {fileID: 0}
   - cardID: 0
     cardName: 
@@ -1118,6 +3077,7 @@ MonoBehaviour:
     buffOtherHealth: 0
     dontBuffThisUnit: 0
     healXHealth: 0
+    isSpellCard: 0
     cardImage: {fileID: 0}
   - cardID: 0
     cardName: 
@@ -1136,6 +3096,7 @@ MonoBehaviour:
     buffOtherHealth: 0
     dontBuffThisUnit: 0
     healXHealth: 0
+    isSpellCard: 0
     cardImage: {fileID: 0}
   - cardID: 0
     cardName: 
@@ -1154,6 +3115,7 @@ MonoBehaviour:
     buffOtherHealth: 0
     dontBuffThisUnit: 0
     healXHealth: 0
+    isSpellCard: 0
     cardImage: {fileID: 0}
   - cardID: 0
     cardName: 
@@ -1172,6 +3134,7 @@ MonoBehaviour:
     buffOtherHealth: 0
     dontBuffThisUnit: 0
     healXHealth: 0
+    isSpellCard: 0
     cardImage: {fileID: 0}
   - cardID: 0
     cardName: 
@@ -1190,6 +3153,7 @@ MonoBehaviour:
     buffOtherHealth: 0
     dontBuffThisUnit: 0
     healXHealth: 0
+    isSpellCard: 0
     cardImage: {fileID: 0}
   - cardID: 0
     cardName: 
@@ -1208,6 +3172,7 @@ MonoBehaviour:
     buffOtherHealth: 0
     dontBuffThisUnit: 0
     healXHealth: 0
+    isSpellCard: 0
     cardImage: {fileID: 0}
   - cardID: 0
     cardName: 
@@ -1226,6 +3191,7 @@ MonoBehaviour:
     buffOtherHealth: 0
     dontBuffThisUnit: 0
     healXHealth: 0
+    isSpellCard: 0
     cardImage: {fileID: 0}
   - cardID: 0
     cardName: 
@@ -1244,6 +3210,7 @@ MonoBehaviour:
     buffOtherHealth: 0
     dontBuffThisUnit: 0
     healXHealth: 0
+    isSpellCard: 0
     cardImage: {fileID: 0}
   - cardID: 0
     cardName: 
@@ -1262,6 +3229,7 @@ MonoBehaviour:
     buffOtherHealth: 0
     dontBuffThisUnit: 0
     healXHealth: 0
+    isSpellCard: 0
     cardImage: {fileID: 0}
   - cardID: 0
     cardName: 
@@ -1280,6 +3248,7 @@ MonoBehaviour:
     buffOtherHealth: 0
     dontBuffThisUnit: 0
     healXHealth: 0
+    isSpellCard: 0
     cardImage: {fileID: 0}
   - cardID: 0
     cardName: 
@@ -1298,6 +3267,7 @@ MonoBehaviour:
     buffOtherHealth: 0
     dontBuffThisUnit: 0
     healXHealth: 0
+    isSpellCard: 0
     cardImage: {fileID: 0}
   - cardID: 0
     cardName: 
@@ -1316,6 +3286,7 @@ MonoBehaviour:
     buffOtherHealth: 0
     dontBuffThisUnit: 0
     healXHealth: 0
+    isSpellCard: 0
     cardImage: {fileID: 0}
   - cardID: 0
     cardName: 
@@ -1334,6 +3305,7 @@ MonoBehaviour:
     buffOtherHealth: 0
     dontBuffThisUnit: 0
     healXHealth: 0
+    isSpellCard: 0
     cardImage: {fileID: 0}
   - cardID: 0
     cardName: 
@@ -1352,6 +3324,7 @@ MonoBehaviour:
     buffOtherHealth: 0
     dontBuffThisUnit: 0
     healXHealth: 0
+    isSpellCard: 0
     cardImage: {fileID: 0}
   - cardID: 0
     cardName: 
@@ -1370,6 +3343,7 @@ MonoBehaviour:
     buffOtherHealth: 0
     dontBuffThisUnit: 0
     healXHealth: 0
+    isSpellCard: 0
     cardImage: {fileID: 0}
   - cardID: 0
     cardName: 
@@ -1388,6 +3362,7 @@ MonoBehaviour:
     buffOtherHealth: 0
     dontBuffThisUnit: 0
     healXHealth: 0
+    isSpellCard: 0
     cardImage: {fileID: 0}
   - cardID: 0
     cardName: 
@@ -1406,6 +3381,7 @@ MonoBehaviour:
     buffOtherHealth: 0
     dontBuffThisUnit: 0
     healXHealth: 0
+    isSpellCard: 0
     cardImage: {fileID: 0}
   - cardID: 0
     cardName: 
@@ -1424,6 +3400,7 @@ MonoBehaviour:
     buffOtherHealth: 0
     dontBuffThisUnit: 0
     healXHealth: 0
+    isSpellCard: 0
     cardImage: {fileID: 0}
   - cardID: 0
     cardName: 
@@ -1442,6 +3419,7 @@ MonoBehaviour:
     buffOtherHealth: 0
     dontBuffThisUnit: 0
     healXHealth: 0
+    isSpellCard: 0
     cardImage: {fileID: 0}
   - cardID: 0
     cardName: 
@@ -1460,6 +3438,7 @@ MonoBehaviour:
     buffOtherHealth: 0
     dontBuffThisUnit: 0
     healXHealth: 0
+    isSpellCard: 0
     cardImage: {fileID: 0}
   - cardID: 0
     cardName: 
@@ -1478,6 +3457,7 @@ MonoBehaviour:
     buffOtherHealth: 0
     dontBuffThisUnit: 0
     healXHealth: 0
+    isSpellCard: 0
     cardImage: {fileID: 0}
   - cardID: 0
     cardName: 
@@ -1496,6 +3476,7 @@ MonoBehaviour:
     buffOtherHealth: 0
     dontBuffThisUnit: 0
     healXHealth: 0
+    isSpellCard: 0
     cardImage: {fileID: 0}
   - cardID: 0
     cardName: 
@@ -1514,6 +3495,7 @@ MonoBehaviour:
     buffOtherHealth: 0
     dontBuffThisUnit: 0
     healXHealth: 0
+    isSpellCard: 0
     cardImage: {fileID: 0}
   - cardID: 0
     cardName: 
@@ -1532,6 +3514,7 @@ MonoBehaviour:
     buffOtherHealth: 0
     dontBuffThisUnit: 0
     healXHealth: 0
+    isSpellCard: 0
     cardImage: {fileID: 0}
   - cardID: 0
     cardName: 
@@ -1550,6 +3533,7 @@ MonoBehaviour:
     buffOtherHealth: 0
     dontBuffThisUnit: 0
     healXHealth: 0
+    isSpellCard: 0
     cardImage: {fileID: 0}
   - cardID: 0
     cardName: 
@@ -1568,6 +3552,7 @@ MonoBehaviour:
     buffOtherHealth: 0
     dontBuffThisUnit: 0
     healXHealth: 0
+    isSpellCard: 0
     cardImage: {fileID: 0}
   - cardID: 0
     cardName: 
@@ -1586,6 +3571,7 @@ MonoBehaviour:
     buffOtherHealth: 0
     dontBuffThisUnit: 0
     healXHealth: 0
+    isSpellCard: 0
     cardImage: {fileID: 0}
   - cardID: 0
     cardName: 
@@ -1604,6 +3590,7 @@ MonoBehaviour:
     buffOtherHealth: 0
     dontBuffThisUnit: 0
     healXHealth: 0
+    isSpellCard: 0
     cardImage: {fileID: 0}
   - cardID: 0
     cardName: 
@@ -1622,6 +3609,7 @@ MonoBehaviour:
     buffOtherHealth: 0
     dontBuffThisUnit: 0
     healXHealth: 0
+    isSpellCard: 0
     cardImage: {fileID: 0}
   - cardID: 0
     cardName: 
@@ -1640,6 +3628,7 @@ MonoBehaviour:
     buffOtherHealth: 0
     dontBuffThisUnit: 0
     healXHealth: 0
+    isSpellCard: 0
     cardImage: {fileID: 0}
   - cardID: 0
     cardName: 
@@ -1658,6 +3647,7 @@ MonoBehaviour:
     buffOtherHealth: 0
     dontBuffThisUnit: 0
     healXHealth: 0
+    isSpellCard: 0
     cardImage: {fileID: 0}
   - cardID: 0
     cardName: 
@@ -1676,6 +3666,7 @@ MonoBehaviour:
     buffOtherHealth: 0
     dontBuffThisUnit: 0
     healXHealth: 0
+    isSpellCard: 0
     cardImage: {fileID: 0}
   - cardID: 0
     cardName: 
@@ -1694,6 +3685,7 @@ MonoBehaviour:
     buffOtherHealth: 0
     dontBuffThisUnit: 0
     healXHealth: 0
+    isSpellCard: 0
     cardImage: {fileID: 0}
   container:
   - cardID: 0
@@ -1713,6 +3705,7 @@ MonoBehaviour:
     buffOtherHealth: 0
     dontBuffThisUnit: 0
     healXHealth: 0
+    isSpellCard: 0
     cardImage: {fileID: 0}
   x: 0
   cardsInDeck1: {fileID: 1641129311}
@@ -1845,6 +3838,154 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2acc4ca2166d070439621656c099a2c2, type: 3}
+--- !u!1001 &294211002
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 134410640}
+    m_Modifications:
+    - target: {fileID: 5514749094227752913, guid: 2acc4ca2166d070439621656c099a2c2,
+        type: 3}
+      propertyPath: m_Name
+      value: Card (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514749094227752913, guid: 2acc4ca2166d070439621656c099a2c2,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 2975211153750898179, guid: 2acc4ca2166d070439621656c099a2c2,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2975211153750898179, guid: 2acc4ca2166d070439621656c099a2c2,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2975211153750898179, guid: 2acc4ca2166d070439621656c099a2c2,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2975211153750898179, guid: 2acc4ca2166d070439621656c099a2c2,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2975211153750898179, guid: 2acc4ca2166d070439621656c099a2c2,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2975211153750898179, guid: 2acc4ca2166d070439621656c099a2c2,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2975211153750898179, guid: 2acc4ca2166d070439621656c099a2c2,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2975211153750898179, guid: 2acc4ca2166d070439621656c099a2c2,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2975211153750898179, guid: 2acc4ca2166d070439621656c099a2c2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2975211153750898179, guid: 2acc4ca2166d070439621656c099a2c2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2975211153750898179, guid: 2acc4ca2166d070439621656c099a2c2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2975211153750898179, guid: 2acc4ca2166d070439621656c099a2c2,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2975211153750898179, guid: 2acc4ca2166d070439621656c099a2c2,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2975211153750898179, guid: 2acc4ca2166d070439621656c099a2c2,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2975211153750898179, guid: 2acc4ca2166d070439621656c099a2c2,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2975211153750898179, guid: 2acc4ca2166d070439621656c099a2c2,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2975211153750898179, guid: 2acc4ca2166d070439621656c099a2c2,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2975211153750898179, guid: 2acc4ca2166d070439621656c099a2c2,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2975211153750898179, guid: 2acc4ca2166d070439621656c099a2c2,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2975211153750898179, guid: 2acc4ca2166d070439621656c099a2c2,
+        type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2975211153750898179, guid: 2acc4ca2166d070439621656c099a2c2,
+        type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1610754973, guid: 2acc4ca2166d070439621656c099a2c2, type: 3}
+      propertyPath: cardBack
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1610754973, guid: 2acc4ca2166d070439621656c099a2c2, type: 3}
+      propertyPath: numberOfCardsInDeck
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1610754973, guid: 2acc4ca2166d070439621656c099a2c2, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2acc4ca2166d070439621656c099a2c2, type: 3}
+--- !u!224 &294211003 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 2975211153750898179, guid: 2acc4ca2166d070439621656c099a2c2,
+    type: 3}
+  m_PrefabInstance: {fileID: 294211002}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &294211004 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5514749094227752913, guid: 2acc4ca2166d070439621656c099a2c2,
+    type: 3}
+  m_PrefabInstance: {fileID: 294211002}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &303736099
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2005,7 +4146,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 75, y: 75}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &327724164
 MonoBehaviour:
@@ -2053,6 +4194,80 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 138917312}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &365675503
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 365675504}
+  - component: {fileID: 365675506}
+  - component: {fileID: 365675505}
+  m_Layer: 5
+  m_Name: Winner/Loser Banner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &365675504
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 365675503}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1911914676}
+  m_Father: {fileID: 2003303586}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 1000, y: 200}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &365675505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 365675503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &365675506
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 365675503}
+  m_CullTransparentMesh: 0
 --- !u!1 &438124889
 GameObject:
   m_ObjectHideFlags: 0
@@ -2130,6 +4345,83 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 438124889}
   m_CullTransparentMesh: 0
+--- !u!1 &462490154
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 462490155}
+  - component: {fileID: 462490157}
+  - component: {fileID: 462490156}
+  m_Layer: 5
+  m_Name: Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &462490155
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 462490154}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 504290922}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 75, y: 75}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &462490156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 462490154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0.12756586, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 1
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 0
+--- !u!222 &462490157
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 462490154}
+  m_CullTransparentMesh: 0
 --- !u!1 &488016163
 GameObject:
   m_ObjectHideFlags: 0
@@ -2170,6 +4462,80 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &504290921
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 504290922}
+  - component: {fileID: 504290924}
+  - component: {fileID: 504290923}
+  m_Layer: 5
+  m_Name: EnemyMana
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &504290922
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 504290921}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 462490155}
+  m_Father: {fileID: 2003303586}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 0, y: -180}
+  m_SizeDelta: {x: 75, y: 75}
+  m_Pivot: {x: 0, y: 1}
+--- !u!114 &504290923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 504290921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &504290924
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 504290921}
+  m_CullTransparentMesh: 0
 --- !u!224 &510343180 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8152244986203022429, guid: 6eb6d9f33a16b934f9d107143393b65a,
@@ -2182,6 +4548,80 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1108097070}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &563804041
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 563804042}
+  - component: {fileID: 563804044}
+  - component: {fileID: 563804043}
+  m_Layer: 5
+  m_Name: EnemyCoin
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &563804042
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 563804041}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 608074056}
+  m_Father: {fileID: 2003303586}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 0, y: -90}
+  m_SizeDelta: {x: 75, y: 75}
+  m_Pivot: {x: 0, y: 1}
+--- !u!114 &563804043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 563804041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &563804044
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 563804041}
+  m_CullTransparentMesh: 0
 --- !u!1001 &593122204
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2307,6 +4747,83 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1857956655}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &608074055
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 608074056}
+  - component: {fileID: 608074058}
+  - component: {fileID: 608074057}
+  m_Layer: 5
+  m_Name: Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &608074056
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 608074055}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 563804042}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 75, y: 75}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &608074057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 608074055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 1
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 0
+--- !u!222 &608074058
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 608074055}
+  m_CullTransparentMesh: 0
 --- !u!1 &634067825
 GameObject:
   m_ObjectHideFlags: 0
@@ -2338,13 +4855,13 @@ RectTransform:
   m_Children:
   - {fileID: 164577111}
   m_Father: {fileID: 2003303586}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 230, y: -14}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 90}
+  m_SizeDelta: {x: 75, y: 75}
+  m_Pivot: {x: 0, y: 0}
 --- !u!114 &634067827
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2417,14 +4934,14 @@ RectTransform:
   m_GameObject: {fileID: 679195707}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_Children: []
   m_Father: {fileID: 2003303586}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -80}
   m_SizeDelta: {x: 1000, y: 160}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &679195709
@@ -2547,12 +5064,12 @@ RectTransform:
   m_Children:
   - {fileID: 2014061016}
   m_Father: {fileID: 2003303586}
-  m_RootOrder: 11
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 75, y: 75}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &706838082
 MonoBehaviour:
@@ -2637,11 +5154,11 @@ RectTransform:
   m_Father: {fileID: 2003303586}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -65, y: 232}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 200, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &708219149
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2713,7 +5230,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 75, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &728992885
 CanvasRenderer:
@@ -3254,12 +5771,12 @@ RectTransform:
   m_Children:
   - {fileID: 327724163}
   m_Father: {fileID: 2003303586}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 75, y: 75}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &975890288
 MonoBehaviour:
@@ -3666,6 +6183,154 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1011892092}
   m_CullTransparentMesh: 0
+--- !u!1001 &1024839073
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 134410640}
+    m_Modifications:
+    - target: {fileID: 5514749094227752913, guid: 2acc4ca2166d070439621656c099a2c2,
+        type: 3}
+      propertyPath: m_Name
+      value: Card (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514749094227752913, guid: 2acc4ca2166d070439621656c099a2c2,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 2975211153750898179, guid: 2acc4ca2166d070439621656c099a2c2,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2975211153750898179, guid: 2acc4ca2166d070439621656c099a2c2,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2975211153750898179, guid: 2acc4ca2166d070439621656c099a2c2,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2975211153750898179, guid: 2acc4ca2166d070439621656c099a2c2,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2975211153750898179, guid: 2acc4ca2166d070439621656c099a2c2,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2975211153750898179, guid: 2acc4ca2166d070439621656c099a2c2,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2975211153750898179, guid: 2acc4ca2166d070439621656c099a2c2,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2975211153750898179, guid: 2acc4ca2166d070439621656c099a2c2,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2975211153750898179, guid: 2acc4ca2166d070439621656c099a2c2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2975211153750898179, guid: 2acc4ca2166d070439621656c099a2c2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2975211153750898179, guid: 2acc4ca2166d070439621656c099a2c2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2975211153750898179, guid: 2acc4ca2166d070439621656c099a2c2,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2975211153750898179, guid: 2acc4ca2166d070439621656c099a2c2,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2975211153750898179, guid: 2acc4ca2166d070439621656c099a2c2,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2975211153750898179, guid: 2acc4ca2166d070439621656c099a2c2,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2975211153750898179, guid: 2acc4ca2166d070439621656c099a2c2,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2975211153750898179, guid: 2acc4ca2166d070439621656c099a2c2,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2975211153750898179, guid: 2acc4ca2166d070439621656c099a2c2,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2975211153750898179, guid: 2acc4ca2166d070439621656c099a2c2,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2975211153750898179, guid: 2acc4ca2166d070439621656c099a2c2,
+        type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2975211153750898179, guid: 2acc4ca2166d070439621656c099a2c2,
+        type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1610754973, guid: 2acc4ca2166d070439621656c099a2c2, type: 3}
+      propertyPath: cardBack
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1610754973, guid: 2acc4ca2166d070439621656c099a2c2, type: 3}
+      propertyPath: numberOfCardsInDeck
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1610754973, guid: 2acc4ca2166d070439621656c099a2c2, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2acc4ca2166d070439621656c099a2c2, type: 3}
+--- !u!224 &1024839074 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 2975211153750898179, guid: 2acc4ca2166d070439621656c099a2c2,
+    type: 3}
+  m_PrefabInstance: {fileID: 1024839073}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1024839075 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5514749094227752913, guid: 2acc4ca2166d070439621656c099a2c2,
+    type: 3}
+  m_PrefabInstance: {fileID: 1024839073}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1028176149
 GameObject:
   m_ObjectHideFlags: 0
@@ -4247,13 +6912,13 @@ RectTransform:
   m_Children:
   - {fileID: 438124890}
   m_Father: {fileID: 2003303586}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 145, y: 185}
+  m_AnchorMin: {x: 1, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 160, y: 30}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &1202922345
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4343,6 +7008,118 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1202922343}
+  m_CullTransparentMesh: 0
+--- !u!1 &1243173187
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1243173188}
+  - component: {fileID: 1243173192}
+  - component: {fileID: 1243173191}
+  - component: {fileID: 1243173190}
+  - component: {fileID: 1243173189}
+  m_Layer: 5
+  m_Name: EnemyHand Version2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1243173188
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1243173187}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.79999995, y: 0.79999995, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2003303586}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 0, y: -20}
+  m_SizeDelta: {x: 750, y: 175}
+  m_Pivot: {x: 0.5, y: 1}
+--- !u!114 &1243173189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1243173187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ba889a6a2df9294ba19effe96ce8624, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1243173190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1243173187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30649d3a9faa99c48a7b1166b86bf2a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 0
+  m_Spacing: -1100
+  m_ChildForceExpandWidth: 1
+  m_ChildForceExpandHeight: 1
+  m_ChildControlWidth: 1
+  m_ChildControlHeight: 1
+  m_ChildScaleWidth: 0
+  m_ChildScaleHeight: 0
+--- !u!114 &1243173191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1243173187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1243173192
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1243173187}
   m_CullTransparentMesh: 0
 --- !u!1001 &1256543442
 PrefabInstance:
@@ -4764,15 +7541,15 @@ RectTransform:
   m_GameObject: {fileID: 1382901565}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_Children: []
   m_Father: {fileID: 2003303586}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 60, y: 15}
-  m_SizeDelta: {x: 605.7, y: 151.42}
+  m_AnchoredPosition: {x: 0, y: 20}
+  m_SizeDelta: {x: 750, y: 175}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &1382901567
 MonoBehaviour:
@@ -4966,6 +7743,118 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6eb6d9f33a16b934f9d107143393b65a, type: 3}
+--- !u!1 &1462375740
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1462375741}
+  - component: {fileID: 1462375745}
+  - component: {fileID: 1462375744}
+  - component: {fileID: 1462375743}
+  - component: {fileID: 1462375742}
+  m_Layer: 5
+  m_Name: EnemySpellField
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1462375741
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1462375740}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.79999995, y: 0.79999995, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2003303586}
+  m_RootOrder: 18
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 110, y: 0}
+  m_SizeDelta: {x: 185, y: 210}
+  m_Pivot: {x: 0, y: 1}
+--- !u!114 &1462375742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1462375740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30649d3a9faa99c48a7b1166b86bf2a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 4
+  m_Spacing: 0
+  m_ChildForceExpandWidth: 1
+  m_ChildForceExpandHeight: 1
+  m_ChildControlWidth: 1
+  m_ChildControlHeight: 1
+  m_ChildScaleWidth: 0
+  m_ChildScaleHeight: 0
+--- !u!114 &1462375743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1462375740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ba889a6a2df9294ba19effe96ce8624, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1462375744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1462375740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1462375745
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1462375740}
+  m_CullTransparentMesh: 0
 --- !u!1001 &1480394825
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5961,6 +8850,83 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 834114026}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1911914673
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1911914676}
+  - component: {fileID: 1911914675}
+  - component: {fileID: 1911914674}
+  m_Layer: 5
+  m_Name: Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1911914674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1911914673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 1
+    m_MinSize: 10
+    m_MaxSize: 120
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: VICTORY
+--- !u!222 &1911914675
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1911914673}
+  m_CullTransparentMesh: 0
+--- !u!224 &1911914676
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1911914673}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 365675504}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 1000, y: 200}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1959620750
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6199,6 +9165,154 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2acc4ca2166d070439621656c099a2c2, type: 3}
+--- !u!1001 &1998218832
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 134410640}
+    m_Modifications:
+    - target: {fileID: 5514749094227752913, guid: 2acc4ca2166d070439621656c099a2c2,
+        type: 3}
+      propertyPath: m_Name
+      value: Card (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514749094227752913, guid: 2acc4ca2166d070439621656c099a2c2,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 2975211153750898179, guid: 2acc4ca2166d070439621656c099a2c2,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2975211153750898179, guid: 2acc4ca2166d070439621656c099a2c2,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2975211153750898179, guid: 2acc4ca2166d070439621656c099a2c2,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2975211153750898179, guid: 2acc4ca2166d070439621656c099a2c2,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2975211153750898179, guid: 2acc4ca2166d070439621656c099a2c2,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2975211153750898179, guid: 2acc4ca2166d070439621656c099a2c2,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2975211153750898179, guid: 2acc4ca2166d070439621656c099a2c2,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2975211153750898179, guid: 2acc4ca2166d070439621656c099a2c2,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2975211153750898179, guid: 2acc4ca2166d070439621656c099a2c2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2975211153750898179, guid: 2acc4ca2166d070439621656c099a2c2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2975211153750898179, guid: 2acc4ca2166d070439621656c099a2c2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2975211153750898179, guid: 2acc4ca2166d070439621656c099a2c2,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2975211153750898179, guid: 2acc4ca2166d070439621656c099a2c2,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2975211153750898179, guid: 2acc4ca2166d070439621656c099a2c2,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2975211153750898179, guid: 2acc4ca2166d070439621656c099a2c2,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2975211153750898179, guid: 2acc4ca2166d070439621656c099a2c2,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2975211153750898179, guid: 2acc4ca2166d070439621656c099a2c2,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2975211153750898179, guid: 2acc4ca2166d070439621656c099a2c2,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2975211153750898179, guid: 2acc4ca2166d070439621656c099a2c2,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2975211153750898179, guid: 2acc4ca2166d070439621656c099a2c2,
+        type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2975211153750898179, guid: 2acc4ca2166d070439621656c099a2c2,
+        type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1610754973, guid: 2acc4ca2166d070439621656c099a2c2, type: 3}
+      propertyPath: cardBack
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1610754973, guid: 2acc4ca2166d070439621656c099a2c2, type: 3}
+      propertyPath: numberOfCardsInDeck
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1610754973, guid: 2acc4ca2166d070439621656c099a2c2, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2acc4ca2166d070439621656c099a2c2, type: 3}
+--- !u!224 &1998218833 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 2975211153750898179, guid: 2acc4ca2166d070439621656c099a2c2,
+    type: 3}
+  m_PrefabInstance: {fileID: 1998218832}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1998218834 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5514749094227752913, guid: 2acc4ca2166d070439621656c099a2c2,
+    type: 3}
+  m_PrefabInstance: {fileID: 1998218832}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2003303582
 GameObject:
   m_ObjectHideFlags: 0
@@ -6295,12 +9409,19 @@ RectTransform:
   - {fileID: 2011511999}
   - {fileID: 1382901566}
   - {fileID: 708219148}
+  - {fileID: 706838081}
   - {fileID: 224767971}
   - {fileID: 634067826}
   - {fileID: 1202922344}
   - {fileID: 270946960}
   - {fileID: 975890287}
-  - {fileID: 706838081}
+  - {fileID: 563804042}
+  - {fileID: 504290922}
+  - {fileID: 365675504}
+  - {fileID: 134410640}
+  - {fileID: 1243173188}
+  - {fileID: 76761436}
+  - {fileID: 1462375741}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6338,14 +9459,14 @@ RectTransform:
   m_GameObject: {fileID: 2011511998}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_Children: []
   m_Father: {fileID: 2003303586}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 105, y: 1}
+  m_AnchoredPosition: {x: 110, y: 0}
   m_SizeDelta: {x: 185, y: 210}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &2011512000
@@ -6456,7 +9577,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 75, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2014061017
 MonoBehaviour:

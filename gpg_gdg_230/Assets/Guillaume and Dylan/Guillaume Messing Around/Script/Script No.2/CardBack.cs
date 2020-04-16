@@ -7,12 +7,6 @@ public class CardBack : MonoBehaviour
     public GameObject cardBack;
     public ThisCard backCard;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {

@@ -75,6 +75,7 @@ public class ThisCard : MonoBehaviour
     public bool dontBuffThisUnit;
     public int healXHealth;
     public bool canHeal;
+    public bool isSpellCard;
 
     //These are forbeing able to attack or not
     // and which one to attack.
@@ -169,6 +170,7 @@ public class ThisCard : MonoBehaviour
         buffXHealth = thisCard[0].buffHealth;
         summoningMonsters = thisCard[0].summonMonster;
         healXHealth = thisCard[0].healXHealth;
+        isSpellCard = thisCard[0].isSpellCard;
 
         nameText.text = "" + thisCardName;
         deatilText.text = "" + thisCardDetails;
@@ -250,7 +252,7 @@ public class ThisCard : MonoBehaviour
         battleZone = GameObject.Find("Field");
         spellZone = GameObject.Find("SpellField");
 
-        if (spellPlay == false && this.transform.parent == spellZone.transform && this.tag == "Spell")
+        if (spellPlay == false && this.transform.parent == spellZone.transform && this.tag == "Spell" && isSpellCard == true)
             PlaySpellCard();
 
         if (summoned == false && this.transform.parent == battleZone.transform && field.fieldCards.Count < 5 && this.tag != "Spell")
