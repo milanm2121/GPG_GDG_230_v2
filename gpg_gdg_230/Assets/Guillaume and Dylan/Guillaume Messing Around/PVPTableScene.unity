@@ -543,7 +543,7 @@ RectTransform:
   m_Children:
   - {fileID: 728992884}
   m_Father: {fileID: 2003303586}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -684,7 +684,7 @@ RectTransform:
   m_Children:
   - {fileID: 271815269}
   m_Father: {fileID: 2003303586}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -990,6 +990,8 @@ MonoBehaviour:
     blocker: 0
     buffOtherATK: 0
     buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
     cardImage: {fileID: 0}
   - cardID: 0
     cardName: 
@@ -1006,6 +1008,8 @@ MonoBehaviour:
     blocker: 0
     buffOtherATK: 0
     buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
     cardImage: {fileID: 0}
   - cardID: 0
     cardName: 
@@ -1022,6 +1026,8 @@ MonoBehaviour:
     blocker: 0
     buffOtherATK: 0
     buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
     cardImage: {fileID: 0}
   - cardID: 0
     cardName: 
@@ -1038,6 +1044,8 @@ MonoBehaviour:
     blocker: 0
     buffOtherATK: 0
     buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
     cardImage: {fileID: 0}
   - cardID: 0
     cardName: 
@@ -1054,6 +1062,8 @@ MonoBehaviour:
     blocker: 0
     buffOtherATK: 0
     buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
     cardImage: {fileID: 0}
   - cardID: 0
     cardName: 
@@ -1070,6 +1080,8 @@ MonoBehaviour:
     blocker: 0
     buffOtherATK: 0
     buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
     cardImage: {fileID: 0}
   - cardID: 0
     cardName: 
@@ -1086,6 +1098,8 @@ MonoBehaviour:
     blocker: 0
     buffOtherATK: 0
     buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
     cardImage: {fileID: 0}
   - cardID: 0
     cardName: 
@@ -1102,6 +1116,8 @@ MonoBehaviour:
     blocker: 0
     buffOtherATK: 0
     buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
     cardImage: {fileID: 0}
   - cardID: 0
     cardName: 
@@ -1118,6 +1134,8 @@ MonoBehaviour:
     blocker: 0
     buffOtherATK: 0
     buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
     cardImage: {fileID: 0}
   - cardID: 0
     cardName: 
@@ -1134,6 +1152,8 @@ MonoBehaviour:
     blocker: 0
     buffOtherATK: 0
     buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
     cardImage: {fileID: 0}
   - cardID: 0
     cardName: 
@@ -1150,6 +1170,8 @@ MonoBehaviour:
     blocker: 0
     buffOtherATK: 0
     buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
     cardImage: {fileID: 0}
   - cardID: 0
     cardName: 
@@ -1166,6 +1188,8 @@ MonoBehaviour:
     blocker: 0
     buffOtherATK: 0
     buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
     cardImage: {fileID: 0}
   - cardID: 0
     cardName: 
@@ -1182,6 +1206,8 @@ MonoBehaviour:
     blocker: 0
     buffOtherATK: 0
     buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
     cardImage: {fileID: 0}
   - cardID: 0
     cardName: 
@@ -1198,6 +1224,8 @@ MonoBehaviour:
     blocker: 0
     buffOtherATK: 0
     buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
     cardImage: {fileID: 0}
   - cardID: 0
     cardName: 
@@ -1214,6 +1242,8 @@ MonoBehaviour:
     blocker: 0
     buffOtherATK: 0
     buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
     cardImage: {fileID: 0}
   - cardID: 0
     cardName: 
@@ -1230,6 +1260,8 @@ MonoBehaviour:
     blocker: 0
     buffOtherATK: 0
     buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
     cardImage: {fileID: 0}
   - cardID: 0
     cardName: 
@@ -1246,6 +1278,8 @@ MonoBehaviour:
     blocker: 0
     buffOtherATK: 0
     buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
     cardImage: {fileID: 0}
   - cardID: 0
     cardName: 
@@ -1262,6 +1296,8 @@ MonoBehaviour:
     blocker: 0
     buffOtherATK: 0
     buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
     cardImage: {fileID: 0}
   - cardID: 0
     cardName: 
@@ -1278,6 +1314,8 @@ MonoBehaviour:
     blocker: 0
     buffOtherATK: 0
     buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
     cardImage: {fileID: 0}
   - cardID: 0
     cardName: 
@@ -1294,6 +1332,8 @@ MonoBehaviour:
     blocker: 0
     buffOtherATK: 0
     buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
     cardImage: {fileID: 0}
   - cardID: 0
     cardName: 
@@ -1310,6 +1350,8 @@ MonoBehaviour:
     blocker: 0
     buffOtherATK: 0
     buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
     cardImage: {fileID: 0}
   - cardID: 0
     cardName: 
@@ -1326,6 +1368,8 @@ MonoBehaviour:
     blocker: 0
     buffOtherATK: 0
     buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
     cardImage: {fileID: 0}
   - cardID: 0
     cardName: 
@@ -1342,6 +1386,8 @@ MonoBehaviour:
     blocker: 0
     buffOtherATK: 0
     buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
     cardImage: {fileID: 0}
   - cardID: 0
     cardName: 
@@ -1358,6 +1404,8 @@ MonoBehaviour:
     blocker: 0
     buffOtherATK: 0
     buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
     cardImage: {fileID: 0}
   - cardID: 0
     cardName: 
@@ -1374,6 +1422,8 @@ MonoBehaviour:
     blocker: 0
     buffOtherATK: 0
     buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
     cardImage: {fileID: 0}
   - cardID: 0
     cardName: 
@@ -1390,6 +1440,8 @@ MonoBehaviour:
     blocker: 0
     buffOtherATK: 0
     buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
     cardImage: {fileID: 0}
   - cardID: 0
     cardName: 
@@ -1406,6 +1458,8 @@ MonoBehaviour:
     blocker: 0
     buffOtherATK: 0
     buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
     cardImage: {fileID: 0}
   - cardID: 0
     cardName: 
@@ -1422,6 +1476,8 @@ MonoBehaviour:
     blocker: 0
     buffOtherATK: 0
     buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
     cardImage: {fileID: 0}
   - cardID: 0
     cardName: 
@@ -1438,6 +1494,8 @@ MonoBehaviour:
     blocker: 0
     buffOtherATK: 0
     buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
     cardImage: {fileID: 0}
   - cardID: 0
     cardName: 
@@ -1454,6 +1512,8 @@ MonoBehaviour:
     blocker: 0
     buffOtherATK: 0
     buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
     cardImage: {fileID: 0}
   - cardID: 0
     cardName: 
@@ -1470,6 +1530,8 @@ MonoBehaviour:
     blocker: 0
     buffOtherATK: 0
     buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
     cardImage: {fileID: 0}
   - cardID: 0
     cardName: 
@@ -1486,6 +1548,8 @@ MonoBehaviour:
     blocker: 0
     buffOtherATK: 0
     buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
     cardImage: {fileID: 0}
   - cardID: 0
     cardName: 
@@ -1502,6 +1566,8 @@ MonoBehaviour:
     blocker: 0
     buffOtherATK: 0
     buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
     cardImage: {fileID: 0}
   - cardID: 0
     cardName: 
@@ -1518,6 +1584,8 @@ MonoBehaviour:
     blocker: 0
     buffOtherATK: 0
     buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
     cardImage: {fileID: 0}
   - cardID: 0
     cardName: 
@@ -1534,6 +1602,8 @@ MonoBehaviour:
     blocker: 0
     buffOtherATK: 0
     buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
     cardImage: {fileID: 0}
   - cardID: 0
     cardName: 
@@ -1550,6 +1620,8 @@ MonoBehaviour:
     blocker: 0
     buffOtherATK: 0
     buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
     cardImage: {fileID: 0}
   - cardID: 0
     cardName: 
@@ -1566,6 +1638,8 @@ MonoBehaviour:
     blocker: 0
     buffOtherATK: 0
     buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
     cardImage: {fileID: 0}
   - cardID: 0
     cardName: 
@@ -1582,6 +1656,8 @@ MonoBehaviour:
     blocker: 0
     buffOtherATK: 0
     buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
     cardImage: {fileID: 0}
   - cardID: 0
     cardName: 
@@ -1598,6 +1674,8 @@ MonoBehaviour:
     blocker: 0
     buffOtherATK: 0
     buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
     cardImage: {fileID: 0}
   - cardID: 0
     cardName: 
@@ -1614,6 +1692,8 @@ MonoBehaviour:
     blocker: 0
     buffOtherATK: 0
     buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
     cardImage: {fileID: 0}
   container:
   - cardID: 0
@@ -1631,6 +1711,8 @@ MonoBehaviour:
     blocker: 0
     buffOtherATK: 0
     buffOtherHealth: 0
+    dontBuffThisUnit: 0
+    healXHealth: 0
     cardImage: {fileID: 0}
   x: 0
   cardsInDeck1: {fileID: 1641129311}
@@ -2256,7 +2338,7 @@ RectTransform:
   m_Children:
   - {fileID: 164577111}
   m_Father: {fileID: 2003303586}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -2465,7 +2547,7 @@ RectTransform:
   m_Children:
   - {fileID: 2014061016}
   m_Father: {fileID: 2003303586}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2553,7 +2635,7 @@ RectTransform:
   m_Children:
   - {fileID: 1097072546}
   m_Father: {fileID: 2003303586}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3172,7 +3254,7 @@ RectTransform:
   m_Children:
   - {fileID: 327724163}
   m_Father: {fileID: 2003303586}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -4165,7 +4247,7 @@ RectTransform:
   m_Children:
   - {fileID: 438124890}
   m_Father: {fileID: 2003303586}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4685,13 +4767,13 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2003303586}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000015259, y: -236}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 60, y: 15}
   m_SizeDelta: {x: 605.7, y: 151.42}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &1382901567
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6210,6 +6292,7 @@ RectTransform:
   - {fileID: 1135368425}
   - {fileID: 283033686}
   - {fileID: 679195708}
+  - {fileID: 2011511999}
   - {fileID: 1382901566}
   - {fileID: 708219148}
   - {fileID: 224767971}
@@ -6226,6 +6309,118 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &2011511998
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2011511999}
+  - component: {fileID: 2011512003}
+  - component: {fileID: 2011512002}
+  - component: {fileID: 2011512001}
+  - component: {fileID: 2011512000}
+  m_Layer: 5
+  m_Name: SpellField
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2011511999
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2011511998}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2003303586}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 105, y: 1}
+  m_SizeDelta: {x: 185, y: 210}
+  m_Pivot: {x: 0, y: 0}
+--- !u!114 &2011512000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2011511998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30649d3a9faa99c48a7b1166b86bf2a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 4
+  m_Spacing: 0
+  m_ChildForceExpandWidth: 1
+  m_ChildForceExpandHeight: 1
+  m_ChildControlWidth: 1
+  m_ChildControlHeight: 1
+  m_ChildScaleWidth: 0
+  m_ChildScaleHeight: 0
+--- !u!114 &2011512001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2011511998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ba889a6a2df9294ba19effe96ce8624, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2011512002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2011511998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &2011512003
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2011511998}
+  m_CullTransparentMesh: 0
 --- !u!1 &2014061015
 GameObject:
   m_ObjectHideFlags: 0

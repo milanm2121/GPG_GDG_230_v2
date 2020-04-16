@@ -50,6 +50,7 @@ public class ThisCard : MonoBehaviour
     public bool canBeSummon;
     public bool summoned;
     public GameObject battleZone;
+    public GameObject spellZone;
 
     //Setting up spell mechanic
     public bool spellCanBeUse;
@@ -247,8 +248,9 @@ public class ThisCard : MonoBehaviour
             gameObject.GetComponent<DraggableCard>().enabled = false;
 
         battleZone = GameObject.Find("Field");
+        spellZone = GameObject.Find("SpellField");
 
-        if (spellPlay == false && this.transform.parent == battleZone.transform && this.tag == "Spell")
+        if (spellPlay == false && this.transform.parent == spellZone.transform && this.tag == "Spell")
             PlaySpellCard();
 
         if (summoned == false && this.transform.parent == battleZone.transform && field.fieldCards.Count < 5 && this.tag != "Spell")
