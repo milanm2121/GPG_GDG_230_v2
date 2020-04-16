@@ -25,21 +25,25 @@ public class PlayerDeck : MonoBehaviour
 
     public GameObject hand;
 
+    public List<int> deckId = new List<int>();
     // Start is called before the first frame update
     private void Awake()
     {
-        //GameObject.Find("Player")
+        deckId = GameObject.Find("player deck").GetComponent<Player_deck_int_id>().deck;
     }
     void Start()
     {
         x = 0;
         deckSize = 40;
-        
-        for (int i = 0; i < deckSize; i++)
+
+        for (int i = 0; i < deckSize-1; i++)
         {
-            x = Random.Range(1, 10);
+            int a = (int)Random.Range(0f, (float)deckId.Count);
+            x = deckId[a];
+            deckId.RemoveAt(a);
             deck[i] = CardDataBase.cardList[x];
         }
+        deck[39] = CardDataBase.cardList[deckId[0]];
 
         StartCoroutine(StartGame());
     }
@@ -126,8 +130,5 @@ public class PlayerDeck : MonoBehaviour
         }
     }
 
-    public void loadDeack(List<int> loadeddeck)
-    {
-        
-    }
+    
 }
