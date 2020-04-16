@@ -303,11 +303,6 @@ public class ThisCard : MonoBehaviour
             Invoke("DestroyMonster", 1.5f);
         }
 
-        if (canHeal == true && summoned == true)
-        {
-            Heal(healXHealth);
-        }
-
     }
     #endregion
 
@@ -359,6 +354,7 @@ public class ThisCard : MonoBehaviour
         drawX = drawXCards;
         BuffAttack(buffXATK);
         BuffHealth(buffXHealth);
+        Heal(healXHealth);
 
         buffingOtherCardsATKBool = false;
         buffingOtherCardsHealthBool = false;
