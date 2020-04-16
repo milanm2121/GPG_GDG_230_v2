@@ -21,10 +21,14 @@ MonoBehaviour:
     y: 30
     width: 1440
     height: 805
-  m_MinSize: {x: 681, y: 344}
-  m_MaxSize: {x: 12006, y: 8044}
+  m_MinSize: {x: 679, y: 494}
+  m_MaxSize: {x: 14002, y: 14044}
   vertical: 0
+<<<<<<< HEAD
   controlID: 64428
+=======
+  controlID: 58935
+>>>>>>> parent of a6017986... fixed deck scaling again
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -127,10 +131,14 @@ MonoBehaviour:
     y: 0
     width: 1044
     height: 805
-  m_MinSize: {x: 404, y: 344}
-  m_MaxSize: {x: 8004, y: 8044}
+  m_MinSize: {x: 404, y: 494}
+  m_MaxSize: {x: 10002, y: 14044}
   vertical: 1
+<<<<<<< HEAD
   controlID: 64429
+=======
+  controlID: 58889
+>>>>>>> parent of a6017986... fixed deck scaling again
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -155,7 +163,11 @@ MonoBehaviour:
   m_MinSize: {x: 404, y: 222}
   m_MaxSize: {x: 8004, y: 4022}
   vertical: 0
+<<<<<<< HEAD
   controlID: 64430
+=======
+  controlID: 58853
+>>>>>>> parent of a6017986... fixed deck scaling again
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -213,7 +225,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: d064edffda64edffdc64edff0265edff0665edff1065edff5265edff2266edffa867edff1cd6eeff92d6eeff62d7eeff4cdaeeff08deeeff2ce3eeff42e7eeff76efeeff5ef1eeffdaf2eeff5ef4eeff1af8eeff30fceeffb2fdeeff3affeeffde08efffc2eaefffb4e7ffffb8e7ffffc4e7ffffcee7ffffdae7ffffdee7ffffe2e7ffffece7ffff2ae8ffff36e8ffff64e8ffff2eedffffd8edffffdcf1ffffe4faffff6afbffffbc3b00003e3c00004c3c00008c430000ea430000284d00003e4d0000ac4d0000d84d00000a4e0000de4e00002e6101007c61010066620100fe6f0100b27101007275010098770100b6770100267801006c790100767c01002e7d01007c7d010054840100f88401003885010016860100288c0100cc8c01000c8d0100ec8d010004910100bc9101000a920100c89901006c9a0100ac9a01008c9b01008aa3010042a4010090a401007caa0100a8aa01000cab01004cab010012ac0100d6b301008eb40100dcb4010000ba010022ba010070ba0100aaba0100b4ba01005cbb0100c2e90100cce9010032ea01006cea010020eb0100
+      m_ExpandedIDs: 1cd6eeff92d6eeff62d7eeff4cdaeeff08deeeff2ce3eeff42e7eeff76efeeff5ef1eeffdaf2eeff5ef4eeff1af8eeff30fceeffb2fdeeff3affeeffde08efffc2eaefffb4e7ffffb8e7ffffc4e7ffffcee7ffffdae7ffffdee7ffffe2e7ffffece7ffff2ae8ffff36e8ffff64e8ffff2eedffffd8edffffdcf1ffffe4faffff6afbffffbc3b00003e3c00004c3c00008c430000ea430000284d00003e4d0000ac4d0000d84d00000a4e0000de4e00002e6101007c61010066620100fe6f0100b27101007275010098770100b6770100267801006c790100767c01002e7d01007c7d010054840100f88401003885010016860100288c0100cc8c01000c8d0100ec8d010004910100bc9101000a920100c89901006c9a0100ac9a01008c9b01008aa3010042a4010090a401007caa0100a8aa01000cab01004cab010012ac0100d6b301008eb40100dcb4010000ba010022ba010070ba0100b4ba01005cbb0100
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -409,14 +421,20 @@ MonoBehaviour:
     y: 533
     width: 1044
     height: 272
+<<<<<<< HEAD
   m_MinSize: {x: 102, y: 122}
   m_MaxSize: {x: 4002, y: 4022}
   m_ActualView: {fileID: 12}
+=======
+  m_MinSize: {x: 230, y: 250}
+  m_MaxSize: {x: 10000, y: 10000}
+  m_ActualView: {fileID: 11}
+>>>>>>> parent of a6017986... fixed deck scaling again
   m_Panes:
   - {fileID: 11}
   - {fileID: 12}
-  m_Selected: 1
-  m_LastSelected: 0
+  m_Selected: 0
+  m_LastSelected: 1
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -466,7 +484,7 @@ MonoBehaviour:
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 311}
+    scrollPos: {x: 0, y: 234.00177}
     m_SelectedIDs: ce300000
     m_LastClickedID: 12494
     m_ExpandedIDs: 000000003a2e0000e62e00002a2f00003830000064300000b43000000c31000074310000523200006232000072320000a6320000b0320000a2330000da3300003e3400008c3b00008e3b0000903b000000ca9a3b
@@ -522,9 +540,9 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 5265edff
-    m_LastClickedInstanceID: -1219246
-    m_HadKeyboardFocusLastEvent: 1
+    m_SelectedInstanceIDs: aaba0100
+    m_LastClickedInstanceID: 113322
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c62300008234000000000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -641,5 +659,9 @@ MonoBehaviour:
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_PreviewWindow: {fileID: 0}
+<<<<<<< HEAD
   m_LastInspectedObjectInstanceID: -1219246
+=======
+  m_LastInspectedObjectInstanceID: 113322
+>>>>>>> parent of a6017986... fixed deck scaling again
   m_LastVerticalScrollValue: 0
