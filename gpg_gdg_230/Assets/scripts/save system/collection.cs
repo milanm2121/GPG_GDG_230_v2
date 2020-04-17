@@ -232,6 +232,17 @@ public class collection : MonoBehaviour
 
         xoffset3 = offsetTransformX2.position.x - origonalTransform2.position.x;
     }
+
+    public void setScrolbar()
+    {
+        StartCoroutine(setSb());
+    }
+    IEnumerator setSb()
+    {
+        yield return new WaitForEndOfFrame();
+        sbForCollecion.value = 0;
+        sbForCreation.value = 0;
+    }
 }
 
 

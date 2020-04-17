@@ -375,12 +375,13 @@ public class Hand : MonoBehaviour
         //uses an index int to select a card in the hand and put it in a place holder
         GameObject picked_card = hand[picked_card_index];
         //cheaks if you have enough gold or mana to use tha card
-        if (TBS.state == TurnBaseScript.TurnState.PlayerTurn && picked_card.GetComponent<CardDisplay>().card.manaCost <= playerMana || picked_card.GetComponent<CardDisplay>().card.manaCost <= playerGold)
+        if (TBS.state == TurnBaseScript.TurnState.PlayerTurn )
         {
 
             //cheaks if the card is magic or a unit
-            if (picked_card.GetComponent<CardDisplay>().card.isSpell == false && active_cards < 5)
+            if (picked_card.GetComponent<CardDisplay>().card.isSpell == false && active_cards < 5 && picked_card.GetComponent<CardDisplay>().card.manaCost <= playerGold)
             {
+                
                 AS.clip = unitplay;
                 AS.Play();
 
@@ -430,8 +431,9 @@ public class Hand : MonoBehaviour
                 }
 
             }
-            else if (picked_card.GetComponent<CardDisplay>().card.isSpell == true)
+            else if (picked_card.GetComponent<CardDisplay>().card.isSpell == true && picked_card.GetComponent<CardDisplay>().card.manaCost <= playerMana)
             {
+                
                 AS.clip = spellPlay;
                 AS.Play();
                 //magic stuff spell efects are put here
@@ -623,7 +625,7 @@ public class Hand : MonoBehaviour
             Use_card(Random.Range(0, cards_in_hand));
             yield return new WaitForSeconds(0.2f);
         }
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(1);
         if(stateTick==false)
             StartCoroutine(Ai_turn_control(TurnBaseScript.TurnState.Attack));
 
