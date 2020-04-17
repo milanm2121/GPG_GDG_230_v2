@@ -14,9 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 15
   name: Sword Trooper
-  description: 'On play: give other Soilder card +1/ +0'
+  description: 'On play: Boost all Trooper 1 attack 0 health'
   artwork: {fileID: 0}
   manaCost: 4
   attack: 4
   health: 2
-  monsterSickness: 0
+  isSpell: 0
+  monsterSickness: 1
+  FuturefurePramCheak: 0

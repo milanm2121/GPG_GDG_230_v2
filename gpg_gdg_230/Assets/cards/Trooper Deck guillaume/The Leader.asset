@@ -14,9 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 18
   name: The Leader
-  description: 'On play: fill the Board with Buff Trooper'
+  description: 'On play: Summon 4 Buff_Trooper'
   artwork: {fileID: 0}
   manaCost: 10
   attack: 9
   health: 9
-  monsterSickness: 0
+  isSpell: 0
+  monsterSickness: 1
+  FuturefurePramCheak: 0

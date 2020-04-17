@@ -14,9 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 14
   name: Support Trooper
-  description: 'On play: give other Solider +0/+1'
+  description: 'On play: Boost all Trooper 1 attack 0 health'
   artwork: {fileID: 0}
   manaCost: 4
   attack: 2
   health: 3
-  monsterSickness: 0
+  isSpell: 0
+  monsterSickness: 1
+  FuturefurePramCheak: 0

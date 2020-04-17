@@ -18,8 +18,7 @@ public class Player_deck_int_id : MonoBehaviour
 	{
 		if (SceneManager.GetActiveScene().name == "PVPTableScene")
 		{
-			PlayerDeck activeDeck = GameObject.Find("Deck Panel").GetComponent<PlayerDeck>();
-            activeDeck.loadDeack(deck);
+			
 		}
 	}
 }

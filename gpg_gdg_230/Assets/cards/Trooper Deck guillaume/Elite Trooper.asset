@@ -13,10 +13,12 @@ MonoBehaviour:
   m_Name: Elite Trooper
   m_EditorClassIdentifier: 
   ID: 6
-  name: Elite Trooper
-  description: 'On play: give other Elite Trooper +1/+1'
+  name: Elite_Trooper
+  description: 'On play: upgrade all Elite_Trooper 1 attack 1 health'
   artwork: {fileID: 0}
   manaCost: 4
   attack: 3
   health: 3
-  monsterSickness: 0
+  isSpell: 0
+  monsterSickness: 1
+  FuturefurePramCheak: 0

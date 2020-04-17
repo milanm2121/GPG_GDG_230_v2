@@ -20,5 +20,5 @@ MonoBehaviour:
   attack: 4
   health: 4
   isSpell: 0
-  monsterSickness: 0
+  monsterSickness: 1
   FuturefurePramCheak: 0

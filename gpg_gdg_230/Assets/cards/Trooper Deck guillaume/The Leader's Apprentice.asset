@@ -14,9 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 19
   name: The Leader's Apprentice
-  description: 'On play: This card gains +1/+1 for each other Solider on the field'
+  description: 
   artwork: {fileID: 0}
   manaCost: 6
   attack: 3
   health: 3
-  monsterSickness: 0
+  isSpell: 0
+  monsterSickness: 1
+  FuturefurePramCheak: 0
