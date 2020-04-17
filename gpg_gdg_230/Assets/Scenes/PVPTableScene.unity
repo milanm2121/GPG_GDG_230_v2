@@ -2411,6 +2411,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8b34060f6b1b41e8970a698f884cae4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TS: {fileID: 145773392}
+  defending:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  attacking: []
 --- !u!1 &164577108
 GameObject:
   m_ObjectHideFlags: 0

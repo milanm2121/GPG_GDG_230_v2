@@ -340,6 +340,7 @@ MonoBehaviour:
   attackTextObject: {fileID: 5325323479551415881}
   healthTextObject: {fileID: 2209583461616593614}
   attackButton: {fileID: 2849334809025549119}
+  CS: {fileID: 0}
 --- !u!114 &8923790389123335331
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -878,7 +879,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4778322489370016854}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7845622490883193912}
+        m_MethodName: SetToAttack
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3161765567210277177
 GameObject:
   m_ObjectHideFlags: 0

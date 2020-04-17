@@ -110,6 +110,8 @@ public class ThisCard : MonoBehaviour
 
     //This is the what we will use to attack.
     public GameObject attackButton;
+    public Combat_script CS;
+    public TurnSystem Ts;
 
     // Start is called before the first frame update
     void Start()
@@ -136,6 +138,8 @@ public class ThisCard : MonoBehaviour
         field = fieldObject.GetComponent<CardsOnTheField>();
 
         canHeal = false;
+
+        Ts = GameObject.Find("TurnSystem").GetComponent<TurnSystem>();
     }
 
     #region ThisCardUpdate
@@ -470,6 +474,12 @@ public class ThisCard : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void SetToAttack()
+    {
+        if (Ts.state == TurnSystem.TurnState.Start && TurnSystem.isYourTurn == true)
+            CS.attacking.Add(gameObject);
     }
 
     public void ShowAttack()
