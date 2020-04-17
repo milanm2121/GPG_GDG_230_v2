@@ -474,8 +474,8 @@ public class ThisCard : MonoBehaviour
 
     public void ShowAttack()
     {
-        if (this.transform.parent == battleZone)
-            attackButton.SetActive(true);
+       // if (this.transform.parent == battleZone)
+        attackButton.SetActive(true);
     }
 
     public void HideAttack()
