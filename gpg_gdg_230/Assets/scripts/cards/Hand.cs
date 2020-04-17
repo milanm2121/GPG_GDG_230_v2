@@ -245,7 +245,7 @@ public class Hand : MonoBehaviour
                     }
                     else
                     {
-             //           StartCoroutine(Ai_turn_control(TurnBaseScript.TurnState.Attack));
+                       StartCoroutine(Ai_turn_control(TurnBaseScript.TurnState.Attack));
 
                     }
 
