@@ -39,7 +39,7 @@ public class combat_maneger : MonoBehaviour
             //card defending card blocks attack from attacking card of the same position
             if (defend[i] != null)
             {
-                string Decription = defend[i].GetComponent<CardDisplay>().card.description;
+                string Decription = defend[i].GetComponent<CardDisplay>().card.description ;
                 string[] b = Decription.Split(' ');
                 bool doge=false;
                 for (int a = 0; b.Length > a; a++)

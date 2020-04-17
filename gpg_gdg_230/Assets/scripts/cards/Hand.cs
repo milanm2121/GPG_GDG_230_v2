@@ -245,7 +245,7 @@ public class Hand : MonoBehaviour
                     }
                     else
                     {
-                        StartCoroutine(Ai_turn_control(TurnBaseScript.TurnState.Attack));
+             //           StartCoroutine(Ai_turn_control(TurnBaseScript.TurnState.Attack));
 
                     }
 
@@ -253,7 +253,7 @@ public class Hand : MonoBehaviour
                 }
 
             }
-            if (TBS.state == TurnBaseScript.TurnState.Attack)
+     //       if (TBS.state == TurnBaseScript.TurnState.Attack)
             {
                 //    print("attack phase");
                 tick = false;
@@ -292,7 +292,7 @@ public class Hand : MonoBehaviour
             for (int i = 0; TBS.player1Hand.active_cards > i; i++)
             {
                 if (active_cards>i && active_cards_slots[i].GetComponent<CardDisplay>().card.health > 1 && cm.deffendingCardsRef.Contains(active_cards_slots[i]) == false)
-                    SetToDefend(active_cards_slots[i],Random.Range(0,cm.attack.Count+1));
+                    SetToDefend(active_cards_slots[i],Random.Range(0,cm.attack.Count));
                 defending_cards++;
             }
             if (defending_cards <= 2)
@@ -555,8 +555,13 @@ public class Hand : MonoBehaviour
 
         if (active == true)
         {
+            int x = 0;
+            if (state != TurnBaseScript.TurnState.Attack)
+            {
+                x = 1;
+            }
             stateTick = true;
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(x);
             TBS.state = state;
             stateTick = false;
         }
@@ -625,9 +630,10 @@ public class Hand : MonoBehaviour
             Use_card(Random.Range(0, cards_in_hand));
             yield return new WaitForSeconds(0.2f);
         }
-        yield return new WaitForSeconds(1);
-        if(stateTick==false)
-            StartCoroutine(Ai_turn_control(TurnBaseScript.TurnState.Attack));
+
+        if (stateTick == false) { }
+            //StartCoroutine(Ai_turn_control(TurnBaseScript.TurnState.Attack));
+
 
     }
 }

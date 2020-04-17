@@ -292,6 +292,7 @@
 /define:CSHARP_7_OR_LATER
 /define:CSHARP_7_3_OR_NEWER
 "Assets/card_reffence.cs"
+"Assets/Combat_script.cs"
 "Assets/Guillaume and Dylan/Dylan Messing Around/_Scripts/CardDisplay.cs"
 "Assets/Guillaume and Dylan/Dylan Messing Around/_Scripts/ScriptableCard.cs"
 "Assets/Guillaume and Dylan/Guillaume Messing Around/Script/CreatureCards/CardViz.cs"
