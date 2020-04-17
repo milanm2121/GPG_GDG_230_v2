@@ -978,13 +978,20 @@ public class TurnBaseScript : MonoBehaviour
                 List<GameObject> selectedCards = new List<GameObject>();
                 for (int i = 0; player1Hand.active_cards > i; i++)
                 {
-                    string n = player1Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.name;
-                    string[] brokenName = n.Split(' ');
-                    for (int x = 0; brokenName.Length > x; x++)
+                    if (nuber == "units")
                     {
-                        if (brokenName[x] == unit_type)
-                            selectedCards.Add(player1Hand.active_cards_slots[i]);
+                        selectedCards.Add(player2Hand.active_cards_slots[i]);
+                    }
+                    else
+                    {
+                        string n = player1Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.name;
+                        string[] brokenName = n.Split(' ');
+                        for (int x = 0; brokenName.Length > x; x++)
+                        {
+                            if (brokenName[x] == unit_type)
+                                selectedCards.Add(player1Hand.active_cards_slots[i]);
 
+                        }
                     }
                 }
                 for (int i = 0; selectedCards.Count > i; i++)
@@ -999,22 +1006,33 @@ public class TurnBaseScript : MonoBehaviour
             if (nuber == "all")
             {
                 List<GameObject> selectedCards = new List<GameObject>();
+
+
                 for (int i = 0; player2Hand.active_cards > i; i++)
                 {
-                    string n = player2Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.name;
-                    string[] brokenName = n.Split(' ');
-                    for (int x = 0; brokenName.Length > x; x++)
+                    if (nuber == "units")
                     {
-                        if (brokenName[x] == unit_type)
-                            selectedCards.Add(player2Hand.active_cards_slots[i]);
+                        selectedCards.Add(player2Hand.active_cards_slots[i]);
+                    }
+                    else
+                    {
+                        string n = player2Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.name;
+                        string[] brokenName = n.Split(' ');
+                        for (int x = 0; brokenName.Length > x; x++)
+                        {
+                            if (brokenName[x] == unit_type)
+                                selectedCards.Add(player2Hand.active_cards_slots[i]);
 
+                        }
                     }
                 }
                 for (int i = 0; selectedCards.Count > i; i++)
                 {
                     selectedCards[i].GetComponent<CardDisplay>().card.health += int.Parse(health);
                     selectedCards[i].GetComponent<CardDisplay>().card.attack += int.Parse(attack);
+
                 }
+            
             }
             else
             {

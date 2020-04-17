@@ -5,19 +5,16 @@ ScriptsOnlyBuild:
     - CardLoading
     - Deak
     - Hand
-    - LoadingSlider
     - MenuSetting
+    - Quit
     - ScriptableCard
     - TurnBaseScript
     - UiSortingLayer
     - card_functions
-    - collection
+    - card_reffence
     - combat_maneger
-    - deck_building_functions
     - load_deck
     - load_scenes
-    - music_script
-    - player_static_deck
     Unity.TextMeshPro.dll:
     - TMPro.TMP_FontAsset
     - TMPro.TMP_Settings
@@ -40,86 +37,10 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.Outline
     - UnityEngine.UI.ScrollRect
     - UnityEngine.UI.Scrollbar
-    - UnityEngine.UI.Slider
     - UnityEngine.UI.Text
     - UnityEngine.UI.Toggle
   sceneClasses:
     Assets/Scenes/card_tabel.unity:
-    - Class: 1
-      Script: {instanceID: 0}
-    - Class: 4
-      Script: {instanceID: 0}
-    - Class: 20
-      Script: {instanceID: 0}
-    - Class: 21
-      Script: {instanceID: 0}
-    - Class: 28
-      Script: {instanceID: 0}
-    - Class: 48
-      Script: {instanceID: 0}
-    - Class: 81
-      Script: {instanceID: 0}
-    - Class: 82
-      Script: {instanceID: 0}
-    - Class: 83
-      Script: {instanceID: 0}
-    - Class: 104
-      Script: {instanceID: 0}
-    - Class: 114
-      Script: {instanceID: 9768}
-    - Class: 114
-      Script: {instanceID: 9916}
-    - Class: 114
-      Script: {instanceID: 9946}
-    - Class: 114
-      Script: {instanceID: 9986}
-    - Class: 114
-      Script: {instanceID: 10122}
-    - Class: 114
-      Script: {instanceID: 10144}
-    - Class: 114
-      Script: {instanceID: 10314}
-    - Class: 114
-      Script: {instanceID: 10406}
-    - Class: 114
-      Script: {instanceID: 10758}
-    - Class: 114
-      Script: {instanceID: 10808}
-    - Class: 114
-      Script: {instanceID: 10990}
-    - Class: 114
-      Script: {instanceID: 10992}
-    - Class: 114
-      Script: {instanceID: 11032}
-    - Class: 114
-      Script: {instanceID: 11298}
-    - Class: 114
-      Script: {instanceID: 11604}
-    - Class: 114
-      Script: {instanceID: 11628}
-    - Class: 114
-      Script: {instanceID: 11652}
-    - Class: 114
-      Script: {instanceID: 11690}
-    - Class: 114
-      Script: {instanceID: 11750}
-    - Class: 115
-      Script: {instanceID: 0}
-    - Class: 128
-      Script: {instanceID: 0}
-    - Class: 157
-      Script: {instanceID: 0}
-    - Class: 212
-      Script: {instanceID: 0}
-    - Class: 213
-      Script: {instanceID: 0}
-    - Class: 222
-      Script: {instanceID: 0}
-    - Class: 223
-      Script: {instanceID: 0}
-    - Class: 224
-      Script: {instanceID: 0}
-    Assets/Scenes/main_menu.unity:
     - Class: 1
       Script: {instanceID: 0}
     - Class: 4
@@ -145,31 +66,29 @@ ScriptsOnlyBuild:
     - Class: 109
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 9768}
+      Script: {instanceID: 9758}
     - Class: 114
-      Script: {instanceID: 9812}
+      Script: {instanceID: 9908}
     - Class: 114
-      Script: {instanceID: 9916}
+      Script: {instanceID: 9938}
     - Class: 114
-      Script: {instanceID: 9946}
+      Script: {instanceID: 9940}
     - Class: 114
-      Script: {instanceID: 9948}
+      Script: {instanceID: 9978}
     - Class: 114
-      Script: {instanceID: 9986}
+      Script: {instanceID: 10118}
     - Class: 114
-      Script: {instanceID: 10122}
+      Script: {instanceID: 10140}
     - Class: 114
-      Script: {instanceID: 10128}
+      Script: {instanceID: 10310}
     - Class: 114
-      Script: {instanceID: 10314}
+      Script: {instanceID: 10402}
     - Class: 114
-      Script: {instanceID: 10406}
+      Script: {instanceID: 10424}
     - Class: 114
-      Script: {instanceID: 10428}
+      Script: {instanceID: 10600}
     - Class: 114
-      Script: {instanceID: 10514}
-    - Class: 114
-      Script: {instanceID: 10602}
+      Script: {instanceID: 10608}
     - Class: 114
       Script: {instanceID: 10622}
     - Class: 114
@@ -179,39 +98,39 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 10808}
     - Class: 114
-      Script: {instanceID: 10992}
+      Script: {instanceID: 10994}
     - Class: 114
-      Script: {instanceID: 11042}
+      Script: {instanceID: 10996}
     - Class: 114
-      Script: {instanceID: 11056}
+      Script: {instanceID: 11036}
     - Class: 114
-      Script: {instanceID: 11232}
+      Script: {instanceID: 11046}
     - Class: 114
-      Script: {instanceID: 11298}
+      Script: {instanceID: 11060}
+    - Class: 114
+      Script: {instanceID: 11190}
+    - Class: 114
+      Script: {instanceID: 11240}
     - Class: 114
       Script: {instanceID: 11308}
     - Class: 114
-      Script: {instanceID: 11466}
+      Script: {instanceID: 11478}
     - Class: 114
-      Script: {instanceID: 11604}
+      Script: {instanceID: 11618}
     - Class: 114
-      Script: {instanceID: 11628}
+      Script: {instanceID: 11642}
     - Class: 114
-      Script: {instanceID: 11652}
+      Script: {instanceID: 11666}
     - Class: 114
-      Script: {instanceID: 11668}
+      Script: {instanceID: 11694}
     - Class: 114
-      Script: {instanceID: 11678}
+      Script: {instanceID: 11706}
     - Class: 114
-      Script: {instanceID: 11690}
+      Script: {instanceID: 11724}
     - Class: 114
-      Script: {instanceID: 11708}
+      Script: {instanceID: 11768}
     - Class: 114
-      Script: {instanceID: 11728}
-    - Class: 114
-      Script: {instanceID: 11750}
-    - Class: 114
-      Script: {instanceID: 23252}
+      Script: {instanceID: 23656}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -261,13 +180,19 @@ ScriptsOnlyBuild:
     className: TMP_SelectionCaret
   - hash:
       serializedVersion: 2
+      Hash: a9966dab1d1edc5111fa514dcc9be86c
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Combat_script
+  - hash:
+      serializedVersion: 2
       Hash: 87ff43d2baf3385cba327d8f803a4ebb
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: AudioPlayableAsset
   - hash:
       serializedVersion: 2
-      Hash: 1cbfb5280d2fefbddd8f4366c26f4799
+      Hash: f07d297a7a1043b012623494bbadd193
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: collection
@@ -351,6 +276,12 @@ ScriptsOnlyBuild:
     className: Image
   - hash:
       serializedVersion: 2
+      Hash: fb672eaadfdc30b76851d7f48d22bc00
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SelectPurchase
+  - hash:
+      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: UnityEngine.TestRunner.dll
     namespaceName: UnityEngine.TestTools.TestRunner.Callbacks
@@ -393,6 +324,12 @@ ScriptsOnlyBuild:
     className: SignalAsset
   - hash:
       serializedVersion: 2
+      Hash: ff2afb84280460193e585b2e6587439e
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: TokenToField
+  - hash:
+      serializedVersion: 2
       Hash: 38bcb4d3f9a1812fd650f92e87a4cf64
     assemblyName: Unity.Postprocessing.Runtime.dll
     namespaceName: UnityEngine.Rendering.PostProcessing
@@ -405,7 +342,7 @@ ScriptsOnlyBuild:
     className: LayoutElement
   - hash:
       serializedVersion: 2
-      Hash: aae06c8d0f6c10603ea6c2c0551fa23b
+      Hash: ae6281057f350d98377420c276903749
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ScriptableCard
@@ -423,7 +360,7 @@ ScriptsOnlyBuild:
     className: player_static_deck
   - hash:
       serializedVersion: 2
-      Hash: cbb478681552dbf5aa647026adca6aad
+      Hash: 51e7fcaf8a893b3f677082e1513c6bf6
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ThisCard
@@ -531,6 +468,12 @@ ScriptsOnlyBuild:
     className: playerUI
   - hash:
       serializedVersion: 2
+      Hash: 047107dc0776632f7e6b6c8ee66c9aa3
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: EnemyHp
+  - hash:
+      serializedVersion: 2
       Hash: f80b0c636b4a2e8e14e5b7f78edb17fd
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
@@ -565,6 +508,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: ScrollRect
+  - hash:
+      serializedVersion: 2
+      Hash: 772ba06d33eb7f6fdb146f9f931a5469
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: MenuSetting
   - hash:
       serializedVersion: 2
       Hash: 4dba252ae000063a286ed04dd3640779
@@ -603,7 +552,7 @@ ScriptsOnlyBuild:
     className: Health
   - hash:
       serializedVersion: 2
-      Hash: ea62b1816c1976ca6466b02ab8131d32
+      Hash: 1dfc5b9d4026012707b0fd2db18d7c1e
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: load_deck
@@ -621,7 +570,7 @@ ScriptsOnlyBuild:
     className: RemoteTestResultSender
   - hash:
       serializedVersion: 2
-      Hash: 81dfb2e3d069901550bcdea8b99c3e43
+      Hash: 61fd59f53627110ec9a690848d6eaa6e
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Deak
@@ -651,6 +600,18 @@ ScriptsOnlyBuild:
     className: RawImage
   - hash:
       serializedVersion: 2
+      Hash: afd899bf4ab90a974a52d03dcb0e6274
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: CardsOnTheField
+  - hash:
+      serializedVersion: 2
+      Hash: f4bc93cbb5ea753826b556b19054904a
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: AI
+  - hash:
+      serializedVersion: 2
       Hash: 0e7f3338d89238e49b19338d31803388
     assemblyName: Assembly-CSharp.dll
     namespaceName: GB
@@ -669,7 +630,7 @@ ScriptsOnlyBuild:
     className: network_maneger
   - hash:
       serializedVersion: 2
-      Hash: 094345e712d67d5600057998e8a72fee
+      Hash: d4ff69385f4084c8d62e77978d5fd04f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: TurnBaseScript
@@ -741,10 +702,28 @@ ScriptsOnlyBuild:
     className: CanvasFindCamera
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: BuffingOtherCardsScript
+  - hash:
+      serializedVersion: 2
+      Hash: b4b980a3fc6aebf5e1593c50481ab411
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: card_reffence
+  - hash:
+      serializedVersion: 2
       Hash: 3b760e6526e13f7504f59e210145899a
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TextMeshProUGUI
+  - hash:
+      serializedVersion: 2
+      Hash: 1409f71dce762f8040500ebf51a08c59
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: AICardToHand
   - hash:
       serializedVersion: 2
       Hash: f336e086360abe49a3323e5f1583c35a
@@ -757,12 +736,6 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: GraphicRaycaster
-  - hash:
-      serializedVersion: 2
-      Hash: 047107dc0776632f7e6b6c8ee66c9aa3
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: EmenyHp
   - hash:
       serializedVersion: 2
       Hash: 6cd215d1cbbe6908f581c20db0262ed4
@@ -783,6 +756,18 @@ ScriptsOnlyBuild:
     className: BeforeAfterTestCommandState
   - hash:
       serializedVersion: 2
+      Hash: f20b25c43341eaa78fd3a29989a81793
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ThisTokenCard
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: reset_button
+  - hash:
+      serializedVersion: 2
       Hash: bf96218ca7ae0be10c4fc24139d3d39d
     assemblyName: Assembly-CSharp.dll
     namespaceName: GB
@@ -801,10 +786,16 @@ ScriptsOnlyBuild:
     className: TMP_StyleSheet
   - hash:
       serializedVersion: 2
-      Hash: 4a5d21261a193830afb45a816ac4e32d
+      Hash: 49708f37a364479094281099b38ed845
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerDeck
+  - hash:
+      serializedVersion: 2
+      Hash: 33727419810e473f1a8662a140681d3a
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: FakeMicrotransactions
   - hash:
       serializedVersion: 2
       Hash: d5630f96bd5a6a6eed7e1754c3fb8703
@@ -831,7 +822,7 @@ ScriptsOnlyBuild:
     className: TMP_ColorGradient
   - hash:
       serializedVersion: 2
-      Hash: cfadb552f180397981b7351d8ee9892b
+      Hash: 64391959edf5a02ad050fea3f5ce198a
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: CardToHand
@@ -885,6 +876,12 @@ ScriptsOnlyBuild:
     className: TMP_SubMesh
   - hash:
       serializedVersion: 2
+      Hash: bbea8631c161e6b0c29d661b4c296760
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Player_deck_int_id
+  - hash:
+      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
@@ -933,13 +930,19 @@ ScriptsOnlyBuild:
     className: Slider
   - hash:
       serializedVersion: 2
+      Hash: 22fab7c2d3be2cbddfc4806465929bd1
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PurchasingCards
+  - hash:
+      serializedVersion: 2
       Hash: 0fd6822f6177297bd0eb4d83cc7a9030
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: ToggleGroup
   - hash:
       serializedVersion: 2
-      Hash: 019dd85a51319eef4534a177be83fe0b
+      Hash: 50dc0cde81baf4cf9e2556048ee0db49
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Hand
@@ -951,36 +954,24 @@ ScriptsOnlyBuild:
     className: PlayableTrack
   - hash:
       serializedVersion: 2
-      Hash: 4d933a850708e7017991f7b081e55eba
+      Hash: a64bb0ecddd2bc58196301b2eccfe354
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: TurnSystem
   - hash:
       serializedVersion: 2
-      Hash: cbe9b39ad540c96208a018691ff0bdfa
-    assemblyName: UDP.dll
-    namespaceName: UnityEngine.UDP
-    className: AppStoreSettings
-  - hash:
-      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: UDP.dll
-    namespaceName: UnityEngine.UDP
-    className: MainThreadDispatcher
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: UDP.dll
-    namespaceName: UnityEngine.UDP
-    className: UdpGameManager
-  - hash:
-      serializedVersion: 2
-      Hash: 772ba06d33eb7f6fdb146f9f931a5469
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: MenuSetting
+    className: MainMenu
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Quit
   platform: 5
   scenePathNames:
-  - Assets/Scenes/main_menu.unity
   - Assets/Scenes/card_tabel.unity
-  playerPath: C:/Users/guill/Downloads/gpg_gdg_230.exe
+  playerPath: /Users/milan.manji/Documents/GitHub/GPG_GDG_230_v2/gpg_gdg_230/final
+    build/gpg_gdg_230.exe

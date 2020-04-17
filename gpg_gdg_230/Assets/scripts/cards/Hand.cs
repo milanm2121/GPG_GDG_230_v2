@@ -86,7 +86,7 @@ public class Hand : MonoBehaviour
         if (player == true)
         {
             //copies static deck to the player ingame deck
-            GameObject.Find("player deck").GetComponent<player_static_deck>().loadDeck();
+      //      GameObject.Find("player deck").GetComponent<player_static_deck>().loadDeck();
 
         }
 
@@ -191,7 +191,7 @@ public class Hand : MonoBehaviour
                     if (active == true && TBS.state == TurnBaseScript.TurnState.PlayerTurn &&Input.GetMouseButton(0))
                     {
                         hold += Time.deltaTime;
-                        if (hold >= 1)
+                        if (hold >= 0.3f)
                         {
                             hold = 0;
                             for (int i = 0; cards_in_hand > i; i++)
@@ -439,10 +439,8 @@ public class Hand : MonoBehaviour
                 AS.clip = spellPlay;
                 AS.Play();
                 //magic stuff spell efects are put here
-                cards_in_hand -= 1;
                 playerMana -= picked_card.GetComponent<CardDisplay>().card.manaCost;
 
-                active_cards++;
 
                 //cleans up the hand array
                 for (int i = picked_card_index; cards_in_hand > i; i++)
@@ -459,6 +457,8 @@ public class Hand : MonoBehaviour
                 TBS.ReadTheCard(picked_card.GetComponent<CardDisplay>().card);
                 picked_card.GetComponent<CardDisplay>().hide = false;
                 picked_card.GetComponent<CardDisplay>().active = true;
+                cards_in_hand -= 1;
+
                 SendToGrave(picked_card, picked_card_index);
             }
         }
