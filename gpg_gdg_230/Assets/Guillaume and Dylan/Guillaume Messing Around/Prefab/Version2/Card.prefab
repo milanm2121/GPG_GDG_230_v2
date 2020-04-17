@@ -691,6 +691,8 @@ MonoBehaviour:
     buffOtherATK: 0
     buffOtherHealth: 0
     dontBuffThisUnit: 0
+    healXHealth: 0
+    isSpellCard: 0
     cardImage: {fileID: 0}
   thisID: 0
   id: 0
@@ -714,6 +716,7 @@ MonoBehaviour:
   canBeSummon: 0
   summoned: 0
   battleZone: {fileID: 0}
+  spellZone: {fileID: 0}
   spellCanBeUse: 0
   spellPlay: 0
   thisIsASpellCard: 0
@@ -730,6 +733,9 @@ MonoBehaviour:
   buffOtherCardsHealth: 0
   buffingOtherCardsHealthBool: 0
   dontBuffThisUnit: 0
+  healXHealth: 0
+  canHeal: 0
+  isSpellCard: 0
   ableToAttackObject: {fileID: 0}
   target: {fileID: 0}
   enemy: {fileID: 0}
