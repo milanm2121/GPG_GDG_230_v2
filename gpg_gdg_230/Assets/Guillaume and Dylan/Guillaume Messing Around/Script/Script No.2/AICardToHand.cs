@@ -72,6 +72,7 @@ public class AICardToHand : MonoBehaviour
     public GameObject cardBack;
     public GameObject aiZone;
     public CardsOnTheField enemyField;
+    public GameObject spellField;
 
 
     // Start is called before the first frame update
@@ -89,6 +90,7 @@ public class AICardToHand : MonoBehaviour
 
         aiZone = GameObject.Find("EnemyField");
         enemyField = aiZone.GetComponent<CardsOnTheField>();
+        spellField = GameObject.Find("EnemySpellField");
     }
 
     // Update is called once per frame
@@ -168,9 +170,14 @@ public class AICardToHand : MonoBehaviour
             cardBack.SetActive(true);
         }
         
-        if(this.transform.parent == aiZone.transform)
+        if(this.transform.parent == aiZone.transform || this.transform.parent == spellField)
         {
             cardBack.SetActive(false);
+        }
+
+        if (this.transform.parent == aiZone)
+        {
+            Summon();
         }
     }
 

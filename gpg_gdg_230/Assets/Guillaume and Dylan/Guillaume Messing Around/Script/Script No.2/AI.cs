@@ -231,7 +231,7 @@ public class AI : MonoBehaviour
                     Debug.Log("Spell Card");
                     if (isSpellCard == true)
                     {
-                        child.transform.SetParent(fieldZone.transform);
+                        child.transform.SetParent(spellZone.transform);
                         TurnSystem.enemyCurrentCoin -= CardDataBase.cardList[summonThisID].cardCoinCost;
                         fieldCards.fieldCards.Add(cardToHand);
                         isSpellCard = false;
