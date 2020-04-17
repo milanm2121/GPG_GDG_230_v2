@@ -12,6 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/card_tabel.unity
     guid: 7bd53bf5c8413684bbbe4cecd7d5d6b2
   - enabled: 1
-    path: Assets/Guillaume and Dylan/Guillaume Messing Around/PVPTableScene.unity
+    path: Assets/Scenes/PVPTableScene.unity
     guid: 6724991368393d44d9dacbb318fa3870
   m_configObjects: {}
