@@ -36,5 +36,9 @@ public class CardDataBase : MonoBehaviour
         cardList.Add(new CardVersion2(23, "Call for reinforcement", "Add 1 Max Mana", "French", 5, 4, 4, Resources.Load<Sprite>("2"), 0, 0, 0, 0, 0, false, 0, 0, false, 0, false));
         cardList.Add(new CardVersion2(24, "We need to prepare", "Buff 3 ATK and 3 DEF", "French", 1, 2, 1, Resources.Load<Sprite>("3"), 0, 0, 0, 0, 0, false, 0, 0, false, 0, false));
         cardList.Add(new CardVersion2(25, "Uprgade", "Buff 1 ATK", "French", 0, 1, 1, Resources.Load<Sprite>("4"), 0, 0, 0, 0, 0, false, 0, 0, false, 0, false));
+
+
+        cardList.Add(new CardVersion2(26, "AI Tank", "A futuristic tank that functions on it's own Enduring", "Vehicle", 6, 4, 5, Resources.Load<Sprite>("1"), 0, 0, 0, 0, 0, false, 0, 0, false, 0, false));
+
     }
 }
