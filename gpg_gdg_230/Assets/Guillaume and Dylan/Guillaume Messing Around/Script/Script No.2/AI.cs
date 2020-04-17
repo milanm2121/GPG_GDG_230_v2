@@ -14,6 +14,8 @@ public class AI : MonoBehaviour
     public GameObject hand;
     public GameObject fieldZone;
     public GameObject spellZone;
+    public bool isMonsterCard;
+    public bool isSpellCard;
 
     public int x;
     public static int deckSize;
@@ -75,6 +77,9 @@ public class AI : MonoBehaviour
         hand = GameObject.Find("EnemyHand Version2");
         fieldZone = GameObject.Find("EnemyField");
         spellZone = GameObject.Find("EnemySpellField");
+
+        isMonsterCard = false;
+        isSpellCard = false;
     }
 
     // Update is called once per frame
@@ -205,10 +210,16 @@ public class AI : MonoBehaviour
             {
                 if (child.GetComponent<AICardToHand>().id == summonThisID && currentCoin >= CardDataBase.cardList[summonThisID].cardCoinCost && fieldCards.fieldCards.Count < 5 && CardDataBase.cardList[summonThisID].cardType != "Spell")
                 {
-                    child.transform.SetParent(fieldZone.transform);
-                    TurnSystem.enemyCurrentCoin -= CardDataBase.cardList[summonThisID].cardCoinCost;
-                    fieldCards.fieldCards.Add(cardToHand);
-                    break;
+                    isMonsterCard = true;
+                    Debug.Log("Monster Card");
+                    if (isMonsterCard == true)
+                    {
+                        child.transform.SetParent(fieldZone.transform);
+                        TurnSystem.enemyCurrentCoin -= CardDataBase.cardList[summonThisID].cardCoinCost;
+                        fieldCards.fieldCards.Add(cardToHand);
+                        isMonsterCard = false;
+                        break;
+                    }
                 }
             }
 
@@ -216,10 +227,16 @@ public class AI : MonoBehaviour
             {
                 if (child.GetComponent<AICardToHand>().id == summonThisID && currentMana >= CardDataBase.cardList[summonThisID].cardCoinCost && fieldCards.fieldCards.Count < 5 && CardDataBase.cardList[summonThisID].cardType == "Spell")
                 {
-                    child.transform.SetParent(fieldZone.transform);
-                    TurnSystem.enemyCurrentCoin -= CardDataBase.cardList[summonThisID].cardCoinCost;
-                    fieldCards.fieldCards.Add(cardToHand);
-                    break;
+                    isSpellCard = true;
+                    Debug.Log("Spell Card");
+                    if (isSpellCard == true)
+                    {
+                        child.transform.SetParent(fieldZone.transform);
+                        TurnSystem.enemyCurrentCoin -= CardDataBase.cardList[summonThisID].cardCoinCost;
+                        fieldCards.fieldCards.Add(cardToHand);
+                        isSpellCard = false;
+                        break;
+                    }
                 }
             }
 
@@ -279,7 +296,7 @@ public class AI : MonoBehaviour
 
     IEnumerator WaitForSummonPhase()
     {
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(6);
         summonPhase = true;
     }
 
