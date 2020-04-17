@@ -245,7 +245,9 @@ public class Hand : MonoBehaviour
                     }
                     else
                     {
-                       StartCoroutine(Ai_turn_control(TurnBaseScript.TurnState.Attack));
+
+                        print("x");
+                      // StartCoroutine(Ai_turn_control(TurnBaseScript.TurnState.Attack));
 
                     }
 
@@ -253,7 +255,7 @@ public class Hand : MonoBehaviour
                 }
 
             }
-     //       if (TBS.state == TurnBaseScript.TurnState.Attack)
+            if (TBS.state == TurnBaseScript.TurnState.Attack)
             {
                 //    print("attack phase");
                 tick = false;
@@ -560,6 +562,7 @@ public class Hand : MonoBehaviour
             int x = 0;
             if (state != TurnBaseScript.TurnState.Attack)
             {
+                print("a");
                 x = 1;
             }
             stateTick = true;
@@ -633,8 +636,11 @@ public class Hand : MonoBehaviour
             yield return new WaitForSeconds(0.2f);
         }
 
-        if (stateTick == false) { }
-            //StartCoroutine(Ai_turn_control(TurnBaseScript.TurnState.Attack));
+        if (stateTick == false)
+        {
+            print("1");
+            StartCoroutine(Ai_turn_control(TurnBaseScript.TurnState.Attack));
+        }
 
 
     }

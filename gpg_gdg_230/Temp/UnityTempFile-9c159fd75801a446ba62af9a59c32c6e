@@ -317,6 +317,7 @@
 "Assets/Guillaume and Dylan/Guillaume Messing Around/Script/Script No.2/Token/ThisTokenCard.cs"
 "Assets/Guillaume and Dylan/Guillaume Messing Around/Script/Script No.2/Token/TokenToField.cs"
 "Assets/Guillaume and Dylan/Guillaume Messing Around/Script/Script No.2/TurnSystem.cs"
+"Assets/reset_button.cs"
 "Assets/scripts for backup/Player_deck_int_id.cs"
 "Assets/scripts/cards/card_functions.cs"
 "Assets/scripts/cards/CardLoading.cs"

@@ -175,10 +175,8 @@ public class combat_maneger : MonoBehaviour
             TBS.buttons[1].gameObject.SetActive(false);
             TBS.buttons[3].gameObject.SetActive(false);
         }
-        print("x");
         if (TBS.playerTurn == false)
         {
-            print("switch");
             yield return new WaitForSeconds(1);
             TBS.EndPlayerTurn();
         }
