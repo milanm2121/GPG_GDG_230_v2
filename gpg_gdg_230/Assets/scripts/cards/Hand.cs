@@ -440,6 +440,8 @@ public class Hand : MonoBehaviour
                 cards_in_hand -= 1;
                 playerMana -= picked_card.GetComponent<CardDisplay>().card.manaCost;
 
+                active_cards++;
+
                 //cleans up the hand array
                 for (int i = picked_card_index; cards_in_hand > i; i++)
                 {
