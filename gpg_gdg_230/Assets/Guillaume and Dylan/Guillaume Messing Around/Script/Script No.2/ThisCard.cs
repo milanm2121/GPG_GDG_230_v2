@@ -108,6 +108,9 @@ public class ThisCard : MonoBehaviour
     public GameObject attackTextObject;
     public GameObject healthTextObject;
 
+    //This is the what we will use to attack.
+    public GameObject attackButton;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -307,6 +310,10 @@ public class ThisCard : MonoBehaviour
             Invoke("DestroyMonster", 1.5f);
         }
 
+        if(this.transform.parent == hand)
+        {
+            attackButton.SetActive(false);
+        }
     }
     #endregion
 
@@ -463,6 +470,17 @@ public class ThisCard : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void ShowAttack()
+    {
+        if (this.transform.parent == battleZone)
+            attackButton.SetActive(true);
+    }
+
+    public void HideAttack()
+    {
+        attackButton.SetActive(false);
     }
 
     public void UntargetedEdEnemy()
