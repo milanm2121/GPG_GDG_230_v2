@@ -2138,6 +2138,8 @@ MonoBehaviour:
   hand: {fileID: 0}
   fieldZone: {fileID: 0}
   spellZone: {fileID: 0}
+  isMonsterCard: 0
+  isSpellCard: 0
   x: 0
   cardInDeck1: {fileID: 1998218834}
   cardInDeck2: {fileID: 1024839075}
@@ -6088,7 +6090,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1011892093
 RectTransform:
   m_ObjectHideFlags: 0
