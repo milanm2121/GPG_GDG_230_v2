@@ -15,11 +15,11 @@ public class Deak : MonoBehaviour
     public int Class;
     //the array of cards
     public ScriptableCard[] deak = new ScriptableCard[40];
-    public CardLoading[] deck = new CardLoading[40];
+   // public CardLoading[] deck = new CardLoading[40];
 
     //the list of desroyed cards
     public List<ScriptableCard> graveyard=new List<ScriptableCard>();
-    public List<CardLoading> newGraveyard = new List<CardLoading>();
+   // public List<CardLoading> newGraveyard = new List<CardLoading>();
     //the template used for creating cards from the template
     public GameObject cardTemp;
     public GameObject spellCardTemp;
@@ -28,6 +28,19 @@ public class Deak : MonoBehaviour
     public AudioClip cardDraw;
 
     public GameObject UIdeck;
+
+
+    public bool card_test;
+    private void Awake()
+    {
+        if (card_test == true)
+        {
+            for(int i=0; deak.Length >i; i++)
+            {
+                deak[i] = deak[0];
+            }
+        }
+    }
 
     void Start()
     {
