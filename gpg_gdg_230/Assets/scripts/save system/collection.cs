@@ -139,7 +139,6 @@ public class collection : MonoBehaviour
         sbForCollecion.size = 0;
 
         configuerScale();
-        print(xoffset);
        // origonalTransform.localScale = new Vector3(xoffset/250,xoffset/250, 0);
 
         origonalTransform2.position = new Vector2((int)origonalTransform2.position.x, 6500 * sbForCreation.value + origonalsbYvalue2);
