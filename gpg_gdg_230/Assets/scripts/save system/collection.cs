@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 public class collection : MonoBehaviour
 {
     //text box object
@@ -65,6 +66,8 @@ public class collection : MonoBehaviour
 
     public GameObject deckcreation;
     public GameObject decks_screan;
+    public TMP_Text deck_building_count;
+
 
     public AudioSource AS;
 
@@ -94,7 +97,7 @@ public class collection : MonoBehaviour
                 {
                     Collection[(x * 5) + y].count = static_collections.Collection[(x * 5) + y];
                 }
-                Collection[(x * 5) + y].text.text = "cards you can use:" + Collection[(x * 5) + y].count.ToString();
+                Collection[(x * 5) + y].text.text = "cards you have:" + Collection[(x * 5) + y].count.ToString();
                 Collection[(x * 5) + y].text.transform.parent = origonalTransform;
                 Collection[(x * 5) + y].text.GetComponent<RectTransform>().localScale= new Vector2(0.5f, 0.5f);
                 Collection[(x * 5) + y].card.transform.parent = origonalTransform;
@@ -146,8 +149,15 @@ public class collection : MonoBehaviour
 
         for(int i = 0; Collection.Length > i; i++)
         {
-            Collection[i].text.text="cards you can use:" + Collection[i].count.ToString();
+            Collection[i].text.text="cards you have:" + Collection[i].count.ToString();
         }
+
+        for(int i = 0; cards_you_have.Count > i; i++)
+        {
+            cards_you_have[i].text.text = "cards you can use:" + cards_you_have[i].card.GetComponent<deck_building_functions>().count;
+        }
+
+        deck_building_count.text = "Cards in deck:" + "\n" + cardsInCreateDeak + "/40";
     }
     public void save_cards()
     {
