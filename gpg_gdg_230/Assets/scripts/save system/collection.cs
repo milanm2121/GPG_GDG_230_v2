@@ -52,12 +52,12 @@ public class collection : MonoBehaviour
     float xoffset3;
 
     public Scrollbar sbForCollecion;
-    public float origonalsbYvalue;
+    float origonalsbYvalue;
     public Scrollbar sbForCreation;
-    public float origonalsbYvalue2;
+    float origonalsbYvalue2;
     
     public List<serilisable_deak> deaks = new List<serilisable_deak>();
-
+    public List<GameObject> deackButtons = new List<GameObject>();
 
     public serilisable_deak deackBeingCreated;
     public int cardsInCreateDeak=0;
@@ -67,6 +67,8 @@ public class collection : MonoBehaviour
     public GameObject deckcreation;
     public GameObject decks_screan;
     public TMP_Text deck_building_count;
+    public serilisable_deak selected_deck;
+    
 
 
     public AudioSource AS;
@@ -189,7 +191,10 @@ public class collection : MonoBehaviour
         {
             deaks = static_collections.Deaks;
         }
-        
+        if (deaks.Count != 0)
+        {
+            loadDeacks();
+        }
     }
 
     public void createNewDeck()
@@ -238,10 +243,17 @@ public class collection : MonoBehaviour
     }
     public void loadDeacks()
     {
-
-        GameObject x = Instantiate(button, new Vector2(origonalTransform3.transform.position.x, origonalTransform3.transform.position.y) + new Vector2((deaks.Count-1) * xoffset3,0), Quaternion.identity);
-        x.GetComponent<load_deck>().deck = deaks.Count - 1;
-        x.transform.parent = origonalTransform3;
+        for (int i=0;deackButtons.Count>i;i++)
+        {
+            Destroy(deackButtons[i]);
+        }
+        if (deaks.Count > 0)
+        {
+            GameObject x = Instantiate(button, new Vector2(origonalTransform3.transform.position.x, origonalTransform3.transform.position.y) + new Vector2((deaks.Count - 1) * xoffset3, 0), Quaternion.identity);
+            x.GetComponent<load_deck>().deck = deaks.Count - 1;
+            x.transform.parent = origonalTransform3;
+            deackButtons.Add(x);
+        }
 
     }
     public void configuerScale()
@@ -259,6 +271,14 @@ public class collection : MonoBehaviour
     {
         StartCoroutine(setSb());
     }
+
+    public void Delete_Deck()
+    {
+        deaks.Remove(selected_deck);
+        selected_deck = null;
+        loadDeacks();
+    }
+
     IEnumerator setSb()
     {
         yield return new WaitForEndOfFrame();

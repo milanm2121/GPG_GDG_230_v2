@@ -18,12 +18,6 @@ public class deck_building_functions : MonoBehaviour
         button = GetComponent<Button>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void addCard()
     {
         if (col.cardsInCreateDeak < 40 && count>0)
