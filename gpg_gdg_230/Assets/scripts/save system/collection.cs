@@ -61,7 +61,10 @@ public class collection : MonoBehaviour
     public serilisable_deak deackBeingCreated;
     public int cardsInCreateDeak=0;
 
+    public bool cancle_deck=false;
+
     public GameObject deckcreation;
+    public GameObject decks_screan;
 
     public AudioSource AS;
 
@@ -132,7 +135,7 @@ public class collection : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        origonalTransform.position = new Vector2(origonalTransform.position.x ,9000 * sbForCollecion.value+origonalsbYvalue);
+        origonalTransform.position = new Vector2(origonalTransform.position.x ,10000 * sbForCollecion.value+origonalsbYvalue);
         sbForCollecion.size = 0;
 
         configuerScale();
@@ -189,30 +192,40 @@ public class collection : MonoBehaviour
     }
     public void cancle_deack_creation()
     {
-        StopCoroutine(waitForFullDeck());
+        //StopCoroutine(waitForFullDeck());
+        cancle_deck = true;
         deckcreation.SetActive(false);
+        decks_screan.SetActive(true);
     }
 
     IEnumerator waitForFullDeck()
     {
-        yield return new WaitUntil(() => cardsInCreateDeak == 40);
-        //finish building deack
-        print("deack created");
-        //pick a clss goes here
-
-
-
-        //resets count of cards
-        for(int i=0; cards_you_have.Count > i; i++)
+        yield return new WaitUntil(() => cardsInCreateDeak == 40 || cancle_deck==true);
+        if (cancle_deck == true)
         {
-            cards_you_have[i].card.GetComponent<deck_building_functions>().ResetCount();
+            cancle_deck = false;
         }
-        //saves deack
-        deaks.Add(deackBeingCreated);
-        //adds deack to deack screan
-        loadDeacks();
-        deckcreation.SetActive(false);
-        AS.Play();
+        else
+        {
+            //finish building deack
+            print("deack created");
+            //pick a clss goes here
+
+
+
+            //resets count of cards
+            for (int i = 0; cards_you_have.Count > i; i++)
+            {
+                cards_you_have[i].card.GetComponent<deck_building_functions>().ResetCount();
+            }
+            //saves deack
+            deaks.Add(deackBeingCreated);
+            //adds deack to deack screan
+            loadDeacks();
+            deckcreation.SetActive(false);
+            AS.Play();
+            decks_screan.SetActive(true);
+        }
     }
     public void loadDeacks()
     {
