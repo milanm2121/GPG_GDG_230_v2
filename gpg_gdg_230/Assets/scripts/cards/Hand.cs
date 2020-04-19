@@ -108,10 +108,14 @@ public class Hand : MonoBehaviour
         {
             for (int i = 0; active_cards > i; i++)
             {
+
+
                 active_cards_slots[i].transform.position = Vector3.Lerp(active_cards_slots[i].transform.position, active_slots[i].position, 0.5f);
+
                 //card deaths
                 if (active_cards_slots[i].GetComponent<CardDisplay>().card.health <= 0 && active_cards_slots[i].GetComponent<CardDisplay>().card.isSpell == false)
                     SendToGrave(active_cards_slots[i], i);
+
             }
         }
 
@@ -148,7 +152,7 @@ public class Hand : MonoBehaviour
                     {
                         if (active_cards_slots[i] == selectedCard)
                         {
-                            if (unitType != "all")
+                            if (unitType != "unit")
                             {
                                 string compareName;
                                 compareName = selectedCard.GetComponent<CardDisplay>().card.name;

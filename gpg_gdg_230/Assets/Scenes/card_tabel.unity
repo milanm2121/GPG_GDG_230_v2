@@ -972,7 +972,7 @@ MonoBehaviour:
   Cards_active_deak: 40
   Class: 0
   deak:
-  - {fileID: 11400000, guid: 9ccc9a756d4b0433d9c14f863f8a8eac, type: 2}
+  - {fileID: 11400000, guid: b047d32064fb8452fabd668cd043813b, type: 2}
   - {fileID: 11400000, guid: 2e2071b6d530f3d408498c00b31016c2, type: 2}
   - {fileID: 11400000, guid: d4d00bf343adbcc439cba11e71b09ffe, type: 2}
   - {fileID: 11400000, guid: d4d00bf343adbcc439cba11e71b09ffe, type: 2}
@@ -4692,7 +4692,7 @@ MonoBehaviour:
   Cards_active_deak: 40
   Class: 0
   deak:
-  - {fileID: 11400000, guid: 9ccc9a756d4b0433d9c14f863f8a8eac, type: 2}
+  - {fileID: 11400000, guid: b047d32064fb8452fabd668cd043813b, type: 2}
   - {fileID: 11400000, guid: 8d85cfb55347347938ff27eee20a7cab, type: 2}
   - {fileID: 11400000, guid: 936c5668a64f34302a6da943a14af35e, type: 2}
   - {fileID: 11400000, guid: 9b9a25050cf254bb69c540ee23e2dcb3, type: 2}

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 20
   name: Trooper
-  description: is the only unit on the feild it gains 2 health 3 damage
+  description: They been trained to kill
   artwork: {fileID: 0}
   manaCost: 3
   attack: 3

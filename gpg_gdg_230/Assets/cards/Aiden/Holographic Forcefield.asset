@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 50
   name: Holographic Forcefield
-  description: 'Spell: upgrade all units attack -2 health 3'
+  description: 'Spell: upgrade all units -2 attack 3 health'
   artwork: {fileID: 0}
   manaCost: 5
   attack: 0
   health: 0
-  isSpell: 0
+  isSpell: 1
   monsterSickness: 1
   FuturefurePramCheak: 0

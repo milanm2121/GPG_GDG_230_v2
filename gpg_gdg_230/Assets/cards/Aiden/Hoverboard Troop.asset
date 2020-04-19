@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Hoverboard Troop
   m_EditorClassIdentifier: 
   ID: 34
-  name: Hoverboard Troop - Vehicle
+  name: Hoverboard Trooper - Vehicle
   description: Dodge 10 %
   artwork: {fileID: 0}
   manaCost: 3

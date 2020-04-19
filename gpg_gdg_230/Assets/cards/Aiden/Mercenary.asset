@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 26
   name: Mercenary
-  description: 'On Play: Damage All for 1 . Earn 1 Gold 0 Power  futuristic mercenary
+  description: 'On Play: Damage all for 1 . Earn 1 Gold 0 Power  futuristic mercenary
     soldier  '
   artwork: {fileID: 0}
   manaCost: 3

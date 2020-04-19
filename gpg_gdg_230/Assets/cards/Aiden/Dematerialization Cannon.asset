@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 49
   name: Dematerialization Cannon
-  description: 'sacrifice: 1 unit Spell:damage all units for 10'
+  description: 'sacrifice: 1 unit damage all units for 10'
   artwork: {fileID: 0}
   manaCost: 5
   attack: 0

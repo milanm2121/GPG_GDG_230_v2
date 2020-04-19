@@ -338,10 +338,10 @@ public class TurnBaseScript : MonoBehaviour
             player1Hand.playerGold = 10;
         if (player2Hand.playerGold >= 10)
             player2Hand.playerGold = 10;
-        if (player1Hand.playerMana >= 5)
-            player1Hand.playerMana = 5;
-        if (player2Hand.playerMana >= 5)
-            player2Hand.playerMana = 5;
+        if (player1Hand.playerMana >= 8)
+            player1Hand.playerMana = 8;
+        if (player2Hand.playerMana >= 8)
+            player2Hand.playerMana = 8;
 
         player1CoinText.text = player1Hand.playerGold.ToString();
         player1ManaText.text = player1Hand.playerMana.ToString();
@@ -535,7 +535,7 @@ public class TurnBaseScript : MonoBehaviour
 
         FutureFur_Uniqe_pram();
 
-        
+
         for (int i = 0; message.Length > i; i++)
         {
             switch (message[i])
@@ -594,7 +594,12 @@ public class TurnBaseScript : MonoBehaviour
                             break;
                     }
                     break;
-
+            }
+        }
+        for(int i = 0; message.Length > i; i++)
+        {
+            switch (message[i])
+            {
                 case "On":
 
                     switch (message[i + 1])
@@ -850,6 +855,10 @@ public class TurnBaseScript : MonoBehaviour
             player2Hand.playerGold += int.Parse(Gold);
             player2Hand.playerMana += int.Parse(Mana);
         }
+        player1CoinText.text = player1Hand.playerGold.ToString();
+        player1ManaText.text = player1Hand.playerMana.ToString();
+        player2CoinText.text = player2Hand.playerGold.ToString();
+        player2ManaText.text = player2Hand.playerMana.ToString();
     }
 
     void spellDamage(string target, string Damage)
@@ -944,7 +953,7 @@ public class TurnBaseScript : MonoBehaviour
         {
             //number of units / damage
             case "damage":
-                spellDamage(message[start+2 + 2], message[start+2 + 3]);
+                spellDamage(message[start+2 + 2], message[start+2 + 5]);
                 break;
 
             //number of units / unit type / "attack" / damage / "defence" / deffence
@@ -1086,24 +1095,8 @@ public class TurnBaseScript : MonoBehaviour
         }
         else
         {
-            for (int i = 0; int.Parse(units) > i; i++)
-            {
-                if (player2Hand.active_cards < 5)
-                {
-                    int card = Random.Range(0, player1Hand.active_cards);
-                    player2Hand.active_cards_slots[player2Hand.active_cards - 1] = player1Hand.active_cards_slots[card];
-                    player1Hand.active_cards_slots[card] = null;
-                    player2Hand.active_cards++;
-                    player1Hand.active_cards--;
-
-                    for (int x = card; player1Hand.active_cards_slots.Length > x; x++)
-                    {
-
-                        player1Hand.active_cards_slots[x] = player1Hand.active_cards_slots[x + 1];
-
-                    }
-                }
-            }
+            StartCoroutine(AIconvert(int.Parse(units)));
+            
         }
     }
 
@@ -1260,26 +1253,50 @@ public class TurnBaseScript : MonoBehaviour
         {
             if (player1Hand.active_cards < 5)
             {
-                for(int x=0; player2Hand.active_cards_slots.Length > x ;x++)
+                for(int x= 0; player2Hand.active_cards > x ;x++)
                 {
                     if (player2Hand.active_cards_slots[x] == selectedCards[i])
                     {
                         player2Hand.active_cards_slots[x] = null;
                         player2Hand.active_cards--;
-                        
-                        for (int y = x; player2Hand.active_cards > y; y++)
+                        player1Hand.active_cards_slots[player1Hand.active_cards] = selectedCards[i];
+                        player1Hand.active_cards++;
+
+                        for (int y = x; player2Hand.active_cards_slots.Length-1 > y; y++)
                         {
                             player2Hand.active_cards_slots[y] = player2Hand.active_cards_slots[y + 1];
                         }
+                        
                     }
-
+                    
                 }
-
-                player1Hand.active_cards_slots[player1Hand.active_cards] = selectedCards[i];
-                player1Hand.active_cards++;
             }
         }
     }
+
+    IEnumerator AIconvert(int number)
+    {
+        yield return new WaitForEndOfFrame();
+        for (int i = 0; number > i; i++)
+        {
+            if (player2Hand.active_cards < 5)
+            {
+                int card = Random.Range(0, player1Hand.active_cards);
+                player2Hand.active_cards_slots[player2Hand.active_cards - 1] = player1Hand.active_cards_slots[card];
+                player1Hand.active_cards_slots[card] = null;
+                player2Hand.active_cards++;
+                player1Hand.active_cards--;
+
+                for (int x = card; player1Hand.active_cards_slots.Length-1 > x; x++)
+                {
+
+                      player1Hand.active_cards_slots[x] = player1Hand.active_cards_slots[x + 1];
+
+                }
+            }
+        }
+    }
+
     IEnumerator waitForDisable(int cardcount, List<GameObject> selectedCards)
     {
         yield return new WaitUntil(() => selectedCards.Count == cardcount);
