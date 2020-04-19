@@ -1104,7 +1104,7 @@ public class TurnBaseScript : MonoBehaviour
     {
         if (playerTurn == true)
         {
-            for (int i = 0; int.Parse(unitcount)+1 > i; i++)
+            for (int i = 0; int.Parse(unitcount) > i; i++)
             {
                 if (player1Hand.active_cards <= 4)
                 {
@@ -1119,7 +1119,7 @@ public class TurnBaseScript : MonoBehaviour
         }
         else
         {
-            for (int i = 0; int.Parse(unitcount)+1 > i; i++)
+            for (int i = 0; int.Parse(unitcount) > i; i++)
             {
                 if (player2Hand.active_cards < 5)
                 {

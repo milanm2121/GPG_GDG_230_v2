@@ -387,7 +387,7 @@ public class Hand : MonoBehaviour
             //cheaks if the card is magic or a unit
             if (picked_card.GetComponent<CardDisplay>().card.isSpell == false && active_cards < 5 && picked_card.GetComponent<CardDisplay>().card.manaCost <= playerGold)
             {
-                
+
                 AS.clip = unitplay;
                 AS.Play();
 
@@ -430,11 +430,13 @@ public class Hand : MonoBehaviour
                 if (Haste == false)
                 {
                     picked_card.GetComponent<CardDisplay>().card.monsterSickness = true;
-                    StartCoroutine(unsick(picked_card, this));
-                    picked_card.GetComponent<CardDisplay>().hide = false;
-                    picked_card.GetComponent<CardDisplay>().active = true;
-                    TBS.ReadTheCard(picked_card.GetComponent<CardDisplay>().card);
                 }
+
+                StartCoroutine(unsick(picked_card, this));
+                picked_card.GetComponent<CardDisplay>().hide = false;
+                picked_card.GetComponent<CardDisplay>().active = true;
+                TBS.ReadTheCard(picked_card.GetComponent<CardDisplay>().card);
+            
 
             }
             else if (picked_card.GetComponent<CardDisplay>().card.isSpell == true && picked_card.GetComponent<CardDisplay>().card.manaCost <= playerMana)
