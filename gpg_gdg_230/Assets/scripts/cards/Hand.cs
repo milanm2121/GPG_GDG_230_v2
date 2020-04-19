@@ -609,13 +609,18 @@ public class Hand : MonoBehaviour
     {
         if (hand == TBS.player1Hand) {
             yield return new WaitUntil(()=>TBS.playerTurn==false);
-            card.GetComponent<CardDisplay>().card.monsterSickness = false;
-
+            if (card != null)
+            {
+                card.GetComponent<CardDisplay>().card.monsterSickness = false;
+            }
         }
         else if((hand == TBS.player2Hand))
         {
             yield return new WaitUntil(()=>TBS.playerTurn==true);
-            card.GetComponent<CardDisplay>().card.monsterSickness = false;
+            if (card != null)
+            {
+                card.GetComponent<CardDisplay>().card.monsterSickness = false;
+            }
         }
     }
 

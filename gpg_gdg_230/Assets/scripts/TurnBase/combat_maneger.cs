@@ -14,7 +14,8 @@ public class combat_maneger : MonoBehaviour
 
     public bool started_combat=false;
 
-     
+    public GameObject doge_syimbol;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -49,10 +50,12 @@ public class combat_maneger : MonoBehaviour
                         int chance = Random.Range(1, 10);
                         if (chance >= int.Parse(b[a+1])/10)
                             doge = true;
+                      //  Instantiate(doge_syimbol, defend[i].transform.position, Quaternion.identity);
                     }
                 }
                 if (doge == false) {
                     int newHealth = defend[i].GetComponent<CardDisplay>().card.health - attack[i].GetComponent<CardDisplay>().card.attack;
+                    StartCoroutine(cardHit(defend[i]));
                     if (newHealth < defend[i].GetComponent<CardDisplay>().card.health)
                     {
                         defend[i].GetComponent<CardDisplay>().card.health = newHealth;
@@ -101,6 +104,7 @@ public class combat_maneger : MonoBehaviour
                     }
                     newHealth = attack[i].GetComponent<CardDisplay>().card.health - defend[i].GetComponent<CardDisplay>().card.attack;
                     attack[i].GetComponent<CardDisplay>().card.health = newHealth;
+                    StartCoroutine(cardHit(attack[i]));
                     //On Death: Explode for (damage) and(optional) Disable
                     Decription = attack[i].GetComponent<CardDisplay>().card.description;
                     b = Decription.Split(' ');
@@ -180,5 +184,20 @@ public class combat_maneger : MonoBehaviour
             yield return new WaitForSeconds(1);
             TBS.EndPlayerTurn();
         }
+    }
+    IEnumerator cardHit(GameObject card)
+    {
+        card.transform.position += new Vector3(0.1f, 0, 0);
+        yield return new WaitForSeconds(0.1f);
+        card.transform.position += new Vector3(-0.1f, 0.1f, 0);
+        yield return new WaitForSeconds(0.1f);
+        card.transform.position += new Vector3(0, -0.1f, 0);
+        yield return new WaitForSeconds(0.1f);
+        card.transform.position += new Vector3(0.1f, 0.1f, 0);
+        yield return new WaitForSeconds(0.1f);
+        card.transform.position += new Vector3(-0.1f, -0.1f, 0);
+        yield return new WaitForSeconds(0.1f);
+        card.transform.position += new Vector3(0, 0.1f, 0);
+        yield return new WaitForSeconds(0.1f);
     }
 }

@@ -692,7 +692,7 @@ public class TurnBaseScript : MonoBehaviour
             for (int i = 0; player1Hand.active_cards > i; i++)
             {
                 string nam = player1Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.name;
-                string[] brokenName = nam.Split(' ');
+                string[] brokenName = nam.Split(' ','_');
                 for (int a = 0; brokenName.Length > a; a++)
                 {
                     if (brokenName[a] == unit_type)
