@@ -720,30 +720,51 @@ public class TurnBaseScript : MonoBehaviour
     {
         if (playerTurn == true)
         {
-            for (int i=0; player2Hand.active_cards > i; i++)
+            if (target == "all")
             {
-                string nam = player2Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.name;
-                string[] brokenName=nam.Split(' ');
-                for(int a=0;brokenName.Length>a; a++)
+                for (int i = 0; player2Hand.active_cards > i; i++)
                 {
-                    if (brokenName[a] == target)
+                    player2Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.health -= int.Parse(damage);
+                }
+            }
+            else
+            {
+                for (int i = 0; player2Hand.active_cards > i; i++)
+                {
+                    string nam = player2Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.name;
+                    string[] brokenName = nam.Split(' ');
+                    for (int a = 0; brokenName.Length > a; a++)
                     {
-                        player2Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.health -= int.Parse(damage);
+                        if (brokenName[a] == target)
+                        {
+                            player2Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.health -= int.Parse(damage);
+                        }
                     }
                 }
             }
+            
         }
         else
         {
-            for (int i = 0; player1Hand.active_cards > i; i++)
+            if (target == "all")
             {
-                string nam = player1Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.name;
-                string[] brokenName = nam.Split(' ');
-                for (int a = 0; brokenName.Length > a; a++)
+                for (int i = 0; player1Hand.active_cards > i; i++)
                 {
-                    if (brokenName[a] == target)
+                    player1Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.health -= int.Parse(damage);
+                }
+            }
+            else
+            {
+                for (int i = 0; player1Hand.active_cards > i; i++)
+                {
+                    string nam = player1Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.name;
+                    string[] brokenName = nam.Split(' ');
+                    for (int a = 0; brokenName.Length > a; a++)
                     {
-                        player1Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.health -= int.Parse(damage);
+                        if (brokenName[a] == target)
+                        {
+                            player1Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.health -= int.Parse(damage);
+                        }
                     }
                 }
             }
@@ -833,9 +854,6 @@ public class TurnBaseScript : MonoBehaviour
 
     void spellDamage(string target, string Damage)
     {
-
-
-
         if (playerTurn == true)
         {
             if (target == "all")

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 42
   name: Commander General
-  description: 'On Play: Summon 4 Trooper Immobile Doge 50 %'
+  description: 'On Play: Summon 3 Trooper Immobile Doge 50 %'
   artwork: {fileID: 0}
   manaCost: 6
   attack: 2

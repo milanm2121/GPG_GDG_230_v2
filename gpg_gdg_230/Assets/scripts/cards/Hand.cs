@@ -236,7 +236,7 @@ public class Hand : MonoBehaviour
             {
                 if (TBS.state == TurnBaseScript.TurnState.PlayerTurn ){
                    
-                    if (cards_in_hand >= 1 && active_cards <= 4 && tick==false)
+                    if (cards_in_hand >= 1 && tick==false)
                     {
 
                         StartCoroutine(DelayAIUsecard());
