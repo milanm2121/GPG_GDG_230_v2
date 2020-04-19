@@ -31,6 +31,7 @@ public class Deak : MonoBehaviour
 
 
     public bool card_test;
+    public bool spell_test;
     private void Awake()
     {
         if (card_test == true)
@@ -38,6 +39,22 @@ public class Deak : MonoBehaviour
             for(int i=0; deak.Length >i; i++)
             {
                 deak[i] = deak[0];
+                
+            }
+            
+        }
+        if(spell_test==true)
+        {
+       
+            for (int i = 0; 19> i; i++)
+            {
+                deak[i] = deak[0];
+                
+            }
+            for (int i = 19; deak.Length > i; i++)
+            {
+                deak[i] = deak[19];
+
             }
         }
     }

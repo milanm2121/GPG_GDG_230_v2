@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 48
   name: Cybernetic Visual Aid
-  description: 'Spell: upgrade all troopers 1 attack 3 health'
+  description: 'Spell: upgrade all Trooper 1 attack 3 health'
   artwork: {fileID: 0}
   manaCost: 5
   attack: 0

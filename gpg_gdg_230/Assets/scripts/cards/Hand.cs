@@ -441,7 +441,7 @@ public class Hand : MonoBehaviour
                 //magic stuff spell efects are put here
                 playerMana -= picked_card.GetComponent<CardDisplay>().card.manaCost;
 
-
+                cards_in_hand -= 1;
                 //cleans up the hand array
                 for (int i = picked_card_index; cards_in_hand > i; i++)
                 {
@@ -457,11 +457,13 @@ public class Hand : MonoBehaviour
                 TBS.ReadTheCard(picked_card.GetComponent<CardDisplay>().card);
                 picked_card.GetComponent<CardDisplay>().hide = false;
                 picked_card.GetComponent<CardDisplay>().active = true;
-                cards_in_hand -= 1;
 
-                SendToGrave(picked_card, picked_card_index);
+
+                deck.graveyard.Add(picked_card.GetComponent<CardDisplay>().card);
+                Destroy(picked_card);
+
             }
-        }
+        } 
     }
 
     public void SetToAttack(GameObject card)
@@ -516,20 +518,23 @@ public class Hand : MonoBehaviour
         }
     }
 
-    public void SendToGrave(GameObject card,int i)
+    public void SendToGrave(GameObject card, int i)
     {
         deck.graveyard.Add(card.GetComponent<CardDisplay>().card);
-        active_cards_slots[i]=null;
+        active_cards_slots[i] = null; 
         active_cards--;
-        for(int x=i;active_cards>x; x++)
+
+        for (int x = i; active_cards > x; x++)
         {
             active_cards_slots[x] = active_cards_slots[x + 1];
         }
         
         fieldCard.Remove(card);
-        Destroy(card);
         AS.clip = cardDestroy;
         AS.Play();
+
+        Destroy(card);
+
 
     }
 

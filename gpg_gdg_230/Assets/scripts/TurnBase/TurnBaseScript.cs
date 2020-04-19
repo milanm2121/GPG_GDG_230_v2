@@ -641,9 +641,9 @@ public class TurnBaseScript : MonoBehaviour
                             spellDamage(message[i+2], message[i+5]);
                             break;
 
-                        //number of units / unit type / "attack" / damage / "defence" / deffence
+                        //number of units / unit type / attack / "damage" / health / "health"
                         case "upgrade":
-                            upgrade(message[i+2], message[i+3], message[i+5], message[i+7]);
+                            upgrade(message[i+2], message[i+3], message[i+4], message[i+6]);
                             break;
 
                         //unit count / unit name
@@ -996,9 +996,9 @@ public class TurnBaseScript : MonoBehaviour
                 List<GameObject> selectedCards = new List<GameObject>();
                 for (int i = 0; player1Hand.active_cards > i; i++)
                 {
-                    if (nuber == "units")
+                    if (unit_type == "units")
                     {
-                        selectedCards.Add(player2Hand.active_cards_slots[i]);
+                        selectedCards.Add(player1Hand.active_cards_slots[i]);
                     }
                     else
                     {
@@ -1028,7 +1028,7 @@ public class TurnBaseScript : MonoBehaviour
 
                 for (int i = 0; player2Hand.active_cards > i; i++)
                 {
-                    if (nuber == "units")
+                    if (unit_type == "units")
                     {
                         selectedCards.Add(player2Hand.active_cards_slots[i]);
                     }
@@ -1307,6 +1307,25 @@ public class TurnBaseScript : MonoBehaviour
                     else if (x[y] == "dies" && x[y + 1] == "when" && x[y + 2] == "it" && x[y + 3] == "is" && x[y + 4] == "not" && x[y + 5] == "alone")
                     {
                         StartCoroutine(futrtfurDieWhenNotAlone(player1Hand.active_cards_slots[i].GetComponent<CardDisplay>().card, player1Hand)) ;
+                    }
+                }
+            }
+        }
+        for (int i = 0; player2Hand.active_cards > i; i++)
+        {
+            if (player2Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.FuturefurePramCheak == false)
+            {
+                string Decription = player2Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.description;
+                string[] x = Decription.Split(' ');
+                for (int y = 0; x.Length > y; y++)
+                {
+                    if (x[y] == "is" && x[y + 1] == "the" && x[y + 2] == "only" && x[y + 3] == "unit" && x[y + 4] == "on" && x[y + 5] == "the" && x[y + 6] == "feild" && x[y + 7] == "it" && x[y + 8] == "gains")
+                    {
+                        StartCoroutine(futrtfurAloneBonus(player2Hand.active_cards_slots[i].GetComponent<CardDisplay>().card, x[y + 9], x[y + 11], player2Hand));
+                    }
+                    else if (x[y] == "dies" && x[y + 1] == "when" && x[y + 2] == "it" && x[y + 3] == "is" && x[y + 4] == "not" && x[y + 5] == "alone")
+                    {
+                        StartCoroutine(futrtfurDieWhenNotAlone(player2Hand.active_cards_slots[i].GetComponent<CardDisplay>().card, player2Hand));
                     }
                 }
             }
