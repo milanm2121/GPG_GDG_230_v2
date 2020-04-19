@@ -74,6 +74,9 @@ public class Hand : MonoBehaviour
     public AudioClip unitplay;
     public AudioClip spellPlay;
 
+    //chosen magic card
+    public GameObject chosen_magic_card;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -95,6 +98,23 @@ public class Hand : MonoBehaviour
     }
 
     // Update is called once per frame
+    private void Update()
+    {
+        if (chosen_magic_card != null)
+        {
+            chosen_magic_card.transform.position = Vector2.Lerp(chosen_magic_card.transform.position, Vector2.zero, 0.5f);
+
+            if (Vector2.Distance(chosen_magic_card.transform.position, Vector2.zero) < 0.1f) {
+                deck.graveyard.Add(chosen_magic_card.GetComponent<CardDisplay>().card);
+                Destroy(chosen_magic_card, 5);
+            }
+            chosen_magic_card.transform.localScale = Vector3.Lerp(chosen_magic_card.transform.localScale, new Vector3(1,1,0), 0.5f);
+            chosen_magic_card.transform.SetAsLastSibling();
+        }
+    }
+
+
+
     void LateUpdate()
     {
         
@@ -128,8 +148,9 @@ public class Hand : MonoBehaviour
                 if (selectedCard != hand[i])
                     hand[i].transform.SetSiblingIndex(i);
             }
-            if (selectedCard != null)
+            if (selectedCard != null && chosen_magic_card==null && TBS.player2Hand.chosen_magic_card==null)
             {
+                
                 selectedCard.transform.SetAsLastSibling();
                 if (Input.GetKey(KeyCode.I))
                 {
@@ -464,9 +485,8 @@ public class Hand : MonoBehaviour
                 picked_card.GetComponent<CardDisplay>().hide = false;
                 picked_card.GetComponent<CardDisplay>().active = true;
 
-
-                deck.graveyard.Add(picked_card.GetComponent<CardDisplay>().card);
-                Destroy(picked_card);
+                chosen_magic_card = picked_card;
+                
 
             }
         } 
