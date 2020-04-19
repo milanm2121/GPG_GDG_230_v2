@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Pup Cybernetic Wolf
   m_EditorClassIdentifier: 
   ID: 56
-  name: Pup Cybernetic Wolf
+  name: pup_Cybernetic_Wolf
   description: 
   artwork: {fileID: 0}
   manaCost: 1

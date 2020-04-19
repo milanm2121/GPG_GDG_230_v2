@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 74
   name: Alpha Summon
-  description: 
+  description: 'Spell: summon 1 Alpha_Cybernetic_Wolf'
   artwork: {fileID: 0}
   manaCost: 5
   attack: 0

@@ -627,7 +627,7 @@ public class TurnBaseScript : MonoBehaviour
                                     break;
                                 //"all" / unit type/ "with" / enhancement
                                 case "Enhance":
-                                    Enhance(message[i + 3], message[i + 5]);
+                                    Enhance(message[i + 4], message[i + 6]);
                                     break;                                
                             }
                             break;
@@ -820,8 +820,10 @@ public class TurnBaseScript : MonoBehaviour
                 if (player1Hand.active_cards < 5)
                 {
                     GameObject x = Cr.create_card(unit);
+                    
                     player1Hand.active_cards_slots[player1Hand.active_cards] = x;
                     player1Hand.active_cards++;
+                    ReadTheCard(x.GetComponent<CardDisplay>().card);
                     StartCoroutine(player1Hand.unsick(x, player1Hand));
                 }
             }
@@ -835,6 +837,7 @@ public class TurnBaseScript : MonoBehaviour
                     GameObject x = Cr.create_card(unit);
                     player2Hand.active_cards_slots[player2Hand.active_cards] = x;
                     player2Hand.active_cards++;
+                    ReadTheCard(x.GetComponent<CardDisplay>().card);
                     StartCoroutine(player1Hand.unsick(x, player2Hand));
                 }
             }
@@ -1111,7 +1114,7 @@ public class TurnBaseScript : MonoBehaviour
                     GameObject x =Cr.create_card(unit);
                     player1Hand.active_cards++;
                     player1Hand.active_cards_slots[player1Hand.active_cards - 1] = x ;
-
+                    ReadTheCard(x.GetComponent<CardDisplay>().card);
                     StartCoroutine(player1Hand.unsick(x, player1Hand));
                     
                 }
@@ -1126,6 +1129,8 @@ public class TurnBaseScript : MonoBehaviour
                     GameObject x = Cr.create_card(unit);
                     player2Hand.active_cards++;
                     player2Hand.active_cards_slots[player2Hand.active_cards-1] = x;
+                    ReadTheCard(x.GetComponent<CardDisplay>().card);
+
                     StartCoroutine(player2Hand.unsick(x, player2Hand));
                     
                 }
@@ -1361,6 +1366,7 @@ public class TurnBaseScript : MonoBehaviour
     IEnumerator futrtfurDieWhenNotAlone(ScriptableCard card,Hand hand)
     {
         card.FuturefurePramCheak = true;
+        yield return new WaitForSeconds(0.1f);
         yield return new WaitUntil(() => hand.active_cards != 1);
         card.health = 0;
     }

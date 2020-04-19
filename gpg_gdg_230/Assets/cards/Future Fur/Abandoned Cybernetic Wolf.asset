@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 59
   name: Abandoned Cybernetic Wolf
-  description: 
+  description: dies when it is not alone
   artwork: {fileID: 0}
   manaCost: 1
   attack: 3

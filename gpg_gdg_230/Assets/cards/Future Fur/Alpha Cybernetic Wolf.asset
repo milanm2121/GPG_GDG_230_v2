@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Alpha Cybernetic Wolf
   m_EditorClassIdentifier: 
   ID: 51
-  name: Alpha Cybernetic Wolf
-  description: 
+  name: Alpha_Cybernetic_Wolf
+  description: 'On Play: Enhance all Wolf with Haste'
   artwork: {fileID: 0}
   manaCost: 5
   attack: 4

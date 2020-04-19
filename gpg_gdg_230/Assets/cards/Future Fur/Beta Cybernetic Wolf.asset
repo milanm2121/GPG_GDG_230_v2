@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 52
   name: Beta Cybernetic Wolf
-  description: 
+  description: 'On Play: Summon 2 pup_Cybernetic_Wolf'
   artwork: {fileID: 0}
   manaCost: 4
   attack: 2
