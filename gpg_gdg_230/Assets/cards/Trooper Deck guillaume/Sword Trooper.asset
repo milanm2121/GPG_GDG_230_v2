@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 15
   name: Sword Trooper
-  description: 'On play: Boost all Trooper 1 attack 0 health'
+  description: 'On Play: Boost all Trooper 1 attack 0 health'
   artwork: {fileID: 0}
   manaCost: 4
   attack: 4

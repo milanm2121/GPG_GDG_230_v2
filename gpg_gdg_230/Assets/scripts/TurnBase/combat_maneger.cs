@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class combat_maneger : MonoBehaviour
 {
@@ -14,7 +15,7 @@ public class combat_maneger : MonoBehaviour
 
     public bool started_combat=false;
 
-    public GameObject doge_syimbol;
+    public GameObject text_feedback;
 
     // Start is called before the first frame update
     void Start()
@@ -50,12 +51,20 @@ public class combat_maneger : MonoBehaviour
                         int chance = Random.Range(1, 10);
                         if (chance >= int.Parse(b[a+1])/10)
                             doge = true;
-                      //  Instantiate(doge_syimbol, defend[i].transform.position, Quaternion.identity);
+                        GameObject x=Instantiate(text_feedback, defend[i].transform.position, Quaternion.identity);
+                        x.transform.parent = GameObject.Find("card feild").transform;
+                        x.GetComponent<Text>().text = "Doged";
                     }
                 }
                 if (doge == false) {
                     int newHealth = defend[i].GetComponent<CardDisplay>().card.health - attack[i].GetComponent<CardDisplay>().card.attack;
                     StartCoroutine(cardHit(defend[i]));
+                    GameObject t = Instantiate(text_feedback, defend[i].transform.position, Quaternion.identity);
+
+                    t.transform.parent = GameObject.Find("card feild").transform;
+                    t.GetComponent<Text>().color = Color.red;
+                    t.GetComponent<Text>().text = "-"+attack[i].GetComponent<CardDisplay>().card.attack.ToString();
+
                     if (newHealth < defend[i].GetComponent<CardDisplay>().card.health)
                     {
                         defend[i].GetComponent<CardDisplay>().card.health = newHealth;
@@ -67,13 +76,18 @@ public class combat_maneger : MonoBehaviour
                             for (int a = 0; b.Length > a; a++)
                             {
                                 if (b[a] == "On" && b[a+1]=="Death:") {
+                                    t = Instantiate(text_feedback, defend[i].transform.position, Quaternion.identity);
+                                    t.transform.parent = GameObject.Find("card feild").transform;
+                                    t.GetComponent<Text>().color = Color.yellow;
                                     if (b[a + 2] == "Explode")
                                     {
+                                        t.GetComponent<Text>().text += "Exploded"+"\n";
                                         attack[i].GetComponent<CardDisplay>().card.health -= int.Parse(b[a + 4]);
                                     }
                                     if (b.Length>(a+6) && b[a + 6] == "disable")
                                     {
                                         attack[i].GetComponent<CardDisplay>().card.monsterSickness = true;
+                                        t.GetComponent<Text>().text += "Disabeled";
                                     }
                                 }
                             }
@@ -105,6 +119,12 @@ public class combat_maneger : MonoBehaviour
                     newHealth = attack[i].GetComponent<CardDisplay>().card.health - defend[i].GetComponent<CardDisplay>().card.attack;
                     attack[i].GetComponent<CardDisplay>().card.health = newHealth;
                     StartCoroutine(cardHit(attack[i]));
+                    t = Instantiate(text_feedback, attack[i].transform.position, Quaternion.identity);
+                    t.transform.parent = GameObject.Find("card feild").transform;
+                    t.GetComponent<Text>().color = Color.red;
+                    t.GetComponent<Text>().text = "-" + defend[i].GetComponent<CardDisplay>().card.attack.ToString();
+                    
+
                     //On Death: Explode for (damage) and(optional) Disable
                     Decription = attack[i].GetComponent<CardDisplay>().card.description;
                     b = Decription.Split(' ');
@@ -112,13 +132,18 @@ public class combat_maneger : MonoBehaviour
                     {
                         if (b[a] == "On" && b[a + 1] == "Death:")
                         {
+                            t = Instantiate(text_feedback, attack[i].transform.position, Quaternion.identity);
+                            t.transform.parent = GameObject.Find("card feild").transform;
+                            t.GetComponent<Text>().color = Color.yellow;
                             if (b[a + 2] == "Explode")
                             {
-                                defend[i].GetComponent<CardDisplay>().card.health -= int.Parse(b[a + 4]);
+                                attack[i].GetComponent<CardDisplay>().card.health -= int.Parse(b[a + 4]);
+                                t.GetComponent<Text>().text += "Exploded";
                             }
                             if (b.Length > (a + 6) && b[a + 6] == "disable")
                             {
-                                defend[i].GetComponent<CardDisplay>().card.monsterSickness = true;
+                                attack[i].GetComponent<CardDisplay>().card.monsterSickness = true;
+                                t.GetComponent<Text>().text += "Disabeled";
                             }
                         }
                     }

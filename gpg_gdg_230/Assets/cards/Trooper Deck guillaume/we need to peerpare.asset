@@ -14,10 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 25
   name: we need to prpare
-  description: 'sacrifice: 1 trooper Spell: summon 2 trooper'
+  description: 'sacrifice: 1 Trooper Spell: summon 2 trooper'
   artwork: {fileID: 0}
   manaCost: 2
   attack: 0
   health: 0
   isSpell: 1
   monsterSickness: 0
+  FuturefurePramCheak: 0

@@ -177,7 +177,7 @@ public class Hand : MonoBehaviour
                             {
                                 string compareName;
                                 compareName = selectedCard.GetComponent<CardDisplay>().card.name;
-                                string[] brokenName = compareName.Split(' ');
+                                string[] brokenName = compareName.Split(' ','_');
                                 for (int x = 0; brokenName.Length > x; x++)
                                 {
                                     if (brokenName[x] == unitType)

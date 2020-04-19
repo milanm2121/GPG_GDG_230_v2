@@ -708,7 +708,7 @@ public class TurnBaseScript : MonoBehaviour
             for (int i = 0; player2Hand.active_cards > i; i++)
             {
                 string nam = player2Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.name;
-                string[] brokenName = nam.Split(' ');
+                string[] brokenName = nam.Split(' ','_');
                 for (int a = 0; brokenName.Length > a; a++)
                 {
                     if (brokenName[a] == unit_type)
@@ -737,7 +737,7 @@ public class TurnBaseScript : MonoBehaviour
                 for (int i = 0; player2Hand.active_cards > i; i++)
                 {
                     string nam = player2Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.name;
-                    string[] brokenName = nam.Split(' ');
+                    string[] brokenName = nam.Split(' ','_');
                     for (int a = 0; brokenName.Length > a; a++)
                     {
                         if (brokenName[a] == target)
@@ -763,7 +763,7 @@ public class TurnBaseScript : MonoBehaviour
                 for (int i = 0; player1Hand.active_cards > i; i++)
                 {
                     string nam = player1Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.name;
-                    string[] brokenName = nam.Split(' ');
+                    string[] brokenName = nam.Split(' ','_');
                     for (int a = 0; brokenName.Length > a; a++)
                     {
                         if (brokenName[a] == target)
@@ -782,7 +782,7 @@ public class TurnBaseScript : MonoBehaviour
             for (int i = 0; player1Hand.active_cards > i; i++)
             {
                 string nam = player1Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.name;
-                string[] brokenName = nam.Split(' ');
+                string[] brokenName = nam.Split(' ','_');
                 for (int a = 0; brokenName.Length > a; a++)
                 {
                     if (brokenName[a] == unittype)
@@ -798,7 +798,7 @@ public class TurnBaseScript : MonoBehaviour
             for (int i = 0; player2Hand.active_cards > i; i++)
             {
                 string nam = player2Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.name;
-                string[] brokenName = nam.Split(' ');
+                string[] brokenName = nam.Split(' ','_');
                 for (int a = 0; brokenName.Length > a; a++)
                 {
                     if (brokenName[a] == unittype)
@@ -1015,7 +1015,7 @@ public class TurnBaseScript : MonoBehaviour
                     else
                     {
                         string n = player1Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.name;
-                        string[] brokenName = n.Split(' ');
+                        string[] brokenName = n.Split(' ','_');
                         for (int x = 0; brokenName.Length > x; x++)
                         {
                             if (brokenName[x] == unit_type)
@@ -1047,7 +1047,7 @@ public class TurnBaseScript : MonoBehaviour
                     else
                     {
                         string n = player2Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.name;
-                        string[] brokenName = n.Split(' ');
+                        string[] brokenName = n.Split(' ','_');
                         for (int x = 0; brokenName.Length > x; x++)
                         {
                             if (brokenName[x] == unit_type)
@@ -1070,7 +1070,7 @@ public class TurnBaseScript : MonoBehaviour
                 for (int i = 0; player2Hand.active_cards > i; i++)
                 {
                     string n = player2Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.name;
-                    string[] brokenName = n.Split(' ');
+                    string[] brokenName = n.Split(' ','_');
                     for (int x = 0; brokenName.Length > x; x++)
                     {
                         if (brokenName[x] == unit_type)
@@ -1287,9 +1287,9 @@ public class TurnBaseScript : MonoBehaviour
             if (player2Hand.active_cards < 5)
             {
                 int card = Random.Range(0, player1Hand.active_cards);
-                player2Hand.active_cards_slots[player2Hand.active_cards - 1] = player1Hand.active_cards_slots[card];
+                player2Hand.active_cards_slots[player2Hand.active_cards] = player1Hand.active_cards_slots[card];
                 player1Hand.active_cards_slots[card] = null;
-                player2Hand.active_cards++;
+                player2Hand.active_cards++; 
                 player1Hand.active_cards--;
 
                 for (int x = card; player1Hand.active_cards_slots.Length-1 > x; x++)
