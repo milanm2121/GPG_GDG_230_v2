@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 4
   name: Burner Trooper
-  description: 'On play: Damage all units for 2'
+  description: 'On Play: Damage all for 2'
   artwork: {fileID: 0}
   manaCost: 5
   attack: 3

@@ -14,10 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 26
   name: Upgrade
-  description: 'Spell: upgrade 1 trooper attack 2 deffence 3'
+  description: 'Spell: upgrade 1 Trooper 2 attack 3 deffence'
   artwork: {fileID: 0}
   manaCost: 3
   attack: 0
   health: 0
   isSpell: 1
   monsterSickness: 0
+  FuturefurePramCheak: 0

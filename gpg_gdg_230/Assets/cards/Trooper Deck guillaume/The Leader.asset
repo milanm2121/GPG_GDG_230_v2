@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 18
   name: The Leader
-  description: 'On play: Summon 4 Buff_Trooper'
+  description: 'On Play: Summon 4 Buff_Trooper'
   artwork: {fileID: 0}
   manaCost: 10
   attack: 9

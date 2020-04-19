@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 16
   name: The Commander of Troopers
-  description: 'On play: Summon 2 Trooper'
+  description: 'On Play: Summon 2 Trooper'
   artwork: {fileID: 0}
   manaCost: 7
   attack: 5

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 24
   name: Call for renforcmetns
-  description: 'Spell: summon 2 Troopers'
+  description: 'Spell: summon 2 Trooper'
   artwork: {fileID: 0}
   manaCost: 2
   attack: 0

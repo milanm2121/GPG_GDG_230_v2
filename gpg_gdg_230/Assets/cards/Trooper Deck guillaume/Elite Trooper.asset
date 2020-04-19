@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 6
   name: Elite_Trooper
-  description: 'On play: upgrade all Elite_Trooper 1 attack 1 health'
+  description: 'On Play: Boost all Elite_Trooper 1 attack 1 health'
   artwork: {fileID: 0}
   manaCost: 4
   attack: 3

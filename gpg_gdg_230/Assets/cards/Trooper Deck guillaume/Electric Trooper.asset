@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 5
   name: Electric Trooper
-  description: 'On play: damage all for 1'
+  description: 'On Play: Damage all for 1'
   artwork: {fileID: 0}
   manaCost: 5
   attack: 3

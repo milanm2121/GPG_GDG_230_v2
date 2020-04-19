@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 10
   name: Shield Trooper
-  description: Defender
+  description: 
   artwork: {fileID: 0}
   manaCost: 2
   attack: 1

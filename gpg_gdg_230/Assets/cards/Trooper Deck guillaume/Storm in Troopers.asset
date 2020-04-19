@@ -14,10 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 21
   name: Storm in Troopers
-  description: 'Spell: upgrade all trooper attack 1 deffence 1'
+  description: 'Spell: upgrade all Trooper 1 attack 1 deffence'
   artwork: {fileID: 0}
   manaCost: 3
   attack: 0
   health: 0
   isSpell: 1
   monsterSickness: 0
+  FuturefurePramCheak: 0
