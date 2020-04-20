@@ -972,7 +972,7 @@ MonoBehaviour:
   Cards_active_deak: 40
   Class: 0
   deak:
-  - {fileID: 11400000, guid: 734fafc05ef894345a90905a95983c09, type: 2}
+  - {fileID: 11400000, guid: 4b949a4c668524dd2832f3c21ca6f592, type: 2}
   - {fileID: 11400000, guid: 2e2071b6d530f3d408498c00b31016c2, type: 2}
   - {fileID: 11400000, guid: d4d00bf343adbcc439cba11e71b09ffe, type: 2}
   - {fileID: 11400000, guid: d4d00bf343adbcc439cba11e71b09ffe, type: 2}
@@ -1011,7 +1011,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 13b95940f9bf5487f8b9579a517919b0, type: 2}
   - {fileID: 11400000, guid: 7b1bb81373f93af42b74850739183a23, type: 2}
   - {fileID: 11400000, guid: 7b1bb81373f93af42b74850739183a23, type: 2}
-  - {fileID: 11400000, guid: 9a9a5cc7e3311ec4ba9b3b0e394ee2ee, type: 2}
   - {fileID: 11400000, guid: 9a9a5cc7e3311ec4ba9b3b0e394ee2ee, type: 2}
   graveyard: []
   cardTemp: {fileID: 8099801058583234788, guid: edc5075ef4033404992ab5e0d95d3f51,

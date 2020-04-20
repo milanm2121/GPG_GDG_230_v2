@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 615dd9c20f7fa234b9eb1a59bd2aec1a, type: 3}
-  m_Name: Super Magnets
+  m_Name: Haywire Programming
   m_EditorClassIdentifier: 
-  ID: 93
-  name: Super Magnets
-  description: 'Spell: upgrade 1 unit 0 attack 6 health'
+  ID: 100
+  name: Haywire Programming
+  description: 'Spell: Enhance a unit with Swarm Charged and Enduring '
   Tags: 
   artwork: {fileID: 0}
-  manaCost: 5
+  manaCost: 2
   attack: 0
   health: 0
   isSpell: 1
