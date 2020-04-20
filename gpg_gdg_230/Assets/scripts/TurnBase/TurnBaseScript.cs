@@ -550,7 +550,7 @@ public class TurnBaseScript : MonoBehaviour
 
                         //"all"/ unitytype / attack / "attack" / deffence / "deffence"
                         case "Boost":
-                            boost(message[i + 3], message[i + 4], message[i + 6]);
+                            boost(message[i + 3], message[i + 4], message[i + 6],card);
                             break;
 
                         // unit count/ unit name    
@@ -614,7 +614,7 @@ public class TurnBaseScript : MonoBehaviour
 
                                 //"all"/ unitytype / attack / "attack" / deffence / "deffence"
                                 case "Boost":
-                                    boost(message[i + 4], message[i + 5], message[i + 7]);
+                                    boost(message[i + 4], message[i + 5], message[i + 7],card);
                                     break;
 
                                 // unit count/ unit name    
@@ -801,7 +801,7 @@ public class TurnBaseScript : MonoBehaviour
             }
         }
     }
-    void boost(string unittype, string attack, string deffence)
+    void boost(string unittype, string attack, string deffence,ScriptableCard sc)
     {
         if (playerTurn == true)
         {
@@ -835,6 +835,8 @@ public class TurnBaseScript : MonoBehaviour
                 }
             }
         }
+        sc.attack -= int.Parse(attack);
+        sc.health -= int.Parse(deffence);
     }
 
     void PasSummon(string unitcount, string unit)
