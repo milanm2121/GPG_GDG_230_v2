@@ -972,7 +972,7 @@ MonoBehaviour:
   Cards_active_deak: 40
   Class: 0
   deak:
-  - {fileID: 11400000, guid: cbc3ee567a2d94502b15dba8841a7655, type: 2}
+  - {fileID: 11400000, guid: 734fafc05ef894345a90905a95983c09, type: 2}
   - {fileID: 11400000, guid: 2e2071b6d530f3d408498c00b31016c2, type: 2}
   - {fileID: 11400000, guid: d4d00bf343adbcc439cba11e71b09ffe, type: 2}
   - {fileID: 11400000, guid: d4d00bf343adbcc439cba11e71b09ffe, type: 2}

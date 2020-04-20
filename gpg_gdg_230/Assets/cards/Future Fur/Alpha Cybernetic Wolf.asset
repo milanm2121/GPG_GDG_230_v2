@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 51
   name: Alpha_Cybernetic_Wolf
-  description: 'On Play: Enhance all Wolf with Haste'
+  description: 'On Play: Enhance all Wolf with Charged'
   Tags: Alpha_Cybernetic_Wolf
   artwork: {fileID: 0}
   manaCost: 5

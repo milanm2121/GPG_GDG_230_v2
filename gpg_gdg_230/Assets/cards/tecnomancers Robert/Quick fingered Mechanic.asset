@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 615dd9c20f7fa234b9eb1a59bd2aec1a, type: 3}
-  m_Name: Alpha Werewolf
+  m_Name: Quick fingered Mechanic
   m_EditorClassIdentifier: 
-  ID: 61
-  name: Alpha Werewolf
-  description: 'On Play: Enhance all Werewolf with Charged'
-  Tags: Alpha Werewolf
+  ID: 0
+  name: Quick fingered Mechanic
+  description: 'On Play: Enhance all Machine with Charged'
+  Tags: 
   artwork: {fileID: 0}
-  manaCost: 8
-  attack: 6
-  health: 7
+  manaCost: 4
+  attack: 5
+  health: 2
   isSpell: 0
   monsterSickness: 1
   disabeled: 0

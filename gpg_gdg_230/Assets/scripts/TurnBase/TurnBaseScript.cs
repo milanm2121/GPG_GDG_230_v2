@@ -72,7 +72,10 @@ public class TurnBaseScript : MonoBehaviour
     public AudioClip win;
     public AudioClip lose;
 
-    // Start is called before the first frame update
+
+
+    List<GameObject> SelectedCards = new List<GameObject>();
+    // Start is called before the first frame update 
     void Start()
     {
         player1HealthText.text = player1Health.ToString();
@@ -528,6 +531,7 @@ public class TurnBaseScript : MonoBehaviour
     // but to also use it if it has one.
     public void ReadTheCard(ScriptableCard card)
     {
+        SelectedCards = new List<GameObject>(); 
         StopCoroutine("CountDown");
         timerIsOn = false;
         
@@ -614,6 +618,10 @@ public class TurnBaseScript : MonoBehaviour
                         case "dissable":
                             disable(message[i + 1]);
                             break;
+
+                        case "enhance":
+                            SpellEnhance(message);
+                            break;
                     }
                     break;
             }
@@ -693,6 +701,8 @@ public class TurnBaseScript : MonoBehaviour
                         case "Enhance":
                             SpellEnhance(message);
                             break;
+
+                        
 
                         case "Draw":
                             Draw(message[i + 2]);
@@ -970,7 +980,7 @@ public class TurnBaseScript : MonoBehaviour
             }
             else
             {
-                List<GameObject> SelectedCards = new List<GameObject>();
+             //   SelectedCards = new List<GameObject>();
                 StartCoroutine(waitforDamage(int.Parse(target), SelectedCards, int.Parse(Damage)));
                 StartCoroutine(pause_sellection_outher_hand(int.Parse(target), SelectedCards));
             }
@@ -1008,7 +1018,7 @@ public class TurnBaseScript : MonoBehaviour
     {
         if (playerTurn == true)
         {
-            List<GameObject> SelectedCards = new List<GameObject>();
+         //   SelectedCards = new List<GameObject>();
             StartCoroutine(pause_sellection_own_hand(int.Parse(nuber), unit_type, SelectedCards));
             StartCoroutine(player_sacrifice(int.Parse(nuber), SelectedCards,spell,start));
         }
@@ -1018,7 +1028,7 @@ public class TurnBaseScript : MonoBehaviour
             {
                 string Tag = player2Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.Tags;
                 string[] x = Tag.Split(' ');
-                List<GameObject> SelectedCards = new List<GameObject>();
+                SelectedCards = new List<GameObject>();
                 for (int y = 0; x.Length > y; i++)
                 {
                     if (x[i] == unit_type)
@@ -1070,76 +1080,111 @@ public class TurnBaseScript : MonoBehaviour
     void SpellEnhance(string[] spell)
     {
         bool addSwarm=false;
+        int swarmpos=0;
         for(int i = 0; spell.Length > i; i++)
         {
             if (spell[i] == "Swarm")
+            {
                 addSwarm = true;
+                swarmpos = i;
+            }
         }
-        if (playerTurn == true && addSwarm == true)
+        //just swarm
+        if (swarmpos == spell.Length-1) 
         {
-            List<GameObject> SelectedCards = new List<GameObject>();
-            StartCoroutine(pause_sellection_own_hand(1, "unit", SelectedCards));
-            StartCoroutine(WaitForEnhance(SelectedCards));
+            if (playerTurn == true)
+            {
+            //    SelectedCards = new List<GameObject>();
+                StartCoroutine(pause_sellection_own_hand(1, "unit", SelectedCards));
+                StartCoroutine(WaitForEnhance3(SelectedCards));
+            }
+            else
+            {
 
-        }
-        else if (playerTurn == true)
-        {
-            List<GameObject> SelectedCards = new List<GameObject>();
-            StartCoroutine(pause_sellection_own_hand(1, "unit", SelectedCards));
-            StartCoroutine(WaitForEnhance2(SelectedCards));
-        }
-        if (playerTurn == false && addSwarm==true)
-        {
-            bool swarm=false;
-            bool charged=false;
-            bool enduring=false;
-            GameObject x = player2Hand.active_cards_slots[Random.Range(0, player2Hand.active_cards)];
-            string[] brokenDis = x.GetComponent<CardDisplay>().card.description.Split(' ');
-            for(int a = 0; brokenDis.Length > a; a++)
-            {
-                if (brokenDis[a] == "Swarm")
-                    swarm = true;
-                if (brokenDis[a] == "Charged")
-                    charged = true;
-                if (brokenDis[a] == "Enduring")
-                    enduring = true;
+                bool swarm = false;
+                GameObject x = player2Hand.active_cards_slots[Random.Range(0, player2Hand.active_cards)];
+                string[] brokenDis = x.GetComponent<CardDisplay>().card.description.Split(' ');
+                for (int a = 0; brokenDis.Length > a; a++)
+                {
+                    if (brokenDis[a] == "Swarm")
+                        swarm = true;
+                }
+                if (swarm == false)
+                    x.GetComponent<CardDisplay>().descriptionText.text += " Swarm";
+                if (swarm == false)
+                    x.GetComponent<CardDisplay>().card.description += " Swarm";
+                actiontime = 2;
+
             }
-            if (swarm == false)
-                x.GetComponent<CardDisplay>().descriptionText.text += " Swarm";
-            if(charged==false)
-                x.GetComponent<CardDisplay>().descriptionText.text += " Charged";
-            if(enduring==false)
-                x.GetComponent<CardDisplay>().descriptionText.text += " Enduring";
-            if (swarm == false)
-                x.GetComponent<CardDisplay>().card.description += " Swarm";
-            if (charged == false)
-                x.GetComponent<CardDisplay>().card.description += " Charged";
-            if (enduring == false)
-                x.GetComponent<CardDisplay>().card.description += " Enduring";
-            actiontime = 2;
         }
-        else if (playerTurn == false)
+        else//swarm enduring and charged
         {
-            bool charged = false;
-            bool enduring = false;
-            GameObject x = player2Hand.active_cards_slots[Random.Range(0, player2Hand.active_cards)];
-            string[] brokenDis = x.GetComponent<CardDisplay>().card.description.Split(' ');
-            for (int a = 0; brokenDis.Length > a; a++)
+            if (playerTurn == true && addSwarm == true)
             {
-                if (brokenDis[a] == "Charged")
-                    charged = true;
-                if (brokenDis[a] == "Enduring")
-                    enduring = true;
+          //      SelectedCards = new List<GameObject>();
+                StartCoroutine(pause_sellection_own_hand(1, "unit", SelectedCards));
+                StartCoroutine(WaitForEnhance(SelectedCards));
+
             }
-            if (charged == false)
-                x.GetComponent<CardDisplay>().descriptionText.text += " Charged";
-            if (enduring == false)
-                x.GetComponent<CardDisplay>().descriptionText.text += " Enduring";
-            if (charged == false)
-                x.GetComponent<CardDisplay>().card.description += " Charged";
-            if (enduring == false)
-                x.GetComponent<CardDisplay>().card.description += " Enduring";
-            actiontime = 2;
+            else if (playerTurn == true)
+            {
+        //        SelectedCards = new List<GameObject>();
+                StartCoroutine(pause_sellection_own_hand(1, "unit", SelectedCards));
+                StartCoroutine(WaitForEnhance2(SelectedCards));
+            }
+            if (playerTurn == false && addSwarm == true)
+            {
+                bool swarm = false;
+                bool charged = false;
+                bool enduring = false;
+                GameObject x = player2Hand.active_cards_slots[Random.Range(0, player2Hand.active_cards)];
+                string[] brokenDis = x.GetComponent<CardDisplay>().card.description.Split(' ');
+                for (int a = 0; brokenDis.Length > a; a++)
+                {
+                    if (brokenDis[a] == "Swarm")
+                        swarm = true;
+                    if (brokenDis[a] == "Charged")
+                        charged = true;
+                    if (brokenDis[a] == "Enduring")
+                        enduring = true;
+                }
+                if (swarm == false)
+                    x.GetComponent<CardDisplay>().descriptionText.text += " Swarm";
+                if (charged == false)
+                    x.GetComponent<CardDisplay>().descriptionText.text += " Charged";
+                if (enduring == false)
+                    x.GetComponent<CardDisplay>().descriptionText.text += " Enduring";
+                if (swarm == false)
+                    x.GetComponent<CardDisplay>().card.description += " Swarm";
+                if (charged == false)
+                    x.GetComponent<CardDisplay>().card.description += " Charged";
+                if (enduring == false)
+                    x.GetComponent<CardDisplay>().card.description += " Enduring";
+                actiontime = 2;
+            }
+            else if (playerTurn == false)
+            {
+                bool charged = false;
+                bool enduring = false;
+                GameObject x = player2Hand.active_cards_slots[Random.Range(0, player2Hand.active_cards)];
+                string[] brokenDis = x.GetComponent<CardDisplay>().card.description.Split(' ');
+                for (int a = 0; brokenDis.Length > a; a++)
+                {
+                    if (brokenDis[a] == "Charged")
+                        charged = true;
+                    if (brokenDis[a] == "Enduring")
+                        enduring = true;
+                }
+                if (charged == false)
+                    x.GetComponent<CardDisplay>().descriptionText.text += " Charged";
+                if (enduring == false)
+                    x.GetComponent<CardDisplay>().descriptionText.text += " Enduring";
+                if (charged == false)
+                    x.GetComponent<CardDisplay>().card.description += " Charged";
+                if (enduring == false)
+                    x.GetComponent<CardDisplay>().card.description += " Enduring";
+                actiontime = 2;
+            }
         }
 
     }
@@ -1149,18 +1194,18 @@ public class TurnBaseScript : MonoBehaviour
         {
             if (nuber != "all")
             {
-                List<GameObject> SelectedCards = new List<GameObject>();
+                //SelectedCards = new List<GameObject>();
                 StartCoroutine(pause_sellection_own_hand(int.Parse(nuber), unit_type, SelectedCards));
                 StartCoroutine(waitForUpgrade(int.Parse(nuber), SelectedCards, int.Parse(attack), int.Parse(health)));
             }
             else
             {
-                List<GameObject> selectedCards = new List<GameObject>();
+                SelectedCards = new List<GameObject>();
                 for (int i = 0; player1Hand.active_cards > i; i++)
                 {
                     if (unit_type == "units")
                     {
-                        selectedCards.Add(player1Hand.active_cards_slots[i]);
+                        SelectedCards.Add(player1Hand.active_cards_slots[i]);
                     }
                     else
                     {
@@ -1169,16 +1214,16 @@ public class TurnBaseScript : MonoBehaviour
                         for (int x = 0; splitTags.Length > x; x++)
                         {
                             if (splitTags[x] == unit_type)
-                                selectedCards.Add(player1Hand.active_cards_slots[i]);
+                                SelectedCards.Add(player1Hand.active_cards_slots[i]);
 
                         }
                     }
                     actiontime = 2;
                 }
-                for (int i = 0; selectedCards.Count > i; i++)
+                for (int i = 0; SelectedCards.Count > i; i++)
                 {
-                    selectedCards[i].GetComponent<CardDisplay>().card.health += int.Parse(health);
-                    selectedCards[i].GetComponent<CardDisplay>().card.attack += int.Parse(attack);
+                    SelectedCards[i].GetComponent<CardDisplay>().card.health += int.Parse(health);
+                    SelectedCards[i].GetComponent<CardDisplay>().card.attack += int.Parse(attack);
                 }
             }
         }
@@ -1186,14 +1231,14 @@ public class TurnBaseScript : MonoBehaviour
         {
             if (nuber == "all")
             {
-                List<GameObject> selectedCards = new List<GameObject>();
+                SelectedCards = new List<GameObject>();
 
 
                 for (int i = 0; player2Hand.active_cards > i; i++)
                 {
                     if (unit_type == "units")
                     {
-                        selectedCards.Add(player2Hand.active_cards_slots[i]);
+                        SelectedCards.Add(player2Hand.active_cards_slots[i]);
                     }
                     else
                     {
@@ -1202,22 +1247,22 @@ public class TurnBaseScript : MonoBehaviour
                         for (int x = 0; SplitTags.Length > x; x++)
                         {
                             if (SplitTags[x] == unit_type)
-                                selectedCards.Add(player2Hand.active_cards_slots[i]);
+                                SelectedCards.Add(player2Hand.active_cards_slots[i]);
 
                         }
                     }
                 }
-                for (int i = 0; selectedCards.Count > i; i++)
+                for (int i = 0; SelectedCards.Count > i; i++)
                 {
-                    selectedCards[i].GetComponent<CardDisplay>().card.health += int.Parse(health);
-                    selectedCards[i].GetComponent<CardDisplay>().card.attack += int.Parse(attack);
+                    SelectedCards[i].GetComponent<CardDisplay>().card.health += int.Parse(health);
+                    SelectedCards[i].GetComponent<CardDisplay>().card.attack += int.Parse(attack);
 
                 }
                 
             }
             else
             {
-                List<GameObject> selectedCards = new List<GameObject>();
+                SelectedCards = new List<GameObject>();
                 for (int i = 0; player2Hand.active_cards > i; i++)
                 {
                     string n = player2Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.Tags;
@@ -1225,15 +1270,15 @@ public class TurnBaseScript : MonoBehaviour
                     for (int x = 0; splitTags.Length > x; x++)
                     {
                         if (splitTags[x] == unit_type)
-                            selectedCards.Add(player2Hand.active_cards_slots[i]);
-                        if (selectedCards.Count == int.Parse(nuber))
+                            SelectedCards.Add(player2Hand.active_cards_slots[i]);
+                        if (SelectedCards.Count == int.Parse(nuber))
                             i = player2Hand.active_cards;
                     }
                 }
-                for (int i = 0; selectedCards.Count > i; i++)
+                for (int i = 0; SelectedCards.Count > i; i++)
                 {
-                    selectedCards[i].GetComponent<CardDisplay>().card.health += int.Parse(health);
-                    selectedCards[i].GetComponent<CardDisplay>().card.attack += int.Parse(attack);
+                    SelectedCards[i].GetComponent<CardDisplay>().card.health += int.Parse(health);
+                    SelectedCards[i].GetComponent<CardDisplay>().card.attack += int.Parse(attack);
                 }
             }
             actiontime = 2;
@@ -1244,7 +1289,7 @@ public class TurnBaseScript : MonoBehaviour
     {
         if (playerTurn == true)
         {
-            List<GameObject> SelectedCards = new List<GameObject>();
+        //    SelectedCards = new List<GameObject>();
             StartCoroutine(waitForConvert(int.Parse(units), SelectedCards));
             StartCoroutine(pause_sellection_outher_hand(int.Parse(units), SelectedCards));
         }
@@ -1295,7 +1340,7 @@ public class TurnBaseScript : MonoBehaviour
     {
         if (playerTurn == true)
         {
-            List<GameObject> SelectedCards = new List<GameObject>();
+          //  SelectedCards = new List<GameObject>();
             StartCoroutine(waitForDisable(int.Parse(units), SelectedCards));
             StartCoroutine(pause_sellection_outher_hand(int.Parse(units), SelectedCards));
         }
@@ -1323,6 +1368,7 @@ public class TurnBaseScript : MonoBehaviour
 
     IEnumerator WaitForEnhance(List<GameObject> selectedCards)
     {
+        actiontime =10;
         yield return new WaitUntil(() => selectedCards.Count == 1 || state != TurnState.CardPlayed);
         for (int i = 0; selectedCards.Count > i; i++)
         {
@@ -1358,6 +1404,7 @@ public class TurnBaseScript : MonoBehaviour
 
     IEnumerator WaitForEnhance2(List<GameObject> selectedCards)
     {
+        actiontime = 10;
         yield return new WaitUntil(() => selectedCards.Count == 1 || state != TurnState.CardPlayed);
         for (int i = 0; selectedCards.Count > i; i++)
         {
@@ -1379,6 +1426,30 @@ public class TurnBaseScript : MonoBehaviour
                 selectedCards[i].GetComponent<CardDisplay>().card.description += " Charged";
             if (enduring == false)
                 selectedCards[i].GetComponent<CardDisplay>().card.description += " Enduring";
+
+        }
+        actiontime = 2;
+    }
+    IEnumerator WaitForEnhance3(List<GameObject> selectedCards)
+    {
+        actiontime = 10;
+        yield return new WaitUntil(() => selectedCards.Count == 1 || state != TurnState.CardPlayed);
+        for (int i = 0; selectedCards.Count > i; i++)
+        {
+            bool swarm = false;
+            string[] brokenDis = selectedCards[i].GetComponent<CardDisplay>().card.description.Split(' ');
+            for (int a = 0; brokenDis.Length > a; a++)
+            {
+                if (brokenDis[a] == "Swarm")
+                    swarm = true;
+                
+            }
+            if (swarm == false)
+                selectedCards[i].GetComponent<CardDisplay>().descriptionText.text += " Swarm";
+            
+            if (swarm == false)
+                selectedCards[i].GetComponent<CardDisplay>().card.description += " Swarm";
+            
 
         }
         actiontime = 2;
