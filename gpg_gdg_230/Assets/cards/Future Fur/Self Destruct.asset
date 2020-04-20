@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 72
   name: Self Destruct
-  description: As an additional cost, sacrifice a Cybernetic Wolf
+  description: 'sacrifice: 1 Wolf damage 1 unit for 5'
   artwork: {fileID: 0}
   manaCost: 1
   attack: 5

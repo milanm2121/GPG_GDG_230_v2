@@ -1373,9 +1373,11 @@ public class TurnBaseScript : MonoBehaviour
         yield return new WaitUntil(() => selectedCards.Count == cardcount || state != TurnState.CardPlayed);
         for (int i = 0; selectedCards.Count > i; i++)
         {
-            selectedCards[i].GetComponent<CardDisplay>().card.health = 0;
+            if (selectedCards.Count == cardcount)
+                selectedCards[i].GetComponent<CardDisplay>().card.health = 0;
         }
-        scrificeComplete(message,start);
+        if(selectedCards.Count==cardcount)
+            scrificeComplete(message,start);
     }
 
     IEnumerator waitforDamage(int cardcount,List<GameObject> selectedCards,int damage)

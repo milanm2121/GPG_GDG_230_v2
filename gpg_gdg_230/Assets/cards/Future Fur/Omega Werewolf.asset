@@ -16,9 +16,9 @@ MonoBehaviour:
   name: Omega Werewolf
   description: 
   artwork: {fileID: 0}
-  manaCost: 0
-  attack: 0
-  health: 0
+  manaCost: 5
+  attack: 4
+  health: 6
   isSpell: 0
   monsterSickness: 1
   FuturefurePramCheak: 0
