@@ -1080,6 +1080,7 @@ MonoBehaviour:
   cardDestroy: {fileID: 8300000, guid: 63cabab8765b04c9daf7c6237157c31b, type: 3}
   unitplay: {fileID: 8300000, guid: 083c9d4b9cd3e49edb7a166e6c64b3df, type: 3}
   spellPlay: {fileID: 8300000, guid: 22af4a3e4877d473e9cb321040da904a, type: 3}
+  chosen_magic_card: {fileID: 0}
 --- !u!4 &288857956
 Transform:
   m_ObjectHideFlags: 0
@@ -4799,6 +4800,7 @@ MonoBehaviour:
   cardDestroy: {fileID: 8300000, guid: 63cabab8765b04c9daf7c6237157c31b, type: 3}
   unitplay: {fileID: 8300000, guid: 083c9d4b9cd3e49edb7a166e6c64b3df, type: 3}
   spellPlay: {fileID: 8300000, guid: 22af4a3e4877d473e9cb321040da904a, type: 3}
+  chosen_magic_card: {fileID: 0}
 --- !u!4 &1389315625
 Transform:
   m_ObjectHideFlags: 0
@@ -7056,5 +7058,11 @@ PrefabInstance:
       propertyPath: defend.Array.size
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 2285168136727759006, guid: 10016f06ccc7fc84c83dbb0ad76e50f7,
+        type: 3}
+      propertyPath: text_feedback
+      value: 
+      objectReference: {fileID: 8181948459275730548, guid: 3920d3c3e18f549488df45c335570ca0,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 10016f06ccc7fc84c83dbb0ad76e50f7, type: 3}
