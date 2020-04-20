@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 61
   name: Alpha Werewolf
-  description: 
+  description: 'On Play: Enhance all Werewolf with Haste'
   artwork: {fileID: 0}
   manaCost: 8
   attack: 6

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 70
   name: Augmented Scientist
-  description: 
+  description: 'On Play: Boost all Cybernetic 2 attack 2 health'
   artwork: {fileID: 0}
   manaCost: 2
   attack: 2

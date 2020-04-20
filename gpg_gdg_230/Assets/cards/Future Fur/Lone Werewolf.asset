@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 64
   name: Lone Werewolf
-  description: 
+  description: When Lone Werewolf is the only unit on the field it gains 3 attack
+    3 health
   artwork: {fileID: 0}
   manaCost: 6
   attack: 4

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 62
   name: Beta Werewolf
-  description: 
+  description: 'On Play: Summon 2 Pup_Werewolf'
   artwork: {fileID: 0}
   manaCost: 6
   attack: 4

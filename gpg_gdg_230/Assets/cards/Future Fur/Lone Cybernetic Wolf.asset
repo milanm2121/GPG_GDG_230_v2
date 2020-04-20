@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 54
   name: Lone Cybernetic Wolf
-  description: 
+  description: When Lone Cybernetic Wolf is the only unit on the field it gains 2
+    attack 2 health
   artwork: {fileID: 0}
   manaCost: 5
   attack: 3

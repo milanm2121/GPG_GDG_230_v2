@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 55
   name: Pack Cybernetic Wolf
-  description: 
+  description: 'On Play: Boost all Wolf 2 attack 2 health'
   artwork: {fileID: 0}
   manaCost: 3
   attack: 2
