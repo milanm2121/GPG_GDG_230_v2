@@ -566,9 +566,16 @@ public class Hand : MonoBehaviour
 
     public void MonsterSicknessIsOver()
     {
-        for (int i = 0; fieldCard.Count > i; i++)
+        for (int i = 0; active_cards > i; i++)
         {
-            fieldCard[i].GetComponent<CardDisplay>().card.monsterSickness = false;
+            if (active_cards_slots[i].GetComponent<CardDisplay>().card.disabeled == false)
+            {
+                active_cards_slots[i].GetComponent<CardDisplay>().card.monsterSickness = false;
+            }
+            else
+            {
+                active_cards_slots[i].GetComponent<CardDisplay>().card.disabeled = false;
+            }
         }
     }
 

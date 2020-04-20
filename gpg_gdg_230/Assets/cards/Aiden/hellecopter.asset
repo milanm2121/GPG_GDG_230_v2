@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 29
   name: Hellecopter - Vehicle
-  description: They have the high ground Doge 20 %
+  description: They have the high ground Dodge 20 %
   artwork: {fileID: 0}
   manaCost: 4
   attack: 3

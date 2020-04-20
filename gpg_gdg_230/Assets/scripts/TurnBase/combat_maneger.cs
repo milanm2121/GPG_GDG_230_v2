@@ -46,14 +46,14 @@ public class combat_maneger : MonoBehaviour
                 bool doge=false;
                 for (int a = 0; b.Length > a; a++)
                 {
-                    if (b[a] == "Doge")
+                    if (b[a] == "Dodge")
                     {
                         int chance = Random.Range(1, 10);
                         if (chance >= int.Parse(b[a+1])/10)
                             doge = true;
                         GameObject x=Instantiate(text_feedback, defend[i].transform.position, Quaternion.identity);
                         x.transform.parent = GameObject.Find("card feild").transform;
-                        x.GetComponent<Text>().text = "Doged";
+                        x.GetComponent<Text>().text = "Dodged";
                     }
                 }
                 if (doge == false) {
@@ -87,6 +87,7 @@ public class combat_maneger : MonoBehaviour
                                     if (b.Length>(a+6) && b[a + 6] == "disable")
                                     {
                                         attack[i].GetComponent<CardDisplay>().card.monsterSickness = true;
+                                        attack[i].GetComponent<CardDisplay>().card.disabeled = true;
                                         t.GetComponent<Text>().text += "Disabeled";
                                     }
                                 }
@@ -145,6 +146,7 @@ public class combat_maneger : MonoBehaviour
                                 if (b.Length > (a + 6) && b[a + 6] == "disable")
                                 {
                                     defend[i].GetComponent<CardDisplay>().card.monsterSickness = true;
+                                    defend[i].GetComponent<CardDisplay>().card.disabeled = true;
                                     t.GetComponent<Text>().text += "Disabeled";
                                 }
                             }

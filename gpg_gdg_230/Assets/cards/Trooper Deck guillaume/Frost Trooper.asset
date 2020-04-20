@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 7
   name: Frost Trooper
-  description: 
+  description: 'On Death: Explode for 0 and disable'
   artwork: {fileID: 0}
   manaCost: 3
   attack: 3

@@ -21,6 +21,7 @@ public class ScriptableCard : ScriptableObject
     //This is so that when it is played on the field for the first time
     // it won't be allow to attack.
     public bool monsterSickness = true;
+    public bool disabeled=false;
 
     public bool FuturefurePramCheak=false;
     public static implicit operator ScriptableCard(CardLoading v)

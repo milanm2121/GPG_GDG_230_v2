@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 11
   name: Sniper Trooper
-  description: 
+  description: Haste Doge 50 %
   artwork: {fileID: 0}
   manaCost: 2
   attack: 1

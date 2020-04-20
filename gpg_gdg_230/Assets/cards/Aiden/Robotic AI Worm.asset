@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 30
   name: Robotic AI Worm
-  description: 30% Dodge
+  description: Dodge 30 %
   artwork: {fileID: 0}
   manaCost: 6
   attack: 3

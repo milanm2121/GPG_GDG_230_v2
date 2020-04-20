@@ -1253,10 +1253,12 @@ public class TurnBaseScript : MonoBehaviour
             for(int i=0;int.Parse(units)>i; x++)
             {
                 int card = Random.Range(0, player1Hand.active_cards);
+                player1Hand.active_cards_slots[card].GetComponent<CardDisplay>().card.disabeled = true;
                 if (player1Hand.active_cards_slots[card].GetComponent<CardDisplay>().card.monsterSickness == false)
                 {
                     i++;
                     player1Hand.active_cards_slots[card].GetComponent<CardDisplay>().card.monsterSickness = true;
+                    
                 }
                 if (x == 10)
                 {
@@ -1468,6 +1470,7 @@ public class TurnBaseScript : MonoBehaviour
         for (int i = 0; selectedCards.Count > i; i++)
         {
             selectedCards[i].GetComponent<CardDisplay>().card.monsterSickness = true;
+            selectedCards[i].GetComponent<CardDisplay>().card.disabeled = true;
         }
         actiontime = 2;
     }
