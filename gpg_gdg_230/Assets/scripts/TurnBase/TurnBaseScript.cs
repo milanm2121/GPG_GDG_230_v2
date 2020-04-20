@@ -693,6 +693,10 @@ public class TurnBaseScript : MonoBehaviour
                         case "Enhance":
                             SpellEnhance(message);
                             break;
+
+                        case "Draw":
+                            Draw(message[i + 2]);
+                            break;
                     }
                     break;
 
@@ -713,11 +717,11 @@ public class TurnBaseScript : MonoBehaviour
         {
             for (int i = 0; player1Hand.active_cards > i; i++)
             {
-                string nam = player1Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.name;
-                string[] brokenName = nam.Split(' ','_');
-                for (int a = 0; brokenName.Length > a; a++)
+                string Tag = player1Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.Tags;
+                string[] SplitTags = Tag.Split(' ','_');
+                for (int a = 0; SplitTags.Length > a; a++)
                 {
-                    if (brokenName[a] == unit_type)
+                    if (SplitTags[a] == unit_type)
                     {
                         bool hasEnhancement=false;
                         string Dis = player1Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.description;
@@ -742,11 +746,11 @@ public class TurnBaseScript : MonoBehaviour
         {
             for (int i = 0; player2Hand.active_cards > i; i++)
             {
-                string nam = player2Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.name;
-                string[] brokenName = nam.Split(' ','_');
-                for (int a = 0; brokenName.Length > a; a++)
+                string Tag = player2Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.Tags;
+                string[] splitTags = Tag.Split(' ','_');
+                for (int a = 0; splitTags.Length > a; a++)
                 {
-                    if (brokenName[a] == unit_type)
+                    if (splitTags[a] == unit_type)
                     {
                         bool hasEnhancement = false;
                         string Dis = player2Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.description; 
@@ -784,11 +788,11 @@ public class TurnBaseScript : MonoBehaviour
             {
                 for (int i = 0; player2Hand.active_cards > i; i++)
                 {
-                    string nam = player2Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.name;
-                    string[] brokenName = nam.Split(' ','_');
-                    for (int a = 0; brokenName.Length > a; a++)
+                    string Tags = player2Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.Tags;
+                    string[] BrokenTags = Tags.Split(' ','_');
+                    for (int a = 0; BrokenTags.Length > a; a++)
                     {
-                        if (brokenName[a] == target)
+                        if (BrokenTags[a] == target)
                         {
                             player2Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.health -= int.Parse(damage);
                         }
@@ -810,11 +814,11 @@ public class TurnBaseScript : MonoBehaviour
             {
                 for (int i = 0; player1Hand.active_cards > i; i++)
                 {
-                    string nam = player1Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.name;
-                    string[] brokenName = nam.Split(' ','_');
-                    for (int a = 0; brokenName.Length > a; a++)
+                    string Tags = player1Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.Tags;
+                    string[] splitTags = Tags.Split(' ','_');
+                    for (int a = 0; splitTags.Length > a; a++)
                     {
-                        if (brokenName[a] == target)
+                        if (splitTags[a] == target)
                         {
                             player1Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.health -= int.Parse(damage);
                         }
@@ -829,11 +833,11 @@ public class TurnBaseScript : MonoBehaviour
         {
             for (int i = 0; player1Hand.active_cards > i; i++)
             {
-                string nam = player1Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.name;
-                string[] brokenName = nam.Split(' ','_');
-                for (int a = 0; brokenName.Length > a; a++)
+                string Tags = player1Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.Tags;
+                string[] splitTags = Tags.Split(' ','_');
+                for (int a = 0; splitTags.Length > a; a++)
                 {
-                    if (brokenName[a] == unittype)
+                    if (splitTags[a] == unittype)
                     {
                         player1Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.health += int.Parse(deffence);
                         player1Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.attack += int.Parse(attack);
@@ -845,11 +849,11 @@ public class TurnBaseScript : MonoBehaviour
         {
             for (int i = 0; player2Hand.active_cards > i; i++)
             {
-                string nam = player2Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.name;
-                string[] brokenName = nam.Split(' ','_');
-                for (int a = 0; brokenName.Length > a; a++)
+                string Tags = player2Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.Tags;
+                string[] splitTags = Tags.Split(' ','_');
+                for (int a = 0; splitTags.Length > a; a++)
                 {
-                    if (brokenName[a] == unittype)
+                    if (splitTags[a] == unittype)
                     {
                         player2Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.health += int.Parse(deffence);
                         player2Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.attack += int.Parse(attack);
@@ -857,11 +861,11 @@ public class TurnBaseScript : MonoBehaviour
                 }
             }
         }
-        string x = sc.name;
-        string[] brokenNamex = x.Split(' ', '_');
-        for (int a = 0; brokenNamex.Length > a; a++)
+        string x = sc.Tags;
+        string[] splitTagsx = x.Split(' ', '_');
+        for (int a = 0; splitTagsx.Length > a; a++)
         {
-            if (brokenNamex[a] == unittype)
+            if (splitTagsx[a] == unittype)
             {
                 sc.attack -= int.Parse(attack);
                 sc.health -= int.Parse(deffence);
@@ -903,6 +907,24 @@ public class TurnBaseScript : MonoBehaviour
     }
     #endregion
     #region spells
+
+    void Draw(string number)
+    {
+        if (playerTurn == true)
+        {
+            for(int i=0;int.Parse(number)>i; i++)
+            {
+                player1Hand.pickCard();
+            }
+        }
+        else
+        {
+            for (int i = 0; int.Parse(number) > i; i++)
+            {
+                player1Hand.pickCard();
+            }
+        }
+    }
 
     void earn(string Gold,string Mana)
     {
@@ -994,8 +1016,8 @@ public class TurnBaseScript : MonoBehaviour
         {
             for (int i = 0; player2Hand.active_cards > i; i++)
             {
-                string Decription = player2Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.name;
-                string[] x = Decription.Split(' ');
+                string Tag = player2Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.Tags;
+                string[] x = Tag.Split(' ');
                 List<GameObject> SelectedCards = new List<GameObject>();
                 for (int y = 0; x.Length > y; i++)
                 {
@@ -1142,11 +1164,11 @@ public class TurnBaseScript : MonoBehaviour
                     }
                     else
                     {
-                        string n = player1Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.name;
-                        string[] brokenName = n.Split(' ','_');
-                        for (int x = 0; brokenName.Length > x; x++)
+                        string n = player1Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.Tags;
+                        string[] splitTags = n.Split(' ','_');
+                        for (int x = 0; splitTags.Length > x; x++)
                         {
-                            if (brokenName[x] == unit_type)
+                            if (splitTags[x] == unit_type)
                                 selectedCards.Add(player1Hand.active_cards_slots[i]);
 
                         }
@@ -1175,11 +1197,11 @@ public class TurnBaseScript : MonoBehaviour
                     }
                     else
                     {
-                        string n = player2Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.name;
-                        string[] brokenName = n.Split(' ','_');
-                        for (int x = 0; brokenName.Length > x; x++)
+                        string n = player2Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.Tags;
+                        string[] SplitTags = n.Split(' ','_');
+                        for (int x = 0; SplitTags.Length > x; x++)
                         {
-                            if (brokenName[x] == unit_type)
+                            if (SplitTags[x] == unit_type)
                                 selectedCards.Add(player2Hand.active_cards_slots[i]);
 
                         }
@@ -1198,11 +1220,11 @@ public class TurnBaseScript : MonoBehaviour
                 List<GameObject> selectedCards = new List<GameObject>();
                 for (int i = 0; player2Hand.active_cards > i; i++)
                 {
-                    string n = player2Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.name;
-                    string[] brokenName = n.Split(' ','_');
-                    for (int x = 0; brokenName.Length > x; x++)
+                    string n = player2Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.Tags;
+                    string[] splitTags = n.Split(' ','_');
+                    for (int x = 0; splitTags.Length > x; x++)
                     {
-                        if (brokenName[x] == unit_type)
+                        if (splitTags[x] == unit_type)
                             selectedCards.Add(player2Hand.active_cards_slots[i]);
                         if (selectedCards.Count == int.Parse(nuber))
                             i = player2Hand.active_cards;

@@ -10,6 +10,7 @@ public class ScriptableCard : ScriptableObject
     public int ID;
     public new string name;
     public string description;
+    public string Tags;
 
     public Sprite artwork;
 

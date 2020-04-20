@@ -175,12 +175,12 @@ public class Hand : MonoBehaviour
                         {
                             if (unitType != "unit")
                             {
-                                string compareName;
-                                compareName = selectedCard.GetComponent<CardDisplay>().card.name;
-                                string[] brokenName = compareName.Split(' ','_');
-                                for (int x = 0; brokenName.Length > x; x++)
+                                string Tags;
+                                Tags = selectedCard.GetComponent<CardDisplay>().card.Tags;
+                                string[] splitTags = Tags.Split(' ','_');
+                                for (int x = 0; splitTags.Length > x; x++)
                                 {
-                                    if (brokenName[x] == unitType)
+                                    if (splitTags[x] == unitType)
                                     {
                                         selectedCards.Add(selectedCard);
                                     }
