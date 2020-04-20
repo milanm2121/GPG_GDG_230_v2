@@ -14,11 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 2
   name: Assassin Trooper
-  description: 
+  description: 'On Play: Damage all for 2'
   artwork: {fileID: 0}
   manaCost: 6
   attack: 4
   health: 4
   isSpell: 0
   monsterSickness: 1
+  disabeled: 0
   FuturefurePramCheak: 0

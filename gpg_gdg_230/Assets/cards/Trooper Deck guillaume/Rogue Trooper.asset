@@ -14,11 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 8
   name: Rogue Trooper
-  description: 
+  description: Dodge 45 %  Swam
   artwork: {fileID: 0}
   manaCost: 1
   attack: 3
   health: 3
   isSpell: 0
   monsterSickness: 1
+  disabeled: 0
   FuturefurePramCheak: 0

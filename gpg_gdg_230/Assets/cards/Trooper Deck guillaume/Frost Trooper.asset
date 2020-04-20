@@ -17,8 +17,9 @@ MonoBehaviour:
   description: 'On Death: Explode for 0 and disable'
   artwork: {fileID: 0}
   manaCost: 3
-  attack: 3
+  attack: 1
   health: 2
   isSpell: 0
   monsterSickness: 1
+  disabeled: 0
   FuturefurePramCheak: 0
