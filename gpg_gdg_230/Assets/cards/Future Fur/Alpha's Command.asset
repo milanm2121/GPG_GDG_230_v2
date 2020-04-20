@@ -15,10 +15,13 @@ MonoBehaviour:
   ID: 73
   name: Alpha's Command
   description: 'Spell: summon 3 Pup_Cybernetic_Wolf'
+  Tags: Alpha's Command
   artwork: {fileID: 0}
   manaCost: 3
   attack: 0
   health: 0
   isSpell: 1
   monsterSickness: 1
+  disabeled: 0
   FuturefurePramCheak: 0
+  Robert_loop_effect: 0

@@ -15,10 +15,13 @@ MonoBehaviour:
   ID: 13
   name: Super Trooper
   description: The best kind of trooper
+  Tags: Super Trooper
   artwork: {fileID: 0}
   manaCost: 8
   attack: 8
   health: 8
   isSpell: 0
   monsterSickness: 1
+  disabeled: 0
   FuturefurePramCheak: 0
+  Robert_loop_effect: 0

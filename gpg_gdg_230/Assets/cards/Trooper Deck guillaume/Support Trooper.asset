@@ -15,10 +15,13 @@ MonoBehaviour:
   ID: 14
   name: Support Trooper
   description: 'On Play: Boost all Trooper 0 attack 1 health'
+  Tags: Support Trooper
   artwork: {fileID: 0}
   manaCost: 4
   attack: 2
   health: 3
   isSpell: 0
   monsterSickness: 1
+  disabeled: 0
   FuturefurePramCheak: 0
+  Robert_loop_effect: 0

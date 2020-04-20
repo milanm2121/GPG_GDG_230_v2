@@ -15,6 +15,7 @@ MonoBehaviour:
   ID: 0
   name: Spider-Mech-Swarm
   description: Swarm
+  Tags: Machine
   artwork: {fileID: 0}
   manaCost: 0
   attack: 1

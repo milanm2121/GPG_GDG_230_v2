@@ -13,12 +13,15 @@ MonoBehaviour:
   m_Name: Hoverboard Troop
   m_EditorClassIdentifier: 
   ID: 35
-  name: Hoverboard Trooper - Vehicle
+  name: Hoverboard Trooper
   description: Dodge 10 %
+  Tags: Hoverboard Trooper - Vehicle
   artwork: {fileID: 0}
   manaCost: 3
   attack: 2
   health: 1
   isSpell: 0
   monsterSickness: 1
+  disabeled: 0
   FuturefurePramCheak: 0
+  Robert_loop_effect: 0

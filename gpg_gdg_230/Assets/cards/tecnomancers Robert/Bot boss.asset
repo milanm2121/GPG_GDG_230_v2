@@ -15,6 +15,7 @@ MonoBehaviour:
   ID: 0
   name: Bot boss
   description: '. Boost all Defender-Bot 1 attack 1 health . Summon 1 Defender-Bot '
+  Tags: 
   artwork: {fileID: 0}
   manaCost: 5
   attack: 1

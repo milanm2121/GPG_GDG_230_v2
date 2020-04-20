@@ -13,12 +13,15 @@ MonoBehaviour:
   m_Name: hellecopter
   m_EditorClassIdentifier: 
   ID: 29
-  name: Hellecopter - Vehicle
+  name: Hellecopter
   description: They have the high ground Dodge 20 %
+  Tags: Hellecopter - Vehicle
   artwork: {fileID: 0}
   manaCost: 4
   attack: 3
   health: 4
   isSpell: 0
   monsterSickness: 1
+  disabeled: 0
   FuturefurePramCheak: 0
+  Robert_loop_effect: 0

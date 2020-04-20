@@ -15,10 +15,13 @@ MonoBehaviour:
   ID: 18
   name: The Leader
   description: 'On Play: Summon 4 Buff_Trooper'
+  Tags: The Leader
   artwork: {fileID: 0}
   manaCost: 10
   attack: 9
   health: 9
   isSpell: 0
   monsterSickness: 1
+  disabeled: 0
   FuturefurePramCheak: 0
+  Robert_loop_effect: 0

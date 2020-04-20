@@ -13,12 +13,15 @@ MonoBehaviour:
   m_Name: Robot Biker Troop
   m_EditorClassIdentifier: 
   ID: 33
-  name: Robot Biker Troop - Vehicle
+  name: Robot Biker Troop
   description: Zooms past enemy bullets  Dodge 15 %
+  Tags: Robot Biker Troop - Vehicle
   artwork: {fileID: 0}
   manaCost: 3
   attack: 3
   health: 2
   isSpell: 0
   monsterSickness: 1
+  disabeled: 0
   FuturefurePramCheak: 0
+  Robert_loop_effect: 0

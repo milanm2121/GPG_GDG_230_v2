@@ -15,6 +15,7 @@ MonoBehaviour:
   ID: 78
   name: Armored Drone
   description: 
+  Tags: Machine
   artwork: {fileID: 0}
   manaCost: 3
   attack: 3

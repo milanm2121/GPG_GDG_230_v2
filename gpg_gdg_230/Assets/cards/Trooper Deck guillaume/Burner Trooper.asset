@@ -15,10 +15,13 @@ MonoBehaviour:
   ID: 4
   name: Burner Trooper
   description: 'On Play: Damage all for 2'
+  Tags: Burner Trooper
   artwork: {fileID: 0}
   manaCost: 5
   attack: 3
   health: 2
   isSpell: 0
   monsterSickness: 1
+  disabeled: 0
   FuturefurePramCheak: 0
+  Robert_loop_effect: 0

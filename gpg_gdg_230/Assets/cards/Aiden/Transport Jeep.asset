@@ -13,12 +13,15 @@ MonoBehaviour:
   m_Name: Transport Jeep
   m_EditorClassIdentifier: 
   ID: 34
-  name: Transport Jeep - Vehicle
+  name: Transport Jeep
   description: 'On Play: Summon 4 Trooper'
+  Tags: Transport Jeep - Vehicle
   artwork: {fileID: 0}
   manaCost: 6
   attack: 2
   health: 2
   isSpell: 0
   monsterSickness: 1
+  disabeled: 0
   FuturefurePramCheak: 0
+  Robert_loop_effect: 0

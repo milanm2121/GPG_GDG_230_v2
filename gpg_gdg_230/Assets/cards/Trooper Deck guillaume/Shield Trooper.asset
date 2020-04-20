@@ -15,10 +15,13 @@ MonoBehaviour:
   ID: 10
   name: Shield Trooper
   description: Enduring
+  Tags: Shield Trooper
   artwork: {fileID: 0}
   manaCost: 2
   attack: 1
   health: 3
   isSpell: 0
   monsterSickness: 1
+  disabeled: 0
   FuturefurePramCheak: 0
+  Robert_loop_effect: 0

@@ -13,12 +13,15 @@ MonoBehaviour:
   m_Name: AI Turret Jeep
   m_EditorClassIdentifier: 
   ID: 38
-  name: AI Turret Jeep - Vehicle
+  name: AI Turret Jeep
   description: A jeep with a self operating AI turret Enduring
+  Tags: AI Turret Jeep - Vehicle
   artwork: {fileID: 0}
   manaCost: 2
   attack: 2
   health: 2
   isSpell: 0
   monsterSickness: 1
+  disabeled: 0
   FuturefurePramCheak: 0
+  Robert_loop_effect: 0

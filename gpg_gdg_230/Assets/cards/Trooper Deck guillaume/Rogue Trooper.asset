@@ -15,6 +15,7 @@ MonoBehaviour:
   ID: 8
   name: Rogue Trooper
   description: Dodge 45 %  Swam
+  Tags: Rogue Trooper
   artwork: {fileID: 0}
   manaCost: 1
   attack: 3
@@ -23,3 +24,4 @@ MonoBehaviour:
   monsterSickness: 1
   disabeled: 0
   FuturefurePramCheak: 0
+  Robert_loop_effect: 0

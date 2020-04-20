@@ -13,12 +13,15 @@ MonoBehaviour:
   m_Name: Super Magnet Car
   m_EditorClassIdentifier: 
   ID: 32
-  name: Super Magnet Car - Vehicle
+  name: Super Magnet Car
   description: Immobile  doge 70 %
+  Tags: Super Magnet Car - Vehicle
   artwork: {fileID: 0}
   manaCost: 5
   attack: 2
   health: 2
   isSpell: 0
   monsterSickness: 1
+  disabeled: 0
   FuturefurePramCheak: 0
+  Robert_loop_effect: 0

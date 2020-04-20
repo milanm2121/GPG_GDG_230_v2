@@ -15,10 +15,13 @@ MonoBehaviour:
   ID: 20
   name: Trooper
   description: They been trained to kill
+  Tags: Trooper
   artwork: {fileID: 0}
   manaCost: 3
   attack: 3
   health: 3
   isSpell: 0
   monsterSickness: 0
+  disabeled: 0
   FuturefurePramCheak: 0
+  Robert_loop_effect: 0

@@ -16,10 +16,13 @@ MonoBehaviour:
   name: Lone Cybernetic Wolf
   description: When Lone Cybernetic Wolf is the only unit on the field it gains 2
     attack 2 health
+  Tags: Lone Cybernetic Wolf
   artwork: {fileID: 0}
   manaCost: 5
   attack: 3
   health: 5
   isSpell: 0
   monsterSickness: 1
+  disabeled: 0
   FuturefurePramCheak: 0
+  Robert_loop_effect: 0

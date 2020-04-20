@@ -15,10 +15,13 @@ MonoBehaviour:
   ID: 43
   name: Portable Drone
   description: Dodge 60 %
+  Tags: Portable Drone
   artwork: {fileID: 0}
-  manaCost: 0
-  attack: 0
-  health: 0
+  manaCost: 5
+  attack: 3
+  health: 1
   isSpell: 0
   monsterSickness: 1
+  disabeled: 0
   FuturefurePramCheak: 0
+  Robert_loop_effect: 0

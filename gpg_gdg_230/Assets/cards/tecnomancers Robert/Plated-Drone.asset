@@ -14,9 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 85
   name: Plated-Drone
-  description: 'On Play: Boost all Plated-Drone 1 attack 1 health '
+  description: 'On Play: Boost all Plated-Drone 0 attack 1 health '
+  Tags: Machine
   artwork: {fileID: 0}
-  manaCost: 0
+  manaCost: 4
   attack: 2
   health: 7
   isSpell: 0

@@ -15,10 +15,13 @@ MonoBehaviour:
   ID: 23
   name: Trooper_in_trainig
   description: 
+  Tags: Trooper_in_trainig
   artwork: {fileID: 0}
   manaCost: 0
   attack: 1
   health: 1
   isSpell: 0
   monsterSickness: 1
+  disabeled: 0
   FuturefurePramCheak: 0
+  Robert_loop_effect: 0

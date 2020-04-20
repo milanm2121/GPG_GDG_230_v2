@@ -15,6 +15,7 @@ MonoBehaviour:
   ID: 79
   name: Optimised Drone
   description: 
+  Tags: Machine
   artwork: {fileID: 0}
   manaCost: 4
   attack: 4

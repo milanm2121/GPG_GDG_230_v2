@@ -15,10 +15,13 @@ MonoBehaviour:
   ID: 12
   name: Quick Trooper
   description: 'On Play: Damage all for 1'
+  Tags: Quick Trooper
   artwork: {fileID: 0}
   manaCost: 3
   attack: 2
   health: 2
   isSpell: 0
   monsterSickness: 1
+  disabeled: 0
   FuturefurePramCheak: 0
+  Robert_loop_effect: 0

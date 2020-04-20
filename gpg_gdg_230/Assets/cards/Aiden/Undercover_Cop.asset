@@ -15,10 +15,13 @@ MonoBehaviour:
   ID: 28
   name: Undercover_Cop
   description: 'On Play: Earn 1 gold 1 Power Haste Charged'
+  Tags: Undercover_Cop
   artwork: {fileID: 0}
   manaCost: 3
   attack: 1
   health: 2
   isSpell: 0
   monsterSickness: 1
+  disabeled: 0
   FuturefurePramCheak: 0
+  Robert_loop_effect: 0

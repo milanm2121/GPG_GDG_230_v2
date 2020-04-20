@@ -15,6 +15,7 @@ MonoBehaviour:
   ID: 83
   name: Sheild Drone
   description: Immobile
+  Tags: Machine
   artwork: {fileID: 0}
   manaCost: 1
   attack: 0

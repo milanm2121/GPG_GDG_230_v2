@@ -15,6 +15,7 @@ MonoBehaviour:
   ID: 77
   name: Assult Drone
   description: 
+  Tags: Machine
   artwork: {fileID: 0}
   manaCost: 3
   attack: 2

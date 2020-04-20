@@ -15,6 +15,7 @@ MonoBehaviour:
   ID: 18
   name: Security Trooper
   description: 'On Play: Enhance all Trooper with Enduring'
+  Tags: Security Trooper
   artwork: {fileID: 0}
   manaCost: 7
   attack: 2
@@ -23,3 +24,4 @@ MonoBehaviour:
   monsterSickness: 1
   disabeled: 0
   FuturefurePramCheak: 0
+  Robert_loop_effect: 0

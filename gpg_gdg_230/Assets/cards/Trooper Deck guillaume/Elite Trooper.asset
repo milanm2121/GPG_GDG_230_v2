@@ -15,6 +15,7 @@ MonoBehaviour:
   ID: 6
   name: Elite-Trooper
   description: 'On Play: Boost all Elite-Trooper 1 attack 1 health'
+  Tags: Elite-Trooper
   artwork: {fileID: 0}
   manaCost: 4
   attack: 3
