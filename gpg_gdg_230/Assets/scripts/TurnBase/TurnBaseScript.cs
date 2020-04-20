@@ -139,7 +139,16 @@ public class TurnBaseScript : MonoBehaviour
                         player_active_ui.SetActive(true);
                         AI_active_ui.SetActive(false);
                         if (turns >= 2)
+                        {
                             player1Hand.MonsterSicknessIsOver();
+                            for(int i = 0; player1Hand.active_cards > i; i++)
+                            {
+                                if (player1Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.Robert_loop_effect == true)
+                                {
+                                    ReadTheCard(player1Hand.active_cards_slots[i].GetComponent<CardDisplay>().card);
+                                }
+                            }
+                        }
 
                     }
                     else
@@ -147,8 +156,16 @@ public class TurnBaseScript : MonoBehaviour
                         player_active_ui.SetActive(false);
                         AI_active_ui.SetActive(true);
                         if (turns >= 2)
+                        {
                             player2Hand.MonsterSicknessIsOver();
-
+                            for (int i = 0; player2Hand.active_cards > i; i++)
+                            {
+                                if (player2Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.Robert_loop_effect == true)
+                                {
+                                    ReadTheCard(player2Hand.active_cards_slots[i].GetComponent<CardDisplay>().card);
+                                }
+                            }
+                        }
                     }
                 }
                 GainManaAndCoin();
@@ -316,12 +333,17 @@ public class TurnBaseScript : MonoBehaviour
         player1Hand.playerGold = defaultGold;
         player2Hand.playerGold = defaultGold;
 
-        player1Hand.playerGold += 1;
-        player2Hand.playerGold += 1;
+        if (player1Hand.playerGold < defaultGold)
+            player1Hand.playerGold += 1;
+        if (player2Hand.playerGold < defaultMana1)
+            player2Hand.playerGold += 1;
         defaultGold += 1;
 
-        player1Hand.playerMana = defaultMana1;
-        player2Hand.playerMana = defaultMana2;
+        if(player1Hand.playerMana<defaultMana1)
+            player1Hand.playerMana = defaultMana1;
+
+        if (player2Hand.playerMana < defaultMana2)
+            player2Hand.playerMana = defaultMana2;
 
         if (playerTurn == true)
         {
@@ -835,8 +857,16 @@ public class TurnBaseScript : MonoBehaviour
                 }
             }
         }
-        sc.attack -= int.Parse(attack);
-        sc.health -= int.Parse(deffence);
+        string x = sc.name;
+        string[] brokenNamex = x.Split(' ', '_');
+        for (int a = 0; brokenNamex.Length > a; a++)
+        {
+            if (brokenNamex[a] == unittype)
+            {
+                sc.attack -= int.Parse(attack);
+                sc.health -= int.Parse(deffence);
+            }
+        }
     }
 
     void PasSummon(string unitcount, string unit)

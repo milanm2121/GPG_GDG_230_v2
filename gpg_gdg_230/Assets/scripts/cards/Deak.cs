@@ -125,7 +125,8 @@ public class Deak : MonoBehaviour
             attack = Random_card_index.attack,
             manaCost = Random_card_index.manaCost,
             description = Random_card_index.description,
-            isSpell = Random_card_index.isSpell
+            isSpell = Random_card_index.isSpell,
+            Robert_loop_effect = Random_card_index.Robert_loop_effect
         };
         
 

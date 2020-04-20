@@ -24,6 +24,9 @@ public class ScriptableCard : ScriptableObject
     public bool disabeled=false;
 
     public bool FuturefurePramCheak=false;
+
+    public bool Robert_loop_effect;
+
     public static implicit operator ScriptableCard(CardLoading v)
     {
         throw new NotImplementedException();

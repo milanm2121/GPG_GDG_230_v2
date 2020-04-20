@@ -13,12 +13,14 @@ MonoBehaviour:
   m_Name: Elite Trooper
   m_EditorClassIdentifier: 
   ID: 6
-  name: Elite_Trooper
-  description: 'On Play: Boost all Elite_Trooper 1 attack 1 health'
+  name: Elite-Trooper
+  description: 'On Play: Boost all Elite-Trooper 1 attack 1 health'
   artwork: {fileID: 0}
   manaCost: 4
   attack: 3
   health: 3
   isSpell: 0
   monsterSickness: 1
+  disabeled: 0
   FuturefurePramCheak: 0
+  Robert_loop_effect: 0
