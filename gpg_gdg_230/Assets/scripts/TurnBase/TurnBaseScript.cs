@@ -697,8 +697,21 @@ public class TurnBaseScript : MonoBehaviour
                 {
                     if (brokenName[a] == unit_type)
                     {
-                        player1Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.description += " " + enhancement;
-                        player1Hand.active_cards_slots[i].GetComponent<CardDisplay>().descriptionText.text += " " + enhancement;
+                        bool hasEnhancement=false;
+                        string Dis = player1Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.description;
+                        string[] brokenDiscription = Dis.Split(' ', '_');
+                        for (int b = 0; brokenDiscription.Length > b; b++)
+                        {
+                            if (brokenDiscription[b] == enhancement)
+                            {
+                                hasEnhancement = true;
+                            }
+                        }
+                        if (hasEnhancement == false)
+                        {
+                            player1Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.description += " " + enhancement;
+                            player1Hand.active_cards_slots[i].GetComponent<CardDisplay>().descriptionText.text += " " + enhancement;
+                        }
                     }
                 }
             }
@@ -713,8 +726,21 @@ public class TurnBaseScript : MonoBehaviour
                 {
                     if (brokenName[a] == unit_type)
                     {
-                        player2Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.description += " " + enhancement;
-                        player2Hand.active_cards_slots[i].GetComponent<CardDisplay>().descriptionText.text += " " + enhancement;
+                        bool hasEnhancement = false;
+                        string Dis = player2Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.description; 
+                        string[] brokenDiscription = Dis.Split(' ', '_');
+                        for (int b = 0; brokenDiscription.Length > b; b++)
+                        {
+                            if (brokenDiscription[b] == enhancement)
+                            {
+                                hasEnhancement = true;
+                            }
+                        }
+                        if (hasEnhancement == false)
+                        {
+                            player2Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.description += " " + enhancement;
+                            player2Hand.active_cards_slots[i].GetComponent<CardDisplay>().descriptionText.text += " " + enhancement;
+                        }
                     }
                 }
             }
