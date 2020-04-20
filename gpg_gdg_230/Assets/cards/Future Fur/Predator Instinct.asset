@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 75
   name: Predator Instinct
-  description: 
+  description: 'Spell: Enhance with Charged Enduring'
   artwork: {fileID: 0}
   manaCost: 3
   attack: 0

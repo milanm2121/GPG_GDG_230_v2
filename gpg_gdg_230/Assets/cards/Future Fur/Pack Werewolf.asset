@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 65
   name: Pack Werewolf
-  description: 
+  description: 'On Play: Boost all Werewolf 1 attack 1 health'
   artwork: {fileID: 0}
   manaCost: 4
   attack: 2

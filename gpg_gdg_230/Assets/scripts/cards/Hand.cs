@@ -106,7 +106,7 @@ public class Hand : MonoBehaviour
 
             if (Vector2.Distance(chosen_magic_card.transform.position, Vector2.zero) < 0.1f) {
                 deck.graveyard.Add(chosen_magic_card.GetComponent<CardDisplay>().card);
-                Destroy(chosen_magic_card, 5);
+                Destroy(chosen_magic_card, 3);
             }
             chosen_magic_card.transform.localScale = Vector3.Lerp(chosen_magic_card.transform.localScale, new Vector3(1,1,0), 0.5f);
             chosen_magic_card.transform.SetAsLastSibling();
@@ -629,7 +629,7 @@ public class Hand : MonoBehaviour
         unitType = cardtype;
         selectedCards = cardSelection;
         selectingCards = true;
-        yield return new WaitUntil(() => TBS.state != TurnBaseScript.TurnState.Nothing);
+        yield return new WaitUntil(() => TBS.state != TurnBaseScript.TurnState.CardPlayed);
         selectingCards = false;
     }
 
@@ -637,7 +637,7 @@ public class Hand : MonoBehaviour
     {
         selectedCards = cardSelection;
         selectingEnemyCards = true;
-        yield return new WaitUntil(() => TBS.state != TurnBaseScript.TurnState.Nothing);
+        yield return new WaitUntil(() => TBS.state != TurnBaseScript.TurnState.CardPlayed);
         selectingEnemyCards = false;
     }
 
