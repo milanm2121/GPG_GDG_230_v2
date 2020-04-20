@@ -123,27 +123,30 @@ public class combat_maneger : MonoBehaviour
                     t.transform.parent = GameObject.Find("card feild").transform;
                     t.GetComponent<Text>().color = Color.red;
                     t.GetComponent<Text>().text = "-" + defend[i].GetComponent<CardDisplay>().card.attack.ToString();
-                    
+
 
                     //On Death: Explode for (damage) and(optional) Disable
-                    Decription = attack[i].GetComponent<CardDisplay>().card.description;
-                    b = Decription.Split(' ');
-                    for (int a = 0; b.Length > a; a++)
+                    if (attack[i].GetComponent<CardDisplay>().card.health <= 0)
                     {
-                        if (b[a] == "On" && b[a + 1] == "Death:")
+                        Decription = attack[i].GetComponent<CardDisplay>().card.description;
+                        b = Decription.Split(' ');
+                        for (int a = 0; b.Length > a; a++)
                         {
-                            t = Instantiate(text_feedback, attack[i].transform.position, Quaternion.identity);
-                            t.transform.parent = GameObject.Find("card feild").transform;
-                            t.GetComponent<Text>().color = Color.yellow;
-                            if (b[a + 2] == "Explode")
+                            if (b[a] == "On" && b[a + 1] == "Death:")
                             {
-                                attack[i].GetComponent<CardDisplay>().card.health -= int.Parse(b[a + 4]);
-                                t.GetComponent<Text>().text += "Exploded";
-                            }
-                            if (b.Length > (a + 6) && b[a + 6] == "disable")
-                            {
-                                attack[i].GetComponent<CardDisplay>().card.monsterSickness = true;
-                                t.GetComponent<Text>().text += "Disabeled";
+                                t = Instantiate(text_feedback, attack[i].transform.position, Quaternion.identity);
+                                t.transform.parent = GameObject.Find("card feild").transform;
+                                t.GetComponent<Text>().color = Color.yellow;
+                                if (b[a + 2] == "Explode")
+                                {
+                                    defend[i].GetComponent<CardDisplay>().card.health -= int.Parse(b[a + 4]);
+                                    t.GetComponent<Text>().text += "Exploded";
+                                }
+                                if (b.Length > (a + 6) && b[a + 6] == "disable")
+                                {
+                                    defend[i].GetComponent<CardDisplay>().card.monsterSickness = true;
+                                    t.GetComponent<Text>().text += "Disabeled";
+                                }
                             }
                         }
                     }

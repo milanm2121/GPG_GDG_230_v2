@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 68
   name: Unstable Werewolf
-  description: 
+  description: 'On Death: Explode for 1'
   artwork: {fileID: 0}
   manaCost: 2
   attack: 2

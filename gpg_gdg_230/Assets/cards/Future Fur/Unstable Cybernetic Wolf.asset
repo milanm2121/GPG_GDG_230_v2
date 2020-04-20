@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 60
   name: Unstable Cybernetic Wolf
-  description: 
+  description: 'On Death: Explode for 1'
   artwork: {fileID: 0}
   manaCost: 1
   attack: 1
-  health: 1
+  health: 2
   isSpell: 0
   monsterSickness: 1
   FuturefurePramCheak: 0
