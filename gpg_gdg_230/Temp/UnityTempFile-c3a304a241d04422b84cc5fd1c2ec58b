@@ -294,6 +294,7 @@
 "Assets/card_reffence.cs"
 "Assets/Combat_script.cs"
 "Assets/deck_stats.cs"
+"Assets/effect_text.cs"
 "Assets/Guillaume and Dylan/Dylan Messing Around/_Scripts/CardDisplay.cs"
 "Assets/Guillaume and Dylan/Dylan Messing Around/_Scripts/ScriptableCard.cs"
 "Assets/Guillaume and Dylan/Guillaume Messing Around/Script/CreatureCards/CardViz.cs"

@@ -14,10 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 22
   name: Traning Camp
-  description: 'Spell: summon 3 trooper_in_trainig'
+  description: 'Spell: summon 3 Trooper_in_trainig'
   artwork: {fileID: 0}
   manaCost: 3
   attack: 0
   health: 0
   isSpell: 1
   monsterSickness: 0
+  FuturefurePramCheak: 0

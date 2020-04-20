@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 25
   name: we need to prpare
-  description: 'sacrifice: 1 Trooper Spell: summon 2 trooper'
+  description: 'sacrifice: 1 Trooper Spell: summon 2 Trooper'
   artwork: {fileID: 0}
   manaCost: 2
   attack: 0

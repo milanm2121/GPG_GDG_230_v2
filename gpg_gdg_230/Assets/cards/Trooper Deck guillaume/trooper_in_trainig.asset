@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: trooper_in_trainig
   m_EditorClassIdentifier: 
   ID: 23
-  name: trooper_in_trainig
+  name: Trooper_in_trainig
   description: 
   artwork: {fileID: 0}
   manaCost: 0
@@ -21,3 +21,4 @@ MonoBehaviour:
   health: 1
   isSpell: 0
   monsterSickness: 1
+  FuturefurePramCheak: 0

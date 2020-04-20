@@ -10,17 +10,19 @@ public class effect_text : MonoBehaviour
     void Start()
     {
         text = GetComponent<Text>();
+        transform.localScale = new Vector3(1, 1, 0);
     }
 
     // Update is called once per frame
     void Update()
     {
         Color c = text.color;
-        c.a -= (0.1f * Time.deltaTime);
+        c.a -= (0.5f * Time.deltaTime);
         text.color = c;
         if (c.a <= 0)
         {
             Destroy(gameObject);
         }
+        transform.position += new Vector3(0, 0.5f, 0) * Time.deltaTime;
     }
 }

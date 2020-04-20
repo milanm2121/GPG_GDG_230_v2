@@ -271,7 +271,7 @@ public class Hand : MonoBehaviour
                     else
                     {
 
-                        print("x");
+                       
                       // StartCoroutine(Ai_turn_control(TurnBaseScript.TurnState.Attack));
 
                     }
@@ -593,7 +593,7 @@ public class Hand : MonoBehaviour
             int x = 0;
             if (state != TurnBaseScript.TurnState.Attack)
             {
-                print("a");
+                
                 x = 1;
             }
             stateTick = true;
