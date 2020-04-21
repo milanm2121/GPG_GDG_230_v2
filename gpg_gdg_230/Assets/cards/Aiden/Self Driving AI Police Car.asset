@@ -15,7 +15,7 @@ MonoBehaviour:
   ID: 47
   name: Self Driving AI Police Car
   description: 'Spell: summon 2 Undercover_Cop'
-  Tags: 
+  Tags: spell
   artwork: {fileID: 0}
   manaCost: 3
   attack: 0

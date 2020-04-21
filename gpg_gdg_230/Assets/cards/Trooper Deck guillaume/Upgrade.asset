@@ -15,10 +15,13 @@ MonoBehaviour:
   ID: 26
   name: Upgrade
   description: 'Spell: upgrade 1 Trooper 2 attack 3 deffence'
+  Tags: spell
   artwork: {fileID: 0}
   manaCost: 3
   attack: 0
   health: 0
   isSpell: 1
   monsterSickness: 0
+  disabeled: 0
   FuturefurePramCheak: 0
+  Robert_loop_effect: 0

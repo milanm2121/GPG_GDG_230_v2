@@ -15,7 +15,7 @@ MonoBehaviour:
   ID: 48
   name: Cybernetic Visual Aid
   description: 'Spell: upgrade all Trooper 1 attack 3 health'
-  Tags: Cybernetic Visual Aid
+  Tags: spell
   artwork: {fileID: 0}
   manaCost: 5
   attack: 0

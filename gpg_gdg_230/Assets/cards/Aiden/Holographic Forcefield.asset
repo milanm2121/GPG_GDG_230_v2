@@ -15,7 +15,7 @@ MonoBehaviour:
   ID: 50
   name: Holographic Forcefield
   description: 'Spell: upgrade all units -2 attack 3 health'
-  Tags: Holographic Forcefield
+  Tags: spell
   artwork: {fileID: 0}
   manaCost: 5
   attack: 0

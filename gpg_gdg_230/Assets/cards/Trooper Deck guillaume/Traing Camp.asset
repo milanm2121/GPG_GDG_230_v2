@@ -15,7 +15,7 @@ MonoBehaviour:
   ID: 22
   name: Traning Camp
   description: 'Spell: summon 3 Trooper_in_trainig'
-  Tags: Traning Camp
+  Tags: spell
   artwork: {fileID: 0}
   manaCost: 3
   attack: 0

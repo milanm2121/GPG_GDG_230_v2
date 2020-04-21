@@ -15,6 +15,7 @@ MonoBehaviour:
   ID: 25
   name: we need to prpare
   description: 'Spell: Draw 2'
+  Tags: spell
   artwork: {fileID: 0}
   manaCost: 2
   attack: 0

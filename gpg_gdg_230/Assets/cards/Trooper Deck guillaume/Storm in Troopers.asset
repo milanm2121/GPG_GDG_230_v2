@@ -15,7 +15,7 @@ MonoBehaviour:
   ID: 21
   name: Storm in Troopers
   description: 'Spell: upgrade all Trooper 1 attack 1 deffence'
-  Tags: 
+  Tags: spell
   artwork: {fileID: 0}
   manaCost: 3
   attack: 0
