@@ -15,7 +15,7 @@ MonoBehaviour:
   ID: 41
   name: AI Artillery Nanite Gun
   description: Beware the power of nanites Enduring Charged
-  Tags: AI Artillery Nanite Gun
+  Tags: AI Artillery Nanite Gun Machine
   artwork: {fileID: 0}
   manaCost: 5
   attack: 4

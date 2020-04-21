@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 80
   name: Master of Turrets
-  description: '. Boost all Turrent 1 attack 4 health . Summon 1 Turrent '
+  description: . Boost all Turrent 1 attack 4 health . Summon 1 Turrent Every turn
+  Tags: 
   artwork: {fileID: 0}
   manaCost: 3
   attack: 1

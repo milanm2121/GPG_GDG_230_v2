@@ -15,7 +15,7 @@ MonoBehaviour:
   ID: 36
   name: AI Artillery Gun
   description: 'On Play: Damage all for 3 Swarm'
-  Tags: AI Artillery Gun
+  Tags: AI Artillery Gun Machine
   artwork: {fileID: 0}
   manaCost: 4
   attack: 4

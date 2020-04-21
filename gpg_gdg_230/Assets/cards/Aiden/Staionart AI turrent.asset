@@ -15,7 +15,7 @@ MonoBehaviour:
   ID: 31
   name: Stationary AI Turret
   description: Immobile Enduring
-  Tags: Stationary AI Turret
+  Tags: Stationary AI Turret Machine
   artwork: {fileID: 0}
   manaCost: 5
   attack: 4

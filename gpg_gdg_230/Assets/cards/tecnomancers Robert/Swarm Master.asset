@@ -14,7 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 81
   name: Swarm Master
-  description: '. Boost all Spider-Mech-Swarm 3 attack 1 health . Summon 1 Spider-Mech-Swarm '
+  description: . Boost all Spider-Mech-Swarm 3 attack 1 health . Summon 1 Spider-Mech-Swarm
+    Every turn
+  Tags: 
   artwork: {fileID: 0}
   manaCost: 4
   attack: 2

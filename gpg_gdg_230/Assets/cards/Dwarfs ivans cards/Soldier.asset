@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 117
   name: Soldier
-  description: 
-  Tags: Soldier
+  description: AI BOT
+  Tags: Soldier Machine
   artwork: {fileID: 0}
   manaCost: 1
   attack: 2

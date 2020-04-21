@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 118
   name: Fighter
-  description: 
-  Tags: Fighter
+  description: Larger and tougher than AI BOT
+  Tags: Fighter Machine
   artwork: {fileID: 0}
   manaCost: 2
   attack: 3

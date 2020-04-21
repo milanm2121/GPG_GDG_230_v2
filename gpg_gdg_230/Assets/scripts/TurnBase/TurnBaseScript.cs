@@ -614,11 +614,11 @@ public class TurnBaseScript : MonoBehaviour
                             break;
                         // number of units
                         case "convert":
-                            convert(message[i + 1]);
+                            convert(message[i + 2]);
                             break;
                         // number of units
-                        case "dissable":
-                            disable(message[i + 1]);
+                        case "disable":
+                            disable(message[i + 2]);
                             break;
 
                         case "enhance":
@@ -696,7 +696,7 @@ public class TurnBaseScript : MonoBehaviour
                             convert(message[i+2]);
                             break;
                         // number of units
-                        case "dissable":
+                        case "disable":
                             disable(message[i+2]);
                             break;
 

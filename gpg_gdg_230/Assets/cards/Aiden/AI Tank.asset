@@ -15,7 +15,7 @@ MonoBehaviour:
   ID: 26
   name: AI Tank
   description: Afuteristic tank that function on its own Enduring
-  Tags: AI Tank
+  Tags: AI Tank Machine
   artwork: {fileID: 0}
   manaCost: 6
   attack: 4

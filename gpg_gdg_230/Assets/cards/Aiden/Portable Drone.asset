@@ -15,7 +15,7 @@ MonoBehaviour:
   ID: 43
   name: Portable Drone
   description: Dodge 60 %
-  Tags: Portable Drone
+  Tags: Portable Drone Machine
   artwork: {fileID: 0}
   manaCost: 5
   attack: 3

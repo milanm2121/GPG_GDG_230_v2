@@ -76,7 +76,7 @@ public class Hand : MonoBehaviour
 
     //chosen magic card
     public GameObject chosen_magic_card;
-
+    bool graveTick=false;
     // Start is called before the first frame update
     void Start()
     {
@@ -104,9 +104,10 @@ public class Hand : MonoBehaviour
         {
             chosen_magic_card.transform.position = Vector2.Lerp(chosen_magic_card.transform.position, Vector2.zero, 0.5f);
 
-            if (Vector2.Distance(chosen_magic_card.transform.position, Vector2.zero) < 0.1f) {
+            if (Vector2.Distance(chosen_magic_card.transform.position, Vector2.zero) < 0.1f && graveTick==false) {
                 deck.graveyard.Add(chosen_magic_card.GetComponent<CardDisplay>().card);
                 Destroy(chosen_magic_card, 3);
+                graveTick = true;
             }
             chosen_magic_card.transform.localScale = Vector3.Lerp(chosen_magic_card.transform.localScale, new Vector3(1,1,0), 0.5f);
             chosen_magic_card.transform.SetAsLastSibling();
@@ -486,8 +487,8 @@ public class Hand : MonoBehaviour
                 picked_card.GetComponent<CardDisplay>().active = true;
 
                 chosen_magic_card = picked_card;
-                
 
+                graveTick = false;
             }
         } 
     }

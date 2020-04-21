@@ -15,7 +15,7 @@ MonoBehaviour:
   ID: 40
   name: AI Artillery Laser Gun
   description: 'On Play: Damage Vehicle for 5'
-  Tags: AI Artillery Laser Gun
+  Tags: AI Artillery Laser Gun Machine
   artwork: {fileID: 0}
   manaCost: 5
   attack: 4
