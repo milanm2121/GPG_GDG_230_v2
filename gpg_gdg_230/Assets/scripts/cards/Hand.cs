@@ -210,15 +210,15 @@ public class Hand : MonoBehaviour
             else
             {
                 //clikink cards
-                if (selectedCard != null && (Input.GetMouseButtonDown(0) || hold!=0))
+                if (selectedCard != null && (Input.GetMouseButtonDown(0)))// || hold!=0))
                 {
                     //for clicking cards in hand to move to the feild
                     if (active == true && TBS.state == TurnBaseScript.TurnState.PlayerTurn &&Input.GetMouseButton(0))
                     {
-                        hold += Time.deltaTime;
-                        if (hold >= 0.3f)
-                        {
-                            hold = 0;
+    //                    hold += Time.deltaTime;
+    //                    if (hold >= 0.3f)
+    //                    {
+    //                        hold = 0;
                             for (int i = 0; cards_in_hand > i; i++)
                             {
                                 if (selectedCard == hand[i])
@@ -227,7 +227,7 @@ public class Hand : MonoBehaviour
                                     break;
                                 }
                             }
-                        }
+         //               }
                     }
 
                     //for seting cards from feild to actack or defend
@@ -581,11 +581,11 @@ public class Hand : MonoBehaviour
 
     public void UntapTheCards()
     {
-        if (fieldCard.Count > 0)
+        if (active_cards > 0)
         {
-            for (int i = 0; fieldCard.Count > i; i++)
+            for (int i = 0; active_cards > i; i++)
             {
-                fieldCard[i].transform.rotation = Quaternion.identity;
+                active_cards_slots[i].transform.rotation = Quaternion.identity;
 
             }
         }
