@@ -333,10 +333,7 @@ public class TurnBaseScript : MonoBehaviour
     //This is to so that each player will gain Gold each turn while only gain Mana at the start of the player's turn.
     void GainManaAndCoin()
     {
-        defaultGold += 1;
 
-        
-        
 
         if (player1Hand.playerGold < defaultGold)
             player1Hand.playerGold = defaultGold;
@@ -344,9 +341,10 @@ public class TurnBaseScript : MonoBehaviour
         if (player2Hand.playerGold < defaultMana1)
             player2Hand.playerGold = defaultGold;
         player2Hand.playerGold += 1;
-        
 
-        if(player1Hand.playerMana<defaultMana1)
+        defaultGold += 1;
+
+        if (player1Hand.playerMana<defaultMana1)
             player1Hand.playerMana = defaultMana1;
 
         if (player2Hand.playerMana < defaultMana2)
@@ -847,14 +845,22 @@ public class TurnBaseScript : MonoBehaviour
         {
             for (int i = 0; player1Hand.active_cards > i; i++)
             {
-                string Tags = player1Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.Tags;
-                string[] splitTags = Tags.Split(' ','_');
-                for (int a = 0; splitTags.Length > a; a++)
+                if (unittype == "units")
                 {
-                    if (splitTags[a] == unittype)
+                    player1Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.health += int.Parse(deffence);
+                    player1Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.attack += int.Parse(attack);
+                }
+                else
+                {
+                    string Tags = player1Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.Tags;
+                    string[] splitTags = Tags.Split(' ', '_');
+                    for (int a = 0; splitTags.Length > a; a++)
                     {
-                        player1Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.health += int.Parse(deffence);
-                        player1Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.attack += int.Parse(attack);
+                        if (splitTags[a] == unittype)
+                        {
+                            player1Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.health += int.Parse(deffence);
+                            player1Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.attack += int.Parse(attack);
+                        }
                     }
                 }
             }
@@ -863,14 +869,22 @@ public class TurnBaseScript : MonoBehaviour
         {
             for (int i = 0; player2Hand.active_cards > i; i++)
             {
-                string Tags = player2Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.Tags;
-                string[] splitTags = Tags.Split(' ','_');
-                for (int a = 0; splitTags.Length > a; a++)
+                if (unittype == "units")
                 {
-                    if (splitTags[a] == unittype)
+                    player2Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.health += int.Parse(deffence);
+                    player2Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.attack += int.Parse(attack);
+                }
+                else
+                {
+                    string Tags = player2Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.Tags;
+                    string[] splitTags = Tags.Split(' ', '_');
+                    for (int a = 0; splitTags.Length > a; a++)
                     {
-                        player2Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.health += int.Parse(deffence);
-                        player2Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.attack += int.Parse(attack);
+                        if (splitTags[a] == unittype)
+                        {
+                            player2Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.health += int.Parse(deffence);
+                            player2Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.attack += int.Parse(attack);
+                        }
                     }
                 }
             }
@@ -1347,12 +1361,32 @@ public class TurnBaseScript : MonoBehaviour
     {
         if (playerTurn == true)
         {
-          //  SelectedCards = new List<GameObject>();
-            StartCoroutine(waitForDisable(int.Parse(units), SelectedCards));
-            StartCoroutine(pause_sellection_outher_hand(int.Parse(units), SelectedCards));
+            if (units != "all")
+            {
+                //  SelectedCards = new List<GameObject>();
+                StartCoroutine(waitForDisable(int.Parse(units), SelectedCards));
+                StartCoroutine(pause_sellection_outher_hand(int.Parse(units), SelectedCards));
+            }
+            else
+            {
+                for(int i = 0; player2Hand.active_cards > i; i++)
+                {
+
+                    player2Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.disabeled = true;
+                    if (player2Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.monsterSickness == false)
+                    {
+                        player2Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.monsterSickness = true;
+
+                    }
+                }
+            }
         }
         else
         {
+            if (units == "all")
+            {
+                units = "5";
+            }
             int x=0;
             for(int i=0;int.Parse(units)>i; x++)
             {
