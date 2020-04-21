@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using TMPro;
 /*
  * The main purpose of this script is so that everything works in order.
  */
@@ -72,7 +72,9 @@ public class TurnBaseScript : MonoBehaviour
     public AudioClip win;
     public AudioClip lose;
 
-
+    //timer
+    public GameObject holder_timer;
+    public TMP_Text timer;
 
     List<GameObject> SelectedCards = new List<GameObject>();
     // Start is called before the first frame update 
@@ -96,6 +98,11 @@ public class TurnBaseScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (timerIsOn == true)
+        {
+            holder_timer.transform.Rotate(new Vector3(0, 0, 1), -20 * Time.deltaTime);
+            timer.text = turnTimer.ToString();
+        }
         switch (state)
         {
             //For when the turn starts for a player.
