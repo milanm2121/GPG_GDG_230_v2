@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 106
   name: Berserker
-  description: 'On Play: Boost all Trooper 0 attack -3 health . Damage units for 5'
+  description: 'On Play: Boost all units 0 attack -3 health . Damage all for 5'
   Tags: Cyborg
   artwork: {fileID: 0}
   manaCost: 5

@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 615dd9c20f7fa234b9eb1a59bd2aec1a, type: 3}
-  m_Name: New Card
+  m_Name: Buff
   m_EditorClassIdentifier: 
-  ID: 0
-  name: 
-  description: 
-  Tags: 
+  ID: 122
+  name: Buff
+  description: 'Spell: upgrade 1 unit 1 attack 1 health'
+  Tags: spell
   artwork: {fileID: 0}
-  manaCost: 0
+  manaCost: 2
   attack: 0
   health: 0
-  isSpell: 0
+  isSpell: 1
   monsterSickness: 1
   disabeled: 0
   FuturefurePramCheak: 0

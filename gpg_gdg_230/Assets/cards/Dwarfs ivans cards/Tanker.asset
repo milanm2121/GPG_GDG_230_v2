@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 615dd9c20f7fa234b9eb1a59bd2aec1a, type: 3}
-  m_Name: New Card
+  m_Name: Tanker
   m_EditorClassIdentifier: 
-  ID: 0
-  name: 
-  description: 
-  Tags: 
+  ID: 112
+  name: Tanker
+  description: 'On Play: Boost all Ranger 1 attack 0 health'
+  Tags: Tanker
   artwork: {fileID: 0}
-  manaCost: 0
-  attack: 0
-  health: 0
+  manaCost: 2
+  attack: 6
+  health: 1
   isSpell: 0
   monsterSickness: 1
   disabeled: 0
