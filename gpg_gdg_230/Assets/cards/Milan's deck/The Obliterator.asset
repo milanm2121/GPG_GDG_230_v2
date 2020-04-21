@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 139
   name: The-Obliterator
-  description: 'On Play: Damage all for 3 , On Death: Explode for 1 Swarm Enduring '
+  description: 'On Play: Damage all for 3 , On Death: Explode for 10 Swarm Enduring '
   Tags: AI
   artwork: {fileID: 0}
   manaCost: 100
