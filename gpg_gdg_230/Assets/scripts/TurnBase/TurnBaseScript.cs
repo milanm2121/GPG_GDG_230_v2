@@ -335,13 +335,15 @@ public class TurnBaseScript : MonoBehaviour
     {
         defaultGold += 1;
 
-        player1Hand.playerGold = defaultGold;
-        player2Hand.playerGold = defaultGold;
+        
+        
 
         if (player1Hand.playerGold < defaultGold)
-            player1Hand.playerGold += 1;
+            player1Hand.playerGold = defaultGold;
+        player1Hand.playerGold += 1;
         if (player2Hand.playerGold < defaultMana1)
-            player2Hand.playerGold += 1;
+            player2Hand.playerGold = defaultGold;
+        player2Hand.playerGold += 1;
         
 
         if(player1Hand.playerMana<defaultMana1)
