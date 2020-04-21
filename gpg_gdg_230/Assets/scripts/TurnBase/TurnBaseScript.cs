@@ -1242,13 +1242,16 @@ public class TurnBaseScript : MonoBehaviour
                     }
                     else
                     {
-                        string n = player2Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.Tags;
-                        string[] SplitTags = n.Split(' ','_');
-                        for (int x = 0; SplitTags.Length > x; x++)
+                        if (player2Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.Tags != "")
                         {
-                            if (SplitTags[x] == unit_type)
-                                SelectedCards.Add(player2Hand.active_cards_slots[i]);
+                            string n = player2Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.Tags;
+                            string[] SplitTags = n.Split(' ', '_');
+                            for (int x = 0; SplitTags.Length > x; x++)
+                            {
+                                if (SplitTags[x] == unit_type)
+                                    SelectedCards.Add(player2Hand.active_cards_slots[i]);
 
+                            }
                         }
                     }
                 }

@@ -25,7 +25,9 @@ public class card_reffence : MonoBehaviour
                     attack = id[i].attack,
                     manaCost = id[i].manaCost,
                     description = id[i].description,
-                    monsterSickness = true
+                    monsterSickness = true,
+                    Tags= id[i].Tags,
+                    Robert_loop_effect=id[i]
 
                 };
                 card.GetComponent<CardDisplay>().card = sc;

@@ -45,7 +45,13 @@ public class deck_stats : MonoBehaviour
     }
     void loadStats()
     {
-        for(int i = 0; selected_deck.deck.Length > i; i++)
+
+        avrage_cost = 0;
+        avrage_spell_cost = 0;
+        number_of_creature_card = 0;
+        number_of_spell_cards = 0;
+
+        for (int i = 0; selected_deck.deck.Length > i; i++)
         {
             ScriptableCard sc = col.id[selected_deck.deck[i]];
             if (sc.isSpell==true)

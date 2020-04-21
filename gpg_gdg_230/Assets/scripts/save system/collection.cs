@@ -91,7 +91,7 @@ public class collection : MonoBehaviour
             {
                 Collection[(x * 5) + y].card = Instantiate(cardtemp, new Vector2(origonalTransform.position.x, origonalTransform.position.y) + new Vector2(y * xoffset, -x * yoffset), Quaternion.identity);
                 Collection[(x * 5) + y].text = Instantiate(texttemp, new Vector2(origonalTransform.position.x, origonalTransform.position.y) + new Vector2(y * xoffset, -x * yoffset - yoffset/2), Quaternion.identity);
-                if (((x * 5) + y) <= 20)
+                if (((x * 5) + y) <= 25)
                 {
                     Collection[(x * 5) + y].count = 40;
                 }
@@ -132,7 +132,6 @@ public class collection : MonoBehaviour
                     cg.card.GetComponent<CardDisplay>().card = cards_you_have[(x * 3) + y].card.GetComponent<CardDisplay>().card;
                     cards_you_have[(x * 3) + y] = cg;
                 }
-
             }
         }
     }
@@ -249,10 +248,13 @@ public class collection : MonoBehaviour
         }
         if (deaks.Count > 0)
         {
-            GameObject x = Instantiate(button, new Vector2(origonalTransform3.transform.position.x, origonalTransform3.transform.position.y) + new Vector2((deaks.Count - 1) * xoffset3, 0), Quaternion.identity);
-            x.GetComponent<load_deck>().deck = deaks.Count - 1;
-            x.transform.parent = origonalTransform3;
-            deackButtons.Add(x);
+            for (int i = 0; deaks.Count > i; i++)
+            {
+                GameObject x = Instantiate(button, new Vector2(origonalTransform3.transform.position.x, origonalTransform3.transform.position.y) + new Vector2(i * xoffset3, 0), Quaternion.identity);
+                x.GetComponent<load_deck>().deck = i;
+                x.transform.parent = origonalTransform3;
+                deackButtons.Add(x);
+            }
         }
 
     }
