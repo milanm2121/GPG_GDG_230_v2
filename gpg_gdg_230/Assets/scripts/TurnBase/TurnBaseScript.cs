@@ -333,6 +333,8 @@ public class TurnBaseScript : MonoBehaviour
     //This is to so that each player will gain Gold each turn while only gain Mana at the start of the player's turn.
     void GainManaAndCoin()
     {
+        defaultGold += 1;
+
         player1Hand.playerGold = defaultGold;
         player2Hand.playerGold = defaultGold;
 
@@ -340,7 +342,7 @@ public class TurnBaseScript : MonoBehaviour
             player1Hand.playerGold += 1;
         if (player2Hand.playerGold < defaultMana1)
             player2Hand.playerGold += 1;
-        defaultGold += 1;
+        
 
         if(player1Hand.playerMana<defaultMana1)
             player1Hand.playerMana = defaultMana1;
