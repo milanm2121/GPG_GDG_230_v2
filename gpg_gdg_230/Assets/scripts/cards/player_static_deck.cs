@@ -19,11 +19,10 @@ public class player_static_deck : MonoBehaviour
     // Update is called once per frame
     public void loadDeck()
     {
-        if(SceneManager.GetActiveScene().name == "card_tabel")
-        {
-            Deak activeDeck = GameObject.Find("player1").GetComponent<Deak>();
-            activeDeck.Class = Class;
-            deak.CopyTo(activeDeck.deak, 0);
-        }
+
+        Deak activeDeck = GameObject.Find("player1").GetComponent<Deak>();
+        activeDeck.Class = Class;
+        deak.CopyTo(activeDeck.deak, 0);
+
     }
 }

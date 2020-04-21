@@ -91,7 +91,7 @@ public class collection : MonoBehaviour
             {
                 Collection[(x * 5) + y].card = Instantiate(cardtemp, new Vector2(origonalTransform.position.x, origonalTransform.position.y) + new Vector2(y * xoffset, -x * yoffset), Quaternion.identity);
                 Collection[(x * 5) + y].text = Instantiate(texttemp, new Vector2(origonalTransform.position.x, origonalTransform.position.y) + new Vector2(y * xoffset, -x * yoffset - yoffset/2), Quaternion.identity);
-                if (((x * 5) + y) <= 25)
+                if (((x * 5) + y) <= 150)
                 {
                     Collection[(x * 5) + y].count = 40;
                 }
@@ -145,7 +145,7 @@ public class collection : MonoBehaviour
         configuerScale();
        // origonalTransform.localScale = new Vector3(xoffset/250,xoffset/250, 0);
 
-        origonalTransform2.position = new Vector2((int)origonalTransform2.position.x, 6500 * sbForCreation.value + origonalsbYvalue2);
+        origonalTransform2.position = new Vector2((int)origonalTransform2.position.x, 7500 * 2 * sbForCreation.value + origonalsbYvalue2);
         sbForCreation.size = 0;
 
         for(int i = 0; Collection.Length > i; i++)

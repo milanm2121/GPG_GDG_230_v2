@@ -89,7 +89,7 @@ public class Hand : MonoBehaviour
         if (player == true)
         {
             //copies static deck to the player ingame deck
-      //      GameObject.Find("player deck").GetComponent<player_static_deck>().loadDeck();
+            GameObject.Find("player deck").GetComponent<player_static_deck>().loadDeck();
 
         }
 

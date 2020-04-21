@@ -12,12 +12,24 @@ EditorBuildSettings:
     path: Assets/Scenes/main_menu(Test).unity
     guid: 2338f5a890aadd44e8d0c0d9c74a7c33
   - enabled: 1
+    path: Assets/Scenes/chose level.unity
+    guid: 6e8bbd9a83b944888bac4c1c4d8eccdd
+  - enabled: 1
+    path: Assets/Scenes/levels/card_tabel 0.unity
+    guid: 74cb80893bccc494894d7b540ad31d25
+  - enabled: 1
     path: Assets/Scenes/levels/card_tabel 1.unity
-    guid: 65729183c6eb24d329a4cf6fb43350da
+    guid: da1f8fb96a5174613932790758f3c7ae
   - enabled: 1
     path: Assets/Scenes/levels/card_tabel 2.unity
-    guid: a1c224e8fb2b04083be0f92d320d5d63
+    guid: 3aa48e05505e74c999c692a0f7ebdd45
   - enabled: 1
     path: Assets/Scenes/levels/card_tabel 3.unity
-    guid: 7140ccf2842a7415abcce4981ae71181
+    guid: 7ffc3cbc9c8554b4eae65e0f1f6749ee
+  - enabled: 1
+    path: Assets/Scenes/levels/card_tabel 4.unity
+    guid: 1ddc288d00394424fb0845912e82615f
+  - enabled: 1
+    path: Assets/Scenes/levels/card_tabel 5.unity
+    guid: fadea917500be40c1a4b075b9cff8241
   m_configObjects: {}
