@@ -17,7 +17,7 @@ MonoBehaviour:
   description: 'sacrifice: 4 AI summon 1 The-Obliterator'
   Tags: Spell
   artwork: {fileID: 0}
-  manaCost: 0
+  manaCost: 5
   attack: 0
   health: 0
   isSpell: 1

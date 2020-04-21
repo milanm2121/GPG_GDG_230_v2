@@ -606,7 +606,7 @@ public class TurnBaseScript : MonoBehaviour
 
                         //unit count / unit name
                         case "summon":
-                            summon(message[i + 1], message[i + 2]);
+                            StartCoroutine(summon(message[i + 1], message[i + 2]));
                             break;
                         //gold / "Gold" / mana / "Power"
                         case "earn":
@@ -685,7 +685,7 @@ public class TurnBaseScript : MonoBehaviour
 
                         //unit count / unit name
                         case "summon":
-                            summon(message[i+2], message[i+3]);
+                            StartCoroutine(summon(message[i+2], message[i+3]));
                             break;
                         //gold / "Gold" / mana / "Power"
                         case "earn":
@@ -1042,20 +1042,26 @@ public class TurnBaseScript : MonoBehaviour
         }
         else
         {
+            SelectedCards = new List<GameObject>();
             for (int i = 0; player2Hand.active_cards > i; i++)
             {
                 string Tag = player2Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.Tags;
                 string[] x = Tag.Split(' ');
-                SelectedCards = new List<GameObject>();
-                for (int y = 0; x.Length > y; i++)
+                
+                for (int y = 0; x.Length > y; y++)
                 {
-                    if (x[i] == unit_type)
+                    
+                    if (x[y] == unit_type)
                     {
                         SelectedCards.Add(player2Hand.active_cards_slots[i]);
                     }
                     if (SelectedCards.Count == int.Parse(nuber))
                     {
                         i = player2Hand.active_cards;
+                        for(int a=0;SelectedCards.Count>a; a++)
+                        {
+                            SelectedCards[a].GetComponent<CardDisplay>().card.health = 0;
+                        }
                         scrificeComplete(spell,start);
                     }
                 }
@@ -1078,7 +1084,7 @@ public class TurnBaseScript : MonoBehaviour
 
             //unit count / unit name
             case "summon":
-                summon(message[start+2 + 2], message[start+2 + 3]);
+                StartCoroutine(summon(message[start+2 + 2], message[start+2 + 3]));
                 break;
 
             case "earn":
@@ -1321,8 +1327,9 @@ public class TurnBaseScript : MonoBehaviour
         }
     }
 
-    void summon(string unitcount,string unit)
+    IEnumerator summon(string unitcount,string unit)
     {
+        yield return new WaitForEndOfFrame();
         if (playerTurn == true)
         {
             for (int i = 0; int.Parse(unitcount) > i; i++)
@@ -1342,7 +1349,7 @@ public class TurnBaseScript : MonoBehaviour
         {
             for (int i = 0; int.Parse(unitcount) > i; i++)
             {
-                if (player2Hand.active_cards < 5)
+                if (player2Hand.active_cards <= 4)
                 {
                     GameObject x = Cr.create_card(unit);
                     player2Hand.active_cards++;
@@ -1507,7 +1514,7 @@ public class TurnBaseScript : MonoBehaviour
             yield return new WaitUntil(() => selectedCards.Count == cardcount || state != TurnState.CardPlayed);
             state = lastState;
             for (int i = 0; selectedCards.Count > i; i++)
-                print(selectedCards[i].gameObject.GetComponent<CardDisplay>().card.name);
+//                print(selectedCards[i].gameObject.GetComponent<CardDisplay>().card.name);
             timerIsOn = true;
 
 
