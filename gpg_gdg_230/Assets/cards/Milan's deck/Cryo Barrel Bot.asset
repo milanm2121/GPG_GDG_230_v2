@@ -15,7 +15,7 @@ MonoBehaviour:
   ID: 128
   name: Cryo Barrel Bot
   description: 'On Death: Explode for 0 and disable , Immobile'
-  Tags: Cryo Barrel Bot Machine
+  Tags: Cryo Barrel Bot Machine AI
   artwork: {fileID: 0}
   manaCost: 1
   attack: 0

@@ -15,7 +15,7 @@ MonoBehaviour:
   ID: 133
   name: Combat Algorithm
   description: 'On Play: Boost all units 1 attack 1 health'
-  Tags: 
+  Tags: AI
   artwork: {fileID: 0}
   manaCost: 3
   attack: 3

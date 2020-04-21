@@ -15,7 +15,7 @@ MonoBehaviour:
   ID: 95
   name: Disassemble
   description: 'Spell: damage 1 units for 100'
-  Tags: 
+  Tags: spell
   artwork: {fileID: 0}
   manaCost: 0
   attack: 0

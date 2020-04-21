@@ -15,7 +15,7 @@ MonoBehaviour:
   ID: 130
   name: Nano Swarm
   description: Swarm
-  Tags: swarm Machine
+  Tags: swarm Machine AI
   artwork: {fileID: 0}
   manaCost: 2
   attack: 2

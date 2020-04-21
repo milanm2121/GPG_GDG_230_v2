@@ -15,7 +15,7 @@ MonoBehaviour:
   ID: 146
   name: Micro EMP Missile
   description: 'Spell: damage 1 unit for 1 . disable 1 unit '
-  Tags: 
+  Tags: spell
   artwork: {fileID: 0}
   manaCost: 2
   attack: 0

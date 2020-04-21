@@ -15,7 +15,7 @@ MonoBehaviour:
   ID: 93
   name: Super Magnets
   description: 'Spell: upgrade 1 unit 0 attack 6 health'
-  Tags: 
+  Tags: spell
   artwork: {fileID: 0}
   manaCost: 5
   attack: 0

@@ -15,7 +15,7 @@ MonoBehaviour:
   ID: 145
   name: Razor Raptor
   description: Dodge 60 % Charged Haste
-  Tags: 
+  Tags: AI
   artwork: {fileID: 0}
   manaCost: 2
   attack: 3

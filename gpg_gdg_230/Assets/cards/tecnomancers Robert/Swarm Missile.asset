@@ -15,7 +15,7 @@ MonoBehaviour:
   ID: 97
   name: Swarm Missile
   description: 'Spell: damage all units for 1'
-  Tags: 
+  Tags: spell
   artwork: {fileID: 0}
   manaCost: 2
   attack: 0

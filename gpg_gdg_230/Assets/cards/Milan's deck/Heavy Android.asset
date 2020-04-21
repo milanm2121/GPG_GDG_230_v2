@@ -15,7 +15,7 @@ MonoBehaviour:
   ID: 140
   name: Heavy Android
   description: 
-  Tags: 
+  Tags: AI
   artwork: {fileID: 0}
   manaCost: 3
   attack: 2

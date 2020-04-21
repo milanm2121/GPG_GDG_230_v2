@@ -15,6 +15,7 @@ MonoBehaviour:
   ID: 84
   name: The Mad Scientist
   description: . Earn 0 Gold 1 Power
+  Tags: N/A
   artwork: {fileID: 0}
   manaCost: 2
   attack: 1

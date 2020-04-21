@@ -15,7 +15,7 @@ MonoBehaviour:
   ID: 98
   name: Metal Conversion
   description: 'Spell: earn 3 Gold 0 Power'
-  Tags: 
+  Tags: Spell
   artwork: {fileID: 0}
   manaCost: 2
   attack: 0

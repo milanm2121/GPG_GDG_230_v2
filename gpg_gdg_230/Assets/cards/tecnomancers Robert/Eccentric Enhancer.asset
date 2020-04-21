@@ -15,7 +15,7 @@ MonoBehaviour:
   ID: 88
   name: Eccentric Enhancer
   description: 'On Play: Boost all Machine 0 attack 2 health'
-  Tags: 
+  Tags: N/A
   artwork: {fileID: 0}
   manaCost: 3
   attack: 2

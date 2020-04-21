@@ -15,7 +15,7 @@ MonoBehaviour:
   ID: 136
   name: Spider Turret Laser
   description: Charged
-  Tags: 
+  Tags: AI
   artwork: {fileID: 0}
   manaCost: 4
   attack: 4

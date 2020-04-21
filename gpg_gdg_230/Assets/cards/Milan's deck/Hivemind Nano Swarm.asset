@@ -15,7 +15,7 @@ MonoBehaviour:
   ID: 129
   name: Hivemind Nano Swarm
   description: . Boost all swarm 1 attack 1 health Every turn
-  Tags: swarm Machine
+  Tags: swarm Machine AI
   artwork: {fileID: 0}
   manaCost: 3
   attack: 1

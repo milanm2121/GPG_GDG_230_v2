@@ -15,7 +15,7 @@ MonoBehaviour:
   ID: 0
   name: A Good Defence
   description: 'Spell: summon 2 Turrent'
-  Tags: 
+  Tags: spell
   artwork: {fileID: 0}
   manaCost: 3
   attack: 0

@@ -15,7 +15,7 @@ MonoBehaviour:
   ID: 148
   name: Force Field
   description: 'Spell: upgrade all units 0 attack 2 health'
-  Tags: 
+  Tags: spell
   artwork: {fileID: 0}
   manaCost: 3
   attack: 0

@@ -15,7 +15,7 @@ MonoBehaviour:
   ID: 71
   name: Cybernetic Augmentation
   description: 'Spell: summon 2 Pup_Cybernetic_Wolf'
-  Tags: Cybernetic Augmentation
+  Tags: spell
   artwork: {fileID: 0}
   manaCost: 2
   attack: 0

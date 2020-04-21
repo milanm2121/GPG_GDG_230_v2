@@ -15,7 +15,7 @@ MonoBehaviour:
   ID: 118
   name: Fighter
   description: Larger and tougher than AI BOT
-  Tags: Fighter Machine
+  Tags: Fighter Machine AI
   artwork: {fileID: 0}
   manaCost: 2
   attack: 3

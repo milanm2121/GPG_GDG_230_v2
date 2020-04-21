@@ -15,7 +15,7 @@ MonoBehaviour:
   ID: 142
   name: Gunner Android
   description: 
-  Tags: 
+  Tags: AI
   artwork: {fileID: 0}
   manaCost: 3
   attack: 3

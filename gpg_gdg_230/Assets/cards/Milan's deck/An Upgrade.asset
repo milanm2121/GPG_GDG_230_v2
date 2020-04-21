@@ -15,7 +15,7 @@ MonoBehaviour:
   ID: 143
   name: An Upgrade
   description: 
-  Tags: 
+  Tags: N/A
   artwork: {fileID: 0}
   manaCost: 4
   attack: 4

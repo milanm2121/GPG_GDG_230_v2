@@ -15,7 +15,7 @@ MonoBehaviour:
   ID: 86
   name: Nanobot Swarm
   description: Swarm Charged
-  Tags: Machine swarm
+  Tags: Machine swarm AI
   artwork: {fileID: 0}
   manaCost: 7
   attack: 7

@@ -15,7 +15,7 @@ MonoBehaviour:
   ID: 75
   name: Predator Instinct
   description: 'Spell: Enhance with Charged Enduring'
-  Tags: Predator Instinct
+  Tags: spell
   artwork: {fileID: 0}
   manaCost: 3
   attack: 0

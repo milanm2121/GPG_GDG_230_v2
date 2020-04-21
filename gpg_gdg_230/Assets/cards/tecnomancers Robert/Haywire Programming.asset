@@ -15,7 +15,7 @@ MonoBehaviour:
   ID: 100
   name: Haywire Programming
   description: 'Spell: Enhance a unit with Swarm Charged and Enduring '
-  Tags: 
+  Tags: spell
   artwork: {fileID: 0}
   manaCost: 2
   attack: 0

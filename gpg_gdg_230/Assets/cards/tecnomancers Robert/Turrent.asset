@@ -15,7 +15,7 @@ MonoBehaviour:
   ID: 0
   name: Turrent
   description: ratataa!!!
-  Tags: Machine
+  Tags: Machine AI
   artwork: {fileID: 0}
   manaCost: 0
   attack: 1

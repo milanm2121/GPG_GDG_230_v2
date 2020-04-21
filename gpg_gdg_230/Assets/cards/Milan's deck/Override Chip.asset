@@ -15,7 +15,7 @@ MonoBehaviour:
   ID: 0
   name: Override Chip
   description: 'Spell: damage 1 unit for 1 . convert 1 unit'
-  Tags: 
+  Tags: spell
   artwork: {fileID: 0}
   manaCost: 4
   attack: 0

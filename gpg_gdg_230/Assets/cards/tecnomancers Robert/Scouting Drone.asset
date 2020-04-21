@@ -15,7 +15,7 @@ MonoBehaviour:
   ID: 76
   name: Scouting Drone
   description: 
-  Tags: Machine
+  Tags: Machine AI
   artwork: {fileID: 0}
   manaCost: 1
   attack: 1

@@ -15,7 +15,7 @@ MonoBehaviour:
   ID: 135
   name: Spider Turret Rocket
   description: Swarm
-  Tags: 
+  Tags: AI
   artwork: {fileID: 0}
   manaCost: 3
   attack: 3

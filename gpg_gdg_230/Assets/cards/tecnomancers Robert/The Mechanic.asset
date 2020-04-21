@@ -15,7 +15,7 @@ MonoBehaviour:
   ID: 87
   name: The Mechanic
   description: 'On Play: Boost all Machine 0 attack 2 health'
-  Tags: 
+  Tags: N/A
   artwork: {fileID: 0}
   manaCost: 4
   attack: 3

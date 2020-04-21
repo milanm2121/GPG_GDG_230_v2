@@ -15,7 +15,7 @@ MonoBehaviour:
   ID: 134
   name: Spider Turret
   description: 
-  Tags: 
+  Tags: AI
   artwork: {fileID: 0}
   manaCost: 2
   attack: 2

@@ -15,7 +15,7 @@ MonoBehaviour:
   ID: 117
   name: Soldier
   description: AI BOT
-  Tags: Soldier Machine
+  Tags: Soldier Machine AI
   artwork: {fileID: 0}
   manaCost: 1
   attack: 2

@@ -972,7 +972,7 @@ MonoBehaviour:
   Cards_active_deak: 40
   Class: 0
   deak:
-  - {fileID: 11400000, guid: 9a2ef749138c04b54a0f4bf86a3b5cbe, type: 2}
+  - {fileID: 11400000, guid: 25a7543a2968546d7b71697c8a461d42, type: 2}
   - {fileID: 11400000, guid: 2e2071b6d530f3d408498c00b31016c2, type: 2}
   - {fileID: 11400000, guid: d4d00bf343adbcc439cba11e71b09ffe, type: 2}
   - {fileID: 11400000, guid: d4d00bf343adbcc439cba11e71b09ffe, type: 2}
@@ -1020,8 +1020,8 @@ MonoBehaviour:
   AS: {fileID: 0}
   cardDraw: {fileID: 8300000, guid: e544fa3fd398a45beb68b17ea8d3cebf, type: 3}
   UIdeck: {fileID: 1373646156}
-  card_test: 1
-  spell_test: 0
+  card_test: 0
+  spell_test: 1
   cardfeild: {fileID: 1987046323}
 --- !u!114 &288857955
 MonoBehaviour:
@@ -3423,7 +3423,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f15cf6ad24ad24c5a92415947f8e971b, type: 2}
   - {fileID: 11400000, guid: 50d368c9184d0455daebaf07dbce64b7, type: 2}
   - {fileID: 11400000, guid: 053616e1369af480fb422e4e21e39ab0, type: 2}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: b47a48f0249c240d3aa88f80ed1f2eab, type: 2}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
