@@ -335,23 +335,16 @@ public class TurnBaseScript : MonoBehaviour
     {
         defaultGold += 1;
 
-        
-        
+        player1Hand.playerGold = defaultGold;
+        player2Hand.playerGold = defaultGold;
 
         if (player1Hand.playerGold < defaultGold)
-        {
-            player1Hand.playerGold = defaultGold;
-        }
-        player1Hand.playerGold += 1;
-
+            player1Hand.playerGold += 1;
         if (player2Hand.playerGold < defaultMana1)
-        {
-            player2Hand.playerGold = defaultGold;
-        }
-        player2Hand.playerGold += 1;
+            player2Hand.playerGold += 1;
+        
 
-
-        if (player1Hand.playerMana<defaultMana1)
+        if(player1Hand.playerMana<defaultMana1)
             player1Hand.playerMana = defaultMana1;
 
         if (player2Hand.playerMana < defaultMana2)
@@ -1005,7 +998,7 @@ public class TurnBaseScript : MonoBehaviour
                 string[] x = Decription.Split(' ');
                 bool enduring = false;
                 
-                for (int y = 0; x.Length > y; y++)
+                for (int y = 0; x.Length > y; i++)
                 {
                     if (x[i] == "Enduring")
                     {
