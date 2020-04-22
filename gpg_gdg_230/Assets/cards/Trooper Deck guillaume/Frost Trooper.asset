@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 615dd9c20f7fa234b9eb1a59bd2aec1a, type: 3}
   m_Name: Frost Trooper
   m_EditorClassIdentifier: 
-  ID: 7
+  ID: 8
   name: Frost Trooper
   description: 'On Death: Explode for 0 and disable'
   Tags: Frost Trooper

@@ -93,7 +93,7 @@ public class collection : MonoBehaviour
                 Collection[(x * 5) + y].text = Instantiate(texttemp, new Vector2(origonalTransform.position.x, origonalTransform.position.y) + new Vector2(y * xoffset, -x * yoffset - yoffset/2), Quaternion.identity);
                 if (((x * 5) + y) <= 150)
                 {
-                    Collection[(x * 5) + y].count = 40;
+                    Collection[(x * 5) + y].count = 4;
                 }
                 else
                 {
@@ -106,10 +106,11 @@ public class collection : MonoBehaviour
                 Collection[(x * 5) + y].card.transform.localScale = new Vector2(0.8f, 0.8f);
                 Collection[(x * 5) + y].card.GetComponent<RectTransform>().localScale = new Vector2(0.5f, 0.5f);
                 Collection[(x * 5) + y].card.GetComponent<CardDisplay>().card = id[(x * 5) + y];
+                Collection[(x * 5) + y].card.GetComponent<CardDisplay>().card.ID = (x * 5) + y + 1;
 
                 if (Collection[(x * 5) + y].count != 0)
                 {
-                    cards_you_have.Add(Collection[(x * 5) + y]);
+                    cards_you_have.Add(Collection[(x * 5) + y]); 
                 }
             }
         }
