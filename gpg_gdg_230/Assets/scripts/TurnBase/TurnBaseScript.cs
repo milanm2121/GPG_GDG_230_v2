@@ -98,6 +98,23 @@ public class TurnBaseScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if (state != TurnState.CardPlayed)
+        {
+            if (timerIsOn == false)
+            {
+                StartCoroutine("CountDown");
+                timerIsOn = true;
+            }
+            if (turnTimer <= 0)
+            {
+                StopCoroutine("CountDown");
+                timerIsOn = false;
+
+                state = TurnState.TimeWasted;
+            }
+        }
+
         if (timerIsOn == true)
         {
             holder_timer.transform.Rotate(new Vector3(0, 0, 1), -20 * Time.deltaTime);
@@ -711,8 +728,6 @@ public class TurnBaseScript : MonoBehaviour
                             SpellEnhance(message);
                             break;
 
-                        
-
                         case "Draw":
                             Draw(message[i + 2]);
                             break;
@@ -956,7 +971,7 @@ public class TurnBaseScript : MonoBehaviour
         {
             for (int i = 0; int.Parse(number) > i; i++)
             {
-                player1Hand.pickCard();
+                player2Hand.pickCard();
             }
         }
     }
@@ -1020,19 +1035,22 @@ public class TurnBaseScript : MonoBehaviour
                 string Decription = player1Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.description;
                 string[] x = Decription.Split(' ');
                 bool enduring = false;
-                
-                for (int y = 0; x.Length > y; i++)
+                if (x.Length != 0)
                 {
-                    if (x[i] == "Enduring")
+                    for (int y = 0; x.Length > y; i++)
                     {
-                        enduring = true;
+                        if (x[i] == "Enduring")
+                        {
+                            enduring = true;
+                        }
                     }
-                }
-                if (enduring == false) {
-                    player1Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.health -= int.Parse(Damage);
-                    effectedCards++;
-                    if (effectedCards == int.Parse(target))
-                        i = player1Hand.active_cards;
+                    if (enduring == false)
+                    {
+                        player1Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.health -= int.Parse(Damage);
+                        effectedCards++;
+                        if (effectedCards == int.Parse(target))
+                            i = player1Hand.active_cards;
+                    }
                 }
             }
             actiontime = 2;

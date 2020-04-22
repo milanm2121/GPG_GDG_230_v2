@@ -532,11 +532,13 @@ public class Hand : MonoBehaviour
                 }
                 if (Charged == false)
                 {
-                    card.transform.rotation = Quaternion.Euler(0, 0, 90);
-                    //          Debug.Log("Can Attack");
+                    
+               
                     card.GetComponent<CardDisplay>().card.monsterSickness = true;
 
                 }
+                card.transform.rotation = Quaternion.Euler(0, 0, 90);
+
                 cm.attack.Add(card);
 
                 card.GetComponent<CardDisplay>().attack_defend = 1;
