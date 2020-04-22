@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 615dd9c20f7fa234b9eb1a59bd2aec1a, type: 3}
   m_Name: The Leader's Apprentice
   m_EditorClassIdentifier: 
-  ID: 19
+  ID: 17
   name: The Leader's Apprentice
   description: 'On Play: Boost all Trooper 2 attack 2 health'
   Tags: The Leader's Apprentice

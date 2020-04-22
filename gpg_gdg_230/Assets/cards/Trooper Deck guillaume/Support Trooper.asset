@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 615dd9c20f7fa234b9eb1a59bd2aec1a, type: 3}
   m_Name: Support Trooper
   m_EditorClassIdentifier: 
-  ID: 14
+  ID: 5
   name: Support Trooper
   description: 'On Play: Boost all Trooper 0 attack 1 health'
   Tags: Support Trooper

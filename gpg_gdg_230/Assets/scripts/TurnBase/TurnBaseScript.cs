@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+
 /*
  * The main purpose of this script is so that everything works in order.
  */
@@ -75,8 +76,13 @@ public class TurnBaseScript : MonoBehaviour
     //timer
     public GameObject holder_timer;
     public TMP_Text timer;
+    public TMP_Text endingCondition;
+    public TMP_Text turnCondition;
+    public bool turnTextIsActive;
 
     List<GameObject> SelectedCards = new List<GameObject>();
+
+    public load_scenes ls;
     // Start is called before the first frame update 
     void Start()
     {
@@ -90,6 +96,9 @@ public class TurnBaseScript : MonoBehaviour
             playerTurn = false;
 
         state = TurnState.StartTurn;
+        endingCondition.gameObject.SetActive(false);
+        turnCondition.gameObject.SetActive(false);
+        turnTextIsActive = false;
 
     }
     #endregion
@@ -98,6 +107,23 @@ public class TurnBaseScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if (state != TurnState.CardPlayed)
+        {
+            if (timerIsOn == false)
+            {
+                StartCoroutine("CountDown");
+                timerIsOn = true;
+            }
+            if (turnTimer <= 0)
+            {
+                StopCoroutine("CountDown");
+                timerIsOn = false;
+
+                state = TurnState.TimeWasted;
+            }
+        }
+
         if (timerIsOn == true)
         {
             holder_timer.transform.Rotate(new Vector3(0, 0, 1), -20 * Time.deltaTime);
@@ -106,7 +132,7 @@ public class TurnBaseScript : MonoBehaviour
         switch (state)
         {
             //For when the turn starts for a player.
-            case (TurnState.StartTurn):
+            case (TurnState.StartTurn): 
 
 
                 if (startOfTheGame == true)
@@ -117,6 +143,9 @@ public class TurnBaseScript : MonoBehaviour
                         player2Hand.active = false;
                         player_active_ui.SetActive(true);
                         AI_active_ui.SetActive(false);
+                        turnCondition.gameObject.SetActive(true);
+                        turnCondition.text = "Your Turn";
+                        turnTextIsActive = true;
                     }
                     else
                     {
@@ -124,6 +153,9 @@ public class TurnBaseScript : MonoBehaviour
                         player2Hand.active = true;
                         player_active_ui.SetActive(false);
                         AI_active_ui.SetActive(true);
+                        turnCondition.gameObject.SetActive(true);
+                        turnCondition.text = "Opponent Turn";
+                        turnTextIsActive = true;
                     }
                     Draw7();
                 }
@@ -134,6 +166,9 @@ public class TurnBaseScript : MonoBehaviour
                     {
                         player1Hand.active = true;
                         player2Hand.active = false;
+                        turnCondition.gameObject.SetActive(true);
+                        turnCondition.text = "Your Turn";
+                        turnTextIsActive = true;
                         player1Hand.pickCard();
                         //                        Debug.Log("Player 1 drew a card");
                     }
@@ -142,6 +177,9 @@ public class TurnBaseScript : MonoBehaviour
                         player1Hand.active = false;
                         player2Hand.active = true;
                         player2Hand.pickCard();
+                        turnCondition.gameObject.SetActive(true);
+                        turnCondition.text = "Opponent Turn";
+                        turnTextIsActive = true;
                         //                        Debug.Log("Player 2 drew a card");
                     }
                     if (playerTurn == true)
@@ -325,11 +363,22 @@ public class TurnBaseScript : MonoBehaviour
             }
         }
 
+        if (turnTextIsActive == true)
+        {
+            Invoke("TurnTextOff", 1.5f);
+        }
         
     }
     #endregion
 
     #region Actions
+
+    public void TurnTextOff()
+    {
+        turnCondition.gameObject.SetActive(false);
+        turnTextIsActive = false;
+    }
+
     void Draw7()
     {
         player2Hand.pick7();
@@ -453,6 +502,8 @@ public class TurnBaseScript : MonoBehaviour
         if (player1AFKStrike == 3)
         {
             Debug.Log("Player 1 lose");
+            endingCondition.gameObject.SetActive(true);
+            endingCondition.text = "Defeated";
             AS.clip = lose;
             AS.loop = false;
             AS.Play();
@@ -468,6 +519,8 @@ public class TurnBaseScript : MonoBehaviour
             AS.loop = false;
             AS.Play();
             Debug.Log("Player 2  lose");
+            endingCondition.gameObject.SetActive(true);
+            endingCondition.text = "Victory";
             for (int i = 0; buttons.Length > i; i++)
             {
                 buttons[i].SetActive(false);
@@ -480,10 +533,13 @@ public class TurnBaseScript : MonoBehaviour
             AS.loop = false;
             AS.Play();
             Debug.Log("Player 1 Lose");
+            endingCondition.gameObject.SetActive(true);
+            endingCondition.text = "Defeated";
             for (int i = 0; buttons.Length > i; i++)
             {
                 buttons[i].SetActive(false);
             }
+            StartCoroutine(back_to_main()); 
         }
         if (player2Health <= 0)
         {
@@ -491,13 +547,22 @@ public class TurnBaseScript : MonoBehaviour
             AS.loop = false;
             AS.Play();
             Debug.Log("Player 2 Lose");
+            endingCondition.gameObject.SetActive(true);
+            endingCondition.text = "Victory";
             for (int i = 0; buttons.Length > i; i++)
             {
                 buttons[i].SetActive(false);
             }
+            StartCoroutine(back_to_main());
         }
 
         state = TurnState.Nothing;
+    }
+
+    IEnumerator back_to_main()
+    {
+        yield return new WaitForSeconds(3);
+        ls.loadScene();
     }
 
     //This is so that the player doesn't take too long
@@ -710,8 +775,6 @@ public class TurnBaseScript : MonoBehaviour
                         case "Enhance":
                             SpellEnhance(message);
                             break;
-
-                        
 
                         case "Draw":
                             Draw(message[i + 2]);
@@ -956,7 +1019,7 @@ public class TurnBaseScript : MonoBehaviour
         {
             for (int i = 0; int.Parse(number) > i; i++)
             {
-                player1Hand.pickCard();
+                player2Hand.pickCard();
             }
         }
     }
@@ -1020,19 +1083,22 @@ public class TurnBaseScript : MonoBehaviour
                 string Decription = player1Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.description;
                 string[] x = Decription.Split(' ');
                 bool enduring = false;
-                
-                for (int y = 0; x.Length > y; i++)
+                if (x.Length != 0)
                 {
-                    if (x[i] == "Enduring")
+                    for (int y = 0; x.Length > y; i++)
                     {
-                        enduring = true;
+                        if (x[i] == "Enduring")
+                        {
+                            enduring = true;
+                        }
                     }
-                }
-                if (enduring == false) {
-                    player1Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.health -= int.Parse(Damage);
-                    effectedCards++;
-                    if (effectedCards == int.Parse(target))
-                        i = player1Hand.active_cards;
+                    if (enduring == false)
+                    {
+                        player1Hand.active_cards_slots[i].GetComponent<CardDisplay>().card.health -= int.Parse(Damage);
+                        effectedCards++;
+                        if (effectedCards == int.Parse(target))
+                            i = player1Hand.active_cards;
+                    }
                 }
             }
             actiontime = 2;

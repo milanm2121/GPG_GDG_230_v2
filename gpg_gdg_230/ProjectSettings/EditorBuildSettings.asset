@@ -6,14 +6,14 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/card_tabel.unity
-    guid: 7bd53bf5c8413684bbbe4cecd7d5d6b2
-  - enabled: 1
     path: Assets/Scenes/main_menu(Test).unity
     guid: 2338f5a890aadd44e8d0c0d9c74a7c33
   - enabled: 1
     path: Assets/Scenes/chose level.unity
     guid: 6e8bbd9a83b944888bac4c1c4d8eccdd
+  - enabled: 1
+    path: Assets/Scenes/levels/tutorial.unity
+    guid: c37b4f7f2f6ca43728f2eb0f9577b75d
   - enabled: 1
     path: Assets/Scenes/levels/card_tabel 0.unity
     guid: 74cb80893bccc494894d7b540ad31d25

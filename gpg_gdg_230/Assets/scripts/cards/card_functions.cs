@@ -26,7 +26,7 @@ public class card_functions : MonoBehaviour
     }
     public void deselectCard()
     {
-        if (hand.selectedCard = gameObject)
+        if (hand.selectedCard == gameObject && !Input.GetMouseButton(0))
         {
             hand.selectedCard = null;
 
