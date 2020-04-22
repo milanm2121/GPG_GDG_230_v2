@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+
 /*
  * The main purpose of this script is so that everything works in order.
  */
@@ -78,6 +79,8 @@ public class TurnBaseScript : MonoBehaviour
     public TMP_Text endingCondition;
 
     List<GameObject> SelectedCards = new List<GameObject>();
+
+    public load_scenes ls;
     // Start is called before the first frame update 
     void Start()
     {
@@ -509,6 +512,7 @@ public class TurnBaseScript : MonoBehaviour
             {
                 buttons[i].SetActive(false);
             }
+            StartCoroutine(back_to_main()); 
         }
         if (player2Health <= 0)
         {
@@ -522,9 +526,16 @@ public class TurnBaseScript : MonoBehaviour
             {
                 buttons[i].SetActive(false);
             }
+            StartCoroutine(back_to_main());
         }
 
         state = TurnState.Nothing;
+    }
+
+    IEnumerator back_to_main()
+    {
+        yield return new WaitForSeconds(3);
+        ls.loadScene();
     }
 
     //This is so that the player doesn't take too long
