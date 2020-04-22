@@ -75,6 +75,7 @@ public class TurnBaseScript : MonoBehaviour
     //timer
     public GameObject holder_timer;
     public TMP_Text timer;
+    public TMP_Text endingCondition;
 
     List<GameObject> SelectedCards = new List<GameObject>();
     // Start is called before the first frame update 
@@ -90,6 +91,7 @@ public class TurnBaseScript : MonoBehaviour
             playerTurn = false;
 
         state = TurnState.StartTurn;
+        endingCondition.gameObject.SetActive(false);
 
     }
     #endregion
@@ -470,6 +472,8 @@ public class TurnBaseScript : MonoBehaviour
         if (player1AFKStrike == 3)
         {
             Debug.Log("Player 1 lose");
+            endingCondition.gameObject.SetActive(true);
+            endingCondition.text = "Defeated";
             AS.clip = lose;
             AS.loop = false;
             AS.Play();
@@ -485,6 +489,8 @@ public class TurnBaseScript : MonoBehaviour
             AS.loop = false;
             AS.Play();
             Debug.Log("Player 2  lose");
+            endingCondition.gameObject.SetActive(true);
+            endingCondition.text = "Victory";
             for (int i = 0; buttons.Length > i; i++)
             {
                 buttons[i].SetActive(false);
@@ -497,6 +503,8 @@ public class TurnBaseScript : MonoBehaviour
             AS.loop = false;
             AS.Play();
             Debug.Log("Player 1 Lose");
+            endingCondition.gameObject.SetActive(true);
+            endingCondition.text = "Defeated";
             for (int i = 0; buttons.Length > i; i++)
             {
                 buttons[i].SetActive(false);
@@ -508,6 +516,8 @@ public class TurnBaseScript : MonoBehaviour
             AS.loop = false;
             AS.Play();
             Debug.Log("Player 2 Lose");
+            endingCondition.gameObject.SetActive(true);
+            endingCondition.text = "Victory";
             for (int i = 0; buttons.Length > i; i++)
             {
                 buttons[i].SetActive(false);
