@@ -112,6 +112,36 @@ public class Hand : MonoBehaviour
             chosen_magic_card.transform.localScale = Vector3.Lerp(chosen_magic_card.transform.localScale, new Vector3(1,1,0), 0.5f);
             chosen_magic_card.transform.SetAsLastSibling();
         }
+
+        //click and drag check
+        if (selectedCard!=null && active == true && TBS.state == TurnBaseScript.TurnState.PlayerTurn && !Input.GetMouseButton(0) && selectedCard.transform.position.y >= active_slots[0].transform.position.y)
+        {
+
+            for (int i = 0; cards_in_hand > i; i++)
+            {
+                if (selectedCard == hand[i])
+                {
+                    Use_card(i);
+                    break;
+                }
+            }
+
+        }
+
+        //repositions the cards
+        for (int i = 0; cards_in_hand > i; i++)
+        {
+            if (hand[i] == selectedCard && Input.GetMouseButton(0) && player==true)
+            {
+                Vector3 v = Input.mousePosition;
+                v.z = 10;
+                hand[i].transform.position = cam.ScreenToWorldPoint(v);
+            }
+            else
+            {
+                hand[i].transform.position = Vector3.Lerp(hand[i].transform.position, hand_slots[i].position, 0.5f);
+            }
+        }
     }
 
 
@@ -119,17 +149,12 @@ public class Hand : MonoBehaviour
     void LateUpdate()
     {
         
-        //repositions the cards
-        for (int i = 0; cards_in_hand > i; i++)
-        {
-            hand[i].transform.position = Vector3.Lerp(hand[i].transform.position, hand_slots[i].position, 0.5f);
-        }
+        
 
         if(TBS.state != TurnBaseScript.TurnState.EndofBattle)
         {
             for (int i = 0; active_cards > i; i++)
             {
-
 
                 active_cards_slots[i].transform.position = Vector3.Lerp(active_cards_slots[i].transform.position, active_slots[i].position, 0.5f);
 
@@ -210,26 +235,13 @@ public class Hand : MonoBehaviour
             }
             else
             {
+
+                
+
                 //clikink cards
-                if (selectedCard != null && (Input.GetMouseButtonDown(0)))// || hold!=0))
+                if (selectedCard != null && Input.GetMouseButtonDown(0))
                 {
-                    //for clicking cards in hand to move to the feild
-                    if (active == true && TBS.state == TurnBaseScript.TurnState.PlayerTurn &&Input.GetMouseButton(0))
-                    {
-    //                    hold += Time.deltaTime;
-    //                    if (hold >= 0.3f)
-    //                    {
-    //                        hold = 0;
-                            for (int i = 0; cards_in_hand > i; i++)
-                            {
-                                if (selectedCard == hand[i])
-                                {
-                                    Use_card(i);
-                                    break;
-                                }
-                            }
-         //               }
-                    }
+                    
 
                     //for seting cards from feild to actack or defend
                     for (int i = 0; active_cards > i; i++)
