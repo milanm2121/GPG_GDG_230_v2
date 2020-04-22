@@ -77,6 +77,8 @@ public class TurnBaseScript : MonoBehaviour
     public GameObject holder_timer;
     public TMP_Text timer;
     public TMP_Text endingCondition;
+    public TMP_Text turnCondition;
+    public bool turnTextIsActive;
 
     List<GameObject> SelectedCards = new List<GameObject>();
 
@@ -95,6 +97,8 @@ public class TurnBaseScript : MonoBehaviour
 
         state = TurnState.StartTurn;
         endingCondition.gameObject.SetActive(false);
+        turnCondition.gameObject.SetActive(false);
+        turnTextIsActive = false;
 
     }
     #endregion
@@ -139,6 +143,9 @@ public class TurnBaseScript : MonoBehaviour
                         player2Hand.active = false;
                         player_active_ui.SetActive(true);
                         AI_active_ui.SetActive(false);
+                        turnCondition.gameObject.SetActive(true);
+                        turnCondition.text = "Your Turn";
+                        turnTextIsActive = true;
                     }
                     else
                     {
@@ -146,6 +153,9 @@ public class TurnBaseScript : MonoBehaviour
                         player2Hand.active = true;
                         player_active_ui.SetActive(false);
                         AI_active_ui.SetActive(true);
+                        turnCondition.gameObject.SetActive(true);
+                        turnCondition.text = "Opponent Turn";
+                        turnTextIsActive = true;
                     }
                     Draw7();
                 }
@@ -156,6 +166,9 @@ public class TurnBaseScript : MonoBehaviour
                     {
                         player1Hand.active = true;
                         player2Hand.active = false;
+                        turnCondition.gameObject.SetActive(true);
+                        turnCondition.text = "Your Turn";
+                        turnTextIsActive = true;
                         player1Hand.pickCard();
                         //                        Debug.Log("Player 1 drew a card");
                     }
@@ -164,6 +177,9 @@ public class TurnBaseScript : MonoBehaviour
                         player1Hand.active = false;
                         player2Hand.active = true;
                         player2Hand.pickCard();
+                        turnCondition.gameObject.SetActive(true);
+                        turnCondition.text = "Opponent Turn";
+                        turnTextIsActive = true;
                         //                        Debug.Log("Player 2 drew a card");
                     }
                     if (playerTurn == true)
@@ -347,11 +363,22 @@ public class TurnBaseScript : MonoBehaviour
             }
         }
 
+        if (turnTextIsActive == true)
+        {
+            Invoke("TurnTextOff", 1.5f);
+        }
         
     }
     #endregion
 
     #region Actions
+
+    public void TurnTextOff()
+    {
+        turnCondition.gameObject.SetActive(false);
+        turnTextIsActive = false;
+    }
+
     void Draw7()
     {
         player2Hand.pick7();
