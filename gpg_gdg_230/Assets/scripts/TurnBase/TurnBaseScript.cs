@@ -123,7 +123,7 @@ public class TurnBaseScript : MonoBehaviour
         switch (state)
         {
             //For when the turn starts for a player.
-            case (TurnState.StartTurn):
+            case (TurnState.StartTurn): 
 
 
                 if (startOfTheGame == true)
