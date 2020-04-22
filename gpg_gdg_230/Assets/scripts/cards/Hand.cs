@@ -86,7 +86,7 @@ public class Hand : MonoBehaviour
         TBS = GameObject.Find("maneger object").GetComponent<TurnBaseScript>();
         cm = GameObject.Find("maneger object").GetComponent<combat_maneger>();
 
-        if (player == true)
+        if (player == true && GameObject.Find("player deck")!=null)
         {
             //copies static deck to the player ingame deck
             GameObject.Find("player deck").GetComponent<player_static_deck>().loadDeck();
