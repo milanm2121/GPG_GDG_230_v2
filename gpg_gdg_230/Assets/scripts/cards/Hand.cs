@@ -319,8 +319,14 @@ public class Hand : MonoBehaviour
                             }
                         }
                     }
-                    
-                    StartCoroutine(Ai_turn_control(TurnBaseScript.TurnState.Response));
+                    if (cm.attack.Count != 0)
+                    {
+                        StartCoroutine(Ai_turn_control(TurnBaseScript.TurnState.Response));
+                    }
+                    else
+                    {
+                        TBS.state = TurnBaseScript.TurnState.End;
+                    }
                 }
             }
         }
@@ -350,8 +356,10 @@ public class Hand : MonoBehaviour
             }
             if (stateTick == false)
             {
+
                 TBS.state = TurnBaseScript.TurnState.EndofBattle;
-            //    StartCoroutine(Ai_turn_control(TurnBaseScript.TurnState.End));
+
+                //    StartCoroutine(Ai_turn_control(TurnBaseScript.TurnState.End));
             }
 
         }
