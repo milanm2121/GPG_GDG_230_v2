@@ -18,7 +18,9 @@ public class collection : MonoBehaviour
         public int cardsYouCanUse;
     };
     public GameObject cardtemp;
+    public GameObject spelltemp;
     public GameObject cardtempcreation;
+    public GameObject spelltempcreation;
     public GameObject button;
 
     //all of the cards that you have and dont
@@ -89,8 +91,14 @@ public class collection : MonoBehaviour
         {
             for (int y = 0; 5 > y; y++)
             {
-                
-                Collection[(x * 5) + y].card = Instantiate(cardtemp, new Vector2(origonalTransform.position.x, origonalTransform.position.y) + new Vector2(y * xoffset, -x * yoffset), Quaternion.identity);
+                if (id[(x * 5) + y].isSpell)
+                {
+                    Collection[(x * 5) + y].card = Instantiate(spelltemp, new Vector2(origonalTransform.position.x, origonalTransform.position.y) + new Vector2(y * xoffset, -x * yoffset), Quaternion.identity);
+                }
+                else
+                {
+                    Collection[(x * 5) + y].card = Instantiate(cardtemp, new Vector2(origonalTransform.position.x, origonalTransform.position.y) + new Vector2(y * xoffset, -x * yoffset), Quaternion.identity);
+                }
                 Collection[(x * 5) + y].text = Instantiate(texttemp, new Vector2(origonalTransform.position.x, origonalTransform.position.y) + new Vector2(y * xoffset, -x * yoffset - yoffset/2), Quaternion.identity);
                 if (((x * 5) + y) <= 150)
                 {
@@ -123,7 +131,15 @@ public class collection : MonoBehaviour
                 if ((x * 3) + y < cards_you_have.Count)
                 {
                     cardGroup cg = new cardGroup();
-                    cg.card = Instantiate(cardtempcreation, new Vector2(origonalTransform2.position.x, origonalTransform2.position.y) + new Vector2(y * xoffset2, -x * yoffset2), Quaternion.identity);
+                    if (cards_you_have[(x * 3) + y].card.GetComponent<CardDisplay>().card.isSpell==true)
+                    {
+                        cg.card = Instantiate(spelltempcreation, new Vector2(origonalTransform2.position.x, origonalTransform2.position.y) + new Vector2(y * xoffset2, -x * yoffset2), Quaternion.identity);
+                    }
+                    else
+                    {
+                        cg.card = Instantiate(cardtempcreation, new Vector2(origonalTransform2.position.x, origonalTransform2.position.y) + new Vector2(y * xoffset2, -x * yoffset2), Quaternion.identity);
+                    }
+                    
                     cg.text = Instantiate(texttemp, new Vector2(origonalTransform2.position.x, origonalTransform2.position.y) + new Vector2(y * xoffset2, -x * yoffset2-yoffset2/2), Quaternion.identity);
                     cg.count = cg.cardsYouCanUse = cards_you_have[(x * 3) + y].count;
                     cg.text.text = "cards you can use:" + cards_you_have[(x * 3) + y].count.ToString();

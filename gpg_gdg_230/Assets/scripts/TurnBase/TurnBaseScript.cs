@@ -1085,7 +1085,7 @@ public class TurnBaseScript : MonoBehaviour
                 bool enduring = false;
                 if (x.Length != 0)
                 {
-                    for (int y = 0; x.Length > y; i++)
+                    for (int y = 0; x.Length > y; y++)
                     {
                         if (x[i] == "Enduring")
                         {
