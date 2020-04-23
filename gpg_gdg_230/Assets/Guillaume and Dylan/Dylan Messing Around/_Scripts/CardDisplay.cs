@@ -36,11 +36,11 @@ public class CardDisplay : MonoBehaviour
         descriptionText.text = card.description;
 
         artworkImage.sprite = card.artwork;
-
+        
         manaText.text = card.manaCost.ToString();
-        
-        
 
+
+        artworkImage.preserveAspect = true;
     }
     private void Update()
     {

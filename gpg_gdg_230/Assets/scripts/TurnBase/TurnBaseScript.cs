@@ -507,6 +507,7 @@ public class TurnBaseScript : MonoBehaviour
             AS.clip = lose;
             AS.loop = false;
             AS.Play();
+            state = TurnState.Nothing;
 
             for (int i = 0; buttons.Length > i; i++)
             {
@@ -521,6 +522,8 @@ public class TurnBaseScript : MonoBehaviour
             Debug.Log("Player 2  lose");
             endingCondition.gameObject.SetActive(true);
             endingCondition.text = "Victory";
+            state = TurnState.Nothing;
+            timerIsOn = false;
             for (int i = 0; buttons.Length > i; i++)
             {
                 buttons[i].SetActive(false);

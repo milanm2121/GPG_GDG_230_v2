@@ -163,7 +163,7 @@ public class collection : MonoBehaviour
         configuerScale();
        // origonalTransform.localScale = new Vector3(xoffset/250,xoffset/250, 0);
 
-        origonalTransform2.position = new Vector2((int)origonalTransform2.position.x, 7500 * 2 * sbForCreation.value + origonalsbYvalue2);
+        origonalTransform2.position = new Vector2((int)origonalTransform2.position.x, 14000 * 2 * sbForCreation.value + origonalsbYvalue2);
         sbForCreation.size = 0;
 
         for(int i = 0; Collection.Length > i; i++)
