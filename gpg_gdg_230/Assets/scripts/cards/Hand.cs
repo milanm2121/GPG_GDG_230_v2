@@ -337,9 +337,13 @@ public class Hand : MonoBehaviour
             int defending_cards = 0;
             for (int i = 0; TBS.player1Hand.active_cards > i; i++)
             {
-                if (active_cards>i && active_cards_slots[i].GetComponent<CardDisplay>().card.health > 1 && cm.deffendingCardsRef.Contains(active_cards_slots[i]) == false)
-                    SetToDefend(active_cards_slots[i],Random.Range(0,cm.attack.Count));
-                defending_cards++;
+                if (active_cards > i && active_cards_slots[i].GetComponent<CardDisplay>().card.health > 1 && cm.deffendingCardsRef.Contains(active_cards_slots[i]) == false)
+                {
+                    int x = Random.Range(0, cm.attack.Count);
+                    if (cm.attack[x] != null)
+                        SetToDefend(active_cards_slots[i], x);
+                    defending_cards++;
+                }
             }
             if (defending_cards <= 2)
             {
@@ -347,7 +351,9 @@ public class Hand : MonoBehaviour
                 {
                     if (active_cards_slots[i] != null && cm.deffendingCardsRef.Contains(active_cards_slots[i]) == false)
                     {
-                        SetToDefend(active_cards_slots[i], Random.Range(0, cm.attack.Count + 1));
+                        int x = Random.Range(0, cm.attack.Count);
+                        if (cm.attack[x]!=null)
+                            SetToDefend(active_cards_slots[i], x);
                         defending_cards++;
                     }
                     if (defending_cards >= 3)
