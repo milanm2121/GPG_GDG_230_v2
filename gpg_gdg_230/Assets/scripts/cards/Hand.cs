@@ -178,7 +178,7 @@ public class Hand : MonoBehaviour
             {
                 
                 selectedCard.transform.SetAsLastSibling();
-                if (Input.GetKey(KeyCode.I))
+                if (Input.GetMouseButton(1))
                 {
                     selectedCard.GetComponent<RectTransform>().localScale = new Vector2(1f, 1f);
                 }
@@ -319,13 +319,17 @@ public class Hand : MonoBehaviour
                             }
                         }
                     }
-                    if (cm.attack.Count != 0)
+                    if(cm.attack.Count == 0)
                     {
-                        StartCoroutine(Ai_turn_control(TurnBaseScript.TurnState.Response));
+                        TBS.state = TurnBaseScript.TurnState.End;
+                    }
+                    else if (TBS.player1Hand.active_cards==0)
+                    {
+                        StartCoroutine(Ai_turn_control(TurnBaseScript.TurnState.EndofBattle));
                     }
                     else
                     {
-                        TBS.state = TurnBaseScript.TurnState.End;
+                        StartCoroutine(Ai_turn_control(TurnBaseScript.TurnState.Response));
                     }
                 }
             }
@@ -340,9 +344,11 @@ public class Hand : MonoBehaviour
                 if (active_cards > i && active_cards_slots[i].GetComponent<CardDisplay>().card.health > 1 && cm.deffendingCardsRef.Contains(active_cards_slots[i]) == false)
                 {
                     int x = Random.Range(0, cm.attack.Count);
-                    if (cm.attack[x] != null)
+                    if (cm.attack.Count != 0 && cm.attack[x] != null)
+                    {
                         SetToDefend(active_cards_slots[i], x);
-                    defending_cards++;
+                        defending_cards++;
+                    }
                 }
             }
             if (defending_cards <= 2)
@@ -352,9 +358,15 @@ public class Hand : MonoBehaviour
                     if (active_cards_slots[i] != null && cm.deffendingCardsRef.Contains(active_cards_slots[i]) == false)
                     {
                         int x = Random.Range(0, cm.attack.Count);
-                        if (cm.attack[x]!=null)
+                        if (cm.attack.Count != 0 && cm.attack[x] != null)
+                        {
                             SetToDefend(active_cards_slots[i], x);
-                        defending_cards++;
+                            defending_cards++;
+                        }
+                        else
+                        {
+       //                     TBS.state = TurnBaseScript.TurnState.End;
+                        }
                     }
                     if (defending_cards >= 3)
                         break;
@@ -710,7 +722,6 @@ public class Hand : MonoBehaviour
 
         if (stateTick == false)
         {
-            print("1");
             StartCoroutine(Ai_turn_control(TurnBaseScript.TurnState.Attack));
         }
 

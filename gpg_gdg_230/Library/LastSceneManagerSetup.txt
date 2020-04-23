@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/main_menu(Test).unity
+- path: Assets/Scenes/levels/card_tabel 5.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

@@ -231,21 +231,21 @@ public class TurnBaseScript : MonoBehaviour
             case (TurnState.PlayerTurn):
                 if (playerTurn == true)
                 {
-                    buttons[2].gameObject.SetActive(true);
-                    buttons[0].gameObject.SetActive(true);
-                    buttons[1].gameObject.SetActive(false);
-                    buttons[3].gameObject.SetActive(false);
+                    buttons[2].gameObject.GetComponent<Button>().interactable=(true);
+                    buttons[0].gameObject.GetComponent<Button>().interactable =(true);
+                    buttons[1].gameObject.GetComponent<Button>().interactable = (false);
+                    buttons[3].gameObject.GetComponent<Button>().interactable = (false);
                 }
                 else
                 {
-                    buttons[2].gameObject.SetActive(false);
-                    buttons[0].gameObject.SetActive(false);
-                    buttons[1].gameObject.SetActive(false);
-                    buttons[3].gameObject.SetActive(false);
+                    buttons[2].gameObject.GetComponent<Button>().interactable = (false);
+                    buttons[0].gameObject.GetComponent<Button>().interactable = (false);
+                    buttons[1].gameObject.GetComponent<Button>().interactable = (false);
+                    buttons[3].gameObject.GetComponent<Button>().interactable = (false);
                 }
                 if (hasAttack == true)
                 {
-                    buttons[2].gameObject.SetActive(false);
+                    buttons[2].gameObject.GetComponent<Button>().interactable = (false);
                 }
                 //Making the turn timer, we need some more work on.
                 if (timerIsOn == false)
@@ -268,17 +268,17 @@ public class TurnBaseScript : MonoBehaviour
             case (TurnState.Attack):
                 if (playerTurn == true)
                 {
-                    buttons[2].gameObject.SetActive(false);
-                    buttons[0].gameObject.SetActive(false);
-                    buttons[1].gameObject.SetActive(false);
-                    buttons[3].gameObject.SetActive(true);
+                    buttons[2].gameObject.GetComponent<Button>().interactable = (false);
+                    buttons[0].gameObject.GetComponent<Button>().interactable = (false);
+                    buttons[1].gameObject.GetComponent<Button>().interactable = (false);
+                    buttons[3].gameObject.GetComponent<Button>().interactable = (true);
                 }
                 else
                 {
-                    buttons[2].gameObject.SetActive(false);
-                    buttons[0].gameObject.SetActive(false);
-                    buttons[1].gameObject.SetActive(false);
-                    buttons[3].gameObject.SetActive(false);
+                    buttons[2].gameObject.GetComponent<Button>().interactable = (false);
+                    buttons[0].gameObject.GetComponent<Button>().interactable = (false);
+                    buttons[1].gameObject.GetComponent<Button>().interactable = (false);
+                    buttons[3].gameObject.GetComponent<Button>().interactable = (false);
                 }
                 hasAttack = true;
                 break;
@@ -286,17 +286,17 @@ public class TurnBaseScript : MonoBehaviour
             case (TurnState.Response):
                 if (playerTurn == false)
                 {
-                    buttons[2].gameObject.SetActive(false);
-                    buttons[0].gameObject.SetActive(false);
-                    buttons[1].gameObject.SetActive(true);
-                    buttons[3].gameObject.SetActive(false);
+                    buttons[2].gameObject.GetComponent<Button>().interactable = (false);
+                    buttons[0].gameObject.GetComponent<Button>().interactable = (false);
+                    buttons[1].gameObject.GetComponent<Button>().interactable = (true);
+                    buttons[3].gameObject.GetComponent<Button>().interactable = (false);
                 }
                 else
                 {
-                    buttons[2].gameObject.SetActive(false);
-                    buttons[0].gameObject.SetActive(false);
-                    buttons[1].gameObject.SetActive(false);
-                    buttons[3].gameObject.SetActive(false);
+                    buttons[2].gameObject.GetComponent<Button>().interactable = (false);
+                    buttons[0].gameObject.GetComponent<Button>().interactable = (false);
+                    buttons[1].gameObject.GetComponent<Button>().interactable = (false);
+                    buttons[3].gameObject.GetComponent<Button>().interactable = (false);
                 }
                 PlayerResponeToAction();
 
@@ -513,6 +513,7 @@ public class TurnBaseScript : MonoBehaviour
             {
                 buttons[i].SetActive(false);
             }
+            StartCoroutine(back_to_main());
         }
         if (player2AFKStrike == 3)
         {
@@ -528,6 +529,7 @@ public class TurnBaseScript : MonoBehaviour
             {
                 buttons[i].SetActive(false);
             }
+            StartCoroutine(back_to_main());
         }
 
         if (player1Health <= 0)
@@ -612,8 +614,8 @@ public class TurnBaseScript : MonoBehaviour
         StopCoroutine("CountDown");
         timerIsOn = false;
         
-        buttons[0].gameObject.SetActive(false);
-        buttons[2].gameObject.SetActive(false);
+        buttons[0].gameObject.GetComponent<Button>().interactable = (false);
+        buttons[2].gameObject.GetComponent<Button>().interactable = (false);
 
         player1CoinText.text = player1Hand.playerGold.ToString();
         player1ManaText.text = player1Hand.playerMana.ToString();
