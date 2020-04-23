@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 615dd9c20f7fa234b9eb1a59bd2aec1a, type: 3}
   m_Name: Magician
   m_EditorClassIdentifier: 
-  ID: 116
-  name: Magician
+  ID: 111
+  name: Therroth
   description: 'On Play: Boost all units 2 attack 2 health'
   Tags: Magician
   artwork: {fileID: 0}

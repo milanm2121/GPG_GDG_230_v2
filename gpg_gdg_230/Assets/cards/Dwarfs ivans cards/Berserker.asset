@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 615dd9c20f7fa234b9eb1a59bd2aec1a, type: 3}
   m_Name: Berserker
   m_EditorClassIdentifier: 
-  ID: 106
-  name: Berserker
+  ID: 103
+  name: Glaggel
   description: 'On Play: Boost all units 0 attack -3 health . Damage all for 5'
   Tags: Cyborg
   artwork: {fileID: 0}

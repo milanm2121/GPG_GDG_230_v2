@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Assasin
   m_EditorClassIdentifier: 
   ID: 102
-  name: Assasin
+  name: LumLin
   description: Dodge 10 %
   Tags: Cyborg
   artwork: {fileID: 0}

@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 615dd9c20f7fa234b9eb1a59bd2aec1a, type: 3}
   m_Name: Shielder
   m_EditorClassIdentifier: 
-  ID: 101
-  name: Shielder
+  ID: 115
+  name: Wol
   description: 
   Tags: Cyborg
   artwork: {fileID: 0}

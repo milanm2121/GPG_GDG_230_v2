@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 615dd9c20f7fa234b9eb1a59bd2aec1a, type: 3}
   m_Name: Fighter
   m_EditorClassIdentifier: 
-  ID: 118
-  name: Fighter
+  ID: 108
+  name: Nuclear Fire Fighting Prototype
   description: Larger and tougher than AI BOT
   Tags: Fighter Machine AI
   artwork: {fileID: 0}
