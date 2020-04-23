@@ -16,7 +16,7 @@ MonoBehaviour:
   name: Dhongrig
   description: Swarm
   Tags: Swordman
-  artwork: {fileID: 0}
+  artwork: {fileID: 21300000, guid: c2079f8bb29f14f2c874b916bcd9bf67, type: 3}
   manaCost: 6
   attack: 5
   health: 3

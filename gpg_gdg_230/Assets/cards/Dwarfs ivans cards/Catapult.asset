@@ -16,7 +16,7 @@ MonoBehaviour:
   name: Uverroid
   description: Charged Swarm
   Tags: Catapult Vehicle
-  artwork: {fileID: 0}
+  artwork: {fileID: 21300000, guid: 8f45ad3818cc04b2da8fdd0e398ae1b3, type: 3}
   manaCost: 5
   attack: 5
   health: 3

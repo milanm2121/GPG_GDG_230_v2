@@ -16,7 +16,7 @@ MonoBehaviour:
   name: Sighout
   description: Dodge 25 %
   Tags: Cyborg
-  artwork: {fileID: 0}
+  artwork: {fileID: 21300000, guid: f888d1711d9704307937190ecacbcba9, type: 3}
   manaCost: 4
   attack: 3
   health: 4

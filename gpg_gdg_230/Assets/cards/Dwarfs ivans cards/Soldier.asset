@@ -16,7 +16,7 @@ MonoBehaviour:
   name: Responsive Robot Control Cyborg
   description: AI BOT
   Tags: Soldier Machine AI
-  artwork: {fileID: 0}
+  artwork: {fileID: 21300000, guid: 46055892653fa4fe586f10cecc3bde30, type: 3}
   manaCost: 1
   attack: 2
   health: 1

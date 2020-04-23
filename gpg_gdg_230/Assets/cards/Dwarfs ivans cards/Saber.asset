@@ -16,7 +16,7 @@ MonoBehaviour:
   name: Watim
   description: 'On Play: Earn 1 gold 2 Power'
   Tags: Cyborg
-  artwork: {fileID: 0}
+  artwork: {fileID: 21300000, guid: 2f67de081a0b04be9a45de275118263c, type: 3}
   manaCost: 4
   attack: 4
   health: 3

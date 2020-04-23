@@ -16,7 +16,7 @@ MonoBehaviour:
   name: ' Thukatir'
   description: 'On Play: Damage all for 3'
   Tags: Cyborg
-  artwork: {fileID: 0}
+  artwork: {fileID: 21300000, guid: 7b8b2d46f16f04b66a1f683201e27007, type: 3}
   manaCost: 6
   attack: 6
   health: 2

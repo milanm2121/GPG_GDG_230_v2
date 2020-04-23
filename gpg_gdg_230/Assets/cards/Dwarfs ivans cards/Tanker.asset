@@ -16,7 +16,7 @@ MonoBehaviour:
   name: Ruil
   description: 'On Play: Boost all Ranger 1 attack 0 health'
   Tags: Tanker
-  artwork: {fileID: 0}
+  artwork: {fileID: 21300000, guid: 26e5eaf77640342a9b78eb384e49f84c, type: 3}
   manaCost: 2
   attack: 6
   health: 1

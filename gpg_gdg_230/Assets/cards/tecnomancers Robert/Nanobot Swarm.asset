@@ -16,7 +16,7 @@ MonoBehaviour:
   name: Nanobot Swarm
   description: Swarm Charged
   Tags: Machine swarm AI
-  artwork: {fileID: 0}
+  artwork: {fileID: 21300000, guid: cb747846e41664154baf34375e00c4f5, type: 3}
   manaCost: 7
   attack: 7
   health: 4

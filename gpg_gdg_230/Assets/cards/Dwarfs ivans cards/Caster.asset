@@ -16,7 +16,7 @@ MonoBehaviour:
   name: Flumin
   description: Enduring
   Tags: Cyborg
-  artwork: {fileID: 0}
+  artwork: {fileID: 21300000, guid: ba3474654e67b474ca73360af70ff59e, type: 3}
   manaCost: 5
   attack: 5
   health: 2

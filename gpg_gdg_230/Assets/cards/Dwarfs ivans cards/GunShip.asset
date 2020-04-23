@@ -16,7 +16,7 @@ MonoBehaviour:
   name: LWSS Pegasus
   description: 
   Tags: GunShip
-  artwork: {fileID: 0}
+  artwork: {fileID: 21300000, guid: a460adc0d8938499e96eb8e189c4ca0f, type: 3}
   manaCost: 4
   attack: 4
   health: 2
