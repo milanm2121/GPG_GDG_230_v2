@@ -716,8 +716,11 @@ public class Hand : MonoBehaviour
     {
         for (int i = 0; 10 > i; i++)
         {
-            Use_card(Random.Range(0, cards_in_hand));
-            yield return new WaitForSeconds(0.2f);
+            if (cards_in_hand != 0)
+            {
+                Use_card(Random.Range(0, cards_in_hand));
+                yield return new WaitForSeconds(0.2f);
+            }
         }
 
         if (stateTick == false)
