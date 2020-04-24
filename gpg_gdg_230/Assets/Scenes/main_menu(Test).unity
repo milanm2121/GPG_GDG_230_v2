@@ -641,7 +641,7 @@ MonoBehaviour:
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -1477,6 +1477,16 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8344372254563469290, guid: 2ad4d0487c4c94afd8f8813a793f104a,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1194284047}
+    - target: {fileID: 8344372254563469290, guid: 2ad4d0487c4c94afd8f8813a793f104a,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetResolutions
+      objectReference: {fileID: 0}
     - target: {fileID: 8344372254563469293, guid: 2ad4d0487c4c94afd8f8813a793f104a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1581,16 +1591,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8344372254563469290, guid: 2ad4d0487c4c94afd8f8813a793f104a,
-        type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1194284047}
-    - target: {fileID: 8344372254563469290, guid: 2ad4d0487c4c94afd8f8813a793f104a,
-        type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetResolutions
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2ad4d0487c4c94afd8f8813a793f104a, type: 3}
@@ -4765,6 +4765,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: Volume
+      objectReference: {fileID: 0}
+    - target: {fileID: 1726617634246141640, guid: 901ee025007f649028b856b5a78ede35,
+        type: 3}
+      propertyPath: m_Value
+      value: 0.134
       objectReference: {fileID: 0}
     - target: {fileID: 1726617634938518852, guid: 901ee025007f649028b856b5a78ede35,
         type: 3}
@@ -12402,6 +12407,7 @@ MonoBehaviour:
   - {fileID: 875043635}
   - {fileID: 875168154}
   - {fileID: 751336270}
+  - {fileID: 109872542}
 --- !u!1 &7798217020945304756
 GameObject:
   m_ObjectHideFlags: 0

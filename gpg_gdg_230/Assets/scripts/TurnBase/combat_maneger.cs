@@ -173,7 +173,7 @@ public class combat_maneger : MonoBehaviour
 
             yield return new WaitForSeconds(1);
         }
-    
+
         yield return new WaitForFixedUpdate();
         //clears list
         for (int i = 0; attack.Count > i; i++)
@@ -212,11 +212,10 @@ public class combat_maneger : MonoBehaviour
             TBS.buttons[1].gameObject.GetComponent<Button>().interactable = (false);
             TBS.buttons[3].gameObject.GetComponent<Button>().interactable = (false);
         }
-        if (TBS.playerTurn == false)
-        {
-            yield return new WaitForSeconds(1);
-            TBS.EndPlayerTurn();
-        }
+
+        yield return new WaitForSeconds(1);
+        TBS.EndPlayerTurn();
+    
     
     }
     
