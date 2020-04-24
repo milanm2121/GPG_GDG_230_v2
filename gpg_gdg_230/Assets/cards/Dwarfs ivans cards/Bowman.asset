@@ -16,7 +16,7 @@ MonoBehaviour:
   name: Fad
   description: 'On Play: Damage all for 1'
   Tags: Bowman
-  artwork: {fileID: 0}
+  artwork: {fileID: 21300000, guid: 302dc3edfa3dc47bba76116c15f1b925, type: 3}
   manaCost: 3
   attack: 5
   health: 2
