@@ -70,11 +70,13 @@ public class collection : MonoBehaviour
     public GameObject decks_screan;
     public TMP_Text deck_building_count;
     public serilisable_deak selected_deck;
-    
 
+    public GameObject cards_button;
+    public GameObject Deck_button;
 
     public AudioSource AS;
 
+    public Button[] deackbuiling_dissable;
 
     // Start is called before the first frame update
     void Start()
@@ -152,6 +154,7 @@ public class collection : MonoBehaviour
                 }
             }
         }
+        save_cards();
     }
 
     // Update is called once per frame
@@ -219,14 +222,27 @@ public class collection : MonoBehaviour
         deackBeingCreated = new serilisable_deak();
         cardsInCreateDeak = 0;
         StartCoroutine(waitForFullDeck());
+        for(int i=0;deackbuiling_dissable.Length>i; i++)
+        {
+            deackbuiling_dissable[i].interactable = false;
+        }
     
     }
     public void cancle_deack_creation()
     {
         //StopCoroutine(waitForFullDeck());
+        
+        for (int i = 0; cards_you_have.Count > i; i++)
+        {
+            cards_you_have[i].card.GetComponent<deck_building_functions>().ResetCount();
+        }
         cancle_deck = true;
         deckcreation.SetActive(false);
         decks_screan.SetActive(true);
+        for (int i = 0; deackbuiling_dissable.Length > i; i++)
+        {
+            deackbuiling_dissable[i].interactable = true;
+        }
     }
 
     IEnumerator waitForFullDeck()
@@ -235,6 +251,8 @@ public class collection : MonoBehaviour
         if (cancle_deck == true)
         {
             cancle_deck = false;
+            cards_button.SetActive(true);
+            Deck_button.SetActive(true);
         }
         else
         {
@@ -256,6 +274,12 @@ public class collection : MonoBehaviour
             deckcreation.SetActive(false);
             AS.Play();
             decks_screan.SetActive(true);
+            for (int i = 0; deackbuiling_dissable.Length > i; i++)
+            {
+                deackbuiling_dissable[i].interactable = true;
+            }
+            cards_button.SetActive(true);
+            Deck_button.SetActive(true);
         }
     }
     public void loadDeacks()

@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 615dd9c20f7fa234b9eb1a59bd2aec1a, type: 3}
   m_Name: The Obliterator
   m_EditorClassIdentifier: 
-  ID: 139
+  ID: 145
   name: The-Obliterator
   description: 'On Play: Damage all for 3 , On Death: Explode for 1 Swarm Enduring '
   Tags: AI
-  artwork: {fileID: 0}
+  artwork: {fileID: 21300000, guid: 3f3eee727aed84928a5e38ed45eae690, type: 3}
   manaCost: 100
   attack: 10
   health: 15

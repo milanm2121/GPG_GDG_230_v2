@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 615dd9c20f7fa234b9eb1a59bd2aec1a, type: 3}
   m_Name: Banshee Screamer
   m_EditorClassIdentifier: 
-  ID: 126
+  ID: 127
   name: Banshee Screamer
   description: 'Swarm Doge 30 % '
   Tags: Banshee Screamer
-  artwork: {fileID: 0}
+  artwork: {fileID: 21300000, guid: 61fa97851a8de43ea96dc5c576c16eea, type: 3}
   manaCost: 4
   attack: 3
   health: 2

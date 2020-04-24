@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 615dd9c20f7fa234b9eb1a59bd2aec1a, type: 3}
   m_Name: Laser Dog
   m_EditorClassIdentifier: 
-  ID: 137
+  ID: 136
   name: Laser Dog
   description: Charged Doged 30 % when it is the only unit on the field it gains 1
     attack 1 health
   Tags: N/A
-  artwork: {fileID: 0}
+  artwork: {fileID: 21300000, guid: 8d2c140c385b74660bd51756cd1f70b5, type: 3}
   manaCost: 3
   attack: 2
   health: 3

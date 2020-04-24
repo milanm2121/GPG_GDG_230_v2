@@ -16,7 +16,7 @@ MonoBehaviour:
   name: Support Trooper
   description: 'On Play: Boost all Trooper 0 attack 1 health'
   Tags: Support Trooper
-  artwork: {fileID: 0}
+  artwork: {fileID: 21300000, guid: 1d7c2e8a181b3438591f3dfd38c5c8c7, type: 3}
   manaCost: 4
   attack: 2
   health: 3

@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 615dd9c20f7fa234b9eb1a59bd2aec1a, type: 3}
   m_Name: Reshearch Camera
   m_EditorClassIdentifier: 
-  ID: 132
+  ID: 140
   name: Reshearch Camera
   description: . Earn 1 Gold 0 Power Every turn , Immobile
   Tags: N/A
-  artwork: {fileID: 0}
+  artwork: {fileID: 21300000, guid: 43172fabcafc84c949856c1a17ee5999, type: 3}
   manaCost: 3
   attack: 0
   health: 3

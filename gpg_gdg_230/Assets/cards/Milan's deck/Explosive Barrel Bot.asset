@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 615dd9c20f7fa234b9eb1a59bd2aec1a, type: 3}
   m_Name: Explosive Barrel Bot
   m_EditorClassIdentifier: 
-  ID: 127
+  ID: 131
   name: Explosive Barrel Bot
   description: 'On Death: Explode for 6 , Immobile'
   Tags: Explosive Barrel Bot Machine AI
-  artwork: {fileID: 0}
+  artwork: {fileID: 21300000, guid: 751e1395b96a347a6bb8d19ba19329c1, type: 3}
   manaCost: 3
   attack: 0
   health: 3
