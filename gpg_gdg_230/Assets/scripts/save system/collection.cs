@@ -102,7 +102,7 @@ public class collection : MonoBehaviour
                     Collection[(x * 5) + y].card = Instantiate(cardtemp, new Vector2(origonalTransform.position.x, origonalTransform.position.y) + new Vector2(y * xoffset, -x * yoffset), Quaternion.identity);
                 }
                 Collection[(x * 5) + y].text = Instantiate(texttemp, new Vector2(origonalTransform.position.x, origonalTransform.position.y) + new Vector2(y * xoffset, -x * yoffset - yoffset/2), Quaternion.identity);
-                if (((x * 5) + y) <= 150)
+                if (((x * 5) + y) <= 40)
                 {
                     Collection[(x * 5) + y].count = 4;
                 }
@@ -160,6 +160,16 @@ public class collection : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        for (int x = 0; 30 > x; x++)
+        {
+            for (int y = 0; 5 > y; y++)
+            {
+                Collection[(x * 5) + y].count = static_collections.Collection[(x * 5) + y];
+            }
+        }
+        
+
+
         origonalTransform.position = new Vector2(origonalTransform.position.x ,10000 * sbForCollecion.value+origonalsbYvalue);
         sbForCollecion.size = 0;
 

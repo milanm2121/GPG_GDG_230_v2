@@ -63,7 +63,7 @@ public class FakeMicrotransactions : MonoBehaviour
                                     cardExpiryMonth.text = " ";
                                     cardExpiryYear.text = " ";
                                     cardCCV.text = " ";
-                                    coinText.text = ingameCoins.ToString();
+                                    coinText.text = "coins: "+ingameCoins.ToString();
                                 }
                             }
                         }

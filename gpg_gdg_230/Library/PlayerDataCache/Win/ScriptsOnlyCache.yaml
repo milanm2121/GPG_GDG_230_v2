@@ -7,6 +7,7 @@ ScriptsOnlyBuild:
     - Hand
     - MenuSetting
     - Player_deck_int_id
+    - PurchasingCards
     - Quit
     - ScriptableCard
     - SelectPurchase
@@ -866,6 +867,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11812}
     - Class: 114
+      Script: {instanceID: 11814}
+    - Class: 114
       Script: {instanceID: 11838}
     - Class: 115
       Script: {instanceID: 0}
@@ -1012,7 +1015,7 @@ ScriptsOnlyBuild:
     className: Image
   - hash:
       serializedVersion: 2
-      Hash: fb672eaadfdc30b76851d7f48d22bc00
+      Hash: 01cde8d886835f36bd4b614bc8204e46
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: SelectPurchase
@@ -1690,7 +1693,7 @@ ScriptsOnlyBuild:
     className: Slider
   - hash:
       serializedVersion: 2
-      Hash: 22fab7c2d3be2cbddfc4806465929bd1
+      Hash: de9b624b8ed3572c591e118277b057a2
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PurchasingCards
