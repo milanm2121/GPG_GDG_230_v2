@@ -1735,4 +1735,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/levels/card_tabel 3.unity
   - Assets/Scenes/levels/card_tabel 4.unity
   - Assets/Scenes/levels/card_tabel 5.unity
-  playerPath: /Users/milan.manji/Desktop/Cyber_Tatics_windows/Cyber_Tactics.exe
+  playerPath: /Users/milan.manji/Desktop/Cyber_Tactics/Cyber_Tactics.exe

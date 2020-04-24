@@ -213,7 +213,7 @@ public class combat_maneger : MonoBehaviour
             TBS.buttons[3].gameObject.GetComponent<Button>().interactable = (false);
         }
 
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(1.5f);
         TBS.EndPlayerTurn();
     
     

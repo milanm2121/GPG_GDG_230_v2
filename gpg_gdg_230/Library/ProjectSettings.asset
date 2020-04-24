@@ -623,10 +623,10 @@ PlayerSettings:
   facebookXfbml: 0
   facebookFrictionlessRequests: 1
   apiCompatibilityLevel: 6
-  cloudProjectId: df24a186-6b77-4208-8eef-2babe8d805ae
+  cloudProjectId: 6d7144a8-33f0-4073-b869-67ab36958381
   framebufferDepthMemorylessMode: 0
-  projectName: gpg_gdg_230
-  organizationId: unity_1012207
+  projectName: Cyber_Tactics
+  organizationId: unity_1014761
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0

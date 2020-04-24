@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-
+using UnityEngine.Analytics;
+using UnityEngine.SceneManagement;
 /*
  * The main purpose of this script is so that everything works in order.
  */
@@ -513,6 +514,7 @@ public class TurnBaseScript : MonoBehaviour
             {
                 buttons[i].SetActive(false);
             }
+            Analytics.CustomEvent("Player AFK");
             StartCoroutine(back_to_main());
         }
         if (player2AFKStrike == 3)
@@ -529,6 +531,7 @@ public class TurnBaseScript : MonoBehaviour
             {
                 buttons[i].SetActive(false);
             }
+            Analytics.CustomEvent("AI crash" + SceneManager.GetActiveScene().name);
             StartCoroutine(back_to_main());
         }
 
@@ -544,6 +547,7 @@ public class TurnBaseScript : MonoBehaviour
             {
                 buttons[i].SetActive(false);
             }
+            Analytics.CustomEvent("Player lose" + SceneManager.GetActiveScene().name);
             StartCoroutine(back_to_main()); 
         }
         if (player2Health <= 0)
@@ -558,6 +562,7 @@ public class TurnBaseScript : MonoBehaviour
             {
                 buttons[i].SetActive(false);
             }
+            Analytics.CustomEvent("Player win" + SceneManager.GetActiveScene().name);
             StartCoroutine(back_to_main());
         }
 
