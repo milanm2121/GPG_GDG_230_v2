@@ -1267,28 +1267,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 149656305}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1116929812}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
       - m_Target: {fileID: 80665957}
         m_MethodName: SetActive
         m_Mode: 6
@@ -3963,6 +3941,8 @@ MonoBehaviour:
   cardExpiryMonth: {fileID: 974664982}
   cardExpiryYear: {fileID: 1302940525}
   cardCCV: {fileID: 1517230994}
+  purchase_screan: {fileID: 1116929812}
+  cardInfo: {fileID: 149656305}
 --- !u!1 &757924194
 GameObject:
   m_ObjectHideFlags: 0
@@ -11185,7 +11165,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Card Number
+  m_Text: Card Number (at least 12 digits)
 --- !u!222 &2052035861
 CanvasRenderer:
   m_ObjectHideFlags: 0

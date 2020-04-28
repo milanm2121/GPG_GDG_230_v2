@@ -27,7 +27,8 @@ public class FakeMicrotransactions : MonoBehaviour
     public InputField cardExpiryMonth;
     public InputField cardExpiryYear;
     public InputField cardCCV;
-
+    public GameObject purchase_screan;
+    public GameObject cardInfo;
 
     void Update()
     {
@@ -64,6 +65,8 @@ public class FakeMicrotransactions : MonoBehaviour
                                     cardExpiryYear.text = " ";
                                     cardCCV.text = " ";
                                     coinText.text = "coins: "+ingameCoins.ToString();
+                                    purchase_screan.SetActive(true);
+                                    cardInfo.SetActive(false);
                                 }
                             }
                         }
