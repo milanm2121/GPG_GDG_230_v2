@@ -12,6 +12,7 @@ TagManager:
   - Clone
   - Token
   - Soldier
+  - player deck
   layers:
   - Default
   - TransparentFX

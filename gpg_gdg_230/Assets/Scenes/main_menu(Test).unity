@@ -1471,7 +1471,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 875168157}
     - target: {fileID: 8344372254563469290, guid: 2ad4d0487c4c94afd8f8813a793f104a,
         type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -1973,17 +1973,6 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 7798217020922736559}
-        m_MethodName: cancle_deack_creation
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -4882,6 +4871,7 @@ GameObject:
   - component: {fileID: 875168156}
   - component: {fileID: 875168155}
   - component: {fileID: 875168154}
+  - component: {fileID: 875168157}
   m_Layer: 5
   m_Name: Setting_Button
   m_TagString: Untagged
@@ -5054,6 +5044,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 875168152}
   m_CullTransparentMesh: 0
+--- !u!114 &875168157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 875168152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb6c50c639f59b046ac92011a80c17fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 89122228}
+  resolutionsDropDown: {fileID: 2120783182}
+  volume_slider: {fileID: 1408248488}
 --- !u!1 &881919206
 GameObject:
   m_ObjectHideFlags: 0
@@ -5334,7 +5339,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 875168157}
     - target: {fileID: 1726617634246141640, guid: 901ee025007f649028b856b5a78ede35,
         type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -6216,7 +6221,7 @@ MonoBehaviour:
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_subTextObjects:
   - {fileID: 0}
   - {fileID: 0}
@@ -6752,7 +6757,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1194284046}
-  - component: {fileID: 1194284047}
   m_Layer: 5
   m_Name: Setting
   m_TagString: Untagged
@@ -6786,20 +6790,6 @@ RectTransform:
   m_AnchoredPosition: {x: -181.6, y: -166}
   m_SizeDelta: {x: 353.1, y: 283.4}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1194284047
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1194284045}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb6c50c639f59b046ac92011a80c17fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audioSource: {fileID: 89122228}
-  resolutionsDropDown: {fileID: 2120783182}
 --- !u!1 &1266862856
 GameObject:
   m_ObjectHideFlags: 0
@@ -7965,7 +7955,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 875168157}
     - target: {fileID: 7350343618059129528, guid: 30a33abd487d14da7bced023a4952bf3,
         type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -8201,6 +8191,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1407258315}
   m_CullTransparentMesh: 0
+--- !u!114 &1408248488 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1726617634246141640, guid: 901ee025007f649028b856b5a78ede35,
+    type: 3}
+  m_PrefabInstance: {fileID: 927209997}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1421954852
 GameObject:
   m_ObjectHideFlags: 0
@@ -11183,6 +11185,11 @@ PrefabInstance:
     - target: {fileID: 292179571884620581, guid: 8e3708c8245b34bb4914f1fb481a62db,
         type: 3}
       propertyPath: m_Name
+      value: player deck
+      objectReference: {fileID: 0}
+    - target: {fileID: 292179571884620581, guid: 8e3708c8245b34bb4914f1fb481a62db,
+        type: 3}
+      propertyPath: m_TagString
       value: player deck
       objectReference: {fileID: 0}
     - target: {fileID: 292179571884620582, guid: 8e3708c8245b34bb4914f1fb481a62db,

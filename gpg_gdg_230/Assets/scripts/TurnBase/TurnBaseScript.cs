@@ -581,7 +581,7 @@ public class TurnBaseScript : MonoBehaviour
     }
 
     //This is so that the player doesn't take too long
-    IEnumerator CountDown()
+    public IEnumerator CountDown()
     {
         while (true)
         {
