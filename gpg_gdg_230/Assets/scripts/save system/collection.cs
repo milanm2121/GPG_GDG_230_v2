@@ -194,11 +194,11 @@ public class collection : MonoBehaviour
     public void save_cards()
     {
         //load cards
-        static_collections.Deaks.Clear();
-        for (int i = 0; deaks.Count > i; i++) {
-            static_collections.Deaks.Add(deaks[i]);
+   //     static_collections.Deaks.Clear();
 
-        }
+        static_collections.Deaks = deaks;
+
+        
         for (int i = 0; id.Length > i; i++)
         {
             static_collections.Collection[i] = Collection[i].count;
@@ -217,10 +217,9 @@ public class collection : MonoBehaviour
         {
             Collection[i].count= static_collections.Collection[i];
         }
-        for(int i=0;static_collections.Deaks.Count > i; i++)
-        {
-            deaks = static_collections.Deaks;
-        }
+        
+        deaks = static_collections.Deaks;
+        
         if (deaks.Count != 0)
         {
             loadDeacks();

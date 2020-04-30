@@ -11,11 +11,13 @@ public class temp_collection
     public List<serilisable_deak> sd = new List<serilisable_deak>();
 
     public int progress;
+    public int coins;
     public void temp_collection_save()
     {
         sd = static_collections.Deaks;
         card_count = static_collections.Collection;
         progress = static_collections.Progres;
+        coins = FakeMicrotransactions.staticIngameCoins;
         save_system.saveData(this);
     }
     public void temp_collection_load()
@@ -23,5 +25,6 @@ public class temp_collection
         static_collections.Deaks = sd;
         static_collections.Collection = card_count;
         static_collections.Progres = progress;
+        FakeMicrotransactions.staticIngameCoins = coins;
     }
 }
