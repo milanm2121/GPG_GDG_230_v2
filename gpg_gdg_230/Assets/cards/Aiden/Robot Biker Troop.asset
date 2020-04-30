@@ -16,7 +16,7 @@ MonoBehaviour:
   name: Robot Biker Troop
   description: Zooms past enemy bullets  Dodge 15 %
   Tags: Robot Biker Troop - Vehicle AI
-  artwork: {fileID: 0}
+  artwork: {fileID: 21300000, guid: f8d3c391594344d598bd8d8a1e1b6bbe, type: 3}
   manaCost: 3
   attack: 3
   health: 2

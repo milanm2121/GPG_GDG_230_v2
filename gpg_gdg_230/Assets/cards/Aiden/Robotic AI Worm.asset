@@ -16,7 +16,7 @@ MonoBehaviour:
   name: Robotic AI Worm
   description: Dodge 30 %
   Tags: Robotic AI Worm Machine
-  artwork: {fileID: 0}
+  artwork: {fileID: 21300000, guid: c9f1999b81d924491b699c6309e0e630, type: 3}
   manaCost: 6
   attack: 3
   health: 3

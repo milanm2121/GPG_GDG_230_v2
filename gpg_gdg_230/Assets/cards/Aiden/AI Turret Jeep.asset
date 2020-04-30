@@ -16,7 +16,7 @@ MonoBehaviour:
   name: AI Turret Jeep
   description: A jeep with a self operating AI turret Enduring
   Tags: AI Turret Jeep - Vehicle Machine
-  artwork: {fileID: 0}
+  artwork: {fileID: 21300000, guid: 77035d8bd5c6d475cb621bf0113650a3, type: 3}
   manaCost: 2
   attack: 2
   health: 2

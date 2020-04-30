@@ -16,7 +16,7 @@ MonoBehaviour:
   name: Robotic AI Scorpion
   description: 'On Play: Damage Vehicle for 4'
   Tags: Robotic AI Scorpion Machine
-  artwork: {fileID: 0}
+  artwork: {fileID: 21300000, guid: cb9d827595edf4c71b1f216548dcc049, type: 3}
   manaCost: 3
   attack: 2
   health: 1

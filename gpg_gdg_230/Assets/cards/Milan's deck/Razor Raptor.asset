@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 615dd9c20f7fa234b9eb1a59bd2aec1a, type: 3}
   m_Name: Razor Raptor
   m_EditorClassIdentifier: 
-  ID: 145
+  ID: 139
   name: Razor Raptor
   description: Dodge 60 % Charged Haste
   Tags: AI
-  artwork: {fileID: 0}
+  artwork: {fileID: 21300000, guid: 30e895dbc99c748e98399d1a04bb2ed2, type: 3}
   manaCost: 2
   attack: 3
   health: 1

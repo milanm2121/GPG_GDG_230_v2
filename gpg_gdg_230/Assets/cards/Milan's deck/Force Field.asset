@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 615dd9c20f7fa234b9eb1a59bd2aec1a, type: 3}
   m_Name: Force Field
   m_EditorClassIdentifier: 
-  ID: 148
+  ID: 147
   name: Force Field
   description: 'Spell: upgrade all units 0 attack 2 health'
   Tags: spell
-  artwork: {fileID: 0}
+  artwork: {fileID: 21300000, guid: 3c8227ed517e14ad5ab7399ea8f21145, type: 3}
   manaCost: 3
   attack: 0
   health: 0
