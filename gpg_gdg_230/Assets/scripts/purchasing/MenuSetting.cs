@@ -13,7 +13,9 @@ public class MenuSetting : MonoBehaviour
 
     public Dropdown resolutionsDropDown;
 
-    public static float staticVolume = 0.5f;
+    public static float staticVolume;
+
+    public static bool firstTime = false;
 
     void Start()
     {
@@ -38,7 +40,8 @@ public class MenuSetting : MonoBehaviour
         resolutionsDropDown.AddOptions(options);
         resolutionsDropDown.value = currentResolutionIndex;
         resolutionsDropDown.RefreshShownValue();
-        audioSource.volume = staticVolume;
+        if (firstTime == true)
+            audioSource.volume = staticVolume;
     }
 
 
@@ -47,6 +50,7 @@ public class MenuSetting : MonoBehaviour
         audioSource.volume = volume;
         staticVolume = volume;
         audioSource.volume = staticVolume;
+        firstTime = true;
     }
 
     public void SetQuality (int qualityIndex)
