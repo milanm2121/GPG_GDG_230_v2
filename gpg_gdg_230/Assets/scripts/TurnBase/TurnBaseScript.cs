@@ -109,7 +109,7 @@ public class TurnBaseScript : MonoBehaviour
     void Update()
     {
 
-        if (state != TurnState.CardPlayed)
+        if (state != TurnState.CardPlayed ||state != TurnState.EndofBattle)
         {
             if (timerIsOn == false)
             {
@@ -436,7 +436,12 @@ public class TurnBaseScript : MonoBehaviour
 
     void PlayerResponeToAction()
     {
-        turnTimer = 30;
+        //        turnTimer = 30;
+        if (turnTimer == 1)
+        {
+            turnTimer = 20;
+            Battle();
+        }
     }
 
     public void ResponeToAttacking()

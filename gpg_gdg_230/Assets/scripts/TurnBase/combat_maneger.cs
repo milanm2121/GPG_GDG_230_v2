@@ -36,6 +36,8 @@ public class combat_maneger : MonoBehaviour
     //this alows cards in the attack and defend list to interact
     IEnumerator CombatPhase()
     {
+        TBS.timerIsOn = false;
+        TBS.StopCoroutine("CountDown");
         for (int i = 0; attack.Count > i; i++)
         {
             //card defending card blocks attack from attacking card of the same position
@@ -214,6 +216,7 @@ public class combat_maneger : MonoBehaviour
         }
 
         yield return new WaitForSeconds(1.5f);
+        TBS.timerIsOn = true;
         TBS.EndPlayerTurn();
     
     

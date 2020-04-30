@@ -206,7 +206,7 @@ public class Hand : MonoBehaviour
                                 string[] splitTags = Tags.Split(' ','_');
                                 for (int x = 0; splitTags.Length > x; x++)
                                 {
-                                    if (splitTags[x] == unitType)
+                                    if (splitTags[x] == unitType && !selectedCards.Contains(selectedCard))
                                     {
                                         selectedCards.Add(selectedCard);
                                     }
@@ -226,7 +226,7 @@ public class Hand : MonoBehaviour
                 {
                     for (int i = 0; TBS.player2Hand.active_cards > i; i++)
                     {
-                        if (TBS.player2Hand.active_cards_slots[i] == selectedCard)
+                        if (TBS.player2Hand.active_cards_slots[i] == selectedCard && !selectedCards.Contains(selectedCard))
                         {
                             selectedCards.Add(selectedCard);
                         }
