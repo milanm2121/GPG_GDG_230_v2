@@ -16,7 +16,7 @@ MonoBehaviour:
   name: Plated-Drone
   description: 'On Play: Boost all Plated-Drone 0 attack 1 health '
   Tags: Machine AI
-  artwork: {fileID: 0}
+  artwork: {fileID: 21300000, guid: 298dc885e56184692ad1c80d03267ffc, type: 3}
   manaCost: 4
   attack: 2
   health: 7

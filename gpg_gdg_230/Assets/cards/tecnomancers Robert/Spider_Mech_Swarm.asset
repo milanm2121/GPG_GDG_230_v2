@@ -16,7 +16,7 @@ MonoBehaviour:
   name: Spider-Mech-Swarm
   description: Swarm
   Tags: Machine AI
-  artwork: {fileID: 0}
+  artwork: {fileID: 21300000, guid: 9c3a32e2f85fa41f28e0d6e41d9ca232, type: 3}
   manaCost: 0
   attack: 1
   health: 1
